@@ -1,0 +1,59 @@
+* Lecture 2 <2018-10-17 Wed>
+
+** Definitions
+*** Positive half
+*** Affine hyperplane
+*** (Question) What is the space of all oriented hyperplanes of $\R^n$
+*** Definition of pos?
+** Radon's theorem
+   Three cases
+
+   - If the size of M is greater than or equal to n+2, there is a radon partiiton
+   - If the size of $M$ is greater than or equal to $n+1$, $0$ is an appex of
+     $M$ and $0\neq M$. or $|M| \ge n+2$. 
+
+     then there is a partition of $M_1$ and $M_2$ of $M$ such that $\pos M_1
+     \cap pos M_2 \neq \emptyset$.
+   - partition is unique if and only i f
+     - $|M| = n+2$ and $n+1$ points of m$ are affinely dependent.
+     - $|M| = n+1$ and no $n$ vectors of $M$ are linearly independent. 
+** Definitions
+*** Radon partition
+    A partition $M_1, M_2$ such that $\conv M_1 \cap conv M_2 \neq \emptyset$ is called a *Radon partition*.
+** Proof
+*** Part 1
+    Size of $M$ greater than $n+2$. Take $x_1, \cdots, x_{n+2}$ pairwise disjoint points from $M.
+
+    Then $x_1, \cdots x_{n+2}$ are affinely dependent, meaning that that you can
+    choose scalars, real such that $\sum \lambda_i x_i = 0$. 
+
+    We can assume that for some $1 \le j \le n+1$ holds
+
+    $\lambda_1 >0, \cdots, \lambda_i >0$ and $\labmda_{i+1} \le 0, \cdots, \lambda{n+2} \le 0$.
+    
+    $\lambda = \lambda_1 + \cdots + \lamda_j = -(\lambda_{i+1} + \cdots + \lambda_{n+2}$. 
+
+    $X=\frac1\lambda (\lambda_1 x_1 + \cdots \lambda_j x_j)$ a convex
+    combination $\in \conv\{x_1, \cdots, x_j\}$.
+
+    $$\frac{1}{\lambda}(\lambda_1x_1 + \cdots + \lambda_{n+2}x_{n+2}) = 0.$$
+
+
+    $$X= \frac{1}{\lambda}(\lambda_1x_1 + \cdots + \lambda_{j}x_{j})  = -\frac{1}{\lambda}(\lambda_jx_j + \cdots + \lambda_{n+2}x_{n+2}) = 0.$$
+
+    a convex combination. 
+
+    Thus $X$ is inside both the intersection.
+*** Part 2
+
+    $\pos M$ is a cone with appex $
+
+    *A drawing*
+
+    For every point $x_i \in M$, there is $\alpha_i > 0$, such that $\alpha_ix_i
+    \in H'$,, 
+
+    blah blah. 
+
+    Keyword: matroids.
+*** 
