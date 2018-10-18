@@ -80,10 +80,10 @@
     again, we have a contradiction.
 ** Questions 
 *** About affine maps
-    We have an arbitrary affine map between a simplex and $\R^n$. implies, there
-    exist faces of the simpleces such that the faces do not intersect, but the
-    images of the faces will intersect. Apparently this follows from the Radon's
-    theorem. A different formulation of Radon's theorem
+    We have an arbitrary affine map between a simplex (n+1 dimensional) and
+    $\R^n$. implies, there exist faces of the simpleces such that the faces do
+    not intersect, but the images of the faces will intersect. Apparently this
+    follows from the Radon's theorem. A different formulation of Radon's theorem
 
     $a\colon T_{n+1} \rightarrow \R^n$
 
