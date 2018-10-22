@@ -1,3 +1,11 @@
+#+TITLE: Discrete Geometry 1
+#+LATEX_HEADER: \usepackage[left=2cm, right=2cm, bottom=2cm, top=2cm]{geometry}
+#+LATEX_HEADER: \usepackage{parskip}
+#+LATEX_HEADER: \def\R{\mathbb{R}}
+#+LATEX_HEADER: \def\Z{\mathbb{Z}}
+#+LATEX_HEADER: \def\pos{\operatorname{pos}}
+#+LATEX_HEADER: \def\conv{\operatorname{Conv}}
+
 * Lecture 2 <2018-10-17 Wed>
 
 ** Definitions
@@ -29,9 +37,9 @@
 
     We can assume that for some $1 \le j \le n+1$ holds
 
-    $\lambda_1 >0, \cdots, \lambda_i >0$ and $\labmda_{i+1} \le 0, \cdots, \lambda{n+2} \le 0$.
+    $\lambda_1 >0, \cdots, \lambda_i >0$ and $\lambda_{i+1} \le 0, \cdots, \lambda{n+2} \le 0$.
 
-    $\lambda = \lambda_1 + \cdots + \lamda_j = -(\lambda_{i+1} + \cdots + \lambda_{n+2}$.
+    $\lambda = \lambda_1 + \cdots + \lambda_j = -(\lambda_{i+1} + \cdots + \lambda_{n+2}$.
 
     $X=\frac1\lambda (\lambda_1 x_1 + \cdots \lambda_j x_j)$ a convex
     combination $\in \conv\{x_1, \cdots, x_j\}$.
@@ -46,7 +54,7 @@
     Thus $X$ is inside both the intersection.
 *** Part 2
 
-    $\pos M$ is a cone with appex $
+    $\pos M$ is a cone with appex ... 
 
     *A drawing*
 
@@ -76,7 +84,7 @@
 
     $$\tilde M_1 \cap (M-\tilde M), \tilde M_2$$
 
-    and $$\tideM_2 \cap (M-\tilde M)$$ forms two different radon partitions and
+    and $$\tilde M_2 \cap (M-\tilde M)$$ forms two different radon partitions and
     again, we have a contradiction.
 ** Questions 
 *** About affine maps
@@ -87,12 +95,16 @@
 
     $a\colon T_{n+1} \rightarrow \R^n$
 
-    *Question*: Replace the affine map by a continuous map and is it still true?
+    *Question*: Replace the affine map by a continuous map and is it still true? [fn:1]
 
     *Question*: How many points in $M \subset \R^d$ you should have to generate
     that for $n\ge 2$, there is a partition $M_1, \cdots, M_r$ of $M$ such that
-    the intersection of the convex hulls of $M_i$s are non-empty. 
+    the intersection of the convex hulls of $M_i$ are non-empty. 
 
     *Question*: More points, minimal number of points?
+
+* Footnotes
+
+[fn:1] Wikipedia article about Radon'n theorem says that this is true. Crazy.
     
 
