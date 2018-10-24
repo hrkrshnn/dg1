@@ -4,6 +4,7 @@
 #+LATEX_HEADER: \def\R{\mathbb{R}}
 #+LATEX_HEADER: \def\Z{\mathbb{Z}}
 #+LATEX_HEADER: \def\pos{\operatorname{pos}}
+#+LATEX_HEADER: \def\relint{\operatorname{rel\ int}}
 #+LATEX_HEADER: \def\conv{\operatorname{Conv}}
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
 
@@ -225,7 +226,165 @@
 
     We kinda use principles similar to the last two theorems. I skipped writing
     the proof.
+* Lecture 3 <2018-10-24 Wed>
+** Review
+*** Nearest point map
+    The definition of the nearest point map for a convex set.
+
+    Recall that we use completeness of Real numbers for the existence of the map. [fn:8]
+*** Some properties
+    The nearest point map is identity in $K$. 
+
+    Every point $y$ on the half line emanating from $x'$ containing is in the
+    fiber of $x'$ with respect to $p_K$.
+
+    $f_K$ is a Lipschitz function with constant $1$ and is hence continuous. 
+
+    Supporting hyperplane $H \colon H \cap K = \emptyset$, $K\subset H^{-}$. 
+*** Lemma
+    If $x \in \R^n - K$, then $H=\{y \colon \langle y, x-x'\rangle = \langle x',
+    x-x'\rangle \}$ is a supporting hyperplane of $K$ at $x'$.
+
+    The lemma says that at every point outside of $K$, we can find a supporting
+    hyperplane. What we need to prove is that at every point on the boundary we
+    can find a supporting hyperplane. 
+** Theorem 
+   Let $K\subset \R^n$ (here $K$ is not equal to $\R^n$ be closed convex set.
+   Then $K$ is equal to the intersection of all its supporting half-spaces. 
+*** Proof
+    Because $K$ is not $\R^n$, we have a point in the difference. Then there is
+    at least one supporting hyperplane, and therefore a supporting half space.
+    Let $K'$ be the intersection of all of it's supporting hyperplanes of $K$.
+    It is clear that $K$ is a subset of $K'$. To prove the inclusion from the
+    other side:
+
+    Let $k'$ be an element in $K'$. Then there exists a supporting hyperplane
+    $H$ at $x'=f_K(x)$ such that $K \subset H^{-}$ and $x \in inf H^{+}$. Thus
+    $H$ separates $H$ and $K$, and more importantly, $x$ is not an element of
+    $K'$.[fn:9]
+** Theorem
+   Let $K\subset \R^n$ a closed convex set and $x\in \partial K$. Then there
+   exists a supporting hyperplane for $K$ containing $x$. 
+*** Proof
+    We define the boundary of $K$ first. Let $x\in \partial K \iff (\forall U
+    \in x \textup{ and open }) U \cap K \neq \emptyset$ and $U\cap K^{c} \neq
+    \emptyset$ and $x_0 \in K$.
+
+    If $x_0$ is a point in the boundary of $K$, then there is a sequence $y_n
+    \in \R^n$ such that $x_0$ is the limit of $y_n$.
+
+    For every point $x_n = f_K(y_n)$, there is a supporting hyperplane $H_n$ at
+    $x_n$. Let $s_n$ be a sequence of half lines emanating from $x_n$
+    perpendicular to $H_n$. Let $S$ be a sphere with center at $x_0 \in H$ of
+    small radius. Then this half line will intersect $S$ at one point. Notice
+    that $y_n$ is also an element of $S_n$, then 
+
+    $x_0 = \lim f_K(y_n')$ and $y'_{k_n}$ subsequence of $y_n'$ converging in
+    $S, $y_{k_n}' \righarrow y_0 \in S$ and $x_0 = \lim f_k(y_n') = \lim
+    f_K(y_{k_n}')$ and $y_0 = lim y_k' \implies f_k(y_0) = \lim f_k(y_{k_n}')$
+    and $x_0 = f_k(y_0)$ and $y_0 \neq x_0$. [fn:10]
+** Faces and Normal Cone
+*** Definition
+    Let $K\subset \R^n$ be a closed convex set. A face $F$ of $K$ is a subset of
+    $K$ is a subset of the form $F = K \cap H$ where $H$ is some supporting
+    hyperplane of $K$. 
+
+    Such a face is called a proper face while $\phi$ and $K$ are also faces but
+    called non-proper. (A diagram with $\emptyset$ and $K$.)
+
+    Examples: Triangles (here faces are the edges.) For a disc, then the faces
+    are points on the boundary. For a cube, the faces are the faces of the cube.
+*** Lemma about convexity of face
+    Every proper face of $K$ is a closed convex set.
+*** Dimension
+    If $F$ is a face of $K$ and $m=\dim F$, (Let affine hull of $K$ is $\R^n$.)
+    1. then $m=0$ we call $F$ a vertex of $K$
+    2. If $m=1$ we call $F$ an edge of $K$
+    3. If $m=n-1$ we call $F$ a *facet* of $K$
+    4. If $m=n-2$ we call $F$ a *ridge* of $K$.
+** Lemma
+   Let $F_0$ be subset of $F_1$ faces of $K$, then $F_0$ is a face of $F_1$.
+*** Proof
+    $F_0$ is a face of $K \implies$, therefore $F_0 = K \cap H$, where $H$ is a
+    supporting hyperplane for $K$. $H$ supporting hyperplane for $K$ and
+    therefore for $F_1$.
+
+    $F_1 \cap H \subset K \cap H \subset F_1 \cap H$
+
+    $F_0 = F_1 \cap H$. 
+*** Remark
+    The converse of the lemma does not hold. $F_2$ is a face of $K$ and $F_0$ is
+    a face of $F_2$ implies $F_2$ is a face of $K$. The last statement is not
+    true. Notice that in the above proof we need both of them to be faces of
+    $A$.
+
+    The picture: A square with a half-disc glued to the right. $F_0$ be a vertex
+    on the right side and $F_1$ be the edge of the square containing $F_0$. [fn:11]
+** Lemma
+   Let $F_1, \cdots, F_k$ be faces of $K$, then $F=F_1\cap \cdots \cap F_k$ if a
+   face of $K$.
+*** Proof
+    $F_i = K \cap H_i$, where $H_i = \{y \vert \langle y, u_i \rangle = 0\}$.
+    ($K \subset H_i^{-1}$ [fn:12]) We can assume that $0 \in F$ which is the
+    intersection of all of them $0 \in F = F_1 \cap \cdots F_k$.
+
+    $u=u_1+\cdots+u_k$ (we can assume without loss of generality that $u \neq
+    0$; this can be attained by scaling one or more $u_i$.)
+
+    $H=\{y\vert \langle y, u\rangle = 0\}$. will be a supporting hyperplane for
+    $K$ and $F = K \cap H$. $K\subset H^-$, $y\in K$, $\langle u, u\rangle =
+    \langle y, u_1\rangle + \cdots + \langle y, u_k\rangle \le 0 + \cdots + 0$. [fn:13]
+
+    The last statement implies that $y$
+
+    $F = K \cap H$.
+
+    $y\in F = F_1 \cap \cdots \cap F_k = (K\cap H_1) \cap \cdots \cap (K\cap H_k)$
+
+    $\langle y, u_1 \rangle = 0, \cdots, \langle y, u_k\rangle = 0$.
+
+    $\langle y, u_1 + \cdots + u_k \rangle = 0$.
+
+    $\langle y, u \rangle = 0 \implies y \in H$. 
+
+    $y \in F \cap H \subset K \subset H$. 
+
+    $y \in K \cap H \implies y \in K$ and $y\in H$. 
+
+    $\langle y, u_i \rangle \le 0$ 
+
+    $\langle y, u \rangle = 0 = \langle y, u_1 \rangle + \cdots + \langle y,
+    u_k\rangle$. [fn:14]
+** Lemma
+   - Let $F$ be a face of a closed convex set $K$ and $x, \tilde x$ be an element
+   of the relative interior of $F$. Then any supporting hyperplane of $K$
+   containing $x$ must contain $\tilde x$.
+   - If $F, F'$ are faces of $K$ and $\relint F \cap \relint F \neq \emptyset$,
+     ten $F = F'$.
+*** Proof
+    $H$ supporting for $F$. I didn't write this. [fn:15]
 * Footnotes
+
+[fn:15] This means that we can choose a supporting hyperplane by choosing a
+point inside relative interior.
+
+[fn:14] Question: what about infinite intersection. 
+
+[fn:13] This is why we assumed that $0$ is in $K$, otherwise we'll have to play
+around.
+
+[fn:12] We need the next statement for making this assertion. 
+
+[fn:11] Apparently the statement would be true for polytopes, i.e., the converse
+holds for polytopes. This is one of the reason we're interested in polytopes. 
+
+[fn:10] I don't understand what's happening at the end 
+
+[fn:9] We're interested in spaces that can be formed by finitely many
+intersections of hyperplanes. These will be called Polyhedra. An non-example is
+a disc.
+
+[fn:8] Did I write this statement correctly?
 
 [fn:7] I think I made mistakes in framing at the beginning of the paragraph.
 
@@ -243,5 +402,3 @@ needed for the uniqueness.
 [fn:2] What if $M$ is a disc?
 
 [fn:1] Wikipedia article about Radon'n theorem says that this is true. Crazy.
-    
-
