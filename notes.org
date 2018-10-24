@@ -5,6 +5,8 @@
 #+LATEX_HEADER: \def\Z{\mathbb{Z}}
 #+LATEX_HEADER: \def\pos{\operatorname{pos}}
 #+LATEX_HEADER: \def\conv{\operatorname{Conv}}
+#+LATEX_HEADER: \usepackage[T1]{fontenc}
+
 
 * Lecture 2 <2018-10-17 Wed>
 
@@ -23,7 +25,7 @@
      then there is a partition of $M_1$ and $M_2$ of $M$ such that $\pos M_1
      \cap pos M_2 \neq \emptyset$.
    - partition is unique if and only i f
-     - $|M| = n+2$ and $n+1$ points of m$ are affinely dependent.
+     - $|M| = n+2$ and $n+1$ points of $m$ are affinely dependent.
      - $|M| = n+1$ and no $n$ vectors of $M$ are linearly independent.
 ** Definitions
 *** Radon partition
@@ -69,7 +71,7 @@
 
     (A part.) A partition is unique.
 
-    Let $|M| = n+2$ and $x_1, \cdots, x_{n+2}$ are affinely dependent implies
+    Let $\vert M \vert = n+2$ and $x_1, \cdots, x_{n+2}$ are affinely dependent implies
     $x_1, \cdots x_{n+1}$ (dropped one point) have to be on a affine hyperplane.
     Then by Radon's theorem, there is a partition $M_1'$ and $M_2'$ such that
     the convex hulls of these intersect. But then we can add the element
@@ -102,8 +104,143 @@
     the intersection of the convex hulls of $M_i$ are non-empty. 
 
     *Question*: More points, minimal number of points?
+* Lecture 2 <2018-10-23 Tue>
+** Review
+*** Radon's theorem
+    1. If $M \subset \R^n$ and $\vert M \vert \ge n+2$, then there exists a
+       partition $M_1$ and $M_2$ of $M$ such that $\conv M_1 \cap \conv M_2 \neq
+       \emptyset$.
+    2. If $M \subset \R^n$ and either $\vert M \vert \ge n+2$ and $0\neq M$ on
+       $\vert M \vert \ge n+2$, then there is a partition of $M_1$, $M_2$ of $M$
+       such that $\pos M_1 \cap \pos M_2 \neq \empty$
+** Charatheodery's theorem
+   1. Let $M\subset \R^n$, then $\conv M$ is the set of all convex combinations
+      of at most $n+1$ points from $M$. [fn:2]
+   2. Let $M\subset \R^n$. Then $\pos M$ is the set of all positive combinations
+      of at most $n$ points from $M$.
+*** Proof
+    $x\in \conv M \implies$ there exists $\lambda_1, \cdots, \lambda_n$ and $x_1,\cdots, x_n \in M$. 
 
+    $x=\lambda_1x_1+\cdots + \lambda_rx_r$ and $\sum \lambda_i = 1$, $\lambda_i \ge 0$.
+    
+    Let the presentation be such that $r$ is minimal. (We can do this because we
+    are taking minimum over natural numbers.) Let us assume that $M \ge n+2$,
+    then there exists an affine dependence $\mu_1x_2 + \cdots \mu_rx_r = 0$,
+    $\mu_1 + \cdots + \mu_r = 0$ and not all $\mu_i$ 's are zero.
+    
+    (Basically the idea is that we assume the minimality of $r$ and if $r \ge
+    n+2$, then there is an affine dependence, and then use this to contradict
+    the  minimality of $r$.)[fn:3]
+*** Lemma about compactness of convex hull of compact set
+    $M^{n+1} \times \Delta \rightarrow M$. Here the space on the left is the set
+    of all $n+1$ points of $M$ and $\Delta$ is a simplex.
+
+    Now, it follows from the fact that image of a compact set is compact.
+** Nearest points map and supporting hyperplane
+*** Lemma
+    Let $K\subset \R^n$ be closed and convex. Then for every $x\in \R^n$, there
+    is unique point $x^1 \in K$ such that $$\Vert x - x^1\Vert = \inf\Vert x -
+    y\Vert = d(x, K)$$
+*** Proof
+    We can find a sequence of points $(y_n)$ in $M$ such that the distance from
+    $x$ is less than $1/n$. Now, the sequence is Cauchy. Since, $\R^n$ is
+    complete, it has to converge, and since $K$ is closed, we are done. [fn:4]
+
+    Uniqueness: Given $X$, if there are two points $x'$ and $x''$ such that the
+    distances from $x$ from these two points are the same. In the plane $x, x',
+    x''$, the triangle $\Delta x x' x''$ exists. But then a perpendicular to the
+    side $x'x''$ would be smaller than the distance to $x'$ or $x''$. This is a
+    contradiction. Hence the points have to be unique. (Here the convexity of
+    the set is used.)
+*** Definition of nearest point map
+    Given $K\subset \R^n$ be a closed convex set. Then $p_k \mathbb \R^n
+    \rightarrow K$ is the nearest points map. (This is defined using the last
+    lemma.)
+
+    If $x\in K$, then $p_k(x) = x$. $p_K$ is surjective. Usually it is not
+    injective, if $K = \R^n$, then it is injective. 
+** Properties of nearest point map
+*** Definition (supporting hyperplane)
+    A hyperplane $H$ is a supporting hyperplane if $a$ closed convex set in $\R^n$ if 
+    $$H \cap K \neq \emptyset \textup{ and } K \subset H^- \textup{ or } K \subset H^+$$
+
+    If we take a $u \in S(\R^n), \alpha \in \R^n$, $H^+ = \{x\in\R^n \vert \langle x, u \rangle \ge \alpha\}$
+    $H^- = \{x\in\R^n \vert \langle x, u \rangle \le \alpha\}$.
+
+    A picture that I didn't draw 
+
+    Notions:
+    1. Supporting half space
+    2. Outer normal
+    3. Inner normal
+*** Aim
+    We want to prove: Given a convex body and take a point in the boundary. I
+    want to prove that there is a supporting hyperplane (?)
+*** Lemma
+    Let $\varphi \neq K \subset \R^n$ be a closed convex set. If $x \in \R^n\setminus K$,
+    then the hyperplane $H = \{y \in \R^n \vert \langle y, u \rangle = 1\}$ is a
+    supporting hyperplane of $K$ at $x' = p_k(x)$ where $u=\frac{x-x'}{\langle
+    x', x - x'\rangle}$.
+
+    A diagram I didn't draw (A convex body, x is a point outside, $x'$ is the
+    closest element, meaning that $x'$ is on the hyperplane and we have a
+    direction vector $x - x'$, we normalize this vector. ([fn:6])) [fn:5]
+*** Proof
+    $H$ is a hyperplane and $x' \in H$, then $\langle x - x', x - x'\rangle \ge
+    0 implies \langle x, x-x' \rangle > \langle x', x-x'\rangle implies \langle
+    x, (x-x')/(\langle x', x-x'\rangle) \implies x\in H^+$
+
+    Now we assume that $H$ is not a supporting hyperplane, which means that
+    there is as point $y$ inside $K\cap (H+\setminus H)$. Consider the
+    triangle $\Delta x x' y$. Since $x$ is perpendicular to the $yx'$, the angle
+    $yx_1 x$ is actute. We kinda want to prove that there is a point on the line
+    segment that would minimize the distance from $x$. The argument is similar
+    to the argument for last theorem. (The perpendicular from $x$ would give a
+    point on the segment $x'y$ that would be the minimum.) [fn:7]
+*** Lemma
+    Let $K\subset \R^n$ be a closed convex set and $x\in \R^n \setminus K$.
+    For a point $y$ on the half-line emanating from $x'=p_k(x)$ and containing
+    $x$ holds
+
+    $y' = p_K(y)=p_K(x) = x'$
+*** Proof 
+    Let $y \in [x', x]$, assume that $y' \neq x'$. We'll try to arrive at a contradiction.
+
+    $\Vert x - x' \Vert = \Vert x - y \Vert + \Vert y - x'\Vert \ge \Vert x -
+    y\Vert + \Vert y - y'\Vert$ (The second part follows from the fact that $y'$
+    is the point in $K$ that is closest to $y$.)
+
+    We apply the inequality of triangle we get that $\Vert x - x' \Vert \ge
+    \Vert x - y\Vert$. This is a contradiction.
+    
+    We do something similar when $x$ is an element in the line segment $[y,
+    x']$. (Not exactly similar, but try to arrive at a contradiction from
+    drawing some triangles and what-not.)
+*** Lemma Busemann and Faller's lemma
+    The function $p_K$ does not increase the distance, therefore it is Lipschitz
+    with constant $1$ and is uniformly continuous. This means that $\Vert
+    p_k(x) - p_K(y) \Vert \le \Vert x - y\Vert$.
+*** Proof
+    We assume that $x' = p_K(x) \neq y' = p_K(y)$. (We draw a diagram.)
+
+    We kinda use principles similar to the last two theorems. I skipped writing
+    the proof.
 * Footnotes
+
+[fn:7] I think I made mistakes in framing at the beginning of the paragraph.
+
+[fn:6] I think I made a mistake in what I wrote here.
+
+[fn:5] If $p_K$ is what we already know, we know that every point in $p_k(\R^n \
+K)$ \subset M$ has a supporting hyperplane. We'll try to figure out more about
+this set.
+
+[fn:4] Interestingly, convexity of the set is not used here. It's probably only
+needed for the uniqueness.
+
+[fn:3] Solve the exercise for Helly's theorem. 
+
+[fn:2] What if $M$ is a disc?
 
 [fn:1] Wikipedia article about Radon'n theorem says that this is true. Crazy.
     
