@@ -280,7 +280,7 @@
     that $y_n$ is also an element of $S_n$, then 
 
     $x_0 = \lim f_K(y_n')$ and $y'_{k_n}$ subsequence of $y_n'$ converging in
-    $S, $y_{k_n}' \righarrow y_0 \in S$ and $x_0 = \lim f_k(y_n') = \lim
+    $S, y_{k_n}' \rightarrow y_0 \in S$ and $x_0 = \lim f_k(y_n') = \lim
     f_K(y_{k_n}')$ and $y_0 = lim y_k' \implies f_k(y_0) = \lim f_k(y_{k_n}')$
     and $x_0 = f_k(y_0)$ and $y_0 \neq x_0$. [fn:10]
 ** Faces and Normal Cone
