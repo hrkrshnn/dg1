@@ -284,6 +284,7 @@
     f_K(y_{k_n}')$ and $y_0 = lim y_k' \implies f_k(y_0) = \lim f_k(y_{k_n}')$
     and $x_0 = f_k(y_0)$ and $y_0 \neq x_0$. [fn:10]
 ** Faces and Normal Cone
+
 *** Definition
     Let $K\subset \R^n$ be a closed convex set. A face $F$ of $K$ is a subset of
     $K$ is a subset of the form $F = K \cap H$ where $H$ is some supporting
@@ -363,7 +364,162 @@
      ten $F = F'$.
 *** Proof
     $H$ supporting for $F$. I didn't write this. [fn:15]
+* Lecture 4 <2018-10-30 Tue>
+** Review
+   He did a review of stuff. 
+
+   1. $K$ closed convex set and $H$ is a supporting hyperplane of $K$. Meaning
+      that $F = K \cap H$ is a face. $\phi_1, K$ (improper) face. 
+   2. $F$ face of $K$ $\implies F$ closed and convex.
+   3. $F_1 \subset F_1$ faces of $K \implies F_0$ a face of $F_1$. Whereas the
+      converse of the statement is not true. [fn:16]
+** Definition (Normal cone)
+   Let $K\subset \R^n$ be a closed convex set and $x\in K$. The *Normal cone* at
+   $x$ is the set at $x$ is the set $$N(x) = -x + p_K^{-1}(\{x\}).$$
+
+   The normal cone at $x$ always contains $0$. We'll draw some examples.
+
+   1. *A closed convex interval in $\R$*. Take a point $x$ inside the interval.
+      Then $N(x) = 0$. This is because the set of all points such that the
+      closest point is $x$ is just $x$.
+   2. If we go at the boundary of the convex set, then the set of points that
+      are closest to the point is the point and the whole half line containing
+      the point. Now $N(x)$ is $[0, \infty)$ after translation. We can make a
+      similar argument for the point on the other side of the boundary.
+   3. *An interval in the plane*: let's say $[1, 3]$ inside $\R^2$. Now, for
+      $2$, there is a perpendicular line that is closest to $2$. Now, if we
+      translate it, we get a line perpendicular to $0$. Whereas, for $3$ and
+      $0$, they would be two dimensional spaces (half spaces.) We can get one
+      form another by doing orthogonal complement.
+   4. *A triangle inside plane*. All the points inside would give us $0$.
+      Whereas, for a point on one of the edge (other than vertex), $N(x)$ would
+      be a line perpendicular to the edge. For an edge, it would be a
+      two-dimensional space.
+   5. *Remark*: Notice that for all these examples, we were able to partition
+      the entire space using $N(x)$. (I think the partition thing we are talking
+      about is about $p^{-1}_K$. $N(x)$ would always contain $0$.
+** Lemma
+   $N(x)$ is a closed convex cone. It consists of $0$ and all outer normals of
+   $K$ in $x$. If $x \in \int K$, then $N(x) = \{0\}$. 
+*** Proof
+    $\lambda \ge 0, u \in N(x) \implies \lambda x \in N(x).$
+
+    $u, v \in N(x) \implies u + v \in N(x).$
+
+    Without loss of generality, we can assume that $x=0$. 
+
+    $u\in N(0) \implies u \in p^{-1}_K$ and a lemma gives us that $\lambda v\in
+    p^{-1}_K(0)$ implies that $\lambda u \in N(0)$.
+
+    $u, v \in N(0) \implies 0 = p_K(u) = p_K(v)$, $H_u = \{x\vert \langle u, x
+    \rangle = 0\}$
+
+    $K\subset H_u^{-1}$. Supporting hyperplane at $0$ of $K$. $H_u = \{x \vert
+    \langle v, x\rangle = 0\}$, and $K\subset K_v^{-1}$.
+
+    $x \in K, \langle u + v, x\rangle = \langle u, x\rangle + \langle v,
+    x\rangle \le 0 + 0 \le 0$.
+
+    $x \in H^{-1} \implies K \subset H^{-1}$.
+
+    $H$ is a supporting hyperplane, then $p_{K}(u+v) = 0$.
+
+    What we proved is that, if we take a point, the positive multiple is inside.
+    We also proved that if there are two points inside, then the sum of them is
+    also inside. So it's like a cone. What about closed?
+
+    $N(x) = -x + p^{-1}(\{x\}$. Now, because $\{x\}$, is closed and $p_K$ is
+    continuous, then inverse image is closed. Because the translation is an
+    isometry, we are done.
+** Definition (Dual cone)
+   Let $G$ be a cone, then $\sigma = \{u \vert \langle \sigma, u\rangle \ge 0 \}$
+   is called the *dual cone*. 
+** Lemma
+   If $\sigma$ is a cone with appex $0$, then $N_\sigma(0) = -\sigma$.[fn:17]
+** Lemma
+   Let $F$ be a face of a closed convex set of $K$ and $x, \tilde{x} \in \relint
+   F$, then $N(x) = N(\tilde x)$.
+*** TODO Proof
+    The idea is that if there are two points in the relative interior of a face,
+    then the supporting hyperplane for these points are the same. We look at all
+    the normals at $x$ and $\tilde x$. [fn:18]
+** A random story
+   $P \rightarrow \{F \colon F \textup{ a face of P\}$, for every face, we can
+   talk about $N(F)$ instead of a point in the relative interior. These two
+   sets, we put inclusion as a relation, these are anti-isomorphic [fn:20] These
+   have some group structure and later can be used to construct affine Toric
+   variety. [fn:19]
+** Definition
+   If $F$ is a face of a closed convex set $K$ and $x\in \relint F$, then $N(x)
+   is denoted by $N(F)$ and is called the cone of normals of $K$ in $F$. [fn:21]
+** Theorem
+   Let $K$ be a convex body in $\R^n$ and $x(F)$ are of the relative interior
+   points in $F \neq \emptyset$ or $K$. Then $\{\relint N(x(F)) \vert F \text{
+   face of } K\} = \{ \relint N(F) \vert F\textup{ face of } K \}$ is a
+   partition of $\R^n$.
+*** TODO Proof
+    Since $K$ is bounded, there exists $\alpha$ non-negative, such that $K$ is a
+    subset of $H^{-1}(u, \alpha)$ where $$H(u, \alpha) = \{x \vert \langle x, u
+    \rangle =\alpha\}.$$
+
+    Let's take the intersection $\cap_{K \subset H^{-1})(u, \alpha) H^{-1}
+    H^{-1}(u, \alpha)$.
+
+    There was a nice diagram. 
+*** Random stuff
+    $\forall u \in \R^n - \{0\}$, there exists a face $F$ of $K$, $u\in N(F)$
+    and $0 \in N(K)$.
+
+    $x \in \relint F$, and $u$ is an outer normal of $x$, then $u\in \relint
+    N(F)$.[fn:22]
+
+    He did an example with tetrahedra.
+
+    $u \in \relint N(F_1) \cap \relint N(F_2)$, $u\ in \relint x(F_1) \cap
+    \relint x(F_2)$. This means that if we take $u$ and add a point $x(F_1)$,
+    $p_K(u + x(F_1)) = x(F_1)$. This means that $p_K(u + x(F_2)) = x(F_2)$
+
+    (I missed parts of this argument.) We used boundedness of the convex body.
+    If it is unbounded, the family of normal cones do not cover.
+** Definition (Normal fan)
+   The family $N(F)$ of $K$ is called the normal fan of $K$
+** Support and distance function
+*** Definition (support function)
+    Let $K$ be a non-empty convex body. The function $h_K$ that maps $\R^n
+    \rightarrow \R$, $h_K(x) = \sup_{x\in K} \langle u, x\rangle$ is the
+    *support function* of $K$.[fn:23]
+
+    We can also say it is the supremum over a fixed $x_0$.
+
+    There was a diagram
+*** Question?
+    Given a ball, what is the normal fan of the space?
+
+    If we take an interior point, then we have $0$. So we should go to the
+    boundary. But each point has a supporting hyperplane. Which means, that the
+    normal fan is all the half lines. The normal fan is a sphere. The normal fan
+    can be ugly when we have smooth convex body. But for polytopes, it's much
+    nicer.
 * Footnotes
+
+[fn:23] We use the fact that every compact function has a supremum.
+
+[fn:22] This may or may not be true. Wasn't discussed in the class.
+
+[fn:21] Connection with analysis: For a smooth real valued function from $\R$,
+we have a unique normal, whereas for a non-smooth point, there are several
+different normals (or supporting hyperplane.) We'll do something similar in our
+course.
+
+[fn:20] I think it means, the inclusion becomes opposite in the other space.
+
+[fn:19] The construction is similar to the construction of a toric variety.
+
+[fn:18] I think I'm missing some stuff.
+
+[fn:17] He didn't prove this, but it's obvious.
+
+[fn:16] Remember the example with a square and a half disc glued to the right side of the square?
 
 [fn:15] This means that we can choose a supporting hyperplane by choosing a
 point inside relative interior.
