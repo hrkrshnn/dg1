@@ -47,10 +47,10 @@
     $X=\frac1\lambda (\lambda_1 x_1 + \cdots \lambda_j x_j)$ a convex
     combination $\in \conv\{x_1, \cdots, x_j\}$.
 
-    $$\frac{1}{\lambda}(\lambda_1x_1 + \cdots + \lambda_{n+2}x_{n+2}) = 0.$$
+    $$\frac{1}{\lambda}(\lambda_1x_1 + \cdots + \lambda_{n+2}x_{n+2}) = 0$$
 
 
-    $$X= \frac{1}{\lambda}(\lambda_1x_1 + \cdots + \lambda_{j}x_{j})  = -\frac{1}{\lambda}(\lambda_jx_j + \cdots + \lambda_{n+2}x_{n+2}) = 0.$$
+    $$X= \frac{1}{\lambda}(\lambda_1x_1 + \cdots + \lambda_{j}x_{j})  = -\frac{1}{\lambda}(\lambda_jx_j + \cdots + \lambda_{n+2}x_{n+2}) = 0$$
 
     a convex combination.
 
@@ -188,7 +188,7 @@
     direction vector $x - x'$, we normalize this vector. ([fn:6])) [fn:5]
 *** Proof
     $H$ is a hyperplane and $x' \in H$, then $\langle x - x', x - x'\rangle \ge
-    0 implies \langle x, x-x' \rangle > \langle x', x-x'\rangle implies \langle
+    0 \implies \langle x, x-x' \rangle > \langle x', x-x'\rangle \implies \langle
     x, (x-x')/(\langle x', x-x'\rangle) \implies x\in H^+$
 
     Now we assume that $H$ is not a supporting hyperplane, which means that
@@ -375,7 +375,7 @@
       converse of the statement is not true. [fn:16]
 ** Definition (Normal cone)
    Let $K\subset \R^n$ be a closed convex set and $x\in K$. The *Normal cone* at
-   $x$ is the set at $x$ is the set $$N(x) = -x + p_K^{-1}(\{x\}).$$
+   $x$ is the set at $x$ is the set $$N(x) = -x + p_K^{-1}(\{x\})$$
 
    The normal cone at $x$ always contains $0$. We'll draw some examples.
 
@@ -402,9 +402,9 @@
    $N(x)$ is a closed convex cone. It consists of $0$ and all outer normals of
    $K$ in $x$. If $x \in \int K$, then $N(x) = \{0\}$. 
 *** Proof
-    $\lambda \ge 0, u \in N(x) \implies \lambda x \in N(x).$
+    $\lambda \ge 0, u \in N(x) \implies \lambda x \in N(x)$
 
-    $u, v \in N(x) \implies u + v \in N(x).$
+    $u, v \in N(x) \implies u + v \in N(x)$
 
     Without loss of generality, we can assume that $x=0$. 
 
@@ -444,7 +444,7 @@
     then the supporting hyperplane for these points are the same. We look at all
     the normals at $x$ and $\tilde x$. [fn:18]
 ** A random story
-   $P \rightarrow \{F \colon F \textup{ a face of P\}$, for every face, we can
+   $P \rightarrow \{F \colon F \textup{ a face of P}$, for every face, we can
    talk about $N(F)$ instead of a point in the relative interior. These two
    sets, we put inclusion as a relation, these are anti-isomorphic [fn:20] These
    have some group structure and later can be used to construct affine Toric
@@ -460,10 +460,10 @@
 *** TODO Proof
     Since $K$ is bounded, there exists $\alpha$ non-negative, such that $K$ is a
     subset of $H^{-1}(u, \alpha)$ where $$H(u, \alpha) = \{x \vert \langle x, u
-    \rangle =\alpha\}.$$
+    \rangle =\alpha\}$$
 
-    Let's take the intersection $\cap_{K \subset H^{-1})(u, \alpha) H^{-1}
-    H^{-1}(u, \alpha)$.
+    Let's take the intersection $\cap_{K \subset H^{-1}}(u, \alpha) H^{-1}
+    H^{-1}(u, \alpha)$
 
     There was a nice diagram. 
 *** Random stuff
