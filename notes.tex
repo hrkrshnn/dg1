@@ -1,4 +1,4 @@
-% Created 2018-10-31 Wed 11:23
+% Created 2018-11-13 Tue 10:05
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -16,17 +16,18 @@
 \usepackage{hyperref}
 \usepackage[left=2cm, right=2cm, bottom=2cm, top=2cm]{geometry}
 \usepackage{parskip}
+\usepackage{mathrsfs}
 \def\R{\mathbb{R}}
 \def\Z{\mathbb{Z}}
 \def\pos{\operatorname{pos}}
 \def\relint{\operatorname{rel\ int}}
 \def\conv{\operatorname{Conv}}
 \usepackage[T1]{fontenc}
-\author{Harikrishnan Mulackal}
+\author{Hari}
 \date{\today}
 \title{Discrete Geometry 1}
 \hypersetup{
- pdfauthor={Harikrishnan Mulackal},
+ pdfauthor={Hari},
  pdftitle={Discrete Geometry 1},
  pdfkeywords={},
  pdfsubject={},
@@ -37,23 +38,21 @@
 \maketitle
 \tableofcontents
 
-
-
 \section{Lecture 2 \textit{<2018-10-17 Wed>}}
-\label{sec:orge55c00a}
+\label{sec:org400ebd8}
 
 \subsection{Definitions}
-\label{sec:org06efc22}
+\label{sec:orgd57d683}
 \subsubsection{Positive half}
-\label{sec:orgf56b55a}
+\label{sec:org59ab205}
 \subsubsection{Affine hyperplane}
-\label{sec:org1fdf2fe}
+\label{sec:org52726d3}
 \subsubsection{(Question) What is the space of all oriented hyperplanes of \(\R^n\)}
-\label{sec:org868ffb3}
+\label{sec:orgb598fa1}
 \subsubsection{Definition of pos?}
-\label{sec:org281a276}
+\label{sec:org41850f9}
 \subsection{Radon's theorem}
-\label{sec:org1c44622}
+\label{sec:org3b0c1c0}
 Three cases
 
 \begin{itemize}
@@ -70,14 +69,14 @@ then there is a partition of \(M_1\) and \(M_2\) of \(M\) such that \(\pos M_1
 \end{itemize}
 \end{itemize}
 \subsection{Definitions}
-\label{sec:orgcb2f620}
+\label{sec:org23d1a0a}
 \subsubsection{Radon partition}
-\label{sec:orga1804bb}
+\label{sec:org9bd57ef}
 A partition \(M_1, M_2\) such that \(\conv M_1 \cap conv M_2 \neq \emptyset\) is called a \textbf{Radon partition}.
 \subsection{Proof}
-\label{sec:org1eaf7ad}
+\label{sec:orgb9daaed}
 \subsubsection{Part 1}
-\label{sec:orgc223351}
+\label{sec:org7b7ee4b}
 Size of \(M\) greater than \(n+2\). Take \(x_1, \cdots, x_{n+2}\) pairwise disjoint points from \$M.
 
 Then \(x_1, \cdots x_{n+2}\) are affinely dependent, meaning that that you can
@@ -101,7 +100,7 @@ a convex combination.
 
 Thus \(X\) is inside both the intersection.
 \subsubsection{Part 2}
-\label{sec:org5600729}
+\label{sec:org4cebd64}
 
 \(\pos M\) is a cone with appex \ldots{} 
 
@@ -114,7 +113,7 @@ blah blah.
 
 Keyword: matroids.
 \subsubsection{Part 3}
-\label{sec:org57c2176}
+\label{sec:org6d90036}
 I didn't type.
 
 (A part.) A partition is unique.
@@ -137,9 +136,9 @@ $$\tilde M_1 \cap (M-\tilde M), \tilde M_2$$
 and $$\tilde M_2 \cap (M-\tilde M)$$ forms two different radon partitions and
 again, we have a contradiction.
 \subsection{Questions}
-\label{sec:org6d2d10d}
+\label{sec:orge944659}
 \subsubsection{About affine maps}
-\label{sec:org3e3b234}
+\label{sec:orgc1f068f}
 We have an arbitrary affine map between a simplex (n+1 dimensional) and
 \(\R^n\). implies, there exist faces of the simpleces such that the faces do
 not intersect, but the images of the faces will intersect. Apparently this
@@ -155,11 +154,11 @@ the intersection of the convex hulls of \(M_i\) are non-empty.
 
 \textbf{Question}: More points, minimal number of points?
 \section{Lecture 2 \textit{<2018-10-23 Tue>}}
-\label{sec:orga418503}
+\label{sec:org6e7c094}
 \subsection{Review}
-\label{sec:org0002a85}
+\label{sec:orgc4576e1}
 \subsubsection{Radon's theorem}
-\label{sec:org0889d26}
+\label{sec:org2b9e88a}
 \begin{enumerate}
 \item If \(M \subset \R^n\) and \(\vert M \vert \ge n+2\), then there exists a
 partition \(M_1\) and \(M_2\) of \(M\) such that \(\conv M_1 \cap \conv M_2 \neq
@@ -169,7 +168,7 @@ partition \(M_1\) and \(M_2\) of \(M\) such that \(\conv M_1 \cap \conv M_2 \neq
 such that \(\pos M_1 \cap \pos M_2 \neq \empty\)
 \end{enumerate}
 \subsection{Charatheodery's theorem}
-\label{sec:org936b723}
+\label{sec:org9bf10a7}
 \begin{enumerate}
 \item Let \(M\subset \R^n\), then \(\conv M\) is the set of all convex combinations
 of at most \(n+1\) points from \(M\). \footnote{What if \(M\) is a disc?}
@@ -177,7 +176,7 @@ of at most \(n+1\) points from \(M\). \footnote{What if \(M\) is a disc?}
 of at most \(n\) points from \(M\).
 \end{enumerate}
 \subsubsection{Proof}
-\label{sec:org9ec3287}
+\label{sec:org4c15604}
 \(x\in \conv M \implies\) there exists \(\lambda_1, \cdots, \lambda_n\) and \(x_1,\cdots, x_n \in M\). 
 
 \(x=\lambda_1x_1+\cdots + \lambda_rx_r\) and \(\sum \lambda_i = 1\), \(\lambda_i \ge 0\).
@@ -191,20 +190,20 @@ then there exists an affine dependence \(\mu_1x_2 + \cdots \mu_rx_r = 0\),
     n+2\), then there is an affine dependence, and then use this to contradict
 the  minimality of \(r\).)\footnote{Solve the exercise for Helly's theorem.}
 \subsubsection{Lemma about compactness of convex hull of compact set}
-\label{sec:org6f6526b}
+\label{sec:orgfb0f807}
 \(M^{n+1} \times \Delta \rightarrow M\). Here the space on the left is the set
 of all \(n+1\) points of \(M\) and \(\Delta\) is a simplex.
 
 Now, it follows from the fact that image of a compact set is compact.
 \subsection{Nearest points map and supporting hyperplane}
-\label{sec:org117affb}
+\label{sec:orgd84f7a1}
 \subsubsection{Lemma}
-\label{sec:orgdab1ea7}
+\label{sec:orge5ecdef}
 Let \(K\subset \R^n\) be closed and convex. Then for every \(x\in \R^n\), there
 is unique point \(x^1 \in K\) such that $$\Vert x - x^1\Vert = \inf\Vert x -
     y\Vert = d(x, K)$$
 \subsubsection{Proof}
-\label{sec:org7491e98}
+\label{sec:orgc189103}
 We can find a sequence of points \((y_n)\) in \(M\) such that the distance from
 \(x\) is less than \(1/n\). Now, the sequence is Cauchy. Since, \(\R^n\) is
 complete, it has to converge, and since \(K\) is closed, we are done. \footnote{Interestingly, convexity of the set is not used here. It's probably only
@@ -217,7 +216,7 @@ side \(x'x''\) would be smaller than the distance to \(x'\) or \(x''\). This is 
 contradiction. Hence the points have to be unique. (Here the convexity of
 the set is used.)
 \subsubsection{Definition of nearest point map}
-\label{sec:orgf043580}
+\label{sec:org4e2f076}
 Given \(K\subset \R^n\) be a closed convex set. Then \(p_k \mathbb \R^n
     \rightarrow K\) is the nearest points map. (This is defined using the last
 lemma.)
@@ -225,9 +224,9 @@ lemma.)
 If \(x\in K\), then \(p_k(x) = x\). \(p_K\) is surjective. Usually it is not
 injective, if \(K = \R^n\), then it is injective. 
 \subsection{Properties of nearest point map}
-\label{sec:org6260070}
+\label{sec:org03db1bf}
 \subsubsection{Definition (supporting hyperplane)}
-\label{sec:org0b50c48}
+\label{sec:org81a73ef}
 A hyperplane \(H\) is a supporting hyperplane if \(a\) closed convex set in \(\R^n\) if 
 $$H \cap K \neq \emptyset \textup{ and } K \subset H^- \textup{ or } K \subset H^+$$
 
@@ -243,11 +242,11 @@ Notions:
 \item Inner normal
 \end{enumerate}
 \subsubsection{Aim}
-\label{sec:org13236e5}
+\label{sec:org1353c5b}
 We want to prove: Given a convex body and take a point in the boundary. I
 want to prove that there is a supporting hyperplane (?)
 \subsubsection{Lemma}
-\label{sec:org3c15822}
+\label{sec:org931b03e}
 Let \(\varphi \neq K \subset \R^n\) be a closed convex set. If \(x \in \R^n\setminus K\),
 then the hyperplane \(H = \{y \in \R^n \vert \langle y, u \rangle = 1\}\) is a
 supporting hyperplane of \(K\) at \(x' = p_k(x)\) where \(u=\frac{x-x'}{\langle
@@ -259,7 +258,7 @@ direction vector \(x - x'\), we normalize this vector. (\footnote{I think I made
 K)\) \(\subset\) M\$ has a supporting hyperplane. We'll try to figure out more about
 this set.}
 \subsubsection{Proof}
-\label{sec:org6e5a853}
+\label{sec:org6289fec}
 \(H\) is a hyperplane and \(x' \in H\), then \(\langle x - x', x - x'\rangle \ge
     0 \implies \langle x, x-x' \rangle > \langle x', x-x'\rangle \implies \langle
     x, (x-x')/(\langle x', x-x'\rangle) \implies x\in H^+\)
@@ -272,14 +271,14 @@ segment that would minimize the distance from \(x\). The argument is similar
 to the argument for last theorem. (The perpendicular from \(x\) would give a
 point on the segment \(x'y\) that would be the minimum.) \footnote{I think I made mistakes in framing at the beginning of the paragraph.}
 \subsubsection{Lemma}
-\label{sec:orgd9e06d6}
+\label{sec:org9a6973d}
 Let \(K\subset \R^n\) be a closed convex set and \(x\in \R^n \setminus K\).
 For a point \(y\) on the half-line emanating from \(x'=p_k(x)\) and containing
 \(x\) holds
 
 \(y' = p_K(y)=p_K(x) = x'\)
 \subsubsection{Proof}
-\label{sec:org2428fb3}
+\label{sec:org5d2a803}
 Let \(y \in [x', x]\), assume that \(y' \neq x'\). We'll try to arrive at a contradiction.
 
 \(\Vert x - x' \Vert = \Vert x - y \Vert + \Vert y - x'\Vert \ge \Vert x -
@@ -293,27 +292,27 @@ We do something similar when \(x\) is an element in the line segment \([y,
     x']\). (Not exactly similar, but try to arrive at a contradiction from
 drawing some triangles and what-not.)
 \subsubsection{Lemma Busemann and Faller's lemma}
-\label{sec:org4fff481}
+\label{sec:org7e9e322}
 The function \(p_K\) does not increase the distance, therefore it is Lipschitz
 with constant \(1\) and is uniformly continuous. This means that \(\Vert
     p_k(x) - p_K(y) \Vert \le \Vert x - y\Vert\).
 \subsubsection{Proof}
-\label{sec:orgc8d778e}
+\label{sec:org1650a32}
 We assume that \(x' = p_K(x) \neq y' = p_K(y)\). (We draw a diagram.)
 
 We kinda use principles similar to the last two theorems. I skipped writing
 the proof.
 \section{Lecture 3 \textit{<2018-10-24 Wed>}}
-\label{sec:org1ff1fe4}
+\label{sec:org12f0780}
 \subsection{Review}
-\label{sec:orgfaf5293}
+\label{sec:org174a1d6}
 \subsubsection{Nearest point map}
-\label{sec:orgf3cdfa4}
+\label{sec:org78ce5d4}
 The definition of the nearest point map for a convex set.
 
 Recall that we use completeness of Real numbers for the existence of the map. \footnote{Did I write this statement correctly?}
 \subsubsection{Some properties}
-\label{sec:orgbc0b31d}
+\label{sec:org4f07434}
 The nearest point map is identity in \(K\). 
 
 Every point \(y\) on the half line emanating from \(x'\) containing is in the
@@ -323,7 +322,7 @@ fiber of \(x'\) with respect to \(p_K\).
 
 Supporting hyperplane \(H \colon H \cap K = \emptyset\), \(K\subset H^{-}\). 
 \subsubsection{Lemma}
-\label{sec:orga808d71}
+\label{sec:org37092b8}
 If \(x \in \R^n - K\), then \(H=\{y \colon \langle y, x-x'\rangle = \langle x',
     x-x'\rangle \}\) is a supporting hyperplane of \(K\) at \(x'\).
 
@@ -331,11 +330,11 @@ The lemma says that at every point outside of \(K\), we can find a supporting
 hyperplane. What we need to prove is that at every point on the boundary we
 can find a supporting hyperplane. 
 \subsection{Theorem}
-\label{sec:org70657b3}
+\label{sec:org54a4879}
 Let \(K\subset \R^n\) (here \(K\) is not equal to \(\R^n\) be closed convex set.
 Then \(K\) is equal to the intersection of all its supporting half-spaces. 
 \subsubsection{Proof}
-\label{sec:orgc683e97}
+\label{sec:org090fcd3}
 Because \(K\) is not \(\R^n\), we have a point in the difference. Then there is
 at least one supporting hyperplane, and therefore a supporting half space.
 Let \(K'\) be the intersection of all of it's supporting hyperplanes of \(K\).
@@ -349,11 +348,11 @@ Let \(k'\) be an element in \(K'\). Then there exists a supporting hyperplane
 intersections of hyperplanes. These will be called Polyhedra. An non-example is
 a disc.}
 \subsection{Theorem}
-\label{sec:org18f285e}
+\label{sec:org7cf16e8}
 Let \(K\subset \R^n\) a closed convex set and \(x\in \partial K\). Then there
 exists a supporting hyperplane for \(K\) containing \(x\). 
 \subsubsection{Proof}
-\label{sec:org101f826}
+\label{sec:org51023a8}
 We define the boundary of \(K\) first. Let \(x\in \partial K \iff (\forall U
     \in x \textup{ and open }) U \cap K \neq \emptyset\) and \(U\cap K^{c} \neq
     \emptyset\) and \(x_0 \in K\).
@@ -372,10 +371,10 @@ that \(y_n\) is also an element of \(S_n\), then
     f_K(y_{k_n}')\) and \(y_0 = lim y_k' \implies f_k(y_0) = \lim f_k(y_{k_n}')\)
 and \(x_0 = f_k(y_0)\) and \(y_0 \neq x_0\). \footnote{I don't understand what's happening at the end}
 \subsection{Faces and Normal Cone}
-\label{sec:org60e3bff}
+\label{sec:org53773fc}
 
 \subsubsection{Definition}
-\label{sec:org7e0ea16}
+\label{sec:org182d0ce}
 Let \(K\subset \R^n\) be a closed convex set. A face \(F\) of \(K\) is a subset of
 \(K\) is a subset of the form \(F = K \cap H\) where \(H\) is some supporting
 hyperplane of \(K\). 
@@ -386,10 +385,10 @@ called non-proper. (A diagram with \(\emptyset\) and \(K\).)
 Examples: Triangles (here faces are the edges.) For a disc, then the faces
 are points on the boundary. For a cube, the faces are the faces of the cube.
 \subsubsection{Lemma about convexity of face}
-\label{sec:org686621e}
+\label{sec:org14d4e66}
 Every proper face of \(K\) is a closed convex set.
 \subsubsection{Dimension}
-\label{sec:orgd36c8a2}
+\label{sec:orga3bd4c0}
 If \(F\) is a face of \(K\) and \(m=\dim F\), (Let affine hull of \(K\) is \(\R^n\).)
 \begin{enumerate}
 \item then \(m=0\) we call \(F\) a vertex of \(K\)
@@ -398,10 +397,10 @@ If \(F\) is a face of \(K\) and \(m=\dim F\), (Let affine hull of \(K\) is \(\R^
 \item If \(m=n-2\) we call \(F\) a \textbf{ridge} of \(K\).
 \end{enumerate}
 \subsection{Lemma}
-\label{sec:org16d6816}
+\label{sec:org66ea4e6}
 Let \(F_0\) be subset of \(F_1\) faces of \(K\), then \(F_0\) is a face of \(F_1\).
 \subsubsection{Proof}
-\label{sec:org8507e35}
+\label{sec:org70c111b}
 \(F_0\) is a face of \(K \implies\), therefore \(F_0 = K \cap H\), where \(H\) is a
 supporting hyperplane for \(K\). \(H\) supporting hyperplane for \(K\) and
 therefore for \(F_1\).
@@ -410,7 +409,7 @@ therefore for \(F_1\).
 
 \(F_0 = F_1 \cap H\). 
 \subsubsection{Remark}
-\label{sec:orgbd1c829}
+\label{sec:org9431663}
 The converse of the lemma does not hold. \(F_2\) is a face of \(K\) and \(F_0\) is
 a face of \(F_2\) implies \(F_2\) is a face of \(K\). The last statement is not
 true. Notice that in the above proof we need both of them to be faces of
@@ -420,11 +419,11 @@ The picture: A square with a half-disc glued to the right. \(F_0\) be a vertex
 on the right side and \(F_1\) be the edge of the square containing \(F_0\). \footnote{Apparently the statement would be true for polytopes, i.e., the converse
 holds for polytopes. This is one of the reason we're interested in polytopes.}
 \subsection{Lemma}
-\label{sec:orgeb61b7c}
+\label{sec:org5a06fb8}
 Let \(F_1, \cdots, F_k\) be faces of \(K\), then \(F=F_1\cap \cdots \cap F_k\) if a
 face of \(K\).
 \subsubsection{Proof}
-\label{sec:org359fa3b}
+\label{sec:orgb4aa09b}
 \(F_i = K \cap H_i\), where \(H_i = \{y \vert \langle y, u_i \rangle = 0\}\).
 (\(K \subset H_i^{-1}\) \footnote{We need the next statement for making this assertion.}) We can assume that \(0 \in F\) which is the
 intersection of all of them \(0 \in F = F_1 \cap \cdots F_k\).
@@ -458,7 +457,7 @@ The last statement implies that \(y\)
 \(\langle y, u \rangle = 0 = \langle y, u_1 \rangle + \cdots + \langle y,
     u_k\rangle\). \footnote{Question: what about infinite intersection.}
 \subsection{Lemma}
-\label{sec:org6e9efee}
+\label{sec:org170bef5}
 \begin{itemize}
 \item Let \(F\) be a face of a closed convex set \(K\) and \(x, \tilde x\) be an element
 \end{itemize}
@@ -469,13 +468,13 @@ containing \(x\) must contain \(\tilde x\).
 ten \(F = F'\).
 \end{itemize}
 \subsubsection{Proof}
-\label{sec:org36b7dc5}
+\label{sec:orgbd4295a}
 \(H\) supporting for \(F\). I didn't write this. \footnote{This means that we can choose a supporting hyperplane by choosing a
 point inside relative interior.}
 \section{Lecture 4 \textit{<2018-10-30 Tue>}}
-\label{sec:orgb64c389}
+\label{sec:org43bc200}
 \subsection{Review}
-\label{sec:org4284d81}
+\label{sec:org6cc5030}
 He did a review of stuff. 
 
 \begin{enumerate}
@@ -486,7 +485,7 @@ that \(F = K \cap H\) is a face. \(\phi_1, K\) (improper) face.
 converse of the statement is not true. \footnote{Remember the example with a square and a half disc glued to the right side of the square?}
 \end{enumerate}
 \subsection{Definition (Normal cone)}
-\label{sec:org6ab5761}
+\label{sec:org333897c}
 Let \(K\subset \R^n\) be a closed convex set and \(x\in K\). The \textbf{Normal cone} at
 \(x\) is the set at \(x\) is the set $$N(x) = -x + p_K^{-1}(\{x\})$$
 
@@ -514,11 +513,11 @@ the entire space using \(N(x)\). (I think the partition thing we are talking
 about is about \(p^{-1}_K\). \(N(x)\) would always contain \(0\).
 \end{enumerate}
 \subsection{Lemma}
-\label{sec:orgc831fad}
+\label{sec:orgaee1ee4}
 \(N(x)\) is a closed convex cone. It consists of \(0\) and all outer normals of
 \(K\) in \(x\). If \(x \in \int K\), then \(N(x) = \{0\}\). 
 \subsubsection{Proof}
-\label{sec:org652ee47}
+\label{sec:orgbef4956}
 \(\lambda \ge 0, u \in N(x) \implies \lambda x \in N(x)\)
 
 \(u, v \in N(x) \implies u + v \in N(x)\)
@@ -549,43 +548,43 @@ also inside. So it's like a cone. What about closed?
 continuous, then inverse image is closed. Because the translation is an
 isometry, we are done.
 \subsection{Definition (Dual cone)}
-\label{sec:org082ac81}
+\label{sec:org7bec6a5}
 Let \(G\) be a cone, then \(\sigma = \{u \vert \langle \sigma, u\rangle \ge 0 \}\)
 is called the \textbf{dual cone}. 
 \subsection{Lemma}
-\label{sec:org15f4260}
+\label{sec:orgdf4f3ab}
 If \(\sigma\) is a cone with appex \(0\), then \(N_\sigma(0) = -\sigma\).\footnote{He didn't prove this, but it's obvious.}
 \subsection{Lemma}
-\label{sec:org05e5700}
+\label{sec:orgecf8994}
 Let \(F\) be a face of a closed convex set of \(K\) and \(x, \tilde{x} \in \relint
    F\), then \(N(x) = N(\tilde x)\).
 \subsubsection{{\bfseries\sffamily TODO} Proof}
-\label{sec:org229517e}
+\label{sec:orga1312fb}
 The idea is that if there are two points in the relative interior of a face,
 then the supporting hyperplane for these points are the same. We look at all
 the normals at \(x\) and \(\tilde x\). \footnote{I think I'm missing some stuff.}
 \subsection{A random story}
-\label{sec:org57508ca}
+\label{sec:org4a7ce5a}
 \(P \rightarrow \{F \colon F \textup{ a face of P}\), for every face, we can
 talk about \(N(F)\) instead of a point in the relative interior. These two
 sets, we put inclusion as a relation, these are anti-isomorphic \footnote{I think it means, the inclusion becomes opposite in the other space.} These
 have some group structure and later can be used to construct affine Toric
 variety. \footnote{The construction is similar to the construction of a toric variety.}
 \subsection{Definition}
-\label{sec:org599b005}
+\label{sec:org0240ea5}
 If \(F\) is a face of a closed convex set \(K\) and \(x\in \relint F\), then \$N(x)
 is denoted by \(N(F)\) and is called the cone of normals of \(K\) in \(F\). \footnote{Connection with analysis: For a smooth real valued function from \(\R\),
 we have a unique normal, whereas for a non-smooth point, there are several
 different normals (or supporting hyperplane.) We'll do something similar in our
 course.}
 \subsection{Theorem}
-\label{sec:org7b05145}
+\label{sec:orgaeea64c}
 Let \(K\) be a convex body in \(\R^n\) and \(x(F)\) are of the relative interior
 points in \(F \neq \emptyset\) or \(K\). Then \(\{\relint N(x(F)) \vert F \text{
    face of } K\} = \{ \relint N(F) \vert F\textup{ face of } K \}\) is a
 partition of \(\R^n\).
 \subsubsection{{\bfseries\sffamily TODO} Proof}
-\label{sec:orgc862deb}
+\label{sec:org8f941af}
 Since \(K\) is bounded, there exists \(\alpha\) non-negative, such that \(K\) is a
 subset of \(H^{-1}(u, \alpha)\) where $$H(u, \alpha) = \{x \vert \langle x, u
     \rangle =\alpha\}$$
@@ -595,7 +594,7 @@ Let's take the intersection \(\cap_{K \subset H^{-1}}(u, \alpha) H^{-1}
 
 There was a nice diagram. 
 \subsubsection{Random stuff}
-\label{sec:org5310ee8}
+\label{sec:org2a504e1}
 \(\forall u \in \R^n - \{0\}\), there exists a face \(F\) of \(K\), \(u\in N(F)\)
 and \(0 \in N(K)\).
 
@@ -611,12 +610,12 @@ He did an example with tetrahedra.
 (I missed parts of this argument.) We used boundedness of the convex body.
 If it is unbounded, the family of normal cones do not cover.
 \subsection{Definition (Normal fan)}
-\label{sec:orgd9a6a84}
+\label{sec:org2d83d30}
 The family \(N(F)\) of \(K\) is called the normal fan of \(K\)
-\subsection{Support and distance function}
-\label{sec:org175d2fd}
+\subsection{Support and distance functionn}
+\label{sec:org618d771}
 \subsubsection{Definition (support function)}
-\label{sec:orgd9ba5aa}
+\label{sec:org4d87f93}
 Let \(K\) be a non-empty convex body. The function \(h_K\) that maps \(\R^n
     \rightarrow \R\), \(h_K(x) = \sup_{x\in K} \langle u, x\rangle\) is the
 \textbf{support function} of \(K\).\footnote{We use the fact that every compact function has a supremum.}
@@ -625,7 +624,7 @@ We can also say it is the supremum over a fixed \(x_0\).
 
 There was a diagram
 \subsubsection{Question?}
-\label{sec:orgd9bbf68}
+\label{sec:orga6ae775}
 Given a ball, what is the normal fan of the space?
 
 If we take an interior point, then we have \(0\). So we should go to the
@@ -633,4 +632,575 @@ boundary. But each point has a supporting hyperplane. Which means, that the
 normal fan is all the half lines. The normal fan is a sphere. The normal fan
 can be ugly when we have smooth convex body. But for polytopes, it's much
 nicer.
+\section{Lecture 5 \textit{<2018-11-06 Tue>}}
+\label{sec:orga9b2e0a}
+\subsection{Support and distance function}
+\label{sec:org525bf7f}
+\subsubsection{Definition}
+\label{sec:orge651348}
+Let \(K \subset \R^n\) be a convex body. The support function of \(K\) is
+\(h_K\colon \R^n \rightarrow \R\), \(h_K(u)= \sup_{x\in K} \langle u,
+    x\rangle\)
+\subsubsection{Lemma}
+\label{sec:orgf94308f}
+\(h_{K+a}(u) = h_K(u) + \langle u, a \rangle\)
+\subsubsection{Proof}
+\label{sec:org966b2b5}
+\(K+a = \{x + a\vert x \in K\}\)
+
+\(h_{K+a}(u) = \sup_{x \in K} \langle u, x+a\rangle \sup_{x\in K} \langle u x \rangle + \langle u, a\rangle\)
+
+\(h_[p, q](u) = ?\), where \([p, q]\in \R^1\).
+\subsubsection{Lemma}
+\label{sec:org8553dd5}
+Let \(K\subset \R^n\) be a convex body and \(u+0\), \(x_0 \in \partial K\), there
+is a supporting hyperplane at \(x_0\), \(H_{x_0} = \{x \vert \langle x,
+    u\rangle = \langle x_0, u\rangle \}\) where \(u\in N(x_0)\)
+\begin{verbatim}
+----------------------------X---------------------------
+                           / \
+                         -/ x \
+                        /      \        
+                       /        \       
+                      /          \-     
+                    -/             \    
+                   /                \   
+                  /                  \  
+                -/                    \ 
+               /                       \
+              /                         \
+\end{verbatim}
+\begin{enumerate}
+\item The hyperplane \(H_{u} = \{\langle x, u \rangle = h_K(u)\}\)
+\item Every support hyperplane of \(K\) has the above form.
+\end{enumerate}
+\subsubsection{Proof}
+\label{sec:orge4aeb06}
+\(h_K(u) = \sup\langle x, u\rangle = \langle x_0, u\rangle\) for some \(x_0 \in
+    K\) (because of compactness \footnote{There is also the notion of sequential compactness. Compactness and
+sequential compactness are not equivalent.})
+
+\(x_0 \in H_{u} \cap K\). Let \(y\in K\), then \(\langle u, u \rangle \le \sup
+    \langle x, u \rangle= h_K(u)\)
+
+\(y \in H^{-1}(u)\), thus \(K \subset H^{-1}\).
+
+\(H\) is a supporting hyperplane. Then it cuts \(K\), \(x_0 \in K \cap H\), \(H
+    =\{x \vert \langle x, u\rangle = \langle x_0, u \rangle \}\) where \(u \in
+    N(x_0)\). \(N \subset H^{-1}\)
+\subsection{Convex function}
+\label{sec:org154ce06}
+Let \(f \colon \R^n \rightarrow \R\), we say that \(f\) is convex if for every
+\(x, y \in \R^n\) and \(0 \le \lambda \le 1\) holds that \(f(\lambda x +
+   (1-\lambda)y) \le \lambda f(x) + (1-\lambda)f(y)\). If \(L \subset \R^n\) is an
+affine subspace, then \(f_L\) is also convex.
+\subsubsection{Definition}
+\label{sec:org3cb9ce0}
+The function \(f\colon \R^n \rightarrow \R\) is \textbf{positively homogeneous} if
+for every \(x\in \R^n\) and \(\lambda \ge 0\) the following holds: \(f(\lambda x)
+    = \lambda f(x)\)
+\subsection{Lemma}
+\label{sec:org7146650}
+Let \(f\) be positively homogeneous. Then \(f\) is convex if and only if for all
+\(x, y, \in \R^n\) the following holds:
+
+\(f(x + y) \le f(x) + f(y)\)
+\subsubsection{{\bfseries\sffamily TODO} Proof}
+\label{sec:orge2a68a9}
+Let \(f\) be convex
+\$f(x)/2 + f(y)/2 \(\le\) f((x+y)/2) \(\le\) \$
+
+\(f\) satisfies the property, to show that \(f\) is convex.
+
+\(f(\lambda x + (1- \lambda)y) \le f(\lambda x) + f((1-\lambda)y) = \lambda
+    f(x) + (1-\lambda) f(y)\).
+\subsection{Lemma}
+\label{sec:orgd70d078}
+A function \(f\colon \R^n \rightarrow \R\) is convex if and only if for all
+\(x_1, \cdots, x_n\) and for all \(\lambda_1, \cdots, \lambda_n\) non-negative
+such that \(\lambda_0 + \cdots + \lambda_m = 1\) the following holds
+
+\(f(\lambda_0 x_0 + \cdots \lambda_m) \le \lambda_0 f(x_0) + \cdots + \lambda_m
+   f(x_m)\)
+\subsubsection{Proof}
+\label{sec:org31034a6}
+\(\Leftarrow\), we put \(x_1, \cdots, x_m = y\), it follows trivially now.
+
+\(\implies\), induction on \(m\). Assume that the condition holds with \(n-1\) on
+every affine subspace of \(\R^n\) of dimension \(n-1\), i.e., \(f(\lambda_1 x_0 +
+    \cdots + \lambda_{n-1}x_{n-1}) \le \lambda_0 f(x_0) + \cdots + \lambda_{n-1}
+    f(x_{n-1})\). 
+
+If \(\lambda_0\) is zero, we are done.
+
+\(f(\lambda_0 x_0 + \lambda_1 x_1+\cdots + \lambda_n x_m) = f(\lambda_0x_0 +
+    \lambda(1-\lambda_0)(\frac{\lambda_1}{(1-\lambda_0)} + \cdots + ? x_m)) \le
+    \lambda_0 f(x_0) + (1-\lambda_0) f(\frac{\lambda_1}{(1-\lambda_0)} x_1 +
+    \cdots + \frac{\lambda_m}{(1-\lambda_0} f(x_m))\) We are done.
+\subsection{Lemma (Convex functions are continuous)}
+\label{sec:org230d392}
+Every convex function \(f\colon \R^n \rightarrow \R\) is continuous
+\subsubsection{{\bfseries\sffamily TODO} Proof}
+\label{sec:orgf53e31e}
+\(x_0 \in \R^n\), \(T = \conv \{x_0, \cdots, x_{m+1}\}\) regular simplex, such that 
+
+\begin{verbatim}
+
+             /|
+            / |-\
+           /  |  \
+          /   |   -\
+         /    |     \
+        /     |      -\
+       /      |        \
+      /       |         \
+     /       -+-         -\
+    /     --/   \---       \
+   /    -/          \---    -\
+  /  --/                \---  \
+ /--/                       \---\
+-/------------------------------\-
+\end{verbatim}
+\(\Vert x_0 - x_1 \Vert = \cdots = \Vert x_0 - x_{n+1}\Vert\)
+
+\(u\in U_{\partial (x_0)} = \{x \vert x - x_0\Vert < \partial \} \in T\)
+
+\(x\) belongs to one of the simplex \(\{x_0, x_1, \cdots, \tilde{x_i}, \cdots,
+    x_{n+1}\}\), \(x\in \conv \{x_0, x_1, \cdots, x_m\}\) and \(x = \lambda_0 x_1 +
+    \cdots + \lambda_m x_m\) and \(0\le \lambda_1, \cdots, \lambda_m < \delta <
+    1\).
+
+\(\vert f(x) - f(x_0) \vert \le \vert \lambda_0 f(x_0) + \cdots +
+    \lambda_mf(x_m) - f(x_0)\vert = \vert x_1 \vert f(x_0) - f(x_0)\vert +
+    \cdots + \lambda_n (f(x_n) -f(x_0)\vert\)
+
+\(f(x) > 0\) assume \(\le \lambda \lambda_1 \vert f(x_1)- f(x_0) \vert +
+    \cdots + \lambda_m \vert f(x_n) - f(x_0) \vert \le (\lambda_1 + \cdots
+    \lambda_n) M \le n \delta M < n\delta (M+1)\)
+
+We can call the last value as \(\varepsilon\) and for given \(\varepsilon > 0\),
+we can choose \(\delta\). Hence the function is continuous.
+\subsection{Lemma}
+\label{sec:orgee19f18}
+\(f \colon \R^n \rightarrow \R\) is convex if and only if \(T^{+}(f) =
+   \{(x, \zeta) \vert x \in \R^n, \zeta \in \R, f(x) \le \zeta \}\) is a closed
+convex \footnote{\(f(x) = 1/x\) and \(f'(x) = - 1/x^2\), but the function is not always
+increasing (but on connected components.)}
+\subsubsection{Examples}
+\label{sec:orgf2934b7}
+\(y = x^2\) is a convex function.
+\subsubsection{{\bfseries\sffamily TODO} Proof}
+\label{sec:org9ca9813}
+\(\implies f\) is convex
+
+\((x, \zeta), (y, \eta) \in T^{+}(f) \implies \zeta \ge f(x), \eta \ge f(y)\),
+\(\lambda(x, \zeta) + (1-\lambda)(y, \eta) = (\lambda x + (1-\lambda)y,
+    \lambda \zeta + (1-\lambda) \eta)\), \(f(\lambda x + (1-\lambda)y) \le \lambda
+    \zeta + (1-\lambda) \eta\), is an element in the inverse.
+
+\(\Leftarrow\) \(T^{+}(f)\) is convex and closed set in \(\R^{n+1}\)
+
+\(f(\lambda x + \cdots + (1-\lambda)y)\)
+
+\((x, f(x)) \in T^{+}(f)\) and similarly \((y, f(y)) \in T^{+}(f)\) these
+implies that \(\lambda(x, f(x)) + (1-\lambda)(y, f(y)) \in T^{+}(f)\) this is
+equal to \((\lambda x + (1-\lambda y, \lambda f(x) + (1-\lambda) f(y)\), then
+\(f(\lambda x + (1-\lambda) y) \le \lambda f(x) + (1-\lambda) f(y)\).
+\subsection{Lemma}
+\label{sec:org23c754c}
+Let \(f\in \R^n \rightarrow \R\) be positively homogeneous. Then \(f\) is convex
+if and only if \(T^{+}(f)\) is a convex closed cone.
+\subsubsection{{\bfseries\sffamily TODO} Proof}
+\label{sec:org181b04e}
+\(f\) is convex.
+
+I didn't write this.
+\subsection{Remark}
+\label{sec:org51baa5a}
+Domain should not be restricted? 
+\section{Lecture 6 \textit{<2018-11-07 Wed>}}
+\label{sec:orgc1f50c2}
+\subsection{Support and distance function (Review)}
+\label{sec:org4039c27}
+\subsubsection{Definition}
+\label{sec:orgb148a81}
+\(K \subset \R^n\) non-empty convex body, we define the supoort function
+\(h_K \colon \R^n \rightarrow \R\), \(h_K(x) = \sup_{x\in K} \langle x, u \rangle\)
+\subsubsection{Lemma}
+\label{sec:org63039b6}
+\(H_K(u) = \{x \in \R^n \vert \langle x , u \rangle = h_K(u)\}\) is a support
+hyperplane for \(K\).
+\subsubsection{Definition}
+\label{sec:org271ebaf}
+\(f\colon \R^n \rightarrow \R\) is convex if for all \(\lambda \in [0, 1]\), and
+for all \(x, y, \in \R^n\), \(f(\lambda x + (1-\lambda)y) \le \lambda f(x) +
+    (1-\lambda)f(y)\) positive homogeneous if \(\forall \lambda \ge 0\) and
+\(\forall x \in \R^n\), \(f(\lambda x) = \lambda f(x)\)
+\subsubsection{Lemma}
+\label{sec:org8e36e50}
+\(f\colon \R^n \rightarrow \R\) positive homogeneous
+
+\(f\) is convex \(\iff\) \(\forall x, y, \in \R^n\), \(f(x+y) \le f(x) + f(y)\).
+\subsubsection{Lemma}
+\label{sec:org4fb88d3}
+\begin{enumerate}
+\item Every convex function is continuous
+\item \(f\colon \R^n \rightarrow \R\) is convex \(\iff\), \(T^{-1}(f) = \{(x, \zeta)
+       \vert \R^n \times \R \vert f(x) \le \zeta\}\) is convex
+
+\(f\) is convex \(\iff\) \(T^{+}(f)\) is closed convex cone in \(\R^{n+1}\).
+\end{enumerate}
+\subsection{Lemma}
+\label{sec:org880e723}
+A support function is positive homogenous and convex.
+\begin{enumerate}
+\item Proof
+\label{sec:org94968aa}
+\begin{enumerate}
+\item \(h_k(\lambda u) = \sup \langle x, \lambda u\rangle = \sup_{x \in K} \lambda
+        \langle x, u \rangle = \lambda \sup \langle x, u \rangle = \lambda h_K(u)\)
+\item \(x \in K \colon \langle x, u\rangle \le \sup_{x\in K} \langle x,
+        u\rangle = h_K(u)\). \(\langle x, v \rangle \le \sup_{x\in K} \langle x,
+        v\rangle = h_K(v)\)
+
+Now \(\langle x, u + v\rangle \le h_K(u) + h_K(v)\), \(\implies\) \(\sup_{x
+        \in K}\langle x, u+v\rangle \le h_K(u) + h_K(v)\).
+
+\(h_K(u+v) \le h_K(u) + h_K(v)\), so \(h_K\) is convex.
+\end{enumerate}
+\end{enumerate}
+\subsection{Lemma (linearity of \(h_K\))}
+\label{sec:orgadf93f7}
+\(h_K\) is linear on all elements of \(\sum(K)\) (normal cone.)
+\subsubsection{Proof}
+\label{sec:org3798bbc}
+\(u \in N(x_0)\), then \(h_K(u)\), \(H_K(u) = \{x \vert \langle x, u \rangle =
+    h_k(u)\}\)
+\begin{verbatim}
+   \                 /-
+    -\             /-
+      -\         /-
+        -\     /-
+          -\ /-
+           /o-
+         -/   \-
+       -/       \-
+     -/           \-
+   -/               \-
+ -/                   \-
+/                       X
+ --         K         /-
+   \-                /
+     \--           /-
+        \-       /-
+          \-    /
+            \-/-
+             /
+\end{verbatim}
+So \(h_K\vert_{N(x_0)}\) is the scalar product \(\langle \cdot, x_0\rangle\).
+\subsection{Definition}
+\label{sec:org28012bb}
+Let \(K\) be a convex body in \(\R^n\) and \(0\) is an element of the interior of
+\(K\). (So the dimension of the convex body is \(n\), i.e., the body is full
+dimensional.)
+
+\(d_K\colon \R^n \rightarrow \R\) is defined as follows: \(d_K(\lambda \bar{x})
+   = \lambda\) for \(\bar{x}\) element of the boundary of \(K\). (When the body is
+symmetric, then one can define a norm.) Here \(\lambda > 0\).
+\subsection{Lemma}
+\label{sec:orgea97752}
+Let \(K\) be an n-dimensional convex body in \(\R^n\), 
+
+\begin{enumerate}
+\item A line \(g\) intersecting the boundary of \(K\) in three different points is
+contained in a support hyperplane of \(K\), in particular, \(G \cap \int K\)
+is empty.\footnote{If we put \(\relint\) instead of \(\int\), it will not work. This is why we
+use the assumption, that we are using a full dimensional convex body rather than
+a random one.}
+\item Any ray emanating from an interior point of \(K\) intersects \(\partial K\) at
+exactly one point.
+
+Here \(A, B, C\) are points in the interior of the boundary and \(B\) is
+inside the interior of \([A, C]\).
+
+\(H\) be a supporting hyperplane through \(B\), and assume that \(A, C \notin
+      H\), also no other point of \(g\) is in \(H\). Thus \(H\) separates \(A\) and \(C\),
+contradiction.
+
+\begin{verbatim}
+                 --
+                |  \-
+                /    \-
+               /       \-       
+              /          \-                                       /-/
+            A|             \-  C                        C     /----/
+------------o/---------------\---------------------------o/-----g/
+            /                  \-                     /---      /
+           /                     \-               /---        -/
+          |                        \-         /---           /
+          /                          \-   /---              /
+         ---\                          ---                -/
+             ------\                                     /
+                    ------\                            -/
+                           -----\                     /
+                                 ------\             /
+                                        ------\    -/
+                                               ----
+\end{verbatim}
+A ray can be thought of as a \(1\) dimensional half space.
+
+\([g_0, g_1] = g\cap K\), a convex body in \(\R^1\).
+\end{enumerate}
+\subsection{Lemma}
+\label{sec:org86e4dcd}
+\(d_K\) is positive homogeneous and convex.\footnote{Positive homogenous is a function \(f(\alpha x) = \alpha^k f(x)\).}
+\subsubsection{Proof}
+\label{sec:org5613ab0}
+It is clear that the function is positive homogenous.
+
+\textbf{Convexity}: We are going to use one of the equivalences on convexity, i.e.,
+ \(f(x +y ) \le f(x) + f(y)\).
+
+\(x = \lambda \bar{x}\) and \(y = \mu \bar{y}\). If \(x\in K\), then \(d_K(x) \le
+     1\).
+
+\(x = \lambda \bar{x}\) and \(y = \mu \bar{y}\).
+
+\(\frac{\lambda}{\lambda + \mu}\bar{x} + \frac{\mu}{\lambda + \mu} \bar{y}
+     \in K \implies\) \(1 \ge d_K(\frac{\lambda}{\lambda + \mu}\bar{x} +
+     \frac{\mu}{\lambda + \mu} \bar{y}) = d_K(\frac{\lambda}{\lambda +
+     \mu}{x}/\mu + \frac{\mu}{\lambda + \mu} {y}/mu) =
+     d_K(\frac1{\mu+\lambda}(x+y)) = \frac{1}{\lambda+\mu} d_K(x+y)\).
+
+\(d_K(x+y) \le \lambda + \mu = d_k(x) + d_k(y)\).\footnote{We now have the triangle inequality. But for the norm, we should also
+have the following property: \(\Vert \lambda x \Vert = \vert \lambda \vert \Vert
+x \Vert\).}
+\subsection{Definition (Centrally symmetric)}
+\label{sec:org5a71932}
+A convex body \(K\) in \(\R^n\) is said to be \textbf{centrally symmetric} if there
+exists a point in \(K\) such that \(K = \rho(K)\) where \(\rho\) is the central
+symmetry with respect to \(c\).
+
+Defining \(\rho\)? With respect to \(c\), \(\rho(x) = 2c - x\).
+
+Examples:
+\begin{enumerate}
+\item Point.
+\item Disc
+\item Cube
+\item Octahedron. Cross polytope? In \(\R^n\), we have a standard basis \((e_1,
+      \cdots, e_n)\). We take \(\{e_1, \cdots, e_n\}\). The convex hull \(\{e_1,
+      \cdots, e_n, -e_1, \cdots, -e_n\}\) is a cross polytope. A three
+dimensional cross polytope is an Octahedron.
+\end{enumerate}
+\subsection{Theorem}
+\label{sec:orgee1419a}
+Let \(K\) be a centrally symmetric convex body with \(0\in \int K\), as its
+center of reflection. Then \(d_K\) defines a norm in \(\R^n\) satisfying for all
+\(\lambda \in \R\) and \(x, y \in \R^n\)
+\begin{enumerate}
+\item \(\Vert x \Vert = 0 \iff x =0\)
+\item \(\Vert \lambda x \Vert = \vert \lambda \vert \Vert x \Vert\)
+\item \(\Vert x +y \Vert \le \Vert x \Vert + \Vert y\Vert\)
+\end{enumerate}
+\subsection{Example}
+\label{sec:org1d85d6b}
+\begin{enumerate}
+\item \textbf{Maximum norm} in \(\R^2\): \(\Vert (x_1, x_2)\Vert =- \max \{\vert x_1\vert,
+      \vert x_2 \vert \} = d_K(x_1, x_2)\). What is the convex body that induces
+this norm? A square (with the usual orientation.)
+\item \textbf{Manhattan norm}: \(\Vert(x_1, x_2)\Vert = \vert x_1 \vert + \vert x_2
+      \vert\). The convex body for this one would be a square (actually a cross
+polytope; the slanted square.)
+\end{enumerate}
+\subsection{Polar bodies}
+\label{sec:orga3145cf}
+Let \(K\) be a convex body in \(\R^n\) with \(0 \in \int K\). For \(u \neq 0\), let
+
+$$H_u^{-1} = \{x \in \R^n \vert \langle x, u \rangle \le 1\} = \cap_{x\in
+   \partial K} H^{-1}_u$$
+
+In particular, \(H^{-1}_0= \R^m\). The polar body of \(K\) is \(K^{*} = \cap
+   H^{-1}_u\).
+\subsection{Theorem}
+\label{sec:orga3ad050}
+Let \(K\) be a convex body with \(0 \in \int K\). Then \(K^{**} = K\)
+\subsubsection{Proof}
+\label{sec:org68cd699}
+\(K^{*} = \cap H^{-1}_u = \cap_{u \in K} \{x \vert \langle x, u \le 1 \} =
+    \{x \vert \forall x \in K, \langle x, u \rangle \le 1\}\)
+
+\(K^{*} = \{x \vert \langle x, K \rangle \le 1\}\)
+
+\(K^{**} = \{y \vert \langle y, K^{*} \rangle \le 1\}\)
+
+\(y \in K \implies \forall x \in K^*, \langle x, y \rangle \le 1\)
+
+\(\langle K, y^{*} \le 1 \implies \langle K^{*}, y\rangle \le 1 \implies y
+    \in K^{**}\), \(K \subset K^{**}\).
+\section{Lecture 7 \textit{<2018-11-13 Tue>}}
+\label{sec:org6c84686}
+\subsection{Polar Body}
+\label{sec:orga8f49a3}
+Let \(K\) be a convex body and \(0\in \int K \subset \R^n\). For every \(u\in
+   \R^n - \{0\}\), we define \(H_u^{-} = \{x \vert \langle x, u \rangle \le 1\}\)
+
+Remember that \(H_K(u) = \{x \vert \langle x, u \rangle = h_K(u)\}\) is a
+support hyperplane in the direction \(u\) of the convex body.
+
+The polar body \(K^{*}\) is the intersection \(\cap H^{-1}_u\), when \(u\) is
+element of \(K\). This is the same as \(\cap_{x\in \partial K} H_u^{-1}\). The
+idea is that for \(m>1\), it is easy to see that \(H^{-1}_{mu} \subset H^{-1}_u\)
+\subsection{Theorem}
+\label{sec:org7682928}
+Let \(K\) be a convex body in \(\R^n\) such that \(0 \in \int K\). Then \(K^{**} =
+   K\).
+\subsubsection{Proof}
+\label{sec:org53a0ab4}
+We use the notation \(\{x \vert \langle x, K \rangle \le 1\}\) to denote
+\(K^{*}\). Similarly \(\{x \vert \langle x, K^{*} \rangle \le 1 \}\) to denote
+\(K^{**}\).
+\begin{enumerate}
+\item \(y\in K\), from definition of \(K^{*}\), it follows that \(\forall x \in
+       K^{*} \vert \langle x, y \rangle \le 1 \implies \langle K^{*}, y\rangle
+       \le 1/2\) implies that \(y \in K^{**}\).
+\item \(x \in K^{**} - K\), \(x' = p_K(x)\), \(u = \frac{x - x'}{\langle x', x -
+       x'\rangle}\), then \(H_u = \{x \vert \langle x, u \rangle \le 1 \}\), \(x \in
+       H^{+}_u\) (we assume that \(x\) is a point in the interior.) and \(K \subset
+       H^{-1}_u\). \(K \subset H_u^{-1} \implies \forall x \in K\), \(\langle x, u
+       \rangle \le 1 \implies \langle K, u \rangle \le 1\). This implies that \(u
+       \in K^{*}\).
+
+\(x \in K^{**}\) and \(u\in K^{*}\). Now \(\langle x, u \rangle \le 1\), \(x\in
+       H^{-1}_u\) contradiction.
+\end{enumerate}
+\subsection{Random stuff}
+\label{sec:org4f2bee9}
+If \(K\) is a convex body, it will turn out that the support function of the
+convex body will be the distance function of the dual body and vice-versa.
+\subsection{Theorem}
+\label{sec:org63ae6ad}
+Let \(K \subset \R^n\) be a convex body and \(0 \in \int K\), then \(d_K =
+   h_{K^{*}}\) and \(d_{K^{*}} = h_{K}\).
+\subsection{Lemma}
+\label{sec:org128fc17}
+Let \(K_1 \subset K_2\), then \(K_2^{*} \subset K_1^{*}\). The proof is not too hard.
+\subsection{Lemma}
+\label{sec:org5f497e1}
+Let \(K \subset \R^n\) and \(0 \in \int K\). Then \(H_u\) is a support hyperplane
+for \(K^{*}\) if \(u \in \partial K\).
+\subsubsection{Proof}
+\label{sec:org0022fb5}
+We know that \(K^{*} = \cap_{x\in \partial K} H^{-1}_u\). We take \(0\in \int
+    K\), and in each direction \(u\), we have a unique intersection with the body.
+In each direction, we have exactly one point on the boundary.
+
+\(K^{*} = \cap H^{-1}_u\) convex body \(0 \in \int K^{*}\).
+
+The proof is kinda easy. The proof involved constructing a new convex body,
+\(\tilde{K} = \conv \{ \beta u \vert u \in \partial K\}\). Apparently there is
+a problem with this proof. \footnote{Apparently it's slightly different in the book. Which book?}
+\subsection{Proof of duality of distance and \(h_K\)}
+\label{sec:orge63962b}
+Let \(u \in \partial K \implies d_K(u) = 1\)
+
+But we just argued that on the boundary, it is a support hyperplane. Thus
+\(H_u = H_K(u) = \{x \vert \langle x, u \rangle = h_{K^{*}}(u)\}\) and \(\{x \vert
+   \langle x, u \rangle = 1\}\). Thus \(h_{K^{*}}(u) = 1\).
+\subsection{Theorem}
+\label{sec:org1cc85d6}
+Let \(K \subset \R^n\) be a convex body with \(0 \in \int K\).
+
+\(K^{+} = \Gamma^{+}(d_K) \subset \R^{n+1}\) and \(H = \{(x, 1) \vert x \in
+   \R^{n}\} \subset \R^{n+1}\). Then
+\begin{enumerate}
+\item \(\partial K_{+}\) is the graph of \(d_K\) in \(\R^{n+1}\).
+\item \$K\(_{\text{+}}\) \(\cap\) H\$is a translation of \(K\).
+\item \(K^{*}_+ \cap H\) is a translate of \(K^{*}\)
+\item \(K_{+}, K^{*}_+\) are convex with appex \(O\) in \(\R^n\).
+\end{enumerate}
+\subsection{Theorem}
+\label{sec:org4aae64e}
+Every positive homogenous and convex function \(h \colon \R^n \rightarrow \R\)
+is a support function \(h = h_K\) of a unique convex body \(K\) whose dimension
+possibly \(<n\). \footnote{We didn't prove this and the theorem before.}
+\subsection{Radon's theorem}
+\label{sec:org1607c25}
+Let \(X\) be a set of points in \(\R^n\), and \(\vert X \vert \ge n+2\), then there
+is a partition of \(X\) into \(P\) and \(N\), such that a convex hull of \(P\) and
+\(N\) intersect.
+\subsubsection{Proof}
+\label{sec:org10a3942}
+One can assume that \(\vert X \vert = n+2\) and \(X = \{x_1, \cdots, x_{n+2}\).
+There is an affine dependence \(\lambda_1 x_1 + \cdots + \lambda n+2 x_{n+2}
+    = 0\) and \(\lambda_1 + \cdots + \lambda_n = 0\) and not all \(\lambda_i\) are
+zero.
+
+So we can write it in terms of \(\sum_{i \in P} \lambda_i x_i = \sum_{i \in
+    N} -\lambda_i x_i\).
+
+Now \(A = \sum_{x_i \in P} \lambda_i = \sum_{x_i \in N} \lambda)i > 0\).
+
+Now it is pretty easy to see that there is a point in intersection.
+\subsubsection{Questions?}
+\label{sec:org0544ee0}
+Why not two? How many points should we have to say something like, we can
+partition into \(100\) sets, but their convex hulls intersect.
+\subsection{Affine space}
+\label{sec:org480c372}
+\((\mathscr{E}, E, \theta \colon \mathscr{E} \times \mathscr{E} \rightarrow
+   E)\)
+
+\begin{enumerate}
+\item For all \(A \in \mathscr{E}\), \(\theta_A \colon \mathscr{E} \rightarrow E\)
+is a bijection. \(B \mapsto \theta(A, B)\).
+\item For all \(A, B, C \in \mathscr{E}\), \(\theta(A, B) + \theta(B, C) =
+      \theta(A, C)\).
+\end{enumerate}
+
+Example: \((E,E, \theta(u, v) = v - u)\) This is an example with \(E = \R^n\)
+that we work with.
+\subsection{Random stuff}
+\label{sec:org8acf5d9}
+A map \((\mathscr{E}, E, \theta) \rightarrow (\mathscr{F}, F, \theta)\).
+\(\theta(\varphi, f), \varphi \colon \mathscr{E}\rightarrow \mathscr{F}\).
+
+And \(f\colon E \rightarrow F\), and for all \(A, B \in \mathscr{E}\) and
+\(\theta(\varphi(A), \varphi(B)) = f(\theta(A, B))\).
+\subsection{Radon's theorem rephrased}
+\label{sec:orgec3e7c5}
+Let \(T_n+1\) be a simplex and \(a \colon T_{n+1}\rightarrow \R^n\) be an affine
+map. Then there exists faces \(\sigma\) and \(\tau\) of the simplex such that
+their \(a\) images in \(\R^n\) would intersect.
+
+Why is this the same?
+
+Why affine map? If we have an affine map, he the image of the simplex is the
+convex hull of all points on vertices.
+
+What about continuous map?
+\subsection{Continuous variant of Radon's theorem (Topological Radon)}
+\label{sec:org963a3f7}
+The continuous invariant is also true.
+\subsection{Helly's theorem}
+\label{sec:orgdc6182c}
+Let \(K_1, \cdots, K_n\) be a collection of convex sets in \(\R^n\) such that
+every subcollection of \(d+1\) of them intersects \(\neq \emptyset\), then the
+complete family intersects.
+\subsubsection{Proof}
+\label{sec:orgf23e93a}
+Induction on \(n\). If \(n \le d+1\), there is nothing to prove. Let \(n \ge
+    d+2\), assume that it holds for \(n-1\), consider the following points \(x_i \in
+    \cap_{1 \le j \le n, j \neq i} K_j\). By induction hypothesis, this has to
+intersect. In this way, have points \(x_1, \cdots, x_n\). By assumption, \(n\ge
+    d+2\), we can apply Radon's theorem. And the point in the Radon's theorem
+belongs to the intersection of everything.
+\subsection{Helly's theorem*}
+\label{sec:org244c514}
+Let \(\{K_i \vert i \in I\}\) be a family of \textbf{convex bodies} in \(\R^n\) such
+that every family of \(d+1\) of them intersects, then the whole intersection is
+non-empty. The difference between these and the before theorem is that the
+index set may be infinite. This follows from the above theorem because of
+compactness. (Use the closed set intersection of compactness; the
+finite-intersection property.)
 \end{document}
