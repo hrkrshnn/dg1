@@ -5,6 +5,7 @@
 #+LATEX_HEADER: \usepackage{mathrsfs}
 #+LATEX_HEADER: \def\R{\mathbb{R}}
 #+LATEX_HEADER: \def\Z{\mathbb{Z}}
+#+LATEX_HEADER: \def\inte{\operatorname{int}}
 #+LATEX_HEADER: \def\pos{\operatorname{pos}}
 #+LATEX_HEADER: \def\relint{\operatorname{rel\ int}}
 #+LATEX_HEADER: \def\conv{\operatorname{Conv}}
@@ -400,7 +401,7 @@
       about is about $p^{-1}_K$. $N(x)$ would always contain $0$.
 ** Lemma
    $N(x)$ is a closed convex cone. It consists of $0$ and all outer normals of
-   $K$ in $x$. If $x \in \int K$, then $N(x) = \{0\}$. 
+   $K$ in $x$. If $x \in \inte K$, then $N(x) = \{0\}$. 
 *** Proof
     $\lambda \ge 0, u \in N(x) \implies \lambda x \in N(x)$
 
@@ -736,7 +737,7 @@
    Let $K$ be an n-dimensional convex body in $\R^n$, 
 
    1. A line $g$ intersecting the boundary of $K$ in three different points is
-      contained in a support hyperplane of $K$, in particular, $G \cap \int K$
+      contained in a support hyperplane of $K$, in particular, $G \cap \inte K$
       is empty.[fn:26]
    2. Any ray emanating from an interior point of $K$ intersects $\partial K$ at
       exactly one point.
@@ -807,7 +808,7 @@
       \cdots, e_n, -e_1, \cdots, -e_n\}$ is a cross polytope. A three
       dimensional cross polytope is an Octahedron.
 ** Theorem
-   Let $K$ be a centrally symmetric convex body with $0\in \int K$, as its
+   Let $K$ be a centrally symmetric convex body with $0\in \inte K$, as its
    center of reflection. Then $d_K$ defines a norm in $\R^n$ satisfying for all
    $\lambda \in \R$ and $x, y \in \R^n$
    1. $\Vert x \Vert = 0 \iff x =0$
@@ -821,7 +822,7 @@
       \vert$. The convex body for this one would be a square (actually a cross
       polytope; the slanted square.)
 ** Polar bodies
-   Let $K$ be a convex body in $\R^n$ with $0 \in \int K$. For $u \neq 0$, let
+   Let $K$ be a convex body in $\R^n$ with $0 \in \inte K$. For $u \neq 0$, let
 
    $$H_u^{-1} = \{x \in \R^n \vert \langle x, u \rangle \le 1\} = \cap_{x\in
    \partial K} H^{-1}_u$$
@@ -829,7 +830,7 @@
    In particular, $H^{-1}_0= \R^m$. The polar body of $K$ is $K^{*} = \cap
    H^{-1}_u$.
 ** Theorem
-   Let $K$ be a convex body with $0 \in \int K$. Then $K^{**} = K$
+   Let $K$ be a convex body with $0 \in \inte K$. Then $K^{**} = K$
 *** Proof
     $K^{*} = \cap H^{-1}_u = \cap_{u \in K} \{x \vert \langle x, u \le 1 \} =
     \{x \vert \forall x \in K, \langle x, u \rangle \le 1\}$
@@ -844,7 +845,7 @@
     \in K^{**}$, $K \subset K^{**}$.
 * Lecture 7 <2018-11-13 Tue>
 ** Polar Body
-   Let $K$ be a convex body and $0\in \int K \subset \R^n$. For every $u\in
+   Let $K$ be a convex body and $0\in \inte K \subset \R^n$. For every $u\in
    \R^n - \{0\}$, we define $H_u^{-} = \{x \vert \langle x, u \rangle \le 1\}$
 
    Remember that $H_K(u) = \{x \vert \langle x, u \rangle = h_K(u)\}$ is a
@@ -854,7 +855,7 @@
    element of $K$. This is the same as $\cap_{x\in \partial K} H_u^{-1}$. The
    idea is that for $m>1$, it is easy to see that $H^{-1}_{mu} \subset H^{-1}_u$
 ** Theorem
-   Let $K$ be a convex body in $\R^n$ such that $0 \in \int K$. Then $K^{**} =
+   Let $K$ be a convex body in $\R^n$ such that $0 \in \inte K$. Then $K^{**} =
    K$.
 *** Proof
     We use the notation $\{x \vert \langle x, K \rangle \le 1\}$ to denote
@@ -876,19 +877,19 @@
    If $K$ is a convex body, it will turn out that the support function of the
    convex body will be the distance function of the dual body and vice-versa.
 ** Theorem
-   Let $K \subset \R^n$ be a convex body and $0 \in \int K$, then $d_K =
+   Let $K \subset \R^n$ be a convex body and $0 \in \inte K$, then $d_K =
    h_{K^{*}}$ and $d_{K^{*}} = h_{K}$.
 ** Lemma
    Let $K_1 \subset K_2$, then $K_2^{*} \subset K_1^{*}$. The proof is not too hard.
 ** Lemma
-   Let $K \subset \R^n$ and $0 \in \int K$. Then $H_u$ is a support hyperplane
+   Let $K \subset \R^n$ and $0 \in \inte K$. Then $H_u$ is a support hyperplane
    for $K^{*}$ if $u \in \partial K$.
 *** Proof
-    We know that $K^{*} = \cap_{x\in \partial K} H^{-1}_u$. We take $0\in \int
+    We know that $K^{*} = \cap_{x\in \partial K} H^{-1}_u$. We take $0\in \inte
     K$, and in each direction $u$, we have a unique intersection with the body.
     In each direction, we have exactly one point on the boundary.
 
-    $K^{*} = \cap H^{-1}_u$ convex body $0 \in \int K^{*}$.
+    $K^{*} = \cap H^{-1}_u$ convex body $0 \in \inte K^{*}$.
 
     The proof is kinda easy. The proof involved constructing a new convex body,
     $\tilde{K} = \conv \{ \beta u \vert u \in \partial K\}$. Apparently there is
@@ -900,7 +901,7 @@
    $H_u = H_K(u) = \{x \vert \langle x, u \rangle = h_{K^{*}}(u)\}$ and $\{x \vert
    \langle x, u \rangle = 1\}$. Thus $h_{K^{*}}(u) = 1$.
 ** Theorem
-   Let $K \subset \R^n$ be a convex body with $0 \in \int K$.
+   Let $K \subset \R^n$ be a convex body with $0 \in \inte K$.
 
    $K^{+} = \Gamma^{+}(d_K) \subset \R^{n+1}$ and $H = \{(x, 1) \vert x \in
    \R^{n}\} \subset \R^{n+1}$. Then
@@ -962,7 +963,7 @@
 ** Continuous variant of Radon's theorem (Topological Radon)
    The continuous invariant is also true.
 ** Helly's theorem
-   Let $K_1, \cdots, K_n$ be a collection of convex sets in $\R^n$ such that
+   Let $K_1, \cdots, K_n$ be a collection of convex sets in $\R^d$ such that
    every subcollection of $d+1$ of them intersects $\neq \emptyset$, then the
    complete family intersects.
 *** Proof
@@ -979,7 +980,161 @@
    index set may be infinite. This follows from the above theorem because of
    compactness. (Use the closed set intersection of compactness; the
    finite-intersection property.)
+* Lecture 8 <2018-11-14 Wed>
+** Helly's theorem
+   Let $K_1, \cdots, K_n$ be a collection of convex sets in $\R^d$ such that
+   every subcollection of $d+1$ of them intersects $\neq \emptyset$, then the
+   complete family intersects.
+*** Is convexity important? 
+    If we drop convexity of one set, we would not have such a result. Convexity
+    is an important assumption. It's not too hard to construct a
+    counter-example.
+*** Remark about infinite families
+    We can replace the finite family with an infinite family, but of convex
+    bodies.
+** Charatheodery's theorem
+   If $x\in \conv X$, then there exists a collection of at most $d+1$ points in
+   $X'$ of $X$ such that $x\in \conv X' \subset \conv X$.
+** Colorful Charatheodery's theorem (theorem by Inere Bardney)
+   Let $S_1, \cdots, S_{d+1}$ be collections of points in $\R^d$ and $x \in
+   \conv S_1 \cap \conv S_2 \cap \cdots \cap S_{d+1}$. Then there are points
+   $x_1 \in S_1, x_2 \in S_2, \cdots, x_{d+1} \in S_{d+1}$ such that $x$ is an
+   element of $\conv \{x_1, \cdots, x_{d+1}\}$.[fn:31]
+*** Proof
+    A proof using infinite descent. 
+
+    Without loss of generality, we can assume that each of $S_i$ are finite.
+    Without loss of generality, we can assume that $x = 0$, $d(x, \conv\{x_1,
+    \cdots, x_{d+1}\})$ for any choice $x_1 \in S_1, \cdots, x_{d+1} \in
+    S_{d+1}\}$. This is a finite set.Let $d$ be the minimum distance. If $d=0$,
+    we are done. Since we have a set of points $x_i \in S_i$, such that the
+    distance of the point $x$ and the convex hulls formed by the points is zero,
+    which means $x$ is in the convex hull and we are done.
+
+    Assume that $d \neq 0$, then one of $d$ minimizes, then there exit
+    $\bar{x_1}\in S_1, \cdots, \bar{x}_{d+1} \in S_{d+1}$. But then, since the
+    convex hull is closed, the distance is attained at a point. There is a point
+    $z$ such that $d(x, z) = d$.
+
+    Let $H$ be the hyperplane perpendicular or orthogonal to the vector $z-x$,
+    oriented such that $x \in H^{-1}$.
+
+    We prove first that $S = \conv\{\bar{x}_1, \cdots, \bar{x}_{d+1}\} \subset
+    H^{+}$ Assume that $y \in S$ is in the interior of $H^{-1}$. Consider the
+    triangle $\Delta xyz$.We know that the angle $xzy < \frac{\pi}{2}$. Second
+    thing we know is that the edge $zy$ \subset S$. $xz \le xy$, because $xz$ is
+    the minimum distance.
+
+    Consider a point $t \in (z, y) \subset S$ such that the angle $\angle xtz >
+    \angle xzt$. But then $\vert xz \vert > \vert xt\vert$. This is a
+    contradiction, since $t$ is in $S$ and $xt$ minimizes the distance of $x$ to
+    $S$.
+
+    Thus there is no point of $S$ in the interior of $H^{-}$.
+
+    $z \in \conv\{\bar{x}_1, \cdots, \bar{x}_{d+1}\} \cap H$. We can assume that
+    all of them are in $H$, if not we can put zero. (Why?)
+
+    $z \in \cone\{\bar{x}_1, \cdots, \hat{x}_i, \cdots x_{d+1}\}$
+
+    Since $x\in \conv S_j$, there is $\tilde{x_j} \in S_j \cap H$ 
+
+    $z \in \conv\{\bar{x}_1, \cdots, \tilde{x_j}, \cdots, \bar{x}_{d+1}\}$. We
+    call the last set $\bar{S}$.
+
+    Consider the triangle $\Delta xz\bar{x}_j$ and we know.
+    1. $[z, \bar{x}_j] \subset \bar{S}$
+    2. $\angle \tilde{x_j}zx < \frac{\pi}{2}$.
+    3. $\vert xz\vert < \bar x \tilde{x}_j\vert$.
+
+    This is similar to the last part, we have a contradiction. Taking a point $t
+    \in xz$ close to $z$ such that $\angle tzx < \angle ztx$ we get that $\vert
+    xt \vert < \vert xz\vert = d$. This is a contradiction since $t \in \bar{S}
+    = \conv\{\bar{x}_1, \cdots, \bar{x}_{d+1}\}$. We are done.
+** Tverberg's theorem
+   [[https://en.wikipedia.org/wiki/Tverberg%27s_theorem][Wikipedia]] Let $N=(d+1)(r-1)$ and $X \subset \R^d$ with $\vert X \vert \ge
+   N+1$. Then there exists a partition $X_1, \cdots, X_r$ of $X$ such that
+
+   $$\conv X_1 \cap \conv X_2 \cdots \cap \conv X_r \neq \emptyset$$
+
+   Can we drop one point and still get the result? No, the number of points is
+   minimal. I didn't write the counter example.
+
+   A simplex. Consider a simplex $\Delta_N = \conv \{x_0, \cdots, x_N\} \mapsto
+   \R^n$ (this is an affine map)
+
+   $X = \vert_{i=0}^n \lambda_i x_i \mapsto \sum_{i=0}^N \lambda_i f(x_i)$.
+
+   The affine map sends a face of the simplex to the convex hull of the
+   simplex.
+*** Question (Topological Tverberg Conjecture)
+    For all $d \ge 1$, $r \ge 2$ and $n=(d+1)(r-1)$ and any continuous map
+    $f\colon \Delta_N \rightarrow \R^d$, there exits $G_1, \cdots, G_r$ pairwise
+    disjoint faces of $\Delta_N$ such that $f(\sigma_1) \cap \cdots \cap
+    f(\sigma_r) \neq \emptyset$.
+
+    This holds if and only if $r$ is a power of a prime. This has something to
+    do with the elementary Abelian groups and their structure. Elementary
+    Abelian groups are direct sums of cyclic groups $\Z_p \oplus \cdots \oplus
+    \Z_p$.
+** Weak Tverberg theorem
+   Let $n\ge (r-1)(d+1)^2 + 1$ and $X = \{x_1, \cdots, x_n\} \subset \R^d$.
+   There is a partition $I_1, \cdots, I_r$ of $[n] = \{1, 2, \cdots, n\}$ such
+   that the intersection of the convex hulls 
+
+   $$\cap_{n \le j \le r} \conv\{x_i \vert i \in I_j\} \neq \emptyset$$
+
+   It's the same as last theorem, except we have more points.
+*** Proof
+    $k=(d+1)(r-1)$, $s=n-k \ge (r-1)(d+1)^2 + 1 - (r-1)(d+1) = (r-1)(d+1)d +1$
+
+    Now $Y_1, \cdots, Y_{d+1} \subset X$ and each $\vert Y_i\vert = s$, we claim
+    that the intersection is non-empty.
+
+    Proof: $\vert Y_1 \cap Y_2\vert = \vert Y_1\vert + vert Y_2\vert - \vert Y_1
+    \cup Y_2 \vert \ge n-k+n-k-n = n-2k \ge (r-1)(d+1)^2 - (r-1)\cdot 2 \cdot
+    (d+1)$
+
+    $\vert Y_1 \cap Y_2 \cap Y_3 \vert = \vert Y_1 \cap Y_2 \vert + \vert
+    Y_3\vert - \vert (Y_1 \cap Y_2) \cup Y_2\vert \ge n-2k+n-k-n = n-3k$
+
+    $\vert Y_1 \cap \cdots \cap Y_{d+1} \vert \ge n - (d+1)k \ge 1$.
+*** TODO Corollary
+    If $Y_1, \cdots, Y_{d+1} \subset X$ with $\vert Y_i\vert = s$, then $\conv
+    Y_1 \cap \cdots \cap \conv Y_{d+1} \neq \emptyset$.
+
+    $Y=\{\conv Y\vert Y \subset X, \vert Y\vert \ge s\}$, finite family of
+    convex sets.
+
+    Every subfamily of $d+1$ elements non-trivially intersect. Then by Helly's
+    theorem there is
+
+    $z \in \cap Y$. $z\in \conv X$. But now Charatheodery tells that $\exits x_1
+    \subset X$ such that $\vert X_1 \vert = d+1$ and $z \in \conv X_1$.
+
+    $\vert X - X_1 \vert = n - (d+1) \ge (n-1)(d+1)^2 + 1 - (d+1) \ge s$. $z \in
+    \conv(X - X_2) \implies \exits x_2 \subset X - X_1), x_2 = d+1$ and $z =
+    \conv X_2$. I can do this $r$ times and we are done.
+** Optimal colored Tverberg theorem
+*** Topological Tverberg theorem
+    $d \ge 1$, $r \ge 2$, power of prime, $f \colon \Delta_N \rightarrow \R^d$,
+    a continuous map. Here $N=(d+1)(r-1)$.
+
+    Then there exists $\sigma_1, \cdots, \sigma_r$ pairwise disjoint faces of
+    $\Delta_N$, $f(\sigma_1) \cap \cdots \cap f(\sigma_r) \neq \empty set$.
+*** Optimal colored version
+    $d \ge 1$, $r\ge 2$ is prime. $f\colon \Delta_N \rightarrow \R^d$ continuous
+    such that $N=(d+1)(r-1)$ and $\vect \Delta_N = C_0 \sqcup \cdots \sqcup C_m$
+    such that $\vert C_i \vert \le r- 1$ implies that there exists $\sigma_1,
+    \cdots, \sigma_r$ (pairwise disjoint faces of $\Delta_N$ such that
+    $f(\sigma_1)\cap \cdots \cap f(\sigma_r) \neq \emptyset$.
+
+    For all $i, j$, $\vert \sigma_i \cap \sigma_j \vert \le 1$. About
+    Barany-Larwan conjecture for primes - 1.
 * Footnotes
+
+[fn:31] Think about $S_i$ as having a unique color. I guess each $S_i$s are
+disjoint.
 
 [fn:30] We didn't prove this and the theorem before.
 
@@ -991,7 +1146,7 @@ x \Vert$.
 
 [fn:27] Positive homogenous is a function $f(\alpha x) = \alpha^k f(x)$.
 
-[fn:26] If we put $\relint$ instead of $\int$, it will not work. This is why we
+[fn:26] If we put $\relint$ instead of $\inte$, it will not work. This is why we
 use the assumption, that we are using a full dimensional convex body rather than
 a random one.
 
