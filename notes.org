@@ -10,8 +10,8 @@
 #+LATEX_HEADER: \def\relint{\operatorname{rel\ int}}
 #+LATEX_HEADER: \def\conv{\operatorname{Conv}}
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
+* Lecture 1
 * Lecture 2 <2018-10-17 Wed>
-
 ** Definitions
 *** Positive half
 *** Affine hyperplane
@@ -106,7 +106,7 @@
     the intersection of the convex hulls of $M_i$ are non-empty. 
 
     *Question*: More points, minimal number of points?
-* Lecture 2 <2018-10-23 Tue>
+* Lecture 3 <2018-10-23 Tue>
 ** Review
 *** Radon's theorem
     1. If $M \subset \R^n$ and $\vert M \vert \ge n+2$, then there exists a
@@ -227,7 +227,7 @@
 
     We kinda use principles similar to the last two theorems. I skipped writing
     the proof.
-* Lecture 3 <2018-10-24 Wed>
+* Lecture 4 <2018-10-24 Wed>
 ** Review
 *** Nearest point map
     The definition of the nearest point map for a convex set.
@@ -365,7 +365,7 @@
      ten $F = F'$.
 *** Proof
     $H$ supporting for $F$. I didn't write this. [fn:15]
-* Lecture 4 <2018-10-30 Tue>
+* Lecture 5 <2018-10-30 Tue>
 ** Review
    He did a review of stuff. 
 
@@ -501,7 +501,7 @@
     normal fan is all the half lines. The normal fan is a sphere. The normal fan
     can be ugly when we have smooth convex body. But for polytopes, it's much
     nicer.
-* Lecture 5 <2018-11-06 Tue>
+* Lecture 6 <2018-11-06 Tue>
 ** Support and distance function
 *** Definition
     Let $K \subset \R^n$ be a convex body. The support function of $K$ is
@@ -662,7 +662,7 @@
     I didn't write this.
 ** Remark
    Domain should not be restricted? 
-* Lecture 6 <2018-11-07 Wed>
+* Lecture 7 <2018-11-07 Wed>
 ** Support and distance function (Review)
 *** Definition
     $K \subset \R^n$ non-empty convex body, we define the supoort function
@@ -843,7 +843,7 @@
 
     $\langle K, y^{*} \le 1 \implies \langle K^{*}, y\rangle \le 1 \implies y
     \in K^{**}$, $K \subset K^{**}$.
-* Lecture 7 <2018-11-13 Tue>
+* Lecture 8 <2018-11-13 Tue>
 ** Polar Body
    Let $K$ be a convex body and $0\in \inte K \subset \R^n$. For every $u\in
    \R^n - \{0\}$, we define $H_u^{-} = \{x \vert \langle x, u \rangle \le 1\}$
@@ -980,7 +980,7 @@
    index set may be infinite. This follows from the above theorem because of
    compactness. (Use the closed set intersection of compactness; the
    finite-intersection property.)
-* Lecture 8 <2018-11-14 Wed>
+* Lecture 9 <2018-11-14 Wed>
 ** Helly's theorem
    Let $K_1, \cdots, K_n$ be a collection of convex sets in $\R^d$ such that
    every subcollection of $d+1$ of them intersects $\neq \emptyset$, then the
@@ -1131,6 +1131,167 @@
 
     For all $i, j$, $\vert \sigma_i \cap \sigma_j \vert \le 1$. About
     Barany-Larwan conjecture for primes - 1.
+* Lecture 10 <2018-11-20 Tue>
+** Lemma about convex functions
+   Let $f\colon I \rightarrow \R$ be a convex function and $x \le y \le z$ be
+   points in $I_1$. Then the following two inequalities hold: 
+
+   $$\frac{f(y) - f(x)}{y-x} \le \frac{f(z)-f(x)}{z-x} \le \frac{f(z) -
+      f(y)}{z-y}$$
+
+   One can think about this as the gradient/slope of lines that can be formed
+   using points on the function.
+*** Proof
+    $x < y < z \implies$ there exits $\lambda \in (0, 1)$, $y = \lambda x + (1-\lambda)z$
+
+    $$\frac{f(y) - f(x)}{y-x} = \frac{f(\lambda x + (1-\lambda)y) -
+    f(x))}{\lambda x + (1-\lambda)z - x} \le \frac{\lambda f(x) + (1-\lambda)
+    f(z) - f(x)}{(1-\lambda) z - (1-\lambda)x} = \frac{(1-\lambda)f(z) -
+    (1-\lambda)f(x)}{(1-\lambda)z - (1-\lambda)x} = \frac{f(z) - f(x)}{z-x}$$
+
+    $$\frac{f(z) - f(y)}{z-y} = \frac{f(z) - f(\lambda x + (1-\lambda)
+    y)}{1-\lambda x - (1-\lambda) z} \ge \frac{f(z) - \lambda f(x) -
+    (1-\lambda)f(z)}{\lambda z - \lamba x}$$
+
+    The last function is equal to $\frac{\lambda f(z) - \lambda f(x)}{\lambda
+    z - \lambda x} = \frac{f(z) - f(x)}{z-x}$
+** Theorem (Jensen's inequality)
+   Let $f\colon C \rightarrow \R$ be a convex function. Then for every $x_1,
+   \cdots, x_m \in C$ and $\lambda_1, \cdots, \lambda_m \ge 0$ with $\sum
+   \lambda_i = 1$ holds
+
+   $$f(\lambda_1 x_1 + \codts + \lambda_m x_m) \le \lambda_1 f(x_1) + \cdots +
+   \lambda_m f(x_m)$$
+** Definition
+   Let $f\colon X \rightarrow \R$ where $X \subset \R^n$. The function $f$ is
+   Lipschitz on $Y \subset X$ if there exits $L > 0$, and $x, y \in Y$, $\vert
+   f(x) - f(y) \vert \le L \Vert x - y \Vert$. The function $f\colon X
+   \rightarrow \R$ is locally Lipschitz on $X$ if for all $x\in X$, there exits
+   $x\in U$, a neighbourhood of $x$ in $X$, $f\vert_U$ is Lipschitz.
+** Theorem
+   Let $f\colon C\rightarrow \R$ be a convex function. Then $f$ is Lipschitz on
+   every compact subset of the interior of $C$. In particular, $f$ is continuous
+   on the $\int C$.
+*** Proof
+    It suffices to prove that $f$ is locally Lipschitz. This is true, because at
+    each point in the compact set, find a neighborhood where it is locally
+    Lipschitz. Now this is a cover, hence there is a finite subcover. Choose
+    Lipschitz constant to be the maximum of all the elements and we are done.
+
+    Let $X$ be element of $\int C$, let $N(X, \varepsilon)$ be an open ball
+    around $x$ of radius $2\varepsilon$. Then there exits $\varepsilon, \alpha >
+    0$ such that $N(2\varepsilon) \subset \int C$ and $f\vert_{N(2\varepsilon)}$
+    is bounded from above by $\alpha$.
+
+    It suffices to prove that $f$ is bounded above on a simplex containing $x$
+    in the interior. Let $x \in \int\{\conv\{x_0, \codts, x_{n}\}$ where $x_0,
+    \cdots, x_m \in \int C$ and affinely independent.
+
+    If $y \in \Delta$, then $y = \lambda_0 x_0 + \cdots + \lambda_m x_n$ where
+    $\lambda_0, \cdots, \lambda_m \ge 0$, and $\sum \lambda_i = 1$.
+
+    $f(y) = f(\lambda_0 x_0 + \cdots + \lambda_m x_m) \le \lambda_0 f(x_0) +
+    \cdots + \lambda_m f(x_n) \le \vert f(x_0) \vert + \cdots + \vert f(x_n)
+    \vert = \alpha$.
+
+    There exits $\gamma > 0$, such that the absolute value $\vert
+    f\vert_{N(2\varepsilon)}\vert$ is bounded by $\gamma$ from above.
+
+    $x = \frac{1}{2}(2x-y) + \frac{y}{2} \implies f(x) = f(\frac{1}{2}(2x-y) +
+    \frac{1}{2}y) \le \frac{1}{2} f(2x + y) + \frac{1}{2} f(y)$
+
+    $2f(x) - f(2x + y) \le f(y)$ (missed some details following)
+
+    $\Vert 2x - y - x\Vert = \Vert x - y \Vert < \varepsilon$
+
+    $\alpha \ge f(y) \ge 2 f(x) - f(2x - y) \ge 2 f(x) - \alpha$
+
+    $f$ is Lipschitz on $N(\varepsilon)$
+
+    $\Vert w - x \Vert \le \Vert w - y\Vert + \Vert y - x\Vert \le \varepsilon +
+    \varepsilon$. $y, z \in N(\varepsilon)$, $w$ is a point on the ray emanating
+    from $z$ containing $y$ such that the distance of $w$ to $y$ is exactly
+    $\varepsilon$ (A diagram was drawn)
+
+    $f\vert_{[w, z]}$ is a convex function on interval $[w, z]$.
+
+    $$\vert{f(y) - f(z)}{\Vert y -z\Vert} \le \frac{f(w) - f(z)}{\Vert w - y
+    \Vert} \le \frac{2\gamma}{\varepsilon}$$
+
+    This implies that $\vert f(y) - f(z)\vert \le \frac{2\gamma}{\varepsilon}
+    \Vert y - z\Vert$
+
+    We would be done if we had the opposite one, $\vert f(y) - f(z)\vert \le
+    \frac{2\gamma}{\varepsilon} \Vert y - z\Vert$. But this is true using
+    similar argument. Therefore the function is locally Lipschitz (this would
+    also imply continuity.)    
+** Combinatorial theory of Polytopes and Polyhedral sets 
+*** A boundary complex of a polyhedral set
+**** Theorem
+     Every Polytope contains or has finitely many faces and all of them are
+     Polytopes.
+***** Proof
+      Let $P$ be a Polytope $P = \conv\{x_1, \cdots, x_r\} \subset \R^n$ b ea
+      Polytope and $F = P cap H$ be a face of $P$, where $H = \{x \vert \langle
+      x, a \rangle = \alpha \}$ is a support hyperplane.
+
+      This means it intersects the Polytope and the whole Polytope is on one
+      side. Thus $P \subset H^{-1}$.
+
+      We can assume that $\langle a, x_1 \rangle = \cdots = \langle a,
+      x_s\rangle = \alpha$ for $1\le s \le r$.
+
+      $\langle a, x_{s+1}\rangle = \alpha - \beta_{s+1}$ where $\beta_{s+1} >
+      0$, $\langle a, x_r \rangle = \alpha - \beta_r$ where $\beta_r > 0$.
+
+      let $x\in P$ and therefore $x = \lambda_1 x_1 + \cdots + \lambda_r x_r$
+      for $\lambda_i > 0$ and $\sum \lambda_i = 1$.
+
+      $\langle a, x\rangle = \langle a, \sum \lambda_i x_i \rangle = \sum
+      \lambda_i \langle a, x_i \rangle = \sum_{i=1}^{r} \lamda_i \alpha -
+      \sum_{i=s+1}^{r} \lambda_i \beta_i$
+
+      $\langle a, x \rangle = \alpha - \sum_{i=s+1}^{r} \lambda_i \beta_i$
+
+      $x \in F = P \cap H$, $\langle a, x\rangle = \alpha - \sum_{i=s+1}^{r}
+      \lambda_i \beta_i = \alpha$, $\beta_i > 0$ implies that $\lamda_{s+1}=
+      \cdots = \lambda_r = 0$. $X = \lambda_1 x_1 + \cdots + \lambda_s X_s$.
+
+      $F = \conv \{x_1, \cdots, x_s\}$ a Polytope.
+**** Theorem (Krein-Milman theorem)
+     Every convex Polytope is a convex hull of its vertices. $P = \conv(\vert
+     P)$. (Vertices are the zero-dimensional faces of a Polytope.)
+***** Proof
+      $P = \conv\{x_1, \cdots, x_r\}$. $\vert P \subet P$, $\conv (\vert P)
+      \subset P$.
+
+      We can assume that for every $i \in \{1, \cdots n\}$, $x_i \notin \conv
+      \{x_1, \cdots, \hat{x}_i, \cdots, x_r\}$ We can do this and get a minimal
+      set of points.
+
+      Now we need to prove that every $x_i$ is a vertex. 
+
+      $y_i = p_{P_i}(x_i)$. There exits a supporting hyperplane $H'_i$ to $P'_i$
+      orthogonal to $x_i - y_i$ and containing $y_i$ with the property that $P_i
+      \subset H_i'$ and $x_i \in \int H_i^{+}$ (a diagram was drawn)
+
+      Let $H_i'$ be a the parallel Hyperplane to $H_i$ passing through $x_i$
+      (such a hyperplane is unique, because we are in Euclidean Geometry.)
+
+      $(H_i)^{-} \subset \int (H'_i)^{-}$ implies that $x_1, \cdots, \hat{x}_i,
+      \cdots, x_r \in H_i^{-1} \subset \int (H'_i)^{-}$ and $H'_i \cap P =
+      \{x_i\}$. Thus $x_i$ is a vertex. We are done.
+**** Remark
+     $P = \conv \{x_1, \cdots, x_n\}$, we assume that these $x_i$ are vertices.
+**** Definition (Polyhedral set)
+     A finite intersection of closed half spaces is called a Polyhedral set.
+**** Theorem
+     Every Polytope $P$ is a bounded Polyhedral set.
+**** Remark
+     A Polytope is a convex hull of finitely many points.
+
+     Also a finite bounded intersection of closed half space. (finitely many
+     vectors and distances.)
 * Footnotes
 
 [fn:31] Think about $S_i$ as having a unique color. I guess each $S_i$s are
