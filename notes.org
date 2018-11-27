@@ -5,6 +5,7 @@
 #+LATEX_HEADER: \usepackage{mathrsfs}
 #+LATEX_HEADER: \def\R{\mathbb{R}}
 #+LATEX_HEADER: \def\Z{\mathbb{Z}}
+#+LATEX_HEADER: \def\N{\mathbb{N}}
 #+LATEX_HEADER: \def\inte{\operatorname{int}}
 #+LATEX_HEADER: \def\pos{\operatorname{pos}}
 #+LATEX_HEADER: \def\relint{\operatorname{rel\ int}}
@@ -285,14 +286,13 @@
     f_K(y_{k_n}')$ and $y_0 = lim y_k' \implies f_k(y_0) = \lim f_k(y_{k_n}')$
     and $x_0 = f_k(y_0)$ and $y_0 \neq x_0$. [fn:10]
 ** Faces and Normal Cone
-
 *** Definition
     Let $K\subset \R^n$ be a closed convex set. A face $F$ of $K$ is a subset of
     $K$ is a subset of the form $F = K \cap H$ where $H$ is some supporting
     hyperplane of $K$. 
 
-    Such a face is called a proper face while $\phi$ and $K$ are also faces but
-    called non-proper. (A diagram with $\emptyset$ and $K$.)
+    Such a face is called a proper face while $\emptyset$ and $K$ are also faces
+    but called non-proper. (A diagram with $\emptyset$ and $K$.)
 
     Examples: Triangles (here faces are the edges.) For a disc, then the faces
     are points on the boundary. For a cube, the faces are the faces of the cube.
@@ -1292,7 +1292,264 @@
 
      Also a finite bounded intersection of closed half space. (finitely many
      vectors and distances.)
+* Lecture 11 <2018-11-21 Wed>
+** Definition
+   A polyhedral set is a finite intersection of closed half-spaces
+** Theorem
+   Every polytope is a bounded polyhedral set.
+*** Proof
+    $P$ is a polytope. The aim is to show that it is the intersection of
+    finitely many closed half spaces $H_i^{-}$.
+
+    It suffices to prove that $P$ is an intersection of finitely many closed
+    half spaces. This would mean that it would be a Polyhedral set. Boundedness
+    follows from the boundedness of $P$.
+
+    $P' = \cap_{\textup{H_i suppporting hyperplane of a facet of P}} H_i^{-1}$,
+    where $H_i$ is the supporting hyperplane of a facet of $P$. We need to prove
+    that $P' = P$.
+
+    A theorem implies that the intersection is finite. (Is this because of
+    compactness?)
+
+    Suppose the contrary. $x_0 \in P' \setminus P$. The idea is to find a facet
+    that would separate $P$ and $x_0$, which would give us a contradiction. Let
+    $A$ be the union of all affine subspaces spanned by $\aff(x_0 \cup
+    \textup{face of dim \le})$ where $F$ is a face of $P$ and $\dim F \le n-2$.
+    This is contained in the union of hyperplanes. $\int A = \emptyset$ and
+    $y \in \int P \setminus A \neq \emptyset$.
+
+    $y\in \int P$ and $x_0\in P' \setminus P$. The segment $[y, x_0] \cap
+    \partial P = \{z\}$ The segment $[y, x] \nsubset A$.
+
+    $[y, x_0] \cap A \{x_0\}$ and $t \in [y, x_0] \cap A$, $t \neq x_0$. Because
+    the boundary of $P$ is the union of faces. Then $z$ belongs to union of
+    proper faces. $z$ cannot be in any face of dimension $\le n-2$ because $z$
+    would be then in $A$, then the whole line would be in $A$. Thus $z$ belongs
+    to a facet. Now the supporting hyperplane of this facet would separate $x_0$
+    and $P$. $z$ belongs to a facet $F = P \cap H$, and $P \subset H^{-1}$ and
+    $x_0 \in \in H^{+}$. Contradiction with $x_0 \in P' = \cap H^{-1}$.
+** Corollary
+   $P = \cap H^{-}$, where $H$ is a supporting facet. Moreover, this is a
+   minimum representation, we cannot drop any half space from this
+   representation.
+** Perspective
+   1. We want to study the boundary of $P$ which is the union of faces.
+   2. We know that it is the union of finitely many faces.
+   3. $F(P)$ is the set of all faces of $P$. $(F(P), \subset)$ is a partially
+      ordered set.
+   4. We can also write the Polyhedra as a disjoint union of the relative
+      intersection of the faces.
+** Theorem
+   If $P$ is a bounded polyhedral set, then it is a Polytope.
+*** Proof
+    Induction on the dimension. $P$ be an $n$ dimensional bounded polyhedral set
+    in $\R^n$. Then all faces of $P$ are polytopes by induction hypothesis.
+    (face is the intersection of polyhedra with a hyperplane.) It follows that
+    $P \cap H$ is a polytope. $\conv(\cap \relint F)$
+
+    $\cup F \subset F \implies \conv(\cap F) \subset P$.
+
+    Now we will prove that the interior of $P$ is contained in the $\conv(\cup
+    P) \subset P$. $x\in \int P$, then $x \in \conv(F_1 \cup F_2) \subset \conv
+    (\cup F)$. The argument is something about taking the closure.[fn:32]
+** Lemma
+   If $F_1$ and $F_2$ are faces of $P$, $F_1$ is subset of $F_2$, then we prove
+   that $F_1$ is a face of $F_2$. We then gave a counterexample to the "inverse"
+   statement, but we claim that this would be true if we work with Polytopes.
+** Theorem
+   Let $P$ be a polytope ([fn:33]) and $F_n$ is a face of $P$ and $F_2$ is a
+   face of $F_1$, then $F_2$ is a face of $P$.
+*** Proof
+    $F_1 \le P \implies$ There is a hyperplane $H_1 = \{x \vert \langle x, u_1
+    \rangle = 0 \}$ such that $F_1 = P \cap H_1$ and $P$ is a subset of
+    $H_1^{+}$. $F_2 \le F_1 \implies$, there is a hyperplane $H_2 = \{x \in H_1
+    \vert \langle x, u \rangle = 0\}$ such that $F_2 = F_1 \cap H_2 \subset H_1$
+    and $F_1 \subset H_2^{+}$.
+
+    We need a hyperplane that cuts $P$ and only cuts in $F_2$.
+
+    $H(\eta) = \{x \in \R^n \vert \langle x, \eta u_1 + u_2 \rangle = 0\}$, $F_2
+    \subset H(\eta)$
+
+    $\eta_0 = \max\{-\frac{\langle w, u_2\rangle}{\rangle w, u_2\rangle} \vert w
+    \in \textup{vert} P \ \textup{vert} F_1 \}$. This is a finite set.
+
+    Let $\eta > \eta_0$ and we prove that $H(\eta) \cap P = F_2$ and $P \subset
+    H^{+}(\eta)$.
+    
+    1. $w\in \textup{vert} P \setminus \textup{vert} F_1$. $\langle w, \eta
+       u_1 + u_2 \rangle > \eta_0$, $\langle w, u_1\rangle + \langle w, u_2
+       \rangle \ge 0$, implies that $w\in H^{+}(\eta)$.
+    2. $w \in \textup{vert} F_1 \setminus \textup{vert} F_2$ $\langle w, \eta
+       u_1 + u_2\rangle = \eta\langle u, u_1 \rangle + \langle w, u_2 \rangle =
+       \langle w, u_2 \rangle \ge 0$.
+    3. $w\in \vert F_2$, $\langle w, \eta u_1 + u_2 \rangle = 0$.
+** Theorem
+   Any proper face of a polytope $P$ is a face of a facet.
+*** Proof
+    1. $x\in F$ where $F$ is a proper face of $P$, then $x$ belongs to a facet.
+       $\dim F \le n-2$ and $y\in \int P$ $M = \cup \aff(\{y\} \cup G)$. Here
+       $G$ is a a face of dimension
+       
+       $z\in B(x, \varepsilon) \cap (\R^n \setminus M) \cap (\R^n \setminus P)$
+
+       $[z, y] \cap \partial P = \{t\}$ and $t_\varepsilon$ is a facet of $P$.
+
+       We create a sequence of points on the facet that converges to $x$. Each
+       of the point belongs to a facet, but need to be the same. But since there
+       are only a finite number of facets, there is a subsequence that is
+       contained in exactly one facet and converges to $x$.
+    2. $F$ is included in a facet. $x\in \relint F$, by $(1)$, we have that $x$
+       is an element of $F_0$, where $F_0$ is a facet of $P$. $F_0$ is a
+       polytope and there exists $F'$ a face of $F_0$, where $x\in \relint F'$.
+
+       $F \le P$ and $F_0 \le P$ and $F' \le F_0$, implies that $F' \le P$. $x
+       \in \relint F \cap \relint F'$, implies that $F = F' \le F_0$.
+** Theorem
+   Let $\dim F' = 1$, where $F_0$ is a face of an $n$ polytope $P$. If $0 \le i
+   < k$ and $F^i \le F^k$, then there exist faces $F^{i+1}, \cdots, F^{k-1}$
+   such that $F^i$ is contained in $F^{i+1} \subset F^k$.
+*** Proof
+    Induction on $k$, when $k=i+1$, there is nothing to prove. Assume $k > i+1$,
+    then $F^i \subset \cdots \subset F^k \subset F^k$.
+* Lecture 12 <2018-11-27 Tue>
+** Partially Ordered sets
+   Let $P \neq \emptyset$ and $\rho \subset P^2$ is called a binary relation.
+
+   1. $\rho$ is reflexive, if the diagonal $\Delta = \{(x, x) \vert x \in P \}
+      \subset \rho$
+   2. $\rho$ is symmetric if $(x, y) \in \rho$, then $(y, x) \in \rho$.
+   3. $\rho$ is anti symmetric if $(x, y) \in \rho$ and $(y, x) \in \rho$, then $x = y$
+   4. $\rho$ is transitive if $(x, y) \in \rho$ and $(y, z) \in \rho$, then $(x,
+      z)\in \rho$.
+
+   We then define the notion of a relational equivalence if is reflexive,
+   symmetric and transitive. Then we define the notion of equivalence classes
+   and partition of a set. An example is in Groups. There is also an equivalence
+   between the partitions of $X$ and relations of equal in $X$.
+** Partial order
+   $\rho$ is *partial order* if $\rho$ is Reflexive, Anti symmetric and
+   transitive.
+
+   Examples: $(\N, \le)$, $(\N, \vert)$. $(\Z, \vert)$ is not a partial order.
+
+   $(\R, \le), (\R \times \R, \le)$ where $\le$ is defined by $(x, y) \le (z, a)
+   \iff (x \le z) \textup{and} y \le a$
+
+   $G$, $\operatorname{sub}_G =$ subgroups of $G$
+
+   $X \neq 0$, $(P(X), \subset)$. Let $(P, \le)$ be a partial order, then if
+   1. If for every $p, q \in P$ holds and $p \le q$ or $q \le p$, then $\le$ is
+      called a linear order.
+   2. An element $m$ is the minimum of $P$ if for every $p \in P$, the following
+      holds: $m \le p$. The minimum element is unique. This is because of the
+      anti-symmetric.
+   3. An element is called the minimal element, if there is no element smaller
+      than the minimal element. A minimum is clearly a minimal element. For
+      example if we take $\N$ without $1$ and the relation being divisibility,
+      there is no minimum any more, but every primes are minimal elements.
+   4. One can define maximal elements similarly. Also similarly for maximum.
+
+   A *cover relation* of order $(X, \le)$ is the relation $\precsim$ define by $p
+   \precsim q \iff $ for all $r \in P$, $P \le r \le q \implies p = r$ or $q =
+   r$.
+
+   A *Hasse diagram* is the following thing: take the minimal elements at the
+   bottom., then we draw an arrow from the bottom element to the top element if
+   $p \precsim q$ and similarly one can continue this process.
+
+   An example with $(\Z, \vert)$ was drawn. Another example, subgroups of $\Z$.
+   It turns out that the Hasse diagram is identical to $(\Z, \vert)$.
+
+   A map $f\colon P \rightarrow Q$ between orders is a *monotone map* (*order
+   preserving*) if $x \le y \implies f(x) \le f(y)$. We can also similarly
+   define a *order reversing*.
+
+   *Remark* Partial Ordered sets with order preserving maps form a Category.
+
+** Boundary of Polytope
+   Boundary of Polytope: There are finitely many faces of $P$.
+
+   $B(P) =$ the set set of all faces of $P$.
+
+   $B_0(P) =$ the set of all proper faces of $P$. $B_0(P)$ does not contain the
+   empty set and $P$.
+
+   $(B(P), \subset)$ is a finite order with minimum $\emptyset$ and maximum $P$.
+
+   Another Property is that $P = \conv(\operatorname{vertices} P)$. We also know
+   that the Polyhedral set is equal to the finite intersection of closed half
+   spaces.
+
+   If $P$ is a bounded Polyhedral set, then $P = \cap H^{-1}$ where $H$ is a
+   supporting hyperplane of a face of $P$.
+
+   We also know that $F_1 \subset P$ and $F_0 \le F_1$, then $F_0 \le P$. In
+   terms of Hasse diagram, if $F_1 \subset P \implies B(F_1) \subset B(P)$
+
+   Also $F_0 \subset P \implies$ there exists a face of $P$, $F_0 \le F$. The
+   maximal elements are facets and the minimal elements are vertices.
+
+   $F^j \le F^k \le P$ and $j \le k$, then there exists. $F^i \le F^{j+1} \le
+   F^{j+2} \le \cdots \le F^{k-1} le F^k$.
+
+   Recall the definition of a ridge. It's an $n-2$ dimensional face of $P$.
+** Theorem about ridges
+   Every $\dim P - 2$ face of $P$ is the intersection of exactly two
+   facets.[fn:34]
+*** Proof
+    $F_1, \cdots, F_s$ are facets of $P$
+
+    $F_1 = P \cap H_i$ and $P \subset H_i^{-}$, $\dim F = \dim P - 2$, $P =
+    \cap_{i=1}^{s} H_i^{-}$, $F_j = P \cap H_j = \cap_{i=1}^{s} H_i^{-} \cap H_j
+    = \cap_{i \neq j} H_i^{-} = \cap_{i \neq j}(H_i^{-} \cap H_j)$. Notice that
+    $H^{-1} \cap H_j$ are closed half spaces in $H_j$. So $F$ a facet of $F_j$
+    is of the form $F = F_j \cap H_r$ for $1 \le r \le s$.
+
+    $F = F_j \cap H_r = (P \cap H_j) \cap (H_r \cap P) = F_j \cap F_r$.
+
+    The exactly part is missing. Let us assume the contrary, that a ridge is in
+    the intersection of three facets. Let us not take a point in the interior
+    and define a hyperplane that would cut the three planes and form three
+    lines. Now one of the lines have to be in the convex hull and (the trick is
+    to use the fact that the dimension of a facet is $n-1$, thus we may think
+    about the orthogonal complement.) The contradiction is that the facet will
+    have a hyperplane that will separate the two parts of the Polytope. But in
+    our case, this cannot happen and hence a contradiction. [fn:35]
+** Theorem
+   Let $P$ be a Polytope and $1 \le j \le k < \dim P$, then every $j$ face $F^j$
+   is an intersection of $k$ faces of $P$. In particular, each proper face is an
+   intersection of facets.
+*** Proof
+    $F^j \le P$ and $F^j \le F^{j+1} \le \cdots \le F^{k+1} \le \cdots \le P$.
+
+    There are two cases
+
+    1. If $k = j+1$ and $k +1 = j+2$, then $F^j \le \le F^{j+2}$. Then $F^j$ is
+       a ride of $F^{j+2}$, so by the above theorem, $F^j$ is the intersection
+       of two facets of $F^{j+2}$ that are dimension $j+1 = k$ faces of
+       $F^{j+2}$ and consequently the faces $P$.
+    2. If $k > j +1$, then $F^i \le F^{j+2} \le \cdots F^{k+1}$. Therefore $F^j$
+       is the intersection of two $j+1$ faces if $k > j+2$ and we continue doing
+       this until $k = j+2$.
+** Definitions
+   $B_0(P)$ all proper faces: reduced boundary complex
+
+   $B(P)$ boundary complex.
+
+   $\psi B(P) \rightarrow B(Q)$, then $P \equiv Q$ are combinatorially
+   equivalent.
 * Footnotes
+
+[fn:35] For manifolds this proves that the top homology is exactly $\Z$.
+
+[fn:34] In algebraic topology, we know that the boundary of a Polytope is a CW
+complex. What we're proving right now is that the boundary is a Pseudo Manifold.
+
+[fn:33] It also holds for Polyhderal set. But we didn't do it.
+
+[fn:32] Reminds me of something form Topology.
 
 [fn:31] Think about $S_i$ as having a unique color. I guess each $S_i$s are
 disjoint.
