@@ -8,6 +8,8 @@
 #+LATEX_HEADER: \def\N{\mathbb{N}}
 #+LATEX_HEADER: \def\inte{\operatorname{int}}
 #+LATEX_HEADER: \def\pos{\operatorname{pos}}
+#+LATEX_HEADER: \def\aff{\operatorname{aff}}
+#+LATEX_HEADER: \def\cone{\operatorname{cone}}
 #+LATEX_HEADER: \def\relint{\operatorname{rel\ int}}
 #+LATEX_HEADER: \def\conv{\operatorname{Conv}}
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
@@ -1069,7 +1071,7 @@
    simplex.
 *** Question (Topological Tverberg Conjecture)
     For all $d \ge 1$, $r \ge 2$ and $n=(d+1)(r-1)$ and any continuous map
-    $f\colon \Delta_N \rightarrow \R^d$, there exits $G_1, \cdots, G_r$ pairwise
+    $f\colon \Delta_N \rightarrow \R^d$, there exists $G_1, \cdots, G_r$ pairwise
     disjoint faces of $\Delta_N$ such that $f(\sigma_1) \cap \cdots \cap
     f(\sigma_r) \neq \emptyset$.
 
@@ -1109,11 +1111,11 @@
     Every subfamily of $d+1$ elements non-trivially intersect. Then by Helly's
     theorem there is
 
-    $z \in \cap Y$. $z\in \conv X$. But now Charatheodery tells that $\exits x_1
+    $z \in \cap Y$. $z\in \conv X$. But now Charatheodery tells that $\exists x_1
     \subset X$ such that $\vert X_1 \vert = d+1$ and $z \in \conv X_1$.
 
     $\vert X - X_1 \vert = n - (d+1) \ge (n-1)(d+1)^2 + 1 - (d+1) \ge s$. $z \in
-    \conv(X - X_2) \implies \exits x_2 \subset X - X_1), x_2 = d+1$ and $z =
+    \conv(X - X_2) \implies \exists x_2 \subset X - X_1), x_2 = d+1$ and $z =
     \conv X_2$. I can do this $r$ times and we are done.
 ** Optimal colored Tverberg theorem
 *** Topological Tverberg theorem
@@ -1124,7 +1126,7 @@
     $\Delta_N$, $f(\sigma_1) \cap \cdots \cap f(\sigma_r) \neq \empty set$.
 *** Optimal colored version
     $d \ge 1$, $r\ge 2$ is prime. $f\colon \Delta_N \rightarrow \R^d$ continuous
-    such that $N=(d+1)(r-1)$ and $\vect \Delta_N = C_0 \sqcup \cdots \sqcup C_m$
+    such that $N=(d+1)(r-1)$ and $\vert \Delta_N \vert= C_0 \sqcup \cdots \sqcup C_m$
     such that $\vert C_i \vert \le r- 1$ implies that there exists $\sigma_1,
     \cdots, \sigma_r$ (pairwise disjoint faces of $\Delta_N$ such that
     $f(\sigma_1)\cap \cdots \cap f(\sigma_r) \neq \emptyset$.
@@ -1142,7 +1144,7 @@
    One can think about this as the gradient/slope of lines that can be formed
    using points on the function.
 *** Proof
-    $x < y < z \implies$ there exits $\lambda \in (0, 1)$, $y = \lambda x + (1-\lambda)z$
+    $x < y < z \implies$ there exists $\lambda \in (0, 1)$, $y = \lambda x + (1-\lambda)z$
 
     $$\frac{f(y) - f(x)}{y-x} = \frac{f(\lambda x + (1-\lambda)y) -
     f(x))}{\lambda x + (1-\lambda)z - x} \le \frac{\lambda f(x) + (1-\lambda)
@@ -1151,7 +1153,7 @@
 
     $$\frac{f(z) - f(y)}{z-y} = \frac{f(z) - f(\lambda x + (1-\lambda)
     y)}{1-\lambda x - (1-\lambda) z} \ge \frac{f(z) - \lambda f(x) -
-    (1-\lambda)f(z)}{\lambda z - \lamba x}$$
+    (1-\lambda)f(z)}{\lambda z - \lambda x}$$
 
     The last function is equal to $\frac{\lambda f(z) - \lambda f(x)}{\lambda
     z - \lambda x} = \frac{f(z) - f(x)}{z-x}$
@@ -1160,13 +1162,13 @@
    \cdots, x_m \in C$ and $\lambda_1, \cdots, \lambda_m \ge 0$ with $\sum
    \lambda_i = 1$ holds
 
-   $$f(\lambda_1 x_1 + \codts + \lambda_m x_m) \le \lambda_1 f(x_1) + \cdots +
+   $$f(\lambda_1 x_1 + \cdots + \lambda_m x_m) \le \lambda_1 f(x_1) + \cdots +
    \lambda_m f(x_m)$$
 ** Definition
    Let $f\colon X \rightarrow \R$ where $X \subset \R^n$. The function $f$ is
-   Lipschitz on $Y \subset X$ if there exits $L > 0$, and $x, y \in Y$, $\vert
+   Lipschitz on $Y \subset X$ if there exists $L > 0$, and $x, y \in Y$, $\vert
    f(x) - f(y) \vert \le L \Vert x - y \Vert$. The function $f\colon X
-   \rightarrow \R$ is locally Lipschitz on $X$ if for all $x\in X$, there exits
+   \rightarrow \R$ is locally Lipschitz on $X$ if for all $x\in X$, there exists
    $x\in U$, a neighbourhood of $x$ in $X$, $f\vert_U$ is Lipschitz.
 ** Theorem
    Let $f\colon C\rightarrow \R$ be a convex function. Then $f$ is Lipschitz on
@@ -1179,12 +1181,12 @@
     Lipschitz constant to be the maximum of all the elements and we are done.
 
     Let $X$ be element of $\int C$, let $N(X, \varepsilon)$ be an open ball
-    around $x$ of radius $2\varepsilon$. Then there exits $\varepsilon, \alpha >
+    around $x$ of radius $2\varepsilon$. Then there exists $\varepsilon, \alpha >
     0$ such that $N(2\varepsilon) \subset \int C$ and $f\vert_{N(2\varepsilon)}$
     is bounded from above by $\alpha$.
 
     It suffices to prove that $f$ is bounded above on a simplex containing $x$
-    in the interior. Let $x \in \int\{\conv\{x_0, \codts, x_{n}\}$ where $x_0,
+    in the interior. Let $x \in \int\{\conv\{x_0, \cdots, x_{n}\}$ where $x_0,
     \cdots, x_m \in \int C$ and affinely independent.
 
     If $y \in \Delta$, then $y = \lambda_0 x_0 + \cdots + \lambda_m x_n$ where
@@ -1194,7 +1196,7 @@
     \cdots + \lambda_m f(x_n) \le \vert f(x_0) \vert + \cdots + \vert f(x_n)
     \vert = \alpha$.
 
-    There exits $\gamma > 0$, such that the absolute value $\vert
+    There exists $\gamma > 0$, such that the absolute value $\vert
     f\vert_{N(2\varepsilon)}\vert$ is bounded by $\gamma$ from above.
 
     $x = \frac{1}{2}(2x-y) + \frac{y}{2} \implies f(x) = f(\frac{1}{2}(2x-y) +
@@ -1248,13 +1250,13 @@
       for $\lambda_i > 0$ and $\sum \lambda_i = 1$.
 
       $\langle a, x\rangle = \langle a, \sum \lambda_i x_i \rangle = \sum
-      \lambda_i \langle a, x_i \rangle = \sum_{i=1}^{r} \lamda_i \alpha -
+      \lambda_i \langle a, x_i \rangle = \sum_{i=1}^{r} \lambda_i \alpha -
       \sum_{i=s+1}^{r} \lambda_i \beta_i$
 
       $\langle a, x \rangle = \alpha - \sum_{i=s+1}^{r} \lambda_i \beta_i$
 
       $x \in F = P \cap H$, $\langle a, x\rangle = \alpha - \sum_{i=s+1}^{r}
-      \lambda_i \beta_i = \alpha$, $\beta_i > 0$ implies that $\lamda_{s+1}=
+      \lambda_i \beta_i = \alpha$, $\beta_i > 0$ implies that $\lambda_{s+1}=
       \cdots = \lambda_r = 0$. $X = \lambda_1 x_1 + \cdots + \lambda_s X_s$.
 
       $F = \conv \{x_1, \cdots, x_s\}$ a Polytope.
@@ -1262,7 +1264,7 @@
      Every convex Polytope is a convex hull of its vertices. $P = \conv(\vert
      P)$. (Vertices are the zero-dimensional faces of a Polytope.)
 ***** Proof
-      $P = \conv\{x_1, \cdots, x_r\}$. $\vert P \subet P$, $\conv (\vert P)
+      $P = \conv\{x_1, \cdots, x_r\}$. $\vert P \subset P$, $\conv (\vert P)
       \subset P$.
 
       We can assume that for every $i \in \{1, \cdots n\}$, $x_i \notin \conv
@@ -1271,7 +1273,7 @@
 
       Now we need to prove that every $x_i$ is a vertex. 
 
-      $y_i = p_{P_i}(x_i)$. There exits a supporting hyperplane $H'_i$ to $P'_i$
+      $y_i = p_{P_i}(x_i)$. There exists a supporting hyperplane $H'_i$ to $P'_i$
       orthogonal to $x_i - y_i$ and containing $y_i$ with the property that $P_i
       \subset H_i'$ and $x_i \in \int H_i^{+}$ (a diagram was drawn)
 
@@ -1305,7 +1307,7 @@
     half spaces. This would mean that it would be a Polyhedral set. Boundedness
     follows from the boundedness of $P$.
 
-    $P' = \cap_{\textup{H_i suppporting hyperplane of a facet of P}} H_i^{-1}$,
+    $P' = \cap_{H_i \textup{ suppporting hyperplane of a facet of P}} H_i^{-1}$
     where $H_i$ is the supporting hyperplane of a facet of $P$. We need to prove
     that $P' = P$.
 
@@ -1315,12 +1317,12 @@
     Suppose the contrary. $x_0 \in P' \setminus P$. The idea is to find a facet
     that would separate $P$ and $x_0$, which would give us a contradiction. Let
     $A$ be the union of all affine subspaces spanned by $\aff(x_0 \cup
-    \textup{face of dim \le})$ where $F$ is a face of $P$ and $\dim F \le n-2$.
+    \textup{face of dim} \le$ where $F$ is a face of $P$ and $\dim F \le n-2$.
     This is contained in the union of hyperplanes. $\int A = \emptyset$ and
     $y \in \int P \setminus A \neq \emptyset$.
 
     $y\in \int P$ and $x_0\in P' \setminus P$. The segment $[y, x_0] \cap
-    \partial P = \{z\}$ The segment $[y, x] \nsubset A$.
+    \partial P = \{z\}$ The segment $[y, x] \nsubseteq A$.
 
     $[y, x_0] \cap A \{x_0\}$ and $t \in [y, x_0] \cap A$, $t \neq x_0$. Because
     the boundary of $P$ is the union of faces. Then $z$ belongs to union of
@@ -1452,7 +1454,7 @@
    4. One can define maximal elements similarly. Also similarly for maximum.
 
    A *cover relation* of order $(X, \le)$ is the relation $\precsim$ define by $p
-   \precsim q \iff $ for all $r \in P$, $P \le r \le q \implies p = r$ or $q =
+   \precsim q \iff$ for all $r \in P$, $P \le r \le q \implies p = r$ or $q =
    r$.
 
    A *Hasse diagram* is the following thing: take the minimal elements at the
