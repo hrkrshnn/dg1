@@ -10,6 +10,7 @@
 #+LATEX_HEADER: \def\pos{\operatorname{pos}}
 #+LATEX_HEADER: \def\aff{\operatorname{aff}}
 #+LATEX_HEADER: \def\cone{\operatorname{cone}}
+#+LATEX_HEADER: \def\ver{\operatorname{ver}}
 #+LATEX_HEADER: \def\relint{\operatorname{rel\ int}}
 #+LATEX_HEADER: \def\conv{\operatorname{Conv}}
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
@@ -1542,7 +1543,513 @@
 
    $\psi B(P) \rightarrow B(Q)$, then $P \equiv Q$ are combinatorially
    equivalent.
+* Lecture 13 <2018-11-27 Tue>
+** Recap
+   $P$ is a polytope of dimension $n$ in $\R^n$.
+
+   $B_0(P)$ is the family of all proper faces of $P$ which is equal to the
+   reduced boundary complex of $P$.
+
+   $B(P)= B_0(P) \cap \{\emptyset\}$ is the boundary complex of $P$.
+
+   $L(P) = B(P)\cap \{P\}$ is the face lattice of $P$
+
+   All these sets form partially ordered sets with respect to inclusion. $B_0(P)
+   \subset B(P) \subset L(P)$.
+
+   All of this happen inside the category of all partially ordered set. The
+   objects of the category are all pairs $(P, \le)$ where $\le$ is an order on
+   $P$.
+
+   The morphisms $M(P, Q)$ are functions $\{f \colon P \rightarrow Q \colon p_1
+   \le p_2 \implies f(p_1) \le f(p_2)\}$.
+
+   A functor from Posets to Posets. $(P, \le)$ to $(P^{*}, \rho)$. Where $P^{*}
+   = P$ and $p_1, p_2 \in P{*}$, $p_2 \rho p_2 \iff p_2 \le p_1$. We basically
+   reverse the order on the first partial order. We also need to tell how the
+   functor maps morphisms to morphisms. Given a morphism, $f\colon P
+   \rightarrrow Q$, what is the map $F(f) \colon P^{*} \rightarrow Q^{*}$. We
+   define $F(f) = f$.
+** Definition
+   Let $P$ be an $n$ Polytope and $f_i(P)$ is the number of $i$ dimensional
+   faces of $P$, then the $f$ vector of $P$ is $f(P) = (f_0(P), f_1(P), \cdots,
+   f_{n-1}(P))$. We set $f_{-1}(P) = 1$ and $f_n(P) = 1$.
+** Remark
+   What vectors in $\N^n$ are $f$ vectors of $n$ polytopes? We should come up
+   with characteristics for $f$ vector.
+
+   A general characterization is not known. But we can look at subfamilies.
+
+   Look at the subfamily of Simplicial complexes. [[https://en.wikipedia.org/wiki/Simplicial_complex][Wikipedia]]
+** A conjecture by Peter McMallen
+   $(f_0, f_1, \cdots, f_n) \in \N^n$ is a $f$ vector of simplicial $n$
+   polytopes if and only if 
+
+   1. Dehn-Somoville equations.
+   2. A bunch of inequalities.
+** Dual Polytopes and Quotient Polytopes
+   $P$ is a polytope. $L_(P)$ is a lattice. What is a lattice? Every fininte
+   subsets have an infimum and supremum.
+
+   The functors give the following commutative diagram. Arrows go down and
+   right.
+   #+BEGIN_SRC artist
+     P---------------------------- [ ]
+     |                              |
+     |                              |
+     |                              |
+     |                              |
+     |                              |
+     L(P)-------------------------L(P)^*
+   #+END_SRC
+
+   $P_1 \equiv P_2\iff L(P_1) \equiv L(P_2)$
+
+   I think the idea is that $L(P_1)$ is all about combinatorics. So if they are
+   combinatorially isomorphic, $P_1$ and $P_2$.
+
+   If $P$ is a polytope, *the dual polytope* is a polytope $P^{*}$ whose face
+   lattice is dual of $L(P)$. The dual Polytope is a class, not just a single
+   Polytope, unlike the Polar of the Polytope which is a polytope. [fn:36]
+** Polarity in $\R^n$
+   Polarity in $\R^n$ with respect to the unit sphere.
+
+   $0 \notin W$ the affine space $\mapsto \pi(W) = \cap_{u \in W} H_{u} =
+   \cap_{w \in W}\{w \vert \langle x u \rangle = 1\}$ The claim is that $\pi(W)
+   = u - 1 - \dim W$.
+
+   $P$ is an affine space of dimension $0 \mapsto \pi(p) = \cap H_u = H_p = \{x
+   \vert \langle x, up \rangle = 1\}$
+
+   $K$ a convex body with $0 \in \int K$, $K^{*} = \cap_{u \in K} H_u^{-} =
+   \cap_{u\in \partial K} H^{-}_u$, the polar body.
+** Theorem
+   Let $P$ be an $n$ dimensional Polytope in $\R^n$ and $0$ is an element of the
+   interior of $P$. Let $P^{*}$ be the polar under the Polarity $\pi$.
+
+   1. If $F$ is a proper face of $P$, then $F{*} = P^{*} \cap \pi(\aff F)$ (by
+      definition) and the $\dim F^{*} = n - \dim F - 1 = \dim \pi(\aff F)$
+   2. Assignment $F$ to $F^{*}$ for all $F \in B_0(P)$ induces a $\phi$, an
+      order reversing map $\varphi \colon B_0(P) \rightarrrow B_0(P^{*})$.
+   3. $F^{**} = F$.
+   4. $P^{*} = \cap_{u \in \vert P} H^{-}_u$. In particular, $P^{*}$ is an $n$
+      dimensional polytope with $0 \in \int P^{*}$.
+
+   Then this will be a dual Polytope.
+*** Proof
+    - (Proof of 4) $P^{*} = \cap_{u \in P} H^{-1}_u = \cap_{u \in P} \{x \vert \langle x, u
+      \rangle \le 1\}$, $P^{*} = \cap_{u \in \partial P} H^{-1}_u$ and $\vert P
+      \subset \partial P$ and
+
+      $K$ is a convex body with $0 \in \int K$ and $K^{*} = \cap_{u \in K}
+      H^{-}_u = \cap_{x \in partial K} H^{-}_u$.
+      
+      $P^{*} \subset \cap_{u \in \vert P} H^{-}_u \implies \forall u \in
+      \partial P, x \in H^{-1}_u$.
+
+      Now we know that $P$ is a convex hull of vertices and 
+      
+      $x \in \cap_{u \in \vert P} H'_u \implies \langle x, x_1 \rangle \le 1,
+      \cdots, \langle x, x_s \rangle \le 1$
+
+      $u\in \partial P \implies \exists \lambda_1, \cdots, \lambda_s \ge 0$, $u
+      = \sum \lambda_i x_i$, such that $\sum \lambda_i = 1$.
+
+      $\langle x_i, u \rangle = \langle x, \lambda_1 x_1 + \cdots, \lambda_s
+      x_s \rangle = \lambda_1\langle x, x_1\rangle + \cdots + \lambda_s \langle
+      x, x_s\rangle \le \lambda_1 + \cdots + \lambda_s = 1$.
+       
+      Thus $x \in H^{-}_u$.
+
+      $B(0, r) = \{x \vert \Vert x \Vert \le 1\}$
+
+      $B(0, r)^{*} = B(0, \frac1r)$.
+
+      $0 \in \int P \implies \exists r > 0, B(0, r) \subset \int P \subset P$.
+
+      $K_1 \subset K_2$, then $K_2^{*} \subset K_1^{*}$.
+
+      $P^{*} \subset B(0, r)^{*} = B(0, \frac1r) \implies P^{*}$ is bounded.
+
+      $P$ is a polytope $\implies L >0, P \subset B(0, L) \implies B(0, L)^{*}
+      \subset P^{*} \implies B(0, 1/L) \subset P^{*}$
+      
+    - (Proof of 1) $F^{*} = P^{*} \cap \pi(\aff F) = (\cap_{u \in \vert P}
+      H_u^{-} \cap \pi(\aff F) = \cap_{v \in \vert P} H^{-1}_u \cap \cap_{u \in
+      \{x_1, \cdots, x_r\}} H_u$
+
+      $\pi(W) =\cap_{w\in W} H_u = \{x \vert \forall u \in W \langle u, x
+      \rangle = 1\}$.
+
+      $\dim W = p \implies y_p, \cdots, y_n \in W$ affinely independent such that
+      $y\in W \implies \exists \lambda_0, \cdots, \lambda_p)$, $y\in \sum
+      \lambda_i y_i, \sum \lambda_i = 1$.
+
+      $\langle y, x \rangle = \sum \lambda_i \langle y_i, x \rangle$.
+
+      Going back, 
+      
+      $\cap_{u \in \{x_1, \cdots, x_r\}} H_u^{-1} \cap \cap H_u = \cap H_u \cap
+      \cap H^{-}_u = \cap (L \cap H^{-}_u)$
+
+      (A simple argument), $F^{*} = P^{*} \cap \pi(\aff F) = P^{*} \cap \cap_{u
+      \in \ver F} H_u = \cap_{u \in \int F \subset \partial P} (P^{*} \cap H_u)$
+      This is a supporting Hyperplane for the dual.
+
+      Lemma: $u \in \partial P \implies H_u$ is a supporting hyperplane of
+      $P^{*}$. $F^{*} = P^{*} \cap H_u = \cap(H_u \cap P^{*})$ The intersection
+      of faces is a face.
+
+      What about the dimension? $\dim F^{*} = n - \dim F - 1$. Thus $F^{*} =
+      P^{*} \cap \pi(\aff(F)) \subset \pi(\aff F)$.
+
+      The $\dim F^{*} \le \dim \pi(\aff F) = n - \dim F - 1$.
+
+      Now $F = \cap_{i = 1} F_i$ where $F_i$ are facets. $F_i = P \cap H_{u_i}$
+      where $u_i$ are some vectors.
+
+      $t = \textup{codim} F \implies u_1, \cdots, u_t$ are affinely independent.
+      Now we want to prove that $u_i \in F_i^{*} \subset F^{*}$. If this is
+      true, then it would mean that $\dim F^{*} \ge t - 1 = n - \dim F - 1$. In
+      order to prove this, we can say that $F_i = P \cap H_i$ is a facet. Now
+      $F_{i}^{*} = P^{*} \cap \cap \pi(H_{u_i}) = \cap H_{u \in \ver P}^{-} \cap
+      \cap_{x\in H_{u_i}} H^{-1}_u$. $u_i$ belongs to every single one of them,
+      therefore belongs to the intersection. There something else that I missed.
+
+    - $F^{**} = F$. We know that $F = P \cap H = P^{**} \cap \pi(\pi(\aff F)) =
+      P^{**} \cap \pi(\aff F^{*}) = F^{**}$. If you prove this, you prove that
+      your map $\phi^2 = \id$, then $\phi$ is bijection.
+* Lecture 14 <2018-12-05 Wed>
+** Dual and quotient polytopes
+   *A dual polytope* $P^{*}$ of the polytope $P$ is any polytope, whose face
+    lattice is anti-isomorphic to the face lattice of $P$.
+
+    $P$ is a polytope and $F(P) = B(P) \cap \{P\}$ is a partially ordered set.
+    We don't know if it is a lattice.
+
+    Anti-isomorphic. Meaning we have a bijection between the face lattices that
+    reverses the inclusion.
+
+    Here $P^{*}$ is a class of Polytopes (Polar is one element in the class.)
+*** Example
+    A prism in $\R^3$. $5$ facets. Hence the dual should have 5 vertices.
+
+    The edges should be edges. We join the $5$ points in the dual similarly.
+*** Polar body
+    If $K$ is a convex body in $\R^d$ with $0 \in \int K$ [fn:37], then $K^{*} =
+    \{ y \vert \forall x \in K, \langle x, y \rangle \le 1\}$.
+*** Lemma 1 (Polar body)
+    $K^{*}$ is a closed set.
+
+    The proof kinda depends on the fact that $K^{*]$ can be written as the
+    intersection of $H_x^{-}$. Now these sets are closed. $K^{*}$ is closed
+    since it is intersection of closed sets.
+*** Lemma 2 (Polar body)
+    If $K_1 \subset K_2$, then $K_2^{*} \subset K_1^{*}$.
+
+    The proof is kinda easy.
+*** Lemma 3 (Polar body)
+    $K^{*}$ is bounded and $0 \in \int K^{*}$ (Also tells us that $K^{*}$ is of
+    maximum dimension)
+
+    We need to prove something about the Polar body of the closed ball, i.e.,
+    $B(0, r)^{*} = B(0, 1/r)$.
+
+    $y \in B(0, r)^{*} \implies \forall x \in B(0, r), \langle x, y \rangle \le
+    1$. Hence $r y \frac{\Vert y \Vert} \in B(0, r)$, now $\langle r y/{\Vert y
+    \Vert}, y \rangle \le 1 \iff \frac{1}{\Vert y \Vert} \iff \Vert y \Vert \le
+    1/r \implies y \in B(0, 1/r)$. Showing the other part is also easy.
+
+    Now K convex body $\implies$ K compact $\implies$ K bounded, implies that $K
+    \subset B(0, r)$. Now $0 \in B(0, 1/r) \subset K^{*}$ and thus $0 \in \int
+    K^{*}$.
+*** Lemma 6 (Polar body)
+    $K^{**} = K$
+
+    $x \in K$ and $y \in K^{*}$, then $\langle x,y \rangle \le 1$ for all $y \in
+    K^{*}$.
+
+    $K^{**} = \{z \vert y \in k^{*}, \langle z , y \rangle \le 1\}$
+
+    $K \subset K^{*}$
+
+    $x_0 \in K^{**} - K$, and $H_y = \{x \vert \langle x, y \rangle = 1\}$, $K
+    \subset H_y^{-}$ and $x_0 \in \int H_y^{+}$, $\forall x\in K, \langle x, y
+    \rangle \le 1 \implies y \in K^{*}$.
+
+    $x_0 \in \int H_y^{+} \implies \langle x_0, y \rangle > 1$ and $x_0 \notin
+    K^{**}$ which is a contradiction.
+*** Lemma 7 (Polar body)
+    Let $F$ be a face of $K$ and set
+
+    $\hat{F} = \{ y \in K^{*} \vert \forall x\in F, \langle x, y \rangle = 1\}$.
+
+    Then $\hat{F}$ is a face of $K^{*}$.
+**** Proof
+     What is the hat of the empty set? It is $K^{*}$.
+
+     $\hat{K}$, this has to be empty because $K$ contains $0$ and there is no
+     element $\langle y, 0 \rangle = 1$.
+
+     $F$ be a proper face and $x_0 \in \relint F$, Define (not really the dual)
+     $F^{*} = \{y \in K^{*} \vert \langle y, x_0 \rangle = 1\} = K^{*} \cap \{y
+     \vert \langle y, x \rangle = 1\}$. This is a face. Here $F$ is only true
+     for one $x_0$, but $\hat{F}$ should be true for every $x_0$. Thus $\hat{F}
+     \subset F^{*}$.
+
+     Now we need to prove the other side, i.e., $F^{*} \subset \hat{F} \subset
+     K^{*}$. (One should prove that) If $x \in F^{*} \implies x \in \hat{F}$. Or
+     $x \in K^{*} \setminus \hat{F} \implies x \in K^{*} \setminus F^{*}$.
+
+     $x \in K^{*}\setminus F\implies \exists x_1 \in F, \langle x, x_1 \rangle <
+     1$, now $x_0 \in \relint F$, this means that we can draw a segment between
+     $x_0$ and $x_1$ and $x_2$ be an element such that $x_0 = (1-\lambda)x_1 +
+     \lambda x_2$,
+
+     Now we should show that $\langle x, x_0\rangle \neq 1$. Now $\langle x, x_0
+     \rangle = \langle x, (1-\lambda)x_1 + \lambda x_2\rangle =
+     (1-\lambda)\langle x, x_1 \rangle + \lambda \langle x, x_2 \rangle$. We
+     know that $\langle x, x_1 < 1$ and $\langle x, x_1 \rangle \le 1$. All
+     together, we see that $\langle x, x_0 \rangle < 1$, which is what we wanted
+     to prove.
+
+     Thus $F^{*} = \hat{F}$ and $F^{*}$ is a face implying $\hat{F}$ is a Face
+     of $K^{*}$.
+*** Lemma 8 (Polar body)
+    The correspondence $F \mapsto \hat{F}$ between $F(K)$ and $F(K^{*})$ (Here
+    $K^{*}$ is the polar body) is bijective and inclusion reversing.
+**** Proof
+     $\hat{F} = \{y \in K^{*} \vert \forall x \in F, \langle x, y \rangle =
+     1\}$.
+
+     $F_1 \subset F_2$ faces of $K \implies \hat{F}_2 \subset \hat{F}_1$. This
+     is clear?
+
+     To complete, it suffices to prove that $\hat{\hat{F}} = F$
+
+     It suffices to prove that $\hat{\hat{F}} = \{ x\in K^{**} \vert \forall y
+     \in \hat{F}, \langle x, y \rangle = 1\}$ and $\hat{\hat{F}} = \{x \in
+     K\vert \forall y \in \hat{F}, \langle x, y \rangle = 1\}\supset F$
+
+     We need to prove that $\hat{\hat{F}} \subset F \subset K$.
+
+     Now $x_0 \in K\setminus F, \implies x_0 \in K\setminus {\hat{\hat{F}}$
+
+     $x_0 \in K \setminus F \implies x_0 \in K\setminus {\hat{\hat{F}}$, $x_0
+     \in \int H_y^{-} \implies \langle x_0, y \rangle < 1$.
+
+     $F = K \cap H_y = \{x \in K \vert \langle x, y \rangle = 1\} \implies y \in
+     \hat{F} \implies x_0 \notin {\hat{\hat F}}$
+** Theorem
+   Let $P$ be a $d$-polytope in $\R^d$ with $0 \in \int P$, then the polar
+   $P^{*}$ of $P$ is a $d$-polytope dual to $P$.
+*** Proof
+    We've already shown that the face lattice of $P^{*}$ is anti-isomorphic to
+    the face-lattice of $P$. But we don't know if $P^{*}$ is a Polytope.
+
+    We also know that $P$ is convex body. This means that $P^{*}$ is a convex
+    body, in particular, this means that $P^{*}$ is bounded. Now it suffices to
+    prove that it is the intersection of half spaces.
+
+    Let $Q \subset \cap \{y \vert \langle x, y \rangle \le 1\}$ a polyhedron.
+    $P^{*} \subset Q$ since $\vert P \subset P$.
+
+    It remains to prove that $Q \subset Q^{*}$. $\vert P = \{v_1, \cdots, v_k\}$
+    and $x\in Q$, $\langle x, v_1 \rangle \le 1, \cdots, \langle x, v_k \rangle
+    \le 1$.
+
+    $P = \conv \{v_1, \cdots, v_k\}\implies \forall y \in P, \exists \lambda_1,
+    \cdots \lambda_k \ge 0, y = \sum \lambda_i v_i, \lambda_i = 1$, for
+    arbitrary $y \in P$, we should prove that $\langle x, y \rangle \le 1$. Now
+    $\langle x, y \rangle = \langle x, \sum \lambda_i v_i \rangle = \sum
+    \lambda_i\langle x, v_i\rangle \le \sum \lambda_i \le 1$.
+
+    Thus we can conclude that $x\in P^{*}$, thus $P^{*}$ is a polyhedron. We
+    already proved that $P^{*}$ is bounded, thus it is a Polytope.
+** Remark (What about lattice?)
+   The family of faces with $\subset$ a lattice. $(F(P), \subset)$ is a lattice.
+
+   In order to be a lattice, every two elements must have an infimum and
+   supremum.
+*** Proof
+    $F_1$ and $F_2$ be face of $P \implies F_1 \wedge F_2 = F_1 \cap F_2$ and
+    $F_1 \vee F_2 = (\hat{F}_1 \wedge {\hat F}_2)$. This is how we define the
+    infimum and supremum.
+** Lemma
+   Let $P$ be a $d$ polytope and $0 \in \int P$. Let $L$ be an $n$ dimensional
+   linear subspace and $\sqcap \colon \R^d \rightarrow L$ corresponding
+   orthogonal projection. Then $L \cap P^{*}$ is the polar set in $L$ of
+   $\sqcap(P)$.
+   
+   There was a diagram drawn.
+
+   For $L \cap P^{*}$, polar of $\sqcap(P)$, we can decompose $\R^d = L \oplus
+   L^\perp$ So every element of $\R^d$ can be thought of as a sum of an element
+   of $L$ and an element of $L\perp$.
+
+   $\vert P = \{v_1, \cdots, v_k}$, $v_i = w_i + w_i^'$, where $w_i \in L$ and
+   $w_i' \in L^\perp$
+
+   $L \cap P^{*} = \{y \in L \cap \vert \forall x \in P, \langle x, y \rangle \le 1\}$
+
+   This is equal to $\{y \in L \vert \langle v_i, y \rangle \le 1\}$.
+
+   Now $\langle w_i, y \rangle + \langle w_i', y \rangle = \langle w_i + w_i', y
+   \rangle \le 1$.
+
+   This is same as $\{y \in L \vert \langle w_i, y \rangle \le 1\} = \cap
+   H_{w_i}^{-}(\textup{in} L)$ The last sum is $(\conv\{w_1, \cdots, w_k\})^{*}$
+   Each $w_i = \sqcap(v_i)$.
+
+   Then it is same as $\conv \{\sqcap(v_1), \cdots, \sqcap(v_k)\} =
+   \sqcap\conv{v_1, \cdots, v_k\} = \sqcap(P)$.
+** Theorem
+   Let $F_1$ be a $j$ face and $F_2$ a $k$ face of $P$ and $F_1 \subset F_2$,
+   then the sub lattice of $F(P)$ consisting of all faces $F$ such that $F_1
+   \subset F \subset F_2$ is isomorphic to a face lattice of some $k-j-1$
+   polytope we denote by $F_2/F_1$.
+*** Proof
+    We have $F_2, F_1$ and we have a sub lattice. Now consider $[F, F_2]$, take
+    a polar of $F_2$, the face lattice changes the position. Now it is a face
+    lattice of $[\hat{F}_1, \hat{F}_2]$.
+* Lecture 15 
+** Review
+   The dual of a polytope was discussed.
+** Quotient polytope
+*** Proposition
+    Let $P$ be an $n$ polytope $F_1$ a $j$ face of $P$ and $F_2$ be a $k$ face
+    of $P$ such that $F_2 \supset F_1$. Thus sublattice of all faces $F$ such
+    that $F_1 \subset F \subset F_2$ is isomorphic to a face lattice of a
+    $k-j-1$ polytope that we denote by $F_2/F_1$.
+*** Some random stuff
+    $F_2$ is a face of $P$, $F_2$ is a a face of $P$, $F_1 \subset F_2$.
+    $F_2^{*}$ is a polar of the $F_2$, $\hat{F}_1$ dual face of $F_1$ inside
+    $F_2$.
+
+    The face lattice of $\hat{F}_2$ is anti-isomorphic to $[F_1, F_2]$.
+
+    $(\hat{F}_1)^{*} \approx [F_1, F_2]$.
+
+    We can say that $F_2/F_1 \approx (\hat{F}_1)^{*}$.
+*** Corollary
+    If $\hat{F}_1$, $\hat{F}_2$ are face of $P^{*}$. $F_1 \subset F_2$ and
+    $\hat{F}_2 \subset \hat{F}_1$.
+
+    $\hat{F}_1/\hat{F}_2 \approx (F_2/F_1)^{*}$
+*** Corollary
+    If $F_1 \subset F_2 \subset F_3$ are faces of the polytope $P$. Then
+    $(F_3/F_1)/(F_2/F_1) \approx F_3/F_2$.
+** Definition (Face figure)
+   Let $P$ be a polytope and $F$ a vertex of $P$ with $H$ a hyperplane,
+   separating $F$ from $\vert P \setminus \{F\}$, then a vertex-figure of $P$ at
+   $F$ is the polytope $P \cap H$.
+
+   Why is it a polytope. Because we're intersecting a hyperplane with a
+   polytope. A picture was drawn.
+
+   $\int H^{*} \supset F$ and $\int H^{-} \supset \ver{P} - \{F}$
+** TODO Lemma
+   A vertex figure of $P$ at the vertex $F$ is combinatorially combinatorially
+   isomorphic to $P/F$.
+*** Proof
+    Let $x$ be the vertex $F$ and $Q = \conv(\vert P \setminus \{x\})$. Let $y$
+    be the closest point, $p_Q(x)$.
+
+    Then $H$ can be hyperplane perpendicular to $y-x$ passing through
+    $\frac{1}{2}(x+y)$.[fn:38]
+    
+    Then $H$ can be the hyperplane perpendicular to $y-x$ passing through
+    $\frac{1}{2}(x+y)$.
+
+    Since $H$ does not contain any vertex of $P$, $H$ intersect every face of
+    $P$ containing $x$ in the relative union.
+
+    Let $H'$ be a hyperplane defining a face of $P$ that contains $x$, then
+    $H'\cap (H \cap P)$ is the face of $H \cap P$.
+
+    Thus $H \cap P$ is combinatorially isomorphic to $P/x$.
+** Construction of quotient polytope using vertex figure
+   $\emptyset = F^{-1} \subset \cdots \subset F^{j-2} \subset F^{j-1} \subset
+   F_1 \subset F_2$
+
+   $F_2/F^{i}$ is combinatorially equivalent to the vertex figure of
+   $F_2/F^{i-1}$ at $F^{i}/F^{i-1}$. This is an inductive definition.
+
+   $F_2/F^{-1} = F_2$.
+
+   $F_2/F^{0}$ is a vertex figure of $F_2$.
+** Special types of Polytopes
+*** Simplex
+
+    Simplex is the convex hull of affinely independent points.
+
+    A $d$ dimensional simplex $T^d$, is the convex hull of $d+1$ affinely
+    independent points.
+
+    0 dim: point
+    1 dim: edge
+    2 dim: triangle
+    4 dim  tetrahedron
+
+    $\vert T^d = \{x_0, \cdots, x_d\}$, $x_0, \cdots, x_d$ are affinely independent.
+    
+    $\sum_0^d \lambda_i x_i' \in  \conv\{x_0, \cdots ,x_d\}$
+
+    Faces of $T^d$. Facets of $T^d$, $x_0, \cdots, x_d$ affinely independent
+    and $H_d = \aff\{x_0, \cdots, x_{d-1}\}$ hyperplane supporting hyperplane.
+    
+    $H_d \cap T^d = \conv\{x_0, \cdots, x_{d-1}\} \approx T^{d-1}$.
+    
+    Now we can apply induction. This way every subset of vertices is a face of y
+    polytope.
+
+    $F(T^d) \approx P(\ver T^d) = \textup{Boolean lattice} \approx B_{d+1}$.
+
+    $f_k(T^d) = \binom{d+1}{k+1}$, $0 \le k \le d$.
+*** Simplicial
+    A polytope $P$ with all proper faces being simplices is called simplicial. A
+    polytope $P$ where dual $P^{*}$ is simplicial is called simple.
+
+    An example of a simplicial polytope is a bi-tetrahedron. An example of a
+    simple is a cube.
+** Lemma
+   An $n$ polytope is simple if and only if each vertex is contained in exactly,
+   $n$ edges.
+*** Proof
+    $P$ is a simple polytope $\implies P^{*}$ is simplicial.
+
+    $v$ is a vertex and $e_1, \cdots, e_m$ edges, containing $v$, $\implies
+    \hat{v}$ is a face of $P^{*}$ and $\hat{e}_1, \cdots, \hat{e}_m$ are ridges
+    of $P^{*}$ containing $\hat{v}$, or $\hat{e}_1, \cdots, \hat{e}_m$ are
+    facets of $\hat{v}$. Simplex of dimension $n-1$.
+
+    $P$ is a polytope with such vertex contained in $n$ edges, implies that
+    every face of $P^{*}$ contains exactly $n$ ridges. This implies every facet
+    $(n-1)$ dimensional polytope of $P^{*}$, $n$ facets.
+** Definition
+   Let $Q$ be an $n-1$ dimensional polytope in $\R^n$ and $v\notin \aff{Q}$. The
+   polytope $P = \conv(Q \cap \{v\})$ is a pyramid with base $Q$ and apex $v$.
+
+   $d-1$ fold of a pyramid is the $d$ face of $d$ pyramid which is a simplex.
+** Lemma
+   $f_k(P) = f_k(Q) + f_{k-1](Q)$, $0 \le k \le n$.
+
+   $f_{-1}(Q) = f_{n-1}(Q)=1$, $F_i(Q) = 0$ for $i < -1$ and $i > n-1$.
+*** Proof
+    Let $H$ be a supporting hyperplane of $P$. Then $v \notin H$, $H \cap P = H
+    \cap Q$ is a face of $Q$.
+
+    $v \in H$ and $H \cap (\ver P - v)$ gives a face in $Q$, $H \cap P = \con
+    (\{v \} \cup$ cone of a face of $Q \cap H$.
 * Footnotes
+
+[fn:38] It's sort of like we choose a hyperplane such that, it passes through
+    the two vertices that are adjacent to the polytope. It's as if, we create a
+    polytope where we remove the vertex. Okay, this might be wrong.
+
+[fn:37] We know that the body is full dimensional because we have an interior point.
+
+[fn:36] Apparently was asked in the Oral exam.
 
 [fn:35] For manifolds this proves that the top homology is exactly $\Z$.
 
