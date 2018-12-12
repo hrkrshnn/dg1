@@ -3,6 +3,7 @@
 #+LATEX_HEADER: \usepackage[left=2cm, right=2cm, bottom=2cm, top=2cm]{geometry}
 #+LATEX_HEADER: \usepackage{parskip}
 #+LATEX_HEADER: \usepackage{mathrsfs}
+#+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \def\R{\mathbb{R}}
 #+LATEX_HEADER: \def\Z{\mathbb{Z}}
 #+LATEX_HEADER: \def\N{\mathbb{N}}
@@ -806,7 +807,7 @@
    1. Point.
    2. Disc
    3. Cube
-   4. Octahedron. Cross polytope? In $\R^n$, we have a standard basis $(e_1,
+   4. Octahedron. Cross polytope? In $\R^n$ we have a standard basis $(e_1,
       \cdots, e_n)$. We take $\{e_1, \cdots, e_n\}$. The convex hull $\{e_1,
       \cdots, e_n, -e_1, \cdots, -e_n\}$ is a cross polytope. A three
       dimensional cross polytope is an Octahedron.
@@ -1541,7 +1542,7 @@
 
    $B(P)$ boundary complex.
 
-   $\psi B(P) \rightarrow B(Q)$, then $P \equiv Q$ are combinatorially
+   $\psi\colon B(P) \rightarrow B(Q)$, then $P \equiv Q$ are combinatorially
    equivalent.
 * Lecture 13 <2018-11-27 Tue>
 ** Recap
@@ -2030,7 +2031,7 @@
    Let $Q$ be an $n-1$ dimensional polytope in $\R^n$ and $v\notin \aff{Q}$. The
    polytope $P = \conv(Q \cap \{v\})$ is a pyramid with base $Q$ and apex $v$.
 
-   $d-1$ fold of a pyramid is the $d$ face of $d$ pyramid which is a simplex.
+   $d-1$ *fold* of a pyramid is the $d$ face of $d$ pyramid which is a simplex.
 ** Lemma
    $f_k(P) = f_k(Q) + f_{k-1](Q)$, $0 \le k \le n$.
 
@@ -2041,7 +2042,154 @@
 
     $v \in H$ and $H \cap (\ver P - v)$ gives a face in $Q$, $H \cap P = \con
     (\{v \} \cup$ cone of a face of $Q \cap H$.
+* Lecture 16 <2018-12-12 Wed>
+** Special types of polytopes
+*** Simplex
+    A convex hull of affinely independent points.
+
+    $f_k(T^d) = \binom{d+1}{n+1}$
+
+    $F(T^d) = P([d+1])$
+
+    $[d+1] = \{1, \cdots, d+1\}$.
+*** Simplicial and simple polytopes
+    Polytopes with all proper faces being simplices.
+    
+    Simple polytope: the dual is simplicial.
+
+    $P$ is simple if and only if every vertex is contained in $\dim P$ edges.
+*** Pyramid
+    Is convex hull of $\{Q, p\} \subset \R^n$. Where $\dim Q = n - 1, p \notin
+    \aff Q$
+
+    $\vert P = \vert Q \cap \{p\}$
+
+    $f_k(P) = f_k(Q) + f_{k-1}(Q)$, $0 \le k \le n-1$.
+
+    $f_{-1}(Q) = 1 = f_{n-1}(Q)$, $f_i(Q) = 0, i < -1, i > n-1$.
+*** Remarks
+    1. Any $d$ polytope is $0$ fold $d$ pyramid.
+    2. A polytope $P$ is an $r$ fold, $d$-pyramid if it is a pyramid over an
+       $r-1$ fold $d-1$ pyramid $Q$ and basis of $P$ and $Q$ are the same. The
+       base is a polytope of dimension $d-r$.
+*** Lemma
+    If $Q_1 \approx Q_2$ and $P_1, P_2$ are pyramids over $Q_1$, $Q_2$
+    respectively, then $P_1 \approx P_2$. Here $\approx$ means combinatorially
+    isomorphic. [fn:39]
+*** Lemma
+    Let $P$ be an $r$ fold, $d$ pyramid over $Q$, then $1$-fold pyramid over
+    $d-1$, $G$.
+
+    $f_k(P) = \sum_{i=0}^{r} \bionom{r}{1} f_{k-1}(Q)$
+
+    $f_k(P) = \sum_{i=0}^{k} \binom{i}{1}f_{k-i}(Q) = f_k(a) + f_{k-1}(Q)$.
+**** Proof
+     Induction hypothesis: Formula holds for $r$ fold $d$ pyramids (where $d$ is
+     anything.)
+
+     $P$ is an $r+1$ pyramid over $Q$.
+
+     $P$ is a $1$ pyramid over $R$ where $R$ is $r$ pyramid over $Q$.
+
+     $f_k(P) = f_k(R) + f_{k-1}(R) = \sum_{i=0}^{r} \binom{r}{i} f_{k-1}(Q) + \sum_{i=0}^{r} \bionom{r}{i} f_{k-1-i}(Q)$
+     
+     This is equal to $\sum_{i=0}^{r}\binom{r}{i} f_{k-1}(Q) +
+     \sum_{j=1}^{r+1}\bionom{r}{j-1}f_{k-j}(Q)$.
+
+     $f_k(Q) + \sum_{j=0}^{n}(\bionom{r}{j} + \bionm{r}{j-1}) f_{k-j}(Q) +
+     f_{k-r-1}(Q)$
+*** Theorem
+    If $p$ is an $r$ fold pyramid, then $P^{*}$ is an $r$ fold pyramid.
+**** Proof
+     $P = \conv{Q \cup \{p\}\}$, $Q$ base, $p$ is the appex of $P$.
+
+     $\hat{Q}$ is a vertex of $P^{*}$ and $p$ is a face of $P^{*}$. These two
+     statements imply that $q$ is a vertex of $P^{*}$ and $q \neq \hat{Q}$.
+     There is a facet of $L$ of $P$ such that $q = \hat{L}$. $Q$ is a base of
+     pyramid.
+
+     $L$ is another facet. $L$ is another facet of $P$. This means that $L$
+     contains the appex. Now, duality, $\hat{L} = q$ is contained in $\hat{p}$,
+     which is a facet. Thus $P^{*}$ is a pyramid.
+
+     What about $r$ bigger than $1$? Do the induction.
+**** Exercise
+     What would be the Hasse diagram of a pyramid, given the Hasse diagram of
+     the base?
+** Bipyramid
+   Let $Q \subset R^n$ be an $n-1$ polytope and $I = [p, q]$ be a $1$ dimensional
+   polytope such that, $\relint Q \cap \relint I = \text{pint}$
+
+   The polytope $B = \conv{Q \cup \{p, q\}) = \conv(Q \cup I)$ is a bipyramid
+   over $Q$.
+
+   Face of $B$, $F = B \cap H$, face of $B$
+
+   1. $\ver  F \subset  \ver Q$
+   2. $p \in \ver F$
+   3. $q \in \ver F \implies \vert F - \{p\} \subset \vert Q$
+   4. $p, q \in \ver F$. This case is not possible.
+*** Lemma
+    $f_k(B) = f_k(Q) + 2f_{k-1}(Q)$, for $0 \le k \le n-1$ Here $k$ are
+    vertices. $\dim B = n$. (Here $f$ is sort of like the degree vector)
+**** Proof
+     $\dim Q = n-1$.
+
+     $f_{n-1}(Q) = 2f_{n-2}(Q)$.
+*** $r$ fold $d$ bipyramid
+    $P$ is $r$ fold $d$-bipyramid, if it a bipyramid over $r-1$ fold $d-1$
+    bipyramid and the basis are the same.
+
+    What is $d-1$ fold $d$ bipyramid, $d$ fold $d$ bipyramid. This will in fact
+    be a cross-polytope.
+*** Lemma
+    If $Q_1 \approx Q_2$ and $P_1$, $P_2$ are bipyramids over $Q_1, Q_2$
+    respectively, then $P_1 \approx P_2$.
+*** Cross Polytope
+    We're in $\R^n$ and $e_1, \cdots, e_n$ be a basis, then $C^n = \conv\{e_1,
+    \cdots, e_n, -e_1, \cdots, -e_n\}$. If $\langle e_i, e_j \rangel =
+    \delta_{ij}$, and $\Vert e_i\Vert = \Vert e_j \Vert$ for all $i, j$, then
+    $C^d$ is regular cross polytope.[fn:40]
+
+    $f_k(C^n) = 2^{k+1} \binom{n}{k+1}$.
+
+    How does one think about it? The typical $k$ face of $C^n$ is the convex
+    hull $\{\epsilon_0, e_{i_0}, \cdots, e_{i_k}\}$. There was some argument
+    about counting.
+*** Ordrent
+    In $n$ dimensional space, given a basis. Then instead of base, we look at
+    the orthogonal complements. These are hyperplane. These are called
+    $\{e_1^\perp, e_2^\perp, \cdots, e_n^\perp\}$. Now, $\R^n$, without these
+    $n$ perpendicular things would have $2^n$ components.
+** Prism
+   Let $Q \subset \R^n$ be an $n-1$ polytope and $Q'$, its translate by a vector
+   in a corresponding linear subspace to the $\aff Q$.
+
+   We use the definition that it is the convex hull of $Q \cup Q'$.
+
+   What are the number of faces?
+   
+   $f_k(P) = 2f_k(Q) + f_{k-1}(Q)$, $1 \le k$
+
+   $f_0(P) = 2f_0(Q)$.
+
+   What about $n-1$?
+*** $r$ fold $d$ prism
+    A prism over $r-1$ fold $d-1$ prism. What is $d-1$ fold $d$ prism?
+
+    $d-1$ fold $d$ prism is the $d$ fold $d$ prism which is a $d$ parallelotop.
+** Lemma
+   If $Q_1 \approx Q_2$ and $P_1, P_2$ prisms over $Q_1$ and $Q_2$, then $Q_1
+   \approx Q_2$.
+** Cube
+   A $d$ cube is $d$ parallelotop or $[0,1]^d$.
+
+   $f_k(\textup{cube}) = 2^{dk} \binom{d}{k}$ for $0 \le k \le d$.
 * Footnotes
+
+[fn:40] All polytopes in dimension 2 are either simple and simplicial.
+
+[fn:39] What is combinatorially isomorphic?
 
 [fn:38] It's sort of like we choose a hyperplane such that, it passes through
     the two vertices that are adjacent to the polytope. It's as if, we create a
