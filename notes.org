@@ -14,6 +14,7 @@
 #+LATEX_HEADER: \def\ver{\operatorname{ver}}
 #+LATEX_HEADER: \def\relint{\operatorname{rel\ int}}
 #+LATEX_HEADER: \def\conv{\operatorname{Conv}}
+#+LATEX_HEADER: \def\card{\operatorname{Card}}
 #+LATEX_HEADER: \usepackage[T1]{fontenc}
 * Lecture 1
 * Lecture 2 <2018-10-17 Wed>
@@ -2185,6 +2186,142 @@
    A $d$ cube is $d$ parallelotop or $[0,1]^d$.
 
    $f_k(\textup{cube}) = 2^{dk} \binom{d}{k}$ for $0 \le k \le d$.
+* Lecture 17 <2018-12-18 Tue>
+** Review
+*** Simplex, simplicial polytopes, simple polytopes
+*** Pyramids
+    r fold d pyramids, $d-1$ fold d pyramid, d fold d pyramid, d simplex
+*** Bipyramids
+    r fold d pyramid, $d-1$ fold d bipyramid, $d$ fold $d$ bipyramid.
+
+    Cross polytope.
+*** Prism
+    r fold d prism, $d-1$ fold d prism, d cube, d parallelotop, d fold d prism.
+*** Cyclic polytopes
+** Moment curve
+   $\alpha(t) = (t, t^2, t^3, \cdots, t^d) \in \R^d$.
+
+   An example of curve of order $d$.
+
+   $M = \{\alpha(t) \vert t \in \R\}$ is the moment curve. $H \subset \R^d$ a
+   hyperplane, $\operatorname{card}(H \cap H) \le d$.
+
+   $H = \{x \in \R^d \vert \langle x, a \rangle = \alpha \}$.
+
+   This is same as $a_1 x_1 + \cdots + a_d x_d = \alpha$, $a_0t + \cdots + a_d
+   t^d = \alpha$. This is a polynomial equation, and hence has at most $d$
+   number of roots.
+
+**** Claim
+     For every hyperplane, the cardinality of $H \cap M$ is less than or equal to $n$
+** More about moment curves
+   $V \subset M$ be a finite set with $v = \vert V \vert$. $C(v, d) =
+   \conv\{\alpha(t) \vert \alpha(t) \in V\} = \conv\{x_1, \cdots, x_r\} =
+   \conv\{\alpha(t_1), \cdots, \alpha(t_v)\}$
+
+   $V = \{x_1, \cdots, x_r \vert \textup{where } x_i = \alpha(t_i)\}$.
+** Remark
+   Notation $C(v, d)$ indicated that cyclic polytope (its combinatorial class)
+   depends only on dimension and the number of points.
+** Lemma
+   $C(v, d)$ is a simplicial polytope.
+*** Proof
+    $C(v, d) = \conv\{\alpha(t_1), \cdots, \alpha(t_n)\}$
+*** Claim
+    Set of points $\{x_1, \cdots, x_r\}$ is in *general position*, which means
+    that every subset of at most $d+1$ points is affinely independent.
+*** Proof
+    Every subset of $\{x_1, \cdots, x_v\}$ of cardinality $d+1$ are affinely
+    independent. $\R^d \mapsto \R^{d+1}, (x_1, \cdots, x_{d+1}) \mapsto (1, x_0,
+    \cdots, x_d)$, points $x_1, \cdots, x_{d+1}$ are affinely independent if and
+    only if the vertex $(1, x_1), \cdots, (1, x_{d+1})$ in $\R^d$ are linearly
+    independent.
+
+    |        1 | $t_1$     | $t_1^2$     | $\cdots$ | $t_1^d$       |
+    |        1 | $t_2$     | $t_2^2$     | $\cdots$ | $t_2^d$       |
+    | $\cdots$ | $\cdots$  | $\cdots$    | $\cdots$ | $\cdots$      |
+    |      $1$ | $t_{d+1}$ | $t_{d+1}^2$ | $\cdots$ | $t_{d+1}^{d}$ |
+
+    The above determinant is called the Van der Monde determinant and the value
+    is equal to $\prod_{1 \le i \le d+1} (t_i - t_j)$ The determinant is zero
+    only if some of $t_i$ coincide. But we don't have it here.
+*** $C(V, d)$ is simplicial
+    $C(v, d) \cap H = \conv W$, where $H$ is a support hyperplane and $W \subset
+    V$ be vertices and $\card W \ge d+2$. (Why don't we assume it's less, if
+    less, then, then are affinely independent, and hence has to be a simplex.)
+
+    $W = \{w_1, \cdots, w_k \vert k \ge d+2\}$ and $W \subset H$, $\dim H =
+    d-1$. On the other hand, we have too many points, therefore we have an
+    affine dependence. Thus $w_i = \sum_{i = 2}^{k} \lambda_i w_i$ where
+    $\sum \lambda_i =1$.
+
+    Now, we use Caratheodery's theorem, we can use without loss of generality
+    that we used only $d$ points in the sum.
+
+    $w_1 = \sum_{i=2}^{d+1} w_j$, but then $w_1, \cdots, w_{d+1}$ are affinely
+    dependent is a contradiction.
+** More about $C(V, d)$
+   $C(v, d) = \conv V$, $V \subset M, \card V = v$.
+
+   $V = \{x_1, \cdots, x_v\} \subset M$.
+
+   $x_i = \alpha(t_i), t_1 < t_2 < \cdots < t_v$.
+
+   $V$ has linear order. $W \subset V$, fix $X \subset W$ is *contiguous* if
+   there exist $1 \le i \le j < v$ such that $X = \{x_i, x_{i+1}, \cdots ,x_j\},
+   x_{i-1}\notin W, x_{j+1} \notin W$
+
+   $Y \subset W$ is an *end set* if there exist $2 \le i \le v-1$ such that $V =
+   \{x_1, \cdots, x_{i-1}\}$ and $x_i \notin W$ and $Y = \{x_{i+1}, \cdots,
+   x_v\}$ and $x_i \notin W$. or $Y = \{x_{i+1}, \cdots, x_v\}$ and $x_i \notin
+   W$, $k+1 + k \le v \implies k \le \lfloor \frac{v-1}{2}\rfloor$.
+
+   Every $W \subset V$ has unique presentation as a disjoint union $W = Y\cap
+   X_1 \cup \cdots \cup X_k \cup Y_2$, where $x_i$ are contiguous and $y_j$ end
+   sets.
+** Definition
+   $W \subset V$ is of type $(r, s)$ if 
+
+   1. $\card W = r$
+   2. $W$ has $s$ contiguous sets with odd number of points.
+** Proposition
+   Let $W$ be a subset of $V = \vert C(v, d)$ where $v \ge d + 1$. Then $\card
+   W$ is a $k$ face of $C(v, d)$, $0 \le k \le d-1$ if and only if $W$ is of
+   type $(k+1, s)$ where $0 \le s \le d - k -1$.
+*** Proof
+    We know that $C(v, d)$ is simplicial, $\implies$ ($\conv W$ is a $k$ face
+    $\implies$, $\card W = k+1$.)
+
+    We take two different cases.
+ 
+    1. $\card W = d$; $W$ is a facet of $C(v, d) \iff W$ is of type $(d, 0)$.
+
+       $W$ is affinely independent, $H = \aff W$ is a hyperplane.
+
+       $M$ is a curve of order $d \implies H \cap M = W$, $H \cap (V \setminus
+       W) = \emptyset$.
+
+       Points of $W$ cut the moment curve $M$ into $d+1$ arc with points from $V
+       \setminus W$ into the interior of these arcs.
+
+       $\conv W$ is a face of $C(v, d) \implies H$ is a support hyperplane for
+       $C(v, d) \implies V \setminus W$ is on one side of $H$. Therefore, two
+       points in $V \setminus W$ should be separated only with even contiguous
+       sets.
+       
+       Which means that there should not be odd contiguous sets. Thus, there are
+       only even contiguous sets. Hence the statements $\conv W$is a face of
+       $C(v, d)$ is equivalent to $H$ is a support hyperplane of $C(v, d)$.
+    2. $\card W = k+1, W \subset V$. $W \subset V$, $W$ is of type $(k+1, s$, $0
+       \le s \le d-k-1$.
+
+       1. Assume that $s$ is indeed between $0$ and $d - k - 1$, this means,
+          there are at most $d-k-1$ odd contiguous sets. Now there is $T \subset
+          M$ such that $V \cap T = \emptyset$ and $W \cup T$ is of the type $(d,
+          0)$. This means that $\conv (W \cup T)$ is a facet in $\conv (V \cup
+          T) \supset \conv V = C(v, d) \implies \conv W$ is a face of $\conv (W
+          \cup T)$ and $\conv(W \cup T)$ is a face of $\conv (V \cup T)$.
+          Tomorrow, we'll do that $\conv W$ is a face of $C(v, d)$.
 * Footnotes
 
 [fn:40] All polytopes in dimension 2 are either simple and simplicial.
