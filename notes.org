@@ -2322,7 +2322,137 @@
           T) \supset \conv V = C(v, d) \implies \conv W$ is a face of $\conv (W
           \cup T)$ and $\conv(W \cup T)$ is a face of $\conv (V \cup T)$.
           Tomorrow, we'll do that $\conv W$ is a face of $C(v, d)$.
+* Lecture 18
+  Books [fn:41]
+** Cyclic Polytope
+   $M = \{(t, t^2, \cdots, t^{d}) \vert t \in \R\}$
+
+   $t_1 < \cdots < t_v$ and $x_i = \alpha(t_i)$ and $C(v, d) = \conv \{x_1, x_2,
+   \cdots, x_v\}$ and $C(v, d)$ is a cyclic Polytope.
+
+   $V \subset M$ and $\card V = r$, $V$ is a $v$ set on $M$ and $W \subset V$.
+
+   $X \subset W$ is contiguous if there are $1 < i \le j < v$.
+
+   $X = \{x_i, \cdots, x_j\}, x \notin W, x_{j+1} \notin W$.
+
+   $Y \subset W$ is an end set if there is $1 < i < v$ such that $Y = \{x_1,
+   \cdots, x_{i+1}\}$, $x_i \notin W$, $Y = \{x_{i+1}, \cdots, x_v\}$, $x_i
+   \notin W$.
+
+   $W \subset V$ is of type $(r, s)$ if $\card W = r$ and $W$ has odd contiguous
+   sets.
+
+   For every $W \subset V$, there is a unique presentation $W = Y_1 \cup X_1
+   \cup \cdots \cup X_k \cup Y_2$ where $X_i$ are contiguous and $Y_i$ end sets
+   be empty.
+** Proposition
+   Let $V \subset M$ and $\cad V = v$. For $W \subset V$ holds $\conv W$ is a
+   face of $C(v, d) = \conv V \iff W$ is of type $(k+1, s)$ with $0 \le 1 \le d-
+   k- 1$.
+*** Proof
+    Part 1: $k = d-1 \iff \conv W = k+1$. Let $W \subset V$ and $\card W = d$,
+    $W \subet M$ and $\card W = d \implies W$ is affinely independent.
+    Therefore, affine hull of $H$ is same as affine hull of $W$.
+
+    $M$ is an order $d$ curve (this means that if you cut the moment curve with
+    the hyperplane, there are at most $d$ intersections.)
+
+    This implies that $V \cap H \supset W$ and $V \subset M$ and $\card(M \cap
+    H) \le d$. 
+
+    $W$ cuts $M$ into $d+1$ arcs and etc.
+
+    $\conv W$ is a face of $C(V, d) \iff \aff W = H$ is a support hyperplane of
+    $C(V, d) \implies C(v, d) \subset H^{-}$ and $V \cap H = W \implies V
+    \setminus W \subset \int H^{-} \implies$ $W$ has odd contiguous sets.
+
+    Part 2: $W \subset V$ is of type $(V + 1, s)$ where $0 \le s \le d - k- 1$.
+
+    Where $s \le d - k - 1$ odd contiguous sets.
+
+    Now, there is $t \subset M$ with $\card W = d - k - 1$ such that $T \cap V =
+    \emptyset$. Then, $W \cup T$ in $V \cup T$ has no odd contiguous sets.
+
+    $C(v, d) = \conv V$
+
+    $C(v+d - k - 1, d) = \conv(V \cup T)$
+
+    $C(V, d) \subset C(v, d - k -1, d)$. By the first part of the proof, $W \cup
+    T$ is a facet of $C(v + d - k - 1, d)$ with supporting hyperplane, $H =
+    \aff(W \cup T)$.
+
+    Summary: $C(v, d) \subset C(v + d - k - 1, d) \subset H^{-1|$ (some abuse of
+    notation, the second one is the convex hull of $V \cup T)
+
+    $W \cup T = (V \cup T) \cap H$.
+
+    $W = V \cap H$, this $H$ cuts $V$ only in $W$. We are done, why? Now $H$ is
+    also a support hyperplane of the smaller one. This already follows from the
+    previous one.
+
+    (b) $W \subset V$ and $\card W = k + 1$ is a face
+
+    (I missed several parts of this proof.)
+** Definition
+   A Polytope is $k$ neighbouring if every subcollection of $k$ vertices of $P$
+   is set of vertices of a proper face.
+** Proposition
+   $C(v, d)$ for $v > d+1$ is $\lfloor \frac{d}{2} \rfloor$.
+*** Proof
+    $V \subset W \subset V$ and $\card W \le \lfloor \frac{d}{2} \rfloor$.
+
+    We want to show that it is a face. We have a criterion for this.
+
+    If $W$ is of type $(\card W, s)$, since $s \le \card W$, the number of all
+    contiguous sets cannot exceed $W$.
+
+    $s \le W$is
+** Proposition
+   $f_k(v, d)$ is the number of $k$ faces of $C(v, d)$
+
+   1. $f_k(v, 2n) = \sum_{j = 1}^{n} \frac{v}{v-j} \binom{v-j}{j} \binom{j}{k+1
+      -j}$ for $0 \le k \le 2n -1$.
+   2. $f_k(v, 2n + 1) = \sum_{j = 1}^{n} \frac{k+2}{v-j} \binom{v - j}{j+1}
+      \binom{j+1}{k+1-j}$ for $0 \le k \le 2m$.
+*** Proof
+    $W \subset V$ is a vertex set of $k$ face in $C(v, d) \iff W$ is of type
+    $(k+1, s)$ where $0 \le s \le d - k - 1$.
+
+    $v$ points $V$ is a subset of $v$ points on the closed simple curve every
+    point of $v$ has a successor and predecessor.
+    
+    Something about Group actions were discussed.
+
+    (A) $d = 2n$, $W \subset V$ of type $(k+1, s)$ or $(k+1, s - 1)$ where $k +
+    1= s(\mod 2)$.
+
+    $W$ is of type $(k+1, s)$ and $k+1 \equiv s (\mod 2)$, then, then number of
+    points in the end sets is even.
+
+    $W = Y_1 \cup X_1 \cup \cdots \cup X_k \cup Y_2$,
+
+    $k+1 = \vert Y_1 \vert + \vert Y_2 \vert + \textup{even } + s\cdot \textup{
+    odd }$.
+
+    $W$ is of type $(k+1, s- 1)$ and $k+1 = s (\mod 2)$, then the number of
+    points in the end set is odd.
+
+    Pictures of circuits were drawn. Type of a circuit: the cardinality of the
+    number of odd continuous sets.
+
+    $p(v, k+1, s)$ is the number of distinct $W_1 \subset V_1$ of type $(k+1,
+    s)$ where $s = k + 1 (\mod 2)$ This is same as the number of distinct sets
+    $W \subset V$ of type $(k+1, s)$ or $(k+1, s-1)$ where $1 \equiv k + 1
+    (\mod 2)$.
+
+    $f_k(v, 2m) = \{W \subset V \vert W \textup{ is of type (k+1, s), 0 \le 1
+    \le \}$.
+* Lecture 19 <2019-01-08 Tue>
 * Footnotes
+
+[fn:41] Gunter Ziegler, Lectures on Polytopes (Springer), McMallen and Shepherd,
+Convex polytopes and the upper Bound conjecture.
 
 [fn:40] All polytopes in dimension 2 are either simple and simplicial.
 
