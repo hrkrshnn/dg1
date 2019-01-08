@@ -2449,7 +2449,162 @@
     $f_k(v, 2m) = \{W \subset V \vert W \textup{ is of type (k+1, s), 0 \le 1
     \le \}$.
 * Lecture 19 <2019-01-08 Tue>
+** Cyclic Polytope
+   $M$ is a moment curve and $\{(t, t^2, \cdots, t^d) \in \R^d \vert t\in \R\}$.
+   $V = \{x(t_1), \cdots, x(t_v) \} \subset M$
+
+   $C(V, d) = \conv V$ which is a cyclic polytope.
+
+   $C(V, d)$ is a simplicial polytope. 
+
+   Any $d+1$ different points on $M$ are affinely dependent.
+
+   Each face of $C(V, d)$ is contained in a hyperplane and so can have at most
+   $d$ points from the moment curve.
+
+   $V \subset M$ a $v$ set and $W \subset V$, $W = Y_1^w \cup X_1^W \cup \cdots
+   \cup X_t^w \cup Y_w^w$ where $X_i$ are independent sets, $X_i = \{x_a,
+   x_{a+1}, \cdots, x_{a+l}\}$, $x_{a+1} \notin W$ and $x_{a+1} \notin W$, $Y_1
+   = \{x_1, x_2, \cddots, x_a\}$, $x_{a+1} \notin W$, $Y_2 = \{x_g, x_{g+1},
+   \cdots, x_v\}$ and $x_{g-1} \noint W$. (Not super sure about the indices)
+
+   $W \subset V$ is of type $(r, s)$ if $\card W = r$ and $s$ the number of odd
+   contiguous sets.
+** Theorem
+   Let $v \ge d+2$ and $V \subset M$ with $\card V = v$, $W \subset V$ is a
+   vertex set of a $k$ face $\card W$ of $C(v, d) = \card V$ if and only if $W$
+   is of type $(k+1, s)$ with $0 \le s \le d - k - 1$.
+
+   $C(V, d)$ is the class of all polytopes combinatorially equivalent to $\conv
+   V$ where $V \subset M \subset \R^d$ is a $v$ set.
+** Definition
+   A polytope $P$ is $k$ neighbouring if every subset of $\vert P$ of
+   cardinality $k$ is a vertex set of a face of $P$.
+** Proposition
+   A cyclic polytope $C(V, d)$ is $\lfloor d/2\rfloor$ neighbouring.
+*** Proof
+    $k = \lfloor \frac{d}{2} \rfloor$ and $W \subset V$ with $\card W = k$, $W$
+    is of type $(k, s)$ where $s \le k = \lfloor \frac{d}{2} \rfloor \le d -
+    \lfloor \frac{d}{2} \rfloor$, $W$ is a face of $C(V, d)$ and $C(V, d)$ is
+    $k$ neighbouring.
+** Example
+   $G$ is a group, finite.
+
+   $\Z$ is the cyclic group, $= \langle 1\rangle, \langle -1 \rangle$.
+
+   $\Z_n = \{0, \cdots, n-1\}$ (we will assume the addition operation)
+
+   $C_n = \{1, t, t^2, \cdots, t^{d+1}\}$ with $t^n = 1$, this is the algebraic
+   notation.
+
+   Generators of $\Z_n$ are all $0 < i < n$ such that $(n, i) = 1$.
+
+   $S_n$ is the group of all permutations of the set $[n]$.
+
+   $D_{2n}$ the group of Isometries of regular $n$ gon. $D_{8}$ is known to be
+   commutative. $S_n$ is only commutative for $n = 2$.
+
+   $X \neq 0$ be a set, $G$ is a group, $G$ acts on $X$ from the left if there
+   is a map, $G \times X \rightarrow X$, $(g, x) \mapsto g\cdot x$. such that
+
+   1. $g \cdot (h \cdot x) = (g \cdot h) \cdot x$
+   2. $1 \cdot x = x$.
+
+   An example. Consider $R^2$ and $\Z_2 = \{1, t\}$, $t \cdot x = - x$.
+
+   We are more interested in actions of groups on finite sets.
+
+   $G$ acts on $G$ as $G \cdot G \rightarrow G$, $(g, x) \mapsto gx$.
+
+   An example we want to work with is $\Z_n$
+
+   $G$ acts on $X$, $x \in X$, $G \cdot x = \{g \cdot x\vert g \in G\}$, the
+   orbits of $x$.
+
+   $G_x =\{h \in G \vert h \cdot x = x\} \subset G$. This is called the
+   stabilizer of $x$.
+
+   The first thing one can notice is that the number of points in $\card Gx =
+   \card G / \card G_x = [G \colon G_x]$.
+
+   $X = \sqcup_{x \in T} G \cdot x \implies \card X = \sum_{x \in T} \card(G x)
+   = \sum_{x \in T} \card D/\card G_x$.
+** TODO Theorem 
+   [fn:42] For cyclic polytopes.
+
+   $f_k(v, 2n) = \sum_{j = 1}^{n} \frac{v}{v-j}\binom{v-j}{j} \binom{j}{k+1 -
+   j}$, $0\le k \le 2n - 1$.
+
+   $f_k(v, 2n+1) = \sum_{j = 0}^{n} \frac{k+2}{v-j} \binom{v-j}{j+1}
+   \binom{j+1}{k+1 - j}$, $0 \le k \le 2n$.
+*** Proof
+    When $d = 2n$, we need to compute $f_k(v, 2n)$, this $\card \{ W \subset V
+    \vert W \textup{ is of type } (k+1, s)\textup{ where } 0 \le s \le 2n - k +
+    1 \}$.
+
+    This is same as $\sum_{0 \ls s le 2n - k + 1} \card \{W \subset V \vert W
+    \textup{ is of type (r, s)}\}$.
+
+    This is again same as $\sum_{0 \le s \le 2n - k + 1, s = k+1 (\mod 2)}
+    \left( \card \{W \subset V \vert W \textup{ is of type (r, s) or (r, s -
+    1)}\} + \card \{W \subset V \vert W \textup{ is of type (r, s)}\} \right)$.
+    Now we have everything.
+
+    $V$ circuit is $V \subset S^1$ circle. $\vert V \vert = v$.
+
+    $W \subset V$ and $W = X_1 \cup X_2 \cup \cdots X_t$.
+
+    $s = k+1 \mod 2$. $W$ is of type $(k+1, s)$, $\vert W \vert = \vert Y_1
+    \vert + \vert Y_2 \vert + \textup{even} + s \cdot \textup{odd}$. This would
+    be similar, $k + 1 = \vert W \vert = \vert Y_1 \vert + \vert Y_2 \vert +
+    \textup{even} + (s-1) \textup{odd}$.
+
+    1. $W$ is of type $(r, s) \implies$ the number of points in end sets is
+       even.
+    2. $W$ is of type $(n, s-1) \implies$ number of points in the end sets is
+       odd.
+
+    $f_k(v, 2n) = \sum_{0 \le s \le 2n - k - 1, s \equiv k + 1 (\mod 2)} \{W_1
+    \subset V_1 \vert W_1 \textup{ is of type (r, s)}\}$
+
+    $s = k+1 \mod 2$, $p(v, k+1, s) =$ the number of $W \subset V$ of type
+    $(k+1, s)$ and $(k+1, s-1)$. This is equal to the number of $W_1 \subset
+    V_1$ of type $(k+1, $
+
+    $p(v, k+1, s)$ (A circle was drawn)
+
+    $W_1 \subset V_1$ is of type $(k+1, s)$, $W_2 \subset V_1$ is of type
+    $(k+1 + s, 0)$.
+
+    $p(v, k+1, s) = \binom{i}{j} p(v, k+1, 1+s, 0)$.
+
+    $p(v, k+1, s) = \binom{\frac{k+1 + s}{2}}{s} p(v, k+1 + s, 0)$
+
+    We need to compute $p(v, k+s + 1, 0)$.
+
+    $W_1 \subset V_1$, $W_1$ is $(k+s +1, 0)$ and $V_1$ has $v$ elements. (I
+    think $W_1$ has cardinality 2j)$.
+
+    $p(v, k+s + 1, 0) = \sum_{i \in I \textup{orbits of }Z_i \textup{ action of
+    subsets of type} (k+s + 1, 0)} \frac{v}{r_i}$
+
+    $W_1 \subset V_1$ gets transformed to $W_2 \subset V_2$, cardinality $j$ and
+    $v-j$.
+
+    $\biom{v-j}{i} = \sum_{i \in I} {v - j}{j} = \sum_{v - j }{r_i} \implies
+    \sum_{i \in I}{\frac1r_i} = \frac{1}{v - j} \binom{v -j}{i}$.
+
+    $p(v, k + s + 1, 0) = \frac{v}{v-j} \binom{v- j}{i}$.
+
+    $p(v, k + s + 1, 0) = \sum {\frac{v}{r_i}}$.
+
+    The most important argument was using the action of the group. It has some
+    nice properties. This somehow proves the theorem for even, the theorem for
+    odd is simpler.
 * Footnotes
+
+[fn:42] Apparently this theorem is important and Pavle said he'll ask in the
+exam.
 
 [fn:41] Gunter Ziegler, Lectures on Polytopes (Springer), McMallen and Shepherd,
 Convex polytopes and the upper Bound conjecture.
