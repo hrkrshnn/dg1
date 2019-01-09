@@ -2601,6 +2601,191 @@
     The most important argument was using the action of the group. It has some
     nice properties. This somehow proves the theorem for even, the theorem for
     odd is simpler.
+* Lecture 20 
+** Stuff from the beginning
+   A diagram for $v = 8$. $V_8 \times \{0, \cdots, 7\} \rightarrow \{0, \cdots,
+   7\}$.
+
+   $G$ acts on $X$. $G$ acts on $X^k$.
+
+   $g(x_1, \cdots, x_k) = (gx_1, \cdots, gx_k)$. by definition.
+
+   $f_k(v, 2n) = \sum_{j =1}^{n} \frac{v}{v - j} \bionom{v-j}{j} \binom{j}{k +
+   1 - j}$, $0 \le k \le 2n -1$.
+   
+   $f_k(v, 2n+1) = \sum_{j = 0}^{n} \sum_{j = 0}^{n} \frac{k + 2}{v - j}
+   \binom{v - j}{j+1} \bionom{j+1}{k+1 - j}$ for $0 \le k \le 2n$.
+
+   $f_k(v, d) = \card\{W \subset V \vert W \textup{ is of type (k+1, s) wheere }
+   s \le d - k - 1\}$
+
+   This is same as $\sum_{s = 0}^{d - k - 1} \card\{W \subset V \vert W \textup{
+   is of type (k + 1, s)}\}$.
+
+   $G$ is a group, $X + \emptyset$, $G \times X \rightarrow X$, $(g, x) \mapsto
+   g \cdot x$. The definition of group action was repeated.
+
+   The definition of symmetric group was done. 
+** More.
+   $d = 2n$
+
+   $W \subset V$, $(k + 1, s), (k+1, s - 1)$, $s = k + 1 \mod 2$.
+
+   The above maps to  the following
+
+   $W_1 \subset V_1$, $v$ circuit. and $s = k + 1 \mod 2$.
+
+   $p(v, k + 1, s) = \textup{number of } W \subset V$ of type $(k+1, s)$ or
+   $(k + 1, s- 1)$ where $s = k + 1 \mod 2$. This is same as the number of $W_1
+   \subset V_1$ of type $(k + 1, s)$.
+
+   $W_2$ has $j$ pairs of points, $\bionom{i}{s} p(v, k+s + 1, 0) = p(v, k+1,
+   s)$. There was a picture that was drawn.
+
+   A circle with 4 points, representing four contiguous sets. This is $W_1$.
+   
+   The same thing is repeated, and labelled as $W_2$, but each point is a pair
+   with one yellow and other one white. Apparently this was a bad example,
+   because $\binom{4}{4} = 1$.
+
+   Whatever.
+** COMMENT Continuation of proof
+   $W_2 \subset V_2$, $(k + s + 1, 0)$ be a $v$ circuit. $k + s + 1 = 2j$.
+
+   $W_3$ has $j$ points, you delete the second one always. $W_3$ is a set on the
+   circle. Strangely enough, you know how many $W_3$ there exist. Here
+   $\bionom{v - j}{j}$ number of them.
+
+   We want to relate this to $p(v, k + s + 1, 0)$. Now comes the story of the
+   action.
+
+   #+BEGIN_SRC artist
+                     +---------------------------------------+
+                     |                                       |
+                     |  .       .         .     .   .n/ni    |
+                     |                                       |
+                     |  .      .         . v/r2              |   \sum v/r_i for r in I
+                     |                                       |
+                     |                                       |
+                     |   .    .          . v/r3              |
+                     +---------------------------------------+
+   #+END_SRC
+
+   #+BEGIN_SRC artist
+     +---------------------------------------+
+     |                                       |
+     |  .       .         .     .   .(v-j)/r1|
+     |                                       |
+     |  .      .         . (                 |   \sum (v-j)/ri = \bionom{v - j}{j} = \sum 1/r = \sum \frac{1}{v-j}\binom{v -j}{j}
+     |                                       |
+     |                                       |
+     |   .    .          . v/r3              |
+     +---------------------------------------+
+   #+END_SRC
+
+   Now we get $p(v, k+ s + 1, 0) = \frac{v}{v-j} \bionom{v - j}{v}$.
+** For the odd case
+   $d = 2n + 1$, $W \subset V$ is a $v$ 
+
+   $W \subset V$, $W$ is $(k + 1, 2n - k)$ and $V$ is a $v$ set.
+   
+   $W \subset V$, $W$ is $(k + 1, s - 1)$ and $V$ is a $v$ set.
+
+   $(k + 1, s)$ implies that the number of points in the end sets have odd
+   number of points.
+
+   Meaning that in $(k + 1, s - 1)$, the end sets have even number of points.
+   This and the previous calculation follows from below.
+
+   $k + 1 = \vert W \vert = \vert \textup{end sets} + s(\textup{odd}) +
+   \textup{even}$.
+
+   $k + 1 = \vert W \vert = \vert \textup{end sets} \vert + ( s + 1)
+   \textup{odd} + \textup{even}$.
+
+   Page 94/86 of the old book.
+** Definition
+   $P$ is $k$ neighbourly if any collection of $k$ vertices of $P$ is the vertex
+   set of a face of $P$.
+** Proposition
+   Let $P$ be $k$ neighbourly. Then any $k$ vertices of $P$ are affinely
+   independent.
+*** Proof
+    $\{w_1, \cdots, w_k\} \subset \vert P$, $\{w_1, \cdots, w_k\}$ are affinely
+    dependent. $w_k \in \aff \{w_1, \cdots, w_{k+1}\}$.
+
+    $W \subset P$, but not equal to $P$.
+
+    Therefore one can find $v \in \vert P \setminus W$, now take $w_1, \cdots,
+    w_{k - 1}, v\}$ This is a vertex set of a face, in $P$ because of the $k$
+    neighbouring property. Thus we know that the convex hull of this set is a
+    face.
+
+    Thus it is the intersecting set of the polytope and some hyperplane.
+
+    $w_k \in \aff\{w_1, \cdots, w_{k+1}\} \subset H$, $w_k \in P \cap H = F$ and
+    $w_k$ is a vertex of $P$. 
+
+    Thus $w_k$ is a vertex of $F$, this is a contradiction, since $w_k$ does not
+    appear in the list. There cannot be a vertex of a polytope inside the face
+    if it is not a vertex of the face. Weird.
+** Question
+   Is every $k - 1$ face of a $k$ neighbourly a simplex?
+** Proposition
+   If $P$ is $k$ neighbouring, then $P$ is $j$ neighbouringly for all $j \le k$.
+*** Proof
+    Let $j \le k$, $w_1, \cdots, w_j$, $F =\conv\{w_1, \cdots, w_j, w_j',
+    \cdots, w_k'\}$. This is the $(k - 1)$ face of $P$.
+
+    $F' = \conv \{w_1, \cdots, w_j\}$ is a face of $F$, and $F$ is a face of
+    $P$.
+** Proposition
+   If $P$ is $k$ neighbouringly polytope with $v$ vertices, then $f_j(P) =
+   \binom{v}{j+1}$, for $0 \le j \le k - 1$.
+   
+   $P$, $P_i = \cup F$, $F$ is a face of $P$ and $\dim F \le i$.
+** Proposition
+   Let $P$ be $k$ neighbourly, and $W \subset \vert P$ and $\card W \ge k + 1$.
+   Then $W$ is also $k$ neighbouringly.
+*** Proof
+    We have a polytope that is $k$ neighbourly. $\{w_1, \cdots, w_k \} \subset W
+    \subset \vert P, F = \conv \{w_1, \cdots, w_k\}$ is a face of $P$. $F
+    \subset W$.
+
+    Then $F \cap \conv W = F$ is a face of a convex hull of $W$ and we are done.
+** Proposition
+   Let $P$ be $k$ neighbourly and $k > \lfloor d/2 \rfloor$, then $P$ is simplex.
+   
+   This means that the cyclic polytopes are maximally neighbourly, if it's more,
+   then it's a simplex.
+*** Proof
+    Assume $P$ is not a simplex ,then $\card (\vert P ) \ge d + 2$.
+
+    $W \subset \vert P, \vert W \vert = d + 2$. $W = X \cup Y, X \cap Y =
+    \emptyset, \conv X \cap \conv Y \neq \emptyset$.
+
+    $\vert X \vert \le \lfloor \frac{d + 2}{2}\rfloor$.
+
+    This means that $X$ is a face of $P$ and $\conv X$ intersects the $\conv Y$.
+    Since this is a face, we can write it as the intersection of a supporting
+    hyperplane, which also intersects the convex hull of $Y$.
+
+    But then we have another vertex in a face where it does not belong, which is
+    a contradiction.
+** Proposition
+   Every $n$ neighbourly $2n$ Polytope is simplicial.
+*** Proof
+    Something is simplicial if every facet is simplex.
+
+    $F$ is a facet of $P$, thus $\dim F = 2n - 1$. By a previous proposition,
+    this means that $F$ is also $n$ neighbourly. Now this means that $F$ is a
+    simplex.
+** Question
+   Do I have $n$ neighbourly $2n + 1$ polytope? Is it also simplicial? The
+   answer is no.
+
+   Take something simplicial, take a pyramid over it, but then we do not have a
+   simplicial polytope.
 * Footnotes
 
 [fn:42] Apparently this theorem is important and Pavle said he'll ask in the
