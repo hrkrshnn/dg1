@@ -2786,7 +2786,161 @@
 
    Take something simplicial, take a pyramid over it, but then we do not have a
    simplicial polytope.
+* Lecture 21 [Skipped]
+* Lecture 22 <2019-01-16 Wed>
+  DG1 written exam: 19th February at 10:00. Mock exam: 5th February from 8:30 to
+  10:00. One more in April.
+** Yesterday
+   WE talked about $f$ vector of polytopes. $F(P) = (f_0(P), \cdots, f_{d-1}(P))
+   \in \R^d$.
+
+   $f_{-1}(P) = -1$ by definition for every $d$ polytope.
+
+   We proved the Euler relation on the $f$ vector on the Euler Polytope.
+   $\sum_{j = 0}^{j - 1} (-1)^{j) f_j(P) = 1 + (-1)^{d - 1}$. Linear if $d$ is
+   even. ([fn:43])
+   
+   $\aff \{ f(P) \vert P \textup{ is a d polytope\} = d - 1$.
+
+   These two were the only thing in the class yesterday.
+** What about special classes of polytopes?
+   Do they fulfil any extra properties? The answer is Yes.
+** Theorem (Dehn-Sommerville relations)
+   For every simplicial $d$ polytope
+
+   $\sum_{j = k}^{d-1} (-1)^j \binom{j + 1}{k + 1} f_j(P) = (-1)^{d - 1}
+   f_k(P)$. The equation is labelled as $E_k^d$
+
+   for $k = 0, \cdots, d -2$.
+
+   If $k = -1$, then $E_{-1}^d$. This is the Euler relation.
+*** Proof
+    We count twice and get the equality.
+
+    Let $f_k$ be a $k$ face of $E$ and $F^j$ a $j$ face o f$P$ such that $0 \le
+    j \le d - 1$. Then the value of $\varphi(F^k_j F^j)$ is $0$ when $F^k
+    \nsubseteq F^j$ or $1$ when $F^k \subset F^j$.
+
+    Now, $\sum_{j = k}^{d - 1} (-1)^j \sum_{k \textup{faces}} \sum_{j
+    \textup{faces}} \varphi(F^k, F^j) = A$.
+
+    One sums over $\sum_{j \textup{faces}} \varphi(F^k_j F^j)$.
+
+    A diagram was drawn. $\sum_{j \textup{faces}} \varphi(F^k_j F^j) = f_{j- k -
+    1}(P/F^k)$.
+
+    Now, $\sum_{j = k}^{d - 1} (-1)^{j - k - 1} \sum_{i \textup{faces}}
+    \varphi(F^k, F^j) = \sum_{j = k}^{d-1} (-1)^{j - k - 1} f_{j - k -
+    1}(P/F^{k}) = (-1)^{d - k - 2}$. This is the Euler relation.
+
+    I need $j$ to appear there. So we multiply by $\sum_{j =k}^{d-1} (-1)^j
+    \sum_{j \textup{faces}} \varphi(F^k, F^j) = (-1)^{d-1}$.
+
+    $\sum_{k \textup{faces}} \sum_{j = k}^{d -1} (-1)^j \sum_{i \textup{faces}}
+    \varphi(F^k, F^j) = (-1)^{d - 1}f_K(P)$.
+
+    Now, for the third step, $\sum_{j \textup{faces}} \varphi(F^k, F^j) =
+    \binom{j + 1}{k + 1}$. (This has something to do with neighbourly.)
+
+    $\sum_{j \textup{faces}}\sum_{k \textup{faces}} \varphi(F^k, F^j) =
+    \bionom{j + 1}{k + 1} f_j(P)$.
+
+    Finally, we take the sum $\sum_{i = k}^{d -1} (-1)^i \sum_{j \textup{faces}}
+    \sum_{k \textup{faces}} \varphi(F^k, F^j) = \sum_{j = k}^{d - 1} (-1)^i
+    \bionom{j + 1}{d + 1} f_i(P)$.
+
+    Now, we can get it from the above equations.
+*** Example
+    For $3$, we have three equations,
+
+    $E^3_{-1}$ is $f_0 - f_1 + f_2 = 2$. This is the Euler relation.
+
+    What about $k = 0$? $f_0 - 2f_1 + 3f_2 = f_0$. (The $f_0$ cancels an we get
+    $-2f_1 + 3f_2 = 0$)
+
+    For $k = 1$. $-f_1 + 3f_2 = f_1$. (Note that this relation is equal to the
+    previous one.)
+
+    So, there are just $2$ linearly independent equations.
+** Theorem
+   For any $d \ge 1$, exactly $\lfloor \frac{d + 1}{2} \rfloor$ of the
+   Dehn-Somerville equations $(E^d_k)$, are independent. Geometrically, this
+   means that $f$ vectors, $f_p$ of Simplicial, polytopes, lie on an affine
+   subspace of $\R^d$ of dimension $\lfloor \frac{d}{2} \rfloor$ and on no
+   affine subspace of lower dimension.
+
+   (The second part of the theorem follows from the first part.)
+
+   Note: if $d = 2m$, then $\lfloor \frac{d + 1}{2} \rfloor = m$, then $\R^d$.
+   The dimension of the space is $d - m$.
+
+   If $d = 2m + 1$, then $\lfloor \frac{d + 1}{2} \lfloor = m + 1$, $\R^d = d -
+   (m + 1) = m$.
+*** Proof
+    If we look at the equations, $E_{-1}^d$, E_1^{d}, E_3^{d}$, etc. If we look
+    at the matrix, then we have the rank.
+
+    We see that, there are at least, $\lfloor d + 1 \rfloor$ independent
+    equations, 
+
+    1. if $d = 2n$, then for $j = 0, 1, \cdots, \frac{d - 1}{2}$, then
+       terms, $f_{2j}(P)$ appears, only in the first $j + 1$ equations, of
+       $E_{-1}^d, E_{1}^d, E_3^d, \cdots, E_{d-3}^d$.
+    2. If $d$ is odd, then $E^{-1}^d$ is the only non-homogeneous equation and
+       for $j = 1, \cdots, \frac{1}{2}\cdot (d- 1)$., the term $f_{2j - 1}(P)$
+       appears, in the first $j + 1$ of the equations, $E_{-1}^d, E_1^d, E_3^d,
+       \cdots, E^d_{d-2}$.
+
+    $L = \aff\{f(P) \vert P \textup{is simplicial polytope}\}$, we know that
+    $\dim L \le d - \lfloor \frac{d + 1}{2} \rfloor = \lfloor \frac{d}{2}
+    \rfloor$.
+
+    In order to prove that the dimension of $L$ is $\lfloor \frac{d}{2} \rfloor
+    = n$, we exhibit, $P_1, \cdots, P_n$, simplicial $d$ polytopes such that
+    $f(P_1), \cdots, f(P_{n+1}) \subset \R^{n+1}$ are affinely independent.
+
+    How can you give a linear space? One can give vectors. Also one can give
+    linear equations that the vectors should fulfil.
+
+    Let us try with cyclic polytopes. $P_1 = C(V, d), P_2 = C(v + 1, d), \cdots,
+    P_{n+1} = C(v + n, d).$ What do we know about cyclic polytopes. $C(v, d)$ is
+    $n$ neighbourly. Because if we know how much neighbourly it is, then we know
+    a piece of the $f$ vector. We have $\binom{v}{1}$ vertices, $\binom{v}{2}$
+    edges and then we don't care. The $f$ vector of $P_1$
+
+    $\bionom{v+1}{1}, \cdots, \binom{v+1}{2}$ for $f(P_2)$.
+
+    etc.
+
+    Show show that it is affinely independent, we just need to show that these
+    vectors are linearly independent. We prove it for a minor of
+
+    I missed some details in writing. The proof seems to be same from the book.
+    But pavle also proved how the value of determinant is $1$. I think the book
+    just skips this.
+** Pulling the vertices
+   Let $P$ be a $d$ Polytope in $\R^d$ and $w \in \R^d \setminus P$. For a
+   hyperplane $H$ not intersecting $\int P$ we say that $w$ is beyond $H$ if $w$
+   is in the intersection of the half-space not containing $P$. $W$ is beneath
+   (with respect to $P$) if $W$ is in the interior of the half-space containing
+   $P$.
+** Theorem
+   Let $P$ be a $d$ polytope in $\R^d$, let $w \in \R^d \setminus P$. Then $P'$
+   by definition is the $\conv (\{w \} \cup P)$ is also a $d$ polytope, and 
+
+   1. A face $F$ of $P$ is a face of $P' \iff$ there is a facet $F''$ of $P$
+      containing $F$ such that $w$ is beneath $F''$ with respect to $P$.
+   2. If $F$ is a face of $P$, then $f'$ is the $\conv(\{w \} \cup F)$ if and
+      only if either
+      1. $w \in \aff F$
+      2. $w$ is beyond at least one facet of $P$ (meaning one supporting
+         hyperplane of the facet containing $F$ and beneath another facet
+         containing $F$.)
+
+    Moreover, each face of $P'$ is of one of the above two types.
 * Footnotes
+
+[fn:43] What? This means, it is homogeneous.
 
 [fn:42] Apparently this theorem is important and Pavle said he'll ask in the
 exam.
