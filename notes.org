@@ -2938,7 +2938,102 @@
          containing $F$.)
 
     Moreover, each face of $P'$ is of one of the above two types.
+* Lecture 23 <2019-01-22 Tue>
+** Pulling vertices
+   $P = \conv \{x_1, \cdots, x_u\}$ polytope and $Z(P) =$ partially ordered set
+   of faces.
+
+   $f(P) = f_0, \cdots, f_{d-1}$, $f_{-1} = f_d= 1$ $f$ vector.
+   
+
+   A picture was drawn.
+
+   If $P$ is a $d$ polytope in $\R^d$ and $w \in \R^d \setminus P$ and $P
+   \subset H^{+}$. Let $F$ be a facet of $P$ and $H$, the corresponding support
+   hyperplane. Then $w$ is beyond $F$ if $w \in \int H^{-}$, $w$ is beneath $F$
+   if $w \in \int H^{+}$ with respect to $P$.
+
+   A picture was drawn.
+** Theorem
+   Let $P$ be a $d$ polytope in $\R^d$ and let $w \in \R^d \setminus P$, then $P
+   = \conv (\{w\} \cup P)$ is also a $d$ polytope and 
+
+   1. A face $F$ of $P$ is also a face of $P^1$ if and only if there exits a
+      facet $F''$ containing $F$ of $P$ such that $w$ is benath $F''$ with
+      respect to $P$.
+   2. If $F$ is a face of $P$, then $F' = \conv(\{w \} \cup F)$ is a face of
+      $P'$ if and only if either 
+      1. $w\in \aff F$ or 
+      2. $w$ is beyond at least one facet of $P$ containing $F$ and beneath
+         another.
+
+   Moreover, each face of $P'$ is one of these two types.
+*** Proof
+    $P = \conv V$, $V = \vert P$, $w \notin P, w \notin V$.
+
+    $P' = \conv(\{w \} \cup P)$, $w$ is a vertex of $P'$.
+
+    $\vert P' \subet \{w\} \cup \vert P$, $\{w\} \cup V$.
+
+    (second part) $H'$ be a mapp hyperplane of $P'$
+
+    $F = P \cap H'$ is a face of $P$.
+
+    1. $w \notin \vert F' \implies \vert F' = \vert F$
+
+    2. $w \in \vert F'$, $F \subset F'$ and $\vert F' \subset \{w \} \cup \vert
+       F$. $F' = \conv(\{w\} \cup F)$.
+
+    I missed several parts of the proof. But it is from the text book.
+
+    (Proving the first part)
+
+    $F''$ is a facet of $P$, then $F''$ is a facet of $P' \iff \aff F''$
+    supports $P'$ and $w \notin \aff F''$.
+
+    *He didn't prove this part*: 
+
+    $F$ is a face of $P'$ and $w \notin F \implies$ $F$ is a face of $P$
+    contained in a facet $F''$ of $P$ such that $w$ is beneath $F''$ with
+    respect to $P$.
+
+    Let $F$ be a face of $P$ such that $F' = \conv (\{w \} \cup F)$ is a face of
+    $P'$. Choose $y_0 \in \int P$, $x_0 \in \int P$, $x_0 \in \relint F$ and set
+    $E = \aff \{x_0, y_0, w\}$. The dimension of $E = 2$.
+
+    $P_0 = E \cap P$.
+
+    The proof was quite lengthy.
+    
+    He did some hand waving towards the end of the proof.
+** Random stuff
+   Let $P$ be a $d$ polytope in $\R^d$ and let $w \in \vert P$ with $w' \in \R^d
+   \setminus P$ such that the segment $(w, w']$ does not intersect any of the
+   hyperplanes spanned by vertices of $P$.
+
+   If $w \in \int \conv (\{w'\} \cup P)$, then $P'= \conv \{w'\} \cup P$ is
+   called *Pulling* of $P$ at $w$.
+** Theorem
+   Let $P'$ be a $d$ polytope in $\R^d$ obtained from the $d$ polytope $P$ by
+   pulling the vertex $w$ of $P$ to $w'$, then for $k = 1, \cdots, d -1$, the
+   $k$ faces of $P'$ are 
+
+   1. The $k$ faces of $P$, which do not contain $w$
+   2. The convex hulls of the form $f' = \conv\{\{w\} \cup F\}$, where $F$ is a
+      $k-1$ face, not containing $w$, but contained in a facet of $P$ containing
+      $w$.
+** Corollary
+   Each $k$ face of $P'$ which contains $w'$ is a $k$ pyramid, with apex $w'$.
+   Thus, $f_0(P) = f_0(P')$ and $f_k(P') \ge f_k(P)$.
+** Theorem
+   If $Q$ is a polytope obtained from $P$ by pulling all the vertices, then $Q$
+   is simplicial and $f_0(Q) = f_0(P)$, and $f_k(Q) \ge f_k(P)$
+
+   [fn:44]
 * Footnotes
+
+[fn:44] The main theorem of the course is the upper bound theorem. Something
+about maximizing the number of faces.
 
 [fn:43] What? This means, it is homogeneous.
 
