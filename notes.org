@@ -5,6 +5,7 @@
 #+LATEX_HEADER: \usepackage{mathrsfs}
 #+LATEX_HEADER: \usepackage{amsmath}
 #+LATEX_HEADER: \def\R{\mathbb{R}}
+#+LATEX_HEADER: \def\E{\mathscr{R}}
 #+LATEX_HEADER: \def\Z{\mathbb{Z}}
 #+LATEX_HEADER: \def\N{\mathbb{N}}
 #+LATEX_HEADER: \def\inte{\operatorname{int}}
@@ -3030,7 +3031,350 @@
    is simplicial and $f_0(Q) = f_0(P)$, and $f_k(Q) \ge f_k(P)$
 
    [fn:44]
+* Lecture 24 <2019-01-23 Wed>
+  I don't think the contents of this lecture was from the book, but they are
+  rather general fact.
+** Affine space
+   $(\E, E, \theta)$ is an affine space. $\E$ is the set, $E$ is the vector
+   space and $\theta \colon \E \times \E \rightarrow E$.
+
+   Every vector space has an affine structure, for $(E, E,\theta)$ where
+   $\theta(u,v) = u - v$.
+
+   $\R^n$ and $\E^n$ Euclidean vector space.
+
+   What about the other way around? Given $(\E, E, \theta)$ and an affine space.
+   The answer is no.
+
+   An affine map $(\E, E, \theta) \rightarrow (\mathscr{F}, F, \theta)$. Call
+   this map $\phi$. Call this map affine map if $\varphi \colon \E \rightarrow
+   \mathscr{F}$ if there exists a point $O$ inside $\E$ and a linear map
+   $f\colon E \rightarrow F$ such that for all $M \in \E$,
+   $\overline(\phi(0)\phi(M)) = f(\overline{OM})$. (It is not hard to prove that
+   this will also hold for every point, not just $O$.)
+
+   1. We say that $\phi$ is translation if $\phi = id$.
+   2. $\phi$ is a dilation if $\overline{\phi} = \lambda Id$ for $\lambda \in K
+      -\{0\}$.
+** Definition
+   An affine map $\Gamma \colon \R^d \rightarrow \R^n$ is any map of the form
+   $\Gamma(x) = \Lambda(x) + a$.
+
+   Also we can show from the definition that $\Gamma(\sum \lambda_i x_i) = \sum
+   \lambda_i \Gamma(x_i)$ if $\sum \lambda_i = 0$.
+
+   where $\Lambda \colon \R^d \rightarrow \R^n$ is a linear map and $\a \in
+   \R^n$. An affine map is *non-singular* if $\Lambda$ is non-singular.
+** Lemma
+   Let $a_0, \cdots, a_d \in \R^d$ be affinely independent points and $b_0,
+   \cdots, b_n$ element of $\R^n$, then there is an affine map $\gamma$ from
+   $\R^d$ to $\R^n$ such that $\Gamma(a_0) = b_0, \cdots, \Gamma(a_d) = b_d$.
+*** Proof
+    When are $a_0 \cdots a_d$ are affinely independent?
+
+    Either you look at the vectors $(a_0, 1), \cdots, (a_d,1)$ are linearly
+    independent in $\R^{d+1}$ or $a_1 - a_0, \cdots, a_d - a_0$ are linearly
+    independent.
+
+    $a_1 - a_0, \cdots, a_d - a_0 \mapsto b_1 - b_0, \cdots, b_d - b_0$. (This
+    map is $\Lambda$.)
+
+    $\Gamma(x) = \Lambda(x) + b_0$.
+
+    $\Lambda(a_i - a_0) = b_i - b_0$.
+
+    $\Lambda(a_i) - \Lambda(a_0) = b_i - b_0$. This part wasn't completed.
+** Projective transformation
+   Consider a map $\theta \colon \R^d \setminus \bbox \rightarrow \R^d$ given by
+
+   $\theta(x) = \frac{1}{\langle x, a \rangle + b} \Gamma(x)$, where $\Gamma
+   \colon \R^d \rightarrow \R^n$ is an affine map, $a\in \R^d$ and $b\in \R$.
+
+   1. $a = 0$, then $\theta \colon \R^d \rightarrow \R^n$ is an affine map.
+   2. $a \neq 0$, then $\theta \colon \R^d \setminus H \rightarrow \R^n$, $H =
+      \{x \in \R^d \colon \langle x, a \rangle + b = 0\}$.
+
+   We call $\theta$ a projective map.
+
+   $\theta$ is *non-singular* if 
+
+   | $\Lambda$ | $c$ |
+   | $a^t$     | $b$ |
+
+   And the matrix is not $\emptyset$ or if the affine map.
+
+   $\bar{theta} \colon \R^{d+1} \rightarrow \R^{d+1}$.
+
+   $(x, y) \mapsto (\Lambda(x) + cy, \langle x, a \rangle + by)$.
+
+   $(x, y) \in (\R^d, \R)$ is non-singular.
+
+   $\theta$ is permissible to $X$ is $X \cap = \emptyset$.
+
+   $X = \{x_1, \cdots, x_n\}$ affinely dependent points on $\R^d$. $\aff X$ is
+   permissible with respect to $\theta$.
+
+   $\theta(x)$ is affinely dependent.
+
+   $\sum_{i = 1}^{n} \lamba_i x_i = 0, \sum \lambda_i = 0$.
+
+   $\theta(x_i)= \frac{1}{\langle x_i, a \rangle + b} \Gamma(x_i)$.
+
+   $\sum_{i = 1}^{n} \lambda_i(\langle x_i, a\rangle + b)(\theta(x_i)) = \sum_{i
+   = 1}^{n} \Gamma'(x_i) = \sum_{i = 1}^{n} \lambda_i(\Lambda(x_i) + c)$. (I
+   missed parts of this calculation, but it is used to conclude the next statement.)
+   
+   What we proved is that if $x_i$ s are affinely dependent, then $\theta(x)$ is
+   also affinely dependent.
+** Theorem
+   Let $\{x_0, \cdots, x_d\}$ and $\{y_0, \cdots, y_d\}$ be affinely independent
+   set of points in $\R^d$ and let, $x' \in \relint \conv \{x_0, \cdots, x_d\}$
+   and $y_1 \in \relint \{y_0, \cdots, y_d\}$.
+
+   Then there exists a projective transformation $\theta \colon \R^d \setminus H
+   \rightarrow \R^d$ such that $\theta(x_i) = y_i$, $0 \le i \le d$ and
+   $\theta(x') = \theta(y')$.
+*** Proof
+    $x' = \sum_{i = 0}^{n} \lambda_i x_i, \lambda_i > 0$.
+
+    $y' = \sum_{i =0}^{j} \mu_i y_i, \mu_i > 0$.
+
+    $\{x_0, \cdots, x_d\}$ maps to $\{\frac{\mu_0}{\lambda_0} y_0, \cdots,
+    \frac{\mu_d}{\lambda_d} y_d\}$ is an affine map.
+
+    $\Gamma(x_i) = \frac{\mu_i}{\lambda_i} y_i$.
+
+    $\Gamma(x') = \Gamma(\sum_{i=0}^{d} \lambda_i x_i) = \sum_{i=0}^{d}
+    \lambda_i \Gamma(x_i) = y'$.
+
+    Let $z_0 = \frac{\lambda_0}{\mu_0}(x_0, 1), \cdots, z_d =
+    \frac{\lambda_d}{\mu_d}(x_d, 1)\in \R^{d+1}$. We have that $x_0, \cdots,
+    x_d$ are affinely independent. This implies that $z_0, \cdots, z_d$ are
+    linearly independent. This implies that the affine hull is a hyperplane not
+    passing through $0$.
+
+    $H' = \span\{z_0, \cdots, z_d\} \subset \R^d = \{z \in \R^{d+1} \vert
+    \langle z, c \rangle = 1\}$
+
+    $\R^{d}\times \R \rightarrow c = (b, \gamma)$.
+
+    We know that every $c$ belongs to the hyperplane and $1 = \langle z_i, c
+    \rangle = \lanlge (b, \gama), \frac{\lambda_i}{\mu_i}(x_i, 1)\rangle =
+    \frac{\lambda_i}{\mu_i}\langle x_i, b \rangle + \gamma$.
+
+    $\langle x', b \rangle + \gamma = \frac{\mu_i}{\lambda_i}$
+
+    $\langle x', b \rangle + \gamma = \langle \sum \lambda_i x_i, b \rangle +
+    \gamma = \sum \lambda_i \langle x_i, b\rangle + \sum \lambda_i \gamma$ This
+    is same as $\sum \lambda_i(\langle x_i, b\rangle + \gamma) = \sum \lambda_i
+    \frac{\mu_i}{\lambda_i} = 1$.
+
+    $\theta(x) = \frac{1}{\langle x', b\rangle + \gamma} \Gamma(x') = \Gamma(x')
+    = y'$
+** Theorem
+   Let $P$ be a $d$ polytope in $\R^d$ with $n$ facets and $a \in \int P$. Let
+   $T^{n+1} = \conv\{e_1, \cdots, e_n\} \subset \R^{n}$ be the regular
+   $n-1$ simplex with $b$ element of the relative interior of $T^{n-1}$.
+
+   Then there exists a $d$ dimensional subspace of $\R^n$ containing $b$ such
+   that
+
+   1. $P$ is projectively equivalent to the $d$ polytope $L \cap T^{n-1}$
+   2. In this projective equivalence, $a$ corresponds to $b$.
+*** Proof
+    $0 = a \in \int P$ and $P = \{x \in \R^d \vert \langle x, w_i \rangle \le 1,
+    i = 1, \cdots, n\} = Q^{*}$.
+
+    Since $P$ is bounded positive span $\{w_1, \cdots, w_n\} = \R^d$.
+
+    $P^{*} = \{y \in \R^d \vert \forall x \in P, \langle x, y \rangle \le 1\}$.
+    We can also write this as the intersection $\cap_{x \in P} \{y \in \R^d
+    \vert \langle x, y \rangle \le 1\}$.
+
+    This is same as $\cap_{x \in \R} \{y \in \R^d \vert \langle x, y \rangle \le
+    1\} = \cap_{x \in \textup{vertex of } P} \{ y \in \R^d \vert \langle x, y
+    \rangle \le 1\}$.
+
+    $Q = \conv \{w_1, \cdots, w_n\}$. Now, $Q$ is also a Polytope.
+
+    $0 \in B(0, r) \subset \int Q$.
+
+    $x \in \R^d$, $\frac{1}{2\Vert x \Vert} \in B(0, r) \subset Q$.
+
+    $\frac{r}{2 \Vert x\Vert} = \sum_{i = 1}^{n} \lambda_i w_i, \lambda_i > 0,
+    \sum_{\lambda_i} = 1$.
+    
+    $x =\frac{2\Vert x \Vert}{}r} \sum \lambda_i w_i$.
+
+    $b \in \relint T^{n-1}$, therefore $b = \sum_{i = 1}^{n} \beta_i e_i$ and
+    $\sum \beta_i = 1$ and $\beta_i > 0$.
+
+    $\theta(x) = \frac{1}{\sum \beta_i(1 - \langle x, x_i\rangle)} (\beta_i( 1-
+    \langle x, w_i\rangle), \cdots, \beta_n (1 - \langle x, w_m\rangle)$
+
+    $L = \theta(\R^d)$
+
+    there was parts of the proof I skipped
+
+    (*This is a theorem from chapter 3 of the book*)
+* Lecture 25
+** Gale transformation. Algebraic formulation
+*** Proposition
+    Let $P$ be a $d$ polytope and $W \subset P = V$. Then $W$ is the set of
+    vertices of a face of $P$ if and only if[fn:45]
+
+    $$\aff W \cap \conv(V \setminus W) = \emptyset.$$ 
+**** Proof
+     I couldn't find this in the book. (Theorem 1A is similar)
+
+     $\implies$ Let $W$ be a face of $P$. Then there exists a support hyperplane
+     $H$ such that $\conv W = P \cap H$.
+
+     Since $H$ is a support hyperplane for $P$, then $V \setminus W \subset
+     H^{+}$, or a bit more, $V \setminus W \subset \int H^{ +}$. Thus $\conv(V
+     \setminus W) \subset \int H^{ + }$ and consequently $\conv(V \setminus W)
+     \cap H = \emptyset$. Since $\conv W \subset H$, then $\aff W \subset H$ and
+     so $\conv (V \setminus W) \cap \aff W = \emptyset$.
+
+     $\Leftarrow$ Let $x \in \aff W$ and $y \in \conv(V \setminus W)$. If $y$ is
+     fixed, then the point $x_0 \in \aff W$ such that $$\Vert x_0 - y \Vert =
+     \inf \{ \Vert x - y \Vert \vert x \in \aff W\}$$
+
+     This defines a line $\aff \{x_0, y\}$ perpendicular to $\aff W$. I missed
+     the rest of the proof.
+*** Duality
+    Let $P$ be a $d$ polytope in $\R^d$ with $n$ vertices, say $V = \vert P
+    =\{x_1, \cdots, x_n\}$ where $x_i \in \R^d$.
+
+    $x_1, \cdots, x_n \in \R^{xx}$ is affinely dependent if there exists
+    scalers $\lambda_1, \cdots, \lamba_n \in \R$ with $\sum \lambda_i x_i = 0$
+    and $\sum \lambda_i = 0$.
+
+    (This is from the book 3.2)
+**** About the dimension
+     $A_n = \{(\lambda_1, \cdots, \lambda_n) \in \R^n \vert \sum \lambda_i =
+     0\}$ and $D(V) \subset A_n$, $\dim A_n = n-1$.
+
+     $f\colon A_n \mapsto \R^d, $(\lambda_1, \cdots, \lambda_N) \mapsto
+     \sum_{i=1}^{n} \lambda_i x_i$.
+
+     1. $f$ is surjective.
+
+     2. $\ker f = D(V)$.
+
+     $\dim D(v) = n - d- 1$.
+
+     Notice that the dimension of $D(V) = 0$ if the polytope is a simplex. Which
+     actually makes sense.
+*** Matrix
+    He talked about the matrix and then the definition of gale transform.
+*** Coface
+    $V = \vert P$ $Z \subset V$ is a *coface* if $\conv V \setminus Z$ is a face
+    of $P$.
+
+    $Z = (x_1, \cdots, x_r) = (x_1, \cdots, x_n)$. $\overline{Z} = (\bar{x}_1,
+    \cdots, \bar{x_r}) \suset \bar{V} = (\bar{x}_1, \cdots, \bar{x}_n)$.
+
+    Recall that $\conv W$ is a face of $P \iff \aff W \cap \conv(V \setminus W) = \emptyset$.
+
+    $Z$ is a face of $P \iff \aff(V\setminus Z)\cap \conv Z = \emptyset$.
+*** Theorem
+    Theorem 1A and proof from the book. pp. 128
+
+    He didn't prove it in the reverse direction.
+*** Why is this useful?
+    My polytope is in $d$ dimensions but the gale transform is in $n-d - 1$. So
+    maybe easier to work with?
+
+    There can be repetitions in gale transform. Is this actually true?
+*** Corollory
+    Let $P$ be a d polytope in $\R^d$ that is not a simplex. Then for every
+    linear hyperplane in $\R^{n - d- 1}$ contains at least two points of the
+    Gale transform relative interior of both half-spaces.
+
+    (The book mentions about this, doesn't actually state or prove this.)
+**** Proof
+     For every vertex $x'_i$ of $P$ is a face 
+
+     I skipped this.
+*** Theorem
+    Let $\bar{V} = \{\bar{x}_1, \cdots, \bar{x}_n\} \subset \R^n$ a collection
+    of points such that
+
+    1. $\R^n = \aff \bar{V}$.
+    2. $0$ is the barycentre of $\bar{V}$, and
+    3. For every linear hyperplane $H$ in $\R^n$, $\card(H^{+} \cap \bar{V}) \ge
+       2$ and $\card \bar{H} \cap \bar{V}) \ge 2$.
+
+    Then there exists 
+* Lecture 26
+** Gale transform
+   Basically a review of gale transform (algebraic version)
+** Theorem
+   $F = \conv\{x_1, \cdots, x_n\}$ is a face of $P$ $\iff 0 \in \relint \conv
+   \{\bar{x}_{r+1}, \cdots, \bar{x}_{n}\}$.
+
+   Something to do with face and coface.
+** Example
+   Gale transform of a $d$ simplex is $\{0, \cdots, 0\} \subset \R^n = \{0\}$.
+** Corollary
+   If $P$ is not a simplex, and $V = \vert P$, then for every hyperplane $H
+   \subset \R^{n-d-1}$ through $0$, the cardinality $\card (\int H^{-1} \cap
+   \bar{V}) \ge 2$.
+** Remark
+   The barycentre of the columns are zero.
+** Theorem
+   Theorem 2. pp. 131
+** Theorem
+   $\dim F = d + \dim \bar{Z} - \card{\bar{Z}}$, $\dim \bar{Z} = \dim \aff \bar{Z}$.
+*** Proof
+    $F = \conv \{x_1, \cdots, x_r\}$
+
+    $Z = \{x_{n+1}, \cdots, x_n\}$
+
+    $\dim D' = a$
+
+    $D' = \{(\lambda_1, \cdots, \lambda_r) \in \R^r \vert \sum_{i=0}^{r}
+    \lambda_i x_i = 0, \sum_{i=1}^{r} \lambda_i = 0\}$
+
+    This gets mapped to $D' = \{(\lambda_1, \cdots, \lambda_r, 0, \cdots 0) \in
+    \R^n \vert \sum_{i=1}^{r} \lambda_i x_i = 0, \sum_{i=1}^{r} \lambda_i = 0\}
+    \subset D(V)$
+
+    $\dim \bar{Z} = n - d- 1- k$.
+
+    $k = \card F - \dim F - 1$.
+
+    $\dim \bar{Z} = n - d- 1 - (\card F - \dim F - 1)$
+
+    This is same as $n - d + \dim F - (n - \card \bar{Z})$
+
+    Again, this is $\card \bar{Z} - d + \dim F$.
+
+    Thus $\dim F = \dim \bar{Z} + d - \card\bar{Z}$.
+** Corollary
+   Let $F$ be a facet of $P$, then the $\conv \bar{Z}$ is a simplex with $0$ in
+   the relative interior $\conv \bar{Z}$.
+*** Proof
+    $\conv \bar{Z}$ is a simplex? $\dim F = d - 1\implies d- 1 = d + \dim
+    \bar{Z} - \card \bar{Z} \implies \card \bar{Z} - \dim \bar{Z} = 1$
+** Corollary
+   Let $F$ be a face of $P$ and $F$ be a simplex, then $\aff \bar{Z}$ positively
+   open $\aff \bar{V}$.
+*** Proof
+    $\aff \bar{Z} = \aff \bar{V}$.
+** Corollary
+   Let $P$ be a simplicial polytope and $\bar{B}$ is a gale transform in $\R^r$.
+
+   $P$ is simplicial $\iff \forall 0 \in H$ hypersphere in $\R^r$, $0 \in
+   \relint (\bar{V} \cap H)$.
+** Theorem
+   Theorem 3 pp. 131
+** Theorem
+   Theorem 4 pp. 132
 * Footnotes
+
+[fn:45] Pavle said this one's important.
 
 [fn:44] The main theorem of the course is the upper bound theorem. Something
 about maximizing the number of faces.
