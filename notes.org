@@ -3372,7 +3372,152 @@
    Theorem 3 pp. 131
 ** Theorem
    Theorem 4 pp. 132
+* Lecture 27 <2019-02-06 Wed> 
+** Gale transform
+   *Question on the oral exam* [fn:46]
+   
+   $P$ is a $d$ polytope in $\R^d$, $V = \vert P = \{x_1, \cdots, x_n\}$.
+
+   We look at the space of all affine dependencies $D(V) = \{(\lambda_1, \cdots,
+   \lambda_m) \in \R^n \vert \sum_{i=1}^{n} \lambda_i x_i = 0, \sum_{i=1}^{n}
+   \lambda_i = 0\}$
+
+   $\dim D(V) = n - d- 1$.
+
+   Choice of a basis of $D(V)$. $\{a_1, \cdots, a_{n-d-1}\} \subset \R^n$
+
+   We can write $A(V)$ as a row
+
+   | $a_1$      |
+   | $a_2$      |
+   | $\cdots$   |
+   | $a_{n-d-1} |
+
+
+   We can look at this as the matrix
+
+   | $\alpha_{11}$      | $\cdots$ | $\alpha_{1n}$      |
+   | $\alpha-{21}$      | $\cdots$ | $\alpha_{2n}$      |
+   | $\cdots$           | $\cdots$ | $\cdots$           |
+   | $\alpha_{n-d-1, 1} | $\cdots$ | $\alpha_{n-d-1,n}$ |
+
+   This can be written as $(\bar{x_1}, \cdots, \bar{x_n})$.
+
+   Where $\bar{x}_i$ is a column.
+** Theorem
+   Let $P$ be a $d$ polytope and $F$ a proper face $P$ of $F \neq \emptyset$
+   with $F = \conv\{x_1, \cdots, x_r\}$ where $V = \vert P = \{x_1, \cdots,
+   x_n\}$, then $0 \in \relint \conv \{\bar{x}_{r-1}, \cdots, \bar{x}_n\}$
+
+   $V = \{x_1, \cdots, x_m\}$, $X \subset V$ and $X \neq V$ then $\conv X$ is a
+   face of $P \iff 0 \in \relint \conv(\bar{V}\setminus \bar{X})$.
+** Corollary
+   If $P$ is not a simplex and $H$ is a *linear* hyperplane in $\R^{n-r-1}$,
+   then $\card(\bar{V} \cap \int H^{+}) \ge 2$
+
+   This corollary is important because this characterizes all Gale transforms.
+   Apparently this is important for the exam.
+** Theorem
+   Let $\bar{V} = \{bar{x}_1, \cdots, \bar{x}_n\} \subset \R^n$ satisfying the
+   following:
+   1. $0$ is the barycentre/centroid of $\bar{x}_1, \cdots, \bar{x}_n$, $0 =
+      \sum \frac{1}{n} \bar{x}_i$.
+   2. (From the corollary) Every linear hyperplane $H \subset \R^{n-d-1}$ and
+      $\card(\bar{V} \cap \int H^{+})$ is at least $2$.
+
+      Trick question: how do I know what is $H^{+}$? We're assuming that we're
+      working with oriented hyperplane $H$ and hence there is an orientation.
+
+   Then there exist a $d$ polytope $P$ on $n$ vertices whose Gale transform is
+   $\bar{V}$
+** Lemma
+   A relation between gale transform and the dimension of the face.
+
+   $\dim F = d + \dim \bar{Z} - \card \bar{Z}$.
+** Corollary
+   If $F$ is a *facet* of $P$, then the corresponding convex hull of the co-face
+   $\bar{Z}$ is a simplex with $0$ in the relative interior.
+
+   The zero in relative interior comes from the above theorem. Not a big deal.
+   But why is it a simplex?
+
+   $\dim F = d - 1$, if we put it in the formula, $d - 1 = d + \dim\bar{Z} -
+   \card\bar{Z} \implies \card \bar{Z} - \dim \bar{Z} = 1$.
+** Corollary
+   If $F$ is a face $P$ of a simplex, then $\bar{Z}$ positively spans $\aff
+   \bar{V} = \R^{n-d-1}$.[fn:47]
+*** Proof
+    $\aff \bar{Z} = \aff \bar{V} = \R^{n - d - 1}$.
+** Theorem
+   Let $P$ be a $d$ polytope in $\R^d$ and $F$ a face of $P$ and $Z$
+   corresponding coface (set of vertices such that it's complement is the face)
+
+   $V = \vert P$ and $\bar{V}$ a Gale transform of $V$ and $\sqcap \colon \aff V
+   \rightarrow (\aff V)^\perp$ Then $\sqcap (\bar V \setminus \bar{Z})$ is a
+   Gale transform of $F$.
+
+   |        0 | affine dependencies of $\vert F = \{x_{n+1}, \cdots, x_n\}$ |
+   | $\cdots$ | $\cdots$                                                    |
+** Theorem
+   Let $P$ be a $d$ polytope and $x\in P$. Denote by $X = \vert P \cup \{x\}$
+   and by $\bar{X}$ its gale transform. Where does $\bar{X}$ live? This is $n +
+   1 - d - 1 = n - d$. This is a space with one more dimension.
+
+   If $H$ is a linear hyperplane, orthogonal to $\bar{x}$ and $\sqcap \colon
+   \aff \bar{X} \rightarrow H$, then $\sqcap (\bar{X}\setminus \{x\})$ is a Gale
+   transform of $\vert P$.
+
+   $P = \conv \{y_1, \cdots, y_m\}$ not necessarily vertices. Call this $Y$.
+   $\bar{Y}$ is the gale transform $\R^{m-d-1}$ for every $y \in Y$ such that $0
+   \notin \relint (\bar{Y} \setminus \{\bar{y}\}$ we project $\bar{Y}$ to
+   $X^\perp$.
+** Gale diagrams
+*** Definition
+    $\bar{X}$ and $\bar{X}'$ be sets of endpoints in $\R^{n-d-1}$, $\bar{X} =
+    \{\bar{x}_1, \cdots, \bar{x}_n\}$ and $X' = \{\bar{x}_1, \cdots,
+    \bar{x}_m'\}$ which assume correspondence $\bar{x}_i \iff \bar{x}_i'$ such
+    that $0 \in \int \conv \bar{X}$ and $0 \in \int \conv \bar{X}'$, then
+    $\bar{X}$ and $\bar{X}'$ are equivalent if and only if $0 \in \relint \conv
+    \bar{Y}\iff 0 \in \relint \conv \bar{Y}'$ for every $\bar{Y} \subset
+    \bar{X}$ and $\bar{Y}' \subset \bar{X}'$.
+
+    The definition is a bit clumsy.
+*** Definition
+    A Gale diagram of $P$ is any collection of points in $\R^{n-d-1}$ equivalent
+    to a Gale transform of $P$.
+*** Remark
+    If $\bar{V} = \{\bar{x}_1, \cdots, \bar{x}_n\}$ is a Gale diagram of $P$ and
+    $\mu_1, \cdots, \mu_n > 0$, then $\{\mu_1 \bar{x}_1, \cdots,
+    \mu_n\bar{x}_n\}$. Notice that all sets of theorems for gale transform is
+    also true for the gale diagram.
+
+    I skipped the proof of this.
+*** Definition
+    Let $P$ be a $d$ polytope and $V = \vert P = \{x_1, \cdots, x_m\}$ and $x_m
+    = 0$. Let $H$ be an affine hyperplane that separates $x_m$ from $x_1,
+    \cdots, x_{m-1}$.
+*** Theorem
+    Let $P$ be a polytope and $F_1 \subset F_2$ faces of $P$ and $Z_1 = \vert
+    F_1$ and $Z_2$ is a coface corresponding to $F_2$. In any gale diagram
+    $\bar{V}$ of $P$, let $L$ be the orthogonal linear complement to $\aff
+    \bar{Z}$, in $\aff \bar{V}$, and let $\sqcap\colon \aff \bar{V}\rightarrow
+    L$. Then $\sqcap(\bar{V} \setminus (\bar{Z}_1 \cup \bar{Z}_2))$ is
+    isomorphic to a Gale transform of a set of point whose convex hull is
+    $F_2/F_1$.
+*** Number of polytopes
+    $d$ polytopes with $d + 2$ vertices.
+
+    $\R^{d + 2 - d - 1} = \R^1$.
+
+    The point lies of the sphere. Three points $-1, 0, 1$. There were more
+    things to this argument. I was too lazy to write it down. Some stuff about
+    polytopes being simplicial.
 * Footnotes
+
+[fn:47] What does it mean positively span? The coefficients $\lambda_i$ are
+non-negative.
+
+[fn:46] Question on oral exam
 
 [fn:45] Pavle said this one's important.
 
