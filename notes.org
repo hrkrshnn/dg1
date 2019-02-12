@@ -3512,6 +3512,48 @@
     The point lies of the sphere. Three points $-1, 0, 1$. There were more
     things to this argument. I was too lazy to write it down. Some stuff about
     polytopes being simplicial.
+* Lecture 28
+** Upper bound conjecture
+   $\max \{f_k(P) \vert P \in \P^d, f_0(P) = v\} \le f_k(C(v, d))$
+
+   $\max\{f_k(P) \vert P \in \P^d_{\textup{sim}}, f_0(P) = v\}$
+
+   $f_k(C(v, d))$
+
+   *Euler's relation* $\sum (-1)^{i} f_i(P) = 1 + (-1)^{d-1}$
+
+   $P$ is a Simplicial $d$ polytope.
+
+   $f(P, f) = \sum_{k=-1}^{d-1} (-1)^{k+1} f_k(P) t^{k+1} =1 - f_0(P) + f_1(P) -
+   f_2(P)t^2 + \cdots$
+
+   $f_{-1}(P) = 1$ and $f_i(P) = 0$ for $i < 2$ and $i \ge d$, $f_d(P) = 0$.
+  
+   (DS equations)
+
+   $\sum_{j=k}^{d-1} (-1)^j \binom{j+1}{k+1} f_j(P) = (-1)^{d-1} f_k(P)$ for
+   $k=0, \cdots, d-2$.
+
+   $f(P, 1 - t) = (-1)^d f(P, t)$
+
+   $f(P, 1-t) = \sum_{k=-1}^{d-1} (-1)^{k + 1} f_k(P) (1-t)^{k+1} =
+   \sum_{k=-1}^{d - 1} (-1)^{k+1} f_k(P) \sum_{i=0}^{k + 1}(-1)^i
+   \bionom{k+1}{i}t^i = \sum_{k=-1}^{d-1}\sum_{i=0}^{k-1} (-1)^{k+i+1}
+   \bionom{k+1}{i} f_k(P)$
+
+   There was more calculations that I was too lazy to write down. This was
+   already done in the class though.
+
+   $l \ge d$, then $g^{e}(P, t) = (1-t)^e f(P, \frac{t}{1-t})$ This is a
+   polynomial of degree $e$.
+
+   Now, we'll prove that $g_k^e(P) = \sum_{j=-1}^{k} (-1)^{k-j}
+   \binom{e-j-1}{e-k-1} f_j(P)$. The book says this is an easy calculation and
+   didn't prove it, but pavle proved it in the class. So, whatever.
+
+   (All of these are from the chapter Upper bound conjecture for Polytopes)
+
+   He wrote equation (5)
 * Footnotes
 
 [fn:47] What does it mean positively span? The coefficients $\lambda_i$ are
