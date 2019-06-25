@@ -1,0 +1,271 @@
+\documentclass[a4paper,10pt,landscape]{article}
+\usepackage[left=1cm, right=1cm, top=1cm, bottom=1cm]{geometry}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+
+\def\R{\mathbb{R}}
+\def\conv{\operatorname{conv}}
+\def\verti{\operatorname{vert}}
+
+\begin{document}
+\begin{multicols}{3}
+  \section{Radon, Caratheodery's and Helly's}
+  \begin{theorem}[Radon]
+    Let $X = \{x_1, \cdots, x_r\}$ be a any finite set of points in $\R^d$. If
+    $r \ge d + 2$, then $X$ can be partitioned into two subsets $X_1$ and $X_2$
+    such that $\conv X_1 \cap \conv X_2 \neq \emptyset$
+  \end{theorem}
+  \begin{proof}
+    \begin{enumerate}
+    \item Any set of more than $d+1$ points in $\R^d$ cannot be affinely
+      independent.
+    \item There is $\sum_{i=1}^{r}\mu_i x_i = 0$ such that $\sum_{i=1}^{r} \mu_i
+      =0$.
+    \item Partition $\mu_i$ into positive and non-positive indices. The
+      corresponding $x_i$'s form a partition.
+    \end{enumerate}
+  \end{proof}
+  
+  \begin{theorem}[Helly's theorem]
+    Let $\{K_1, \cdots, K_r\}$ be a collection of convex sets in $\R^d$ such
+    that any $d+1$ of these sets has a non-empty intersection. Then the entire
+    collection has a non-empty intersection.
+  \end{theorem}
+  \begin{proof}
+    \begin{enumerate}
+      \item For $r = d+1$ this is trivially true. We prove this by induction on
+        $r$.
+      \item Consider $x_i = K_1 \cap K_2 \cap \cdots K_{i-1} \cap K_{i+1} \cap
+        K_{r}$. ($x_i$ exists because of inductive statement.)
+      \item By Radon's theorem, we can partition $\{x_1, \cdots, x_r\}$ into two
+        sets (WLOG) $X_1= \{x_1, \cdots, x_j\}$ and $\{x_{j+1}, \cdots x_r\}$
+        that has non-empty intersection of convex hulls. Pick a point $x$ in the
+        intersection.
+      \item $x_{j+1}, \cdots, x_r \in K_1 \cap K_2 \cap \cdots \cap K_j$. Hence $x
+        \in K_1 \cap K_2 \cap \cdots\cap K_j$. Similarly for the rest.
+      \end{enumerate}
+  \end{proof}
+
+
+  \begin{theorem}[Caratheodery's]
+    The convex hull of a subset $X$ of $\R^d$ is precisely the set of all convex
+    combinations of subsets of $X$ containing at most $d+1$ points.
+  \end{theorem}
+  \begin{proof}
+    \begin{enumerate}
+      \item $x = \sum_{i=1}^{r} \lambda_i x_i$, $\sum_{i=1}^{r} \lambda_i = 1$.
+        Suppose that this is the minimal representation.
+      \item If $r \ge d + 2$, this cannot be affinely independent. Thus there
+        exists $\sum_{i=1}^{r} \mu_i x_i = 0$ and $\sum \mu_i = 0$.
+      \item From all positive $\mu_i$, pick $i_0$ to be the index minimizing
+        $\frac{\lambda_i}{\mu_i}$.
+      \item $\sum_{i=1}^{r} (\lambda_i - \frac{\lambda_{i_0}}{\mu_{i_0}}
+        \mu_{i}) x_i$ would be an even smaller representation for the convex
+        combination, and without $x_{i_0}$. Contradiction.
+    \end{enumerate}
+  \end{proof}
+
+  \section{Support}
+  \begin{enumerate}
+  \item \emph{Supporting Hyperplane}: $C$ is a closed convex bounded set. $H$ is
+    a hyperplane such that $H \cap C \neq 0$. It is a supporting hyperplane if
+    $C \subset H^{+}$ and $C \cap H^{-} = \emptyset$. Given a closed bounded
+    convex set and a non-zero vector $a$, there is a supporting hyperplane with
+    $a$ as the outward normal.
+  \item \emph{Nearest point map}: $p \in \R^d\setminus K$, the infimum
+    $\inf_{x\in K} \Vert x - p\Vert$ is attained, finite, and strictly
+    positive.
+  \item If $q$ is the nearest point of $p$, then all points on the ray from $q$
+    to $p$ has $q$ as the nearest point. The proof has two cases, for points in
+    between $q$ and $p$ (use triangle inequality) and for points after $p$ (use
+    similarity.)
+  \item Given a point outside the convex body. Then the hyperplane through the
+    nearest point and perpendicular to the ray supports $K$. The proof uses the
+    following idea: if there is a point in the negative half space of the
+    hyperplane. Drop a perpendicular from the point to the ray. It meets at a
+    new point. We now have a contradiction to the fact the previous result.
+  \item Every closed bounded convex set is the intersection of all its
+    supporting half spaces. Clearly $K \subset \cap H^{+}$. To prove the other
+    side, we use the previous theorem about supporting half space.
+  \item For any closed bounded convex set $K$, the nearest point map does not
+    increase length, i.e., $\Vert p - q\Vert \ge\Vert p_K(p) - p_k(q) \Vert$.
+    Idea of proof, for the case $p, q$ outside of $K$. There are points
+    $p_K(p)$, $p_K(q)$. Join the line segment between them and form a strip
+    perpendicular to the segment. If $p$ is inside the strip, then consider the
+    ray from $p_K(p)$ to $p$. This intersects the other end of the strip, but
+    this means that the shortest distance from this point $x$ is $p_K(q)$, a
+    contradiction.
+  \end{enumerate}
+  \section{Convex Polytopes}
+  \begin{enumerate}
+  \item A Polytope (convex combination of finitely many points) has only finite
+    number of distinct faces, and each face is a convex polytope. Proof idea:
+    the idea is to prove if the polytope is the convex combination of $\{x_1,
+    \cdots, x_r\}$, then the faces are convex combinations of subsets of the
+    above set.
+  \item A convex polytope $P$ is the convex hull of its set of vertices, that
+    is, $P = \conv(\verti P)$. Proof: If $P = \conv \{x_1, \cdots, x_i\}$, then
+    we may find the minimal subset $\{x_1, \cdots, x_r\}$ such that no points
+    $x_i$ would be in the convex combination of the rest. Now, we are done if we
+    show that these are the vertices.
+  \end{enumerate}
+
+  \section{Polarity and Duality}
+  \begin{enumerate}
+  \item $P$ be a polytope, then a Polytope $P^{*}$ is said to be a dual to $P$
+    if there is a one-to-one correspondence between the set of faces o f$P$ and
+    the set of $P^{*}$ which reverses the relation of inclusion.
+  \item {\emph Polar set} If $K$ is a polytope, the Polar set is defined by
+    $K^{*} = \{y \in \R^d \vert \langle x, y \rangle \le 1\}$. This is closed,
+    reverses inclusion, convex, bounded, contains 0, and $K^{**} = K$.
+  \item 
+  \end{enumerate}
+
+  \section{Special polytopes}
+  \begin{enumerate}
+    \item Simplices: $V$ is a set of $d+1$ affinely independent points, then
+      $T^d = \conv V$ is the $d$ simplex. $f_k(T^d) = \chose{d+1}{k+1}$. Thus
+      any two $d$ simplices are combinatorially equivalent. Also the dual of the
+      $d$ simplex is also a $d$ simplex
+    \item Pyramids: A $d$ pyramid is the convex hull of a $d-1$ polytope $Q$ called
+      based and a point $X \notin \aff(Q)$.
+    \end{enumerate}
+
+    \section{Cyclic Polytopes}
+    \begin{enumerate}
+    \item In $\R^d$, consider the moment curve $f(t) = (t, t^2, \cdots, t^{d})$.
+      For $\tau_1 < \tau_2 < \cdots, \tau_n$ consider the $f(\tau_1), \cdots,
+      f(\tau_n)$. These are the vertices. The cyclic polytope would be the
+      convex hull of these points.
+    \item \bf{General position} We say that a set of points in $\R^d$ is in
+      general position, if any collection of $d+1$ points is affinely
+      independent.
+    \item A cyclic polytope is a simplicial polytope. Proof: We infact prove
+      that the points are in general position. Remember the determinant
+      argument? The determinant would be $\Prod(\tau_i - \tau_j)$ for $i \neq
+      j$.
+    \item Let us denote $x_i = f(\tau_i)$ and $x_i < x_j \iff \tau_i < \tau_j$.
+      Now $V = \{x_1, \cdots, x_v\}$ is a totally ordered set. If the
+      cardinality is $v$, we call it a $v$ set. We call a subset {\emph
+        contiguous} if $X = \{x_i, \cdots, x_j\}$ and $x_{i-1} \neq W$ and
+      $x_{j+1} \neq W$. $X$ will be called even or odd according to the parity
+      of the cardinality of $X$. An {\emph end-set} is a subset $Y \subset W$ of
+      the form ${x_1, \cdots, x_i}$ and ${x_j, \cdots, x_v\}$ where $x_{i+1}
+        \neq W$ and $x_{j-1} \neq W$ respectively.
+
+        Now we may represent any set $W \subset V$ uniquely as $Y_1 \cup X_1
+        \cup \cdots \cup X_t \cup Y_2$ where $Y_1, Y_2$ are end sets and $X_i$
+        are contiguous sets. The size of $W = r$ and exactly $s$ contiguous sets
+        in them are odd. We say that $W$ is of the type $(r, s)$.
+    \end{enumerate}
+
+    
+    \begin{theorem}[Faces of Cyclic Polytopes]
+      Let $W$ be any subset of $V$ which is the vertices of the cyclic polytope
+      $C(v, d)$. Then $\conv W$ is a $k$ face of $C(v, d)$ where $0 \le k \le k
+      - 1$ if and only if $W$ is of the type $(k + 1, s)$ for some $0 \le s\le d
+      - k - 1$.
+    \end{theorem}
+    \begin{proof}
+      We know that $C(v, d)$ is simplicial. So if $\conv W$ is a $k$ face of
+      $C(v, d)$, then the cardinality of $W$ is $k + 1$.
+
+      Consider $k = d - 1$. Given a subset $W \subset V$ with $\card W = d$,
+      then by we know that $W$ is an affinely independent set. Consider the
+      hyperplane $H$ formed by the affine combination of points of $W$. $M$ is a
+      $d$th order curve. So $H \cap M = W$ and the points of $W$ divide $M$ into
+      $d + 1$ arcs laying alternatively along either sides of $H$.
+
+      $\conv W$ is a facet of $C(v, d)$ if and only if all points of $V
+      \setminus W$ lie on the same side of $H$. This will only happen if given
+      any two points of $V \setminus W$, they are separated on $M$ by an even
+      number of points of $W$. This means that the number of odd contiguous sets
+      are $0$. Thus it is of type $(d, 0)$
+
+      Consider the general case. $W \subset V$ with $\card W = k + 1$ be the
+      given subset. If $W$ has at most $d - k - 1$ odd contiguous subsets, then
+      find a subset $T \subset M$ such that $T \cap V = \emptyset$ and $T \cup
+      W$ has zero odd contiguous subsets. Now, for the cyclic polytope with
+      vertices $T \cup V$, $\aff (T \cup W)$ is a face. By a lemma about
+      intersections forming faces, $H \cap C(v, d) = W$ is also a face.
+
+      We now need to prove that every face satisfies the condition. If $\conv W$
+      is a face, then there is a facet $W'$ of $C(v, d)$ where it is also a
+      face. Thus, $W$ cannot have more than $d - k - 1$ odd contiguous subsets.
+      (Basically by adding $p$ points, we can at most decrease $p$ odd
+      contiguous subsets.)
+    \end{proof}
+
+    \begin{enumerate}
+    \item A polytope $P$ is said to be $k$ neighbourly if every subset of $k$
+      points of $V = \vert P$ is the set of vertices of a proper face of $P$.
+    \item $C(v, d)$ is $\lfloor \frac{d}{2} \rfloor$ neighbourly.
+    \end{enumerate}
+
+    \section{Gale transform}
+    Let $P$ be a $d$ polytope with vertices $\{x_1, \cdots, x_n\}$. Consider the
+    set of all vectors $(\lambda_1, \cdots, \lambda_n) \in \R^n$ such that
+    $\lambda_1 x_1 + \cdots + \lambda_n x_n = 0$ and $\lambda_1+ \cdots +
+    \lambda_n = 0$.
+
+    The set of such vectors form a vector space of dimension $n - d- 1$.
+
+    Choose a basis $\{a_1, \cdots, a_{n-d-1}\}$ and suppose that $a_{j} =
+    (\alpha_{j1}, \cdots, \alpha_{jn}$.
+
+    Consider $\bar{x}_i = (\alpha_{1i}, \cdots, \alpha_{(n - d - 1)i})$.
+
+    Now, $\bar{V} = \{\bar{x}_1,\cdots, \bar{x}_n \} \in \R^{n-d-1}$ is a Gale
+    transform of $\bar{V}$ with $\bar{x}_i$ corresponding to $x_i \in V$.
+
+    \begin{lemma}
+      For a $d$ polytope $P$ with vertex set $V$, $F = \conv \{x_i, \cdots,
+      x_j\}$ is a face of $P$ if and only if $\aff(F) \cap \conv \{V \setminus
+      F} = \emptyset$.
+  \end{lemma}
+
+  \begin{proof}
+    If $F = \conv W$ is a face of $P$, then there is a supporting hyperplane $H$
+    of $P$ such that $H \cap P = F$. Then $V \setminus W$ is contained  in one
+    of the open half spaces bounded by $H$. But then $\aff W = \aff F \subset
+    H$, so that $\aff W \cap \conv(V \setminus W) = \emptyset$.
+
+    To show the other direction, suppose $x \in \aff W$, $y \in \conv (V
+    \setminus W)$. For a fixed point in $\conv (V \setminus W)$, the shortest
+    distance from $x$ is attained when they are perpendicular. Since $\conv (V
+    \setminus W)$ is closed and bounded. Now use the nearest point map to get a
+    hyperplane that supports $\conv (V \setminus W)$. Translate it parallely and
+    we are done.
+  \end{proof}
+
+  \begin{theorem}
+    Let $P$ be a polytope and let $V =\vert P$. Then the subset $Z \subset V$ is
+    a coface of $P$ if and only if in a gale transform $\bar{V}$ of $V$, $0 \in$
+    the relative interior of $\conv \bar{Z}$.
+  \end{theorem}
+
+  \begin{proof}
+
+  \end{proof}
+
+  \begin{corollary}
+    A Gale transform $\bar{V}$ of the set of vertices of a Polytope other than
+    the simplex has the property that every open half space with $0$ on its
+    boundary contains at least two points of $\bar{V}$.
+  \end{corollary}
+  \begin{proof}
+    (For a simplex all the gale transform would be zeros and the statement would
+    become weird.) Suppose that there is a hyperplane with zero such that the
+    open half space only contains one point $\bar{x}_i$. Recall the condition
+    for $x_i$, the vertex becoming a face. It is that $0 \in \operatorname{rel.
+      int}\{\bar{x}_1, \cdots, \bar{x}_{i-1}, \bar{x}_{i+1}, \cdots,
+    \bar{x}_{d+1}\}$ But this would lead to a contradiction.
+  \end{proof}
+      
+\end{multicols}
+
+\end{document}
