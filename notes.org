@@ -2311,7 +2311,7 @@
        sets.
        
        Which means that there should not be odd contiguous sets. Thus, there are
-       only even contiguous sets. Hence the statements $\conv W$is a face of
+       only even contiguous sets. Hence the statements $\conv W$ is a face of
        $C(v, d)$ is equivalent to $H$ is a support hyperplane of $C(v, d)$.
     2. $\card W = k+1, W \subset V$. $W \subset V$, $W$ is of type $(k+1, s$, $0
        \le s \le d-k-1$.
@@ -2353,7 +2353,7 @@
    k- 1$.
 *** Proof
     Part 1: $k = d-1 \iff \conv W = k+1$. Let $W \subset V$ and $\card W = d$,
-    $W \subet M$ and $\card W = d \implies W$ is affinely independent.
+    $W \subset M$ and $\card W = d \implies W$ is affinely independent.
     Therefore, affine hull of $H$ is same as affine hull of $W$.
 
     $M$ is an order $d$ curve (this means that if you cut the moment curve with
@@ -2383,7 +2383,7 @@
     T$ is a facet of $C(v + d - k - 1, d)$ with supporting hyperplane, $H =
     \aff(W \cup T)$.
 
-    Summary: $C(v, d) \subset C(v + d - k - 1, d) \subset H^{-1|$ (some abuse of
+    Summary: $C(v, d) \subset C(v + d - k - 1, d) \subset H^{-1}$ (some abuse of
     notation, the second one is the convex hull of $V \cup T)
 
     $W \cup T = (V \cup T) \cap H$.
@@ -2447,7 +2447,7 @@
     $W \subset V$ of type $(k+1, s)$ or $(k+1, s-1)$ where $1 \equiv k + 1
     (\mod 2)$.
 
-    $f_k(v, 2m) = \{W \subset V \vert W \textup{ is of type (k+1, s), 0 \le 1
+    $f_k(v, 2m) = \{W \subset V \vert W \textup{ is of type } (k+1, s), 0 \le 1
     \le \}$.
 * Lecture 19 <2019-01-08 Tue>
 ** Cyclic Polytope
@@ -2543,12 +2543,12 @@
     \vert W \textup{ is of type } (k+1, s)\textup{ where } 0 \le s \le 2n - k +
     1 \}$.
 
-    This is same as $\sum_{0 \ls s le 2n - k + 1} \card \{W \subset V \vert W
+    This is same as $\sum_{0 \le s le 2n - k + 1} \card \{W \subset V \vert W
     \textup{ is of type (r, s)}\}$.
 
-    This is again same as $\sum_{0 \le s \le 2n - k + 1, s = k+1 (\mod 2)}
+    This is again same as $$\sum_{0 \le s \le 2n - k + 1, s = k+1 (\mod 2)}
     \left( \card \{W \subset V \vert W \textup{ is of type (r, s) or (r, s -
-    1)}\} + \card \{W \subset V \vert W \textup{ is of type (r, s)}\} \right)$.
+    1)}\} + \card \{W \subset V \vert W \textup{ is of type (r, s)}\} \right).$$
     Now we have everything.
 
     $V$ circuit is $V \subset S^1$ circle. $\vert V \vert = v$.
@@ -3372,7 +3372,7 @@
    Theorem 3 pp. 131
 ** Theorem
    Theorem 4 pp. 132
-* Lecture 27 <2019-02-06 Wed> 
+* Lecture 27 <2019-02-06 Wed>
 ** Gale transform
    *Question on the oral exam* [fn:46]
    
@@ -3674,3 +3674,7 @@ needed for the uniqueness.
 [fn:2] What if $M$ is a disc?
 
 [fn:1] Wikipedia article about Radon'n theorem says that this is true. Crazy.
+* Study
+** Skipped
+   1. pp 43, 44. Convex Polytope is a bounded Polyhedral set and vice versa.
+   2. Many pages until pp. 60.

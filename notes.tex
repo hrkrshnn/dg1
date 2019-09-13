@@ -1,4 +1,4 @@
-% Created 2018-12-19 Wed 11:09
+% Created 2019-07-03 Wed 12:27
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -19,6 +19,7 @@
 \usepackage{mathrsfs}
 \usepackage{amsmath}
 \def\R{\mathbb{R}}
+\def\E{\mathscr{R}}
 \def\Z{\mathbb{Z}}
 \def\N{\mathbb{N}}
 \def\inte{\operatorname{int}}
@@ -46,21 +47,21 @@
 \tableofcontents
 
 \section{Lecture 1}
-\label{sec:orge41e575}
+\label{sec:org07e5dbb}
 \section{Lecture 2 \textit{<2018-10-17 Wed>}}
-\label{sec:orga7f42ce}
+\label{sec:org6cac4a1}
 \subsection{Definitions}
-\label{sec:org25c7ab3}
+\label{sec:orgb6eb05b}
 \subsubsection{Positive half}
-\label{sec:org710e6c3}
+\label{sec:orgf30c5b8}
 \subsubsection{Affine hyperplane}
-\label{sec:org9a2da90}
+\label{sec:org14dd4b8}
 \subsubsection{(Question) What is the space of all oriented hyperplanes of \(\R^n\)}
-\label{sec:orgdc097af}
+\label{sec:orga54d3c4}
 \subsubsection{Definition of pos?}
-\label{sec:org334e47d}
+\label{sec:org328c5f0}
 \subsection{Radon's theorem}
-\label{sec:orgef75577}
+\label{sec:orgb679f8f}
 Three cases
 
 \begin{itemize}
@@ -77,14 +78,14 @@ then there is a partition of \(M_1\) and \(M_2\) of \(M\) such that \(\pos M_1
 \end{itemize}
 \end{itemize}
 \subsection{Definitions}
-\label{sec:org92120e5}
+\label{sec:orgfc967ff}
 \subsubsection{Radon partition}
-\label{sec:org819de2a}
+\label{sec:org159bbd7}
 A partition \(M_1, M_2\) such that \(\conv M_1 \cap conv M_2 \neq \emptyset\) is called a \textbf{Radon partition}.
 \subsection{Proof}
-\label{sec:org7a62cca}
+\label{sec:orgedfd891}
 \subsubsection{Part 1}
-\label{sec:org73069ba}
+\label{sec:org0f74673}
 Size of \(M\) greater than \(n+2\). Take \(x_1, \cdots, x_{n+2}\) pairwise disjoint points from \$M.
 
 Then \(x_1, \cdots x_{n+2}\) are affinely dependent, meaning that that you can
@@ -108,7 +109,7 @@ a convex combination.
 
 Thus \(X\) is inside both the intersection.
 \subsubsection{Part 2}
-\label{sec:org1c9e757}
+\label{sec:org104966d}
 
 \(\pos M\) is a cone with appex \ldots{} 
 
@@ -121,7 +122,7 @@ blah blah.
 
 Keyword: matroids.
 \subsubsection{Part 3}
-\label{sec:orgc9be2c6}
+\label{sec:org49b9c2d}
 I didn't type.
 
 (A part.) A partition is unique.
@@ -144,9 +145,9 @@ $$\tilde M_1 \cap (M-\tilde M), \tilde M_2$$
 and $$\tilde M_2 \cap (M-\tilde M)$$ forms two different radon partitions and
 again, we have a contradiction.
 \subsection{Questions}
-\label{sec:org9cf8f36}
+\label{sec:org24ca9b8}
 \subsubsection{About affine maps}
-\label{sec:org11a2547}
+\label{sec:org4cc7c71}
 We have an arbitrary affine map between a simplex (n+1 dimensional) and
 \(\R^n\). implies, there exist faces of the simpleces such that the faces do
 not intersect, but the images of the faces will intersect. Apparently this
@@ -162,11 +163,11 @@ the intersection of the convex hulls of \(M_i\) are non-empty.
 
 \textbf{Question}: More points, minimal number of points?
 \section{Lecture 3 \textit{<2018-10-23 Tue>}}
-\label{sec:org7202ab7}
+\label{sec:org0aec252}
 \subsection{Review}
-\label{sec:org00178f8}
+\label{sec:org1d375e9}
 \subsubsection{Radon's theorem}
-\label{sec:org89003a1}
+\label{sec:org11cca32}
 \begin{enumerate}
 \item If \(M \subset \R^n\) and \(\vert M \vert \ge n+2\), then there exists a
 partition \(M_1\) and \(M_2\) of \(M\) such that \(\conv M_1 \cap \conv M_2 \neq
@@ -176,7 +177,7 @@ partition \(M_1\) and \(M_2\) of \(M\) such that \(\conv M_1 \cap \conv M_2 \neq
 such that \(\pos M_1 \cap \pos M_2 \neq \empty\)
 \end{enumerate}
 \subsection{Charatheodery's theorem}
-\label{sec:orgba9d977}
+\label{sec:orgeea6656}
 \begin{enumerate}
 \item Let \(M\subset \R^n\), then \(\conv M\) is the set of all convex combinations
 of at most \(n+1\) points from \(M\). \footnote{What if \(M\) is a disc?}
@@ -184,7 +185,7 @@ of at most \(n+1\) points from \(M\). \footnote{What if \(M\) is a disc?}
 of at most \(n\) points from \(M\).
 \end{enumerate}
 \subsubsection{Proof}
-\label{sec:orgf18dbf2}
+\label{sec:org5a75daf}
 \(x\in \conv M \implies\) there exists \(\lambda_1, \cdots, \lambda_n\) and \(x_1,\cdots, x_n \in M\). 
 
 \(x=\lambda_1x_1+\cdots + \lambda_rx_r\) and \(\sum \lambda_i = 1\), \(\lambda_i \ge 0\).
@@ -198,20 +199,20 @@ then there exists an affine dependence \(\mu_1x_2 + \cdots \mu_rx_r = 0\),
     n+2\), then there is an affine dependence, and then use this to contradict
 the  minimality of \(r\).)\footnote{Solve the exercise for Helly's theorem.}
 \subsubsection{Lemma about compactness of convex hull of compact set}
-\label{sec:org70c059f}
+\label{sec:org6ac60e4}
 \(M^{n+1} \times \Delta \rightarrow M\). Here the space on the left is the set
 of all \(n+1\) points of \(M\) and \(\Delta\) is a simplex.
 
 Now, it follows from the fact that image of a compact set is compact.
 \subsection{Nearest points map and supporting hyperplane}
-\label{sec:org8c4d3c3}
+\label{sec:orge478e5f}
 \subsubsection{Lemma}
-\label{sec:org0bbf58f}
+\label{sec:orge7031df}
 Let \(K\subset \R^n\) be closed and convex. Then for every \(x\in \R^n\), there
 is unique point \(x^1 \in K\) such that $$\Vert x - x^1\Vert = \inf\Vert x -
     y\Vert = d(x, K)$$
 \subsubsection{Proof}
-\label{sec:org374d215}
+\label{sec:org7ce648f}
 We can find a sequence of points \((y_n)\) in \(M\) such that the distance from
 \(x\) is less than \(1/n\). Now, the sequence is Cauchy. Since, \(\R^n\) is
 complete, it has to converge, and since \(K\) is closed, we are done. \footnote{Interestingly, convexity of the set is not used here. It's probably only
@@ -224,7 +225,7 @@ side \(x'x''\) would be smaller than the distance to \(x'\) or \(x''\). This is 
 contradiction. Hence the points have to be unique. (Here the convexity of
 the set is used.)
 \subsubsection{Definition of nearest point map}
-\label{sec:org0ad46bb}
+\label{sec:orgadc5063}
 Given \(K\subset \R^n\) be a closed convex set. Then \(p_k \mathbb \R^n
     \rightarrow K\) is the nearest points map. (This is defined using the last
 lemma.)
@@ -232,9 +233,9 @@ lemma.)
 If \(x\in K\), then \(p_k(x) = x\). \(p_K\) is surjective. Usually it is not
 injective, if \(K = \R^n\), then it is injective. 
 \subsection{Properties of nearest point map}
-\label{sec:org0df3897}
+\label{sec:org165d877}
 \subsubsection{Definition (supporting hyperplane)}
-\label{sec:org455a5cc}
+\label{sec:org939ff03}
 A hyperplane \(H\) is a supporting hyperplane if \(a\) closed convex set in \(\R^n\) if 
 $$H \cap K \neq \emptyset \textup{ and } K \subset H^- \textup{ or } K \subset H^+$$
 
@@ -250,11 +251,11 @@ Notions:
 \item Inner normal
 \end{enumerate}
 \subsubsection{Aim}
-\label{sec:orgbcf061b}
+\label{sec:orged98e50}
 We want to prove: Given a convex body and take a point in the boundary. I
 want to prove that there is a supporting hyperplane (?)
 \subsubsection{Lemma}
-\label{sec:orgb9b918d}
+\label{sec:org7f9c85a}
 Let \(\varphi \neq K \subset \R^n\) be a closed convex set. If \(x \in \R^n\setminus K\),
 then the hyperplane \(H = \{y \in \R^n \vert \langle y, u \rangle = 1\}\) is a
 supporting hyperplane of \(K\) at \(x' = p_k(x)\) where \(u=\frac{x-x'}{\langle
@@ -266,7 +267,7 @@ direction vector \(x - x'\), we normalize this vector. (\footnote{I think I made
 K)\) \(\subset\) M\$ has a supporting hyperplane. We'll try to figure out more about
 this set.}
 \subsubsection{Proof}
-\label{sec:org575a44b}
+\label{sec:org6e24bb7}
 \(H\) is a hyperplane and \(x' \in H\), then \(\langle x - x', x - x'\rangle \ge
     0 \implies \langle x, x-x' \rangle > \langle x', x-x'\rangle \implies \langle
     x, (x-x')/(\langle x', x-x'\rangle) \implies x\in H^+\)
@@ -279,14 +280,14 @@ segment that would minimize the distance from \(x\). The argument is similar
 to the argument for last theorem. (The perpendicular from \(x\) would give a
 point on the segment \(x'y\) that would be the minimum.) \footnote{I think I made mistakes in framing at the beginning of the paragraph.}
 \subsubsection{Lemma}
-\label{sec:org7712cef}
+\label{sec:org3c856c6}
 Let \(K\subset \R^n\) be a closed convex set and \(x\in \R^n \setminus K\).
 For a point \(y\) on the half-line emanating from \(x'=p_k(x)\) and containing
 \(x\) holds
 
 \(y' = p_K(y)=p_K(x) = x'\)
 \subsubsection{Proof}
-\label{sec:orgb46b749}
+\label{sec:org8d58df6}
 Let \(y \in [x', x]\), assume that \(y' \neq x'\). We'll try to arrive at a contradiction.
 
 \(\Vert x - x' \Vert = \Vert x - y \Vert + \Vert y - x'\Vert \ge \Vert x -
@@ -300,27 +301,27 @@ We do something similar when \(x\) is an element in the line segment \([y,
     x']\). (Not exactly similar, but try to arrive at a contradiction from
 drawing some triangles and what-not.)
 \subsubsection{Lemma Busemann and Faller's lemma}
-\label{sec:org7c0f888}
+\label{sec:org327d050}
 The function \(p_K\) does not increase the distance, therefore it is Lipschitz
 with constant \(1\) and is uniformly continuous. This means that \(\Vert
     p_k(x) - p_K(y) \Vert \le \Vert x - y\Vert\).
 \subsubsection{Proof}
-\label{sec:orgd6750b5}
+\label{sec:orge150c16}
 We assume that \(x' = p_K(x) \neq y' = p_K(y)\). (We draw a diagram.)
 
 We kinda use principles similar to the last two theorems. I skipped writing
 the proof.
 \section{Lecture 4 \textit{<2018-10-24 Wed>}}
-\label{sec:orgaba674c}
+\label{sec:org9de6248}
 \subsection{Review}
-\label{sec:org207bd05}
+\label{sec:orgb77fd51}
 \subsubsection{Nearest point map}
-\label{sec:orgb7b6bd3}
+\label{sec:org7a60473}
 The definition of the nearest point map for a convex set.
 
 Recall that we use completeness of Real numbers for the existence of the map. \footnote{Did I write this statement correctly?}
 \subsubsection{Some properties}
-\label{sec:org257eb02}
+\label{sec:org1f1fa96}
 The nearest point map is identity in \(K\). 
 
 Every point \(y\) on the half line emanating from \(x'\) containing is in the
@@ -330,7 +331,7 @@ fiber of \(x'\) with respect to \(p_K\).
 
 Supporting hyperplane \(H \colon H \cap K = \emptyset\), \(K\subset H^{-}\). 
 \subsubsection{Lemma}
-\label{sec:org63f68d6}
+\label{sec:org3bacc7a}
 If \(x \in \R^n - K\), then \(H=\{y \colon \langle y, x-x'\rangle = \langle x',
     x-x'\rangle \}\) is a supporting hyperplane of \(K\) at \(x'\).
 
@@ -338,11 +339,11 @@ The lemma says that at every point outside of \(K\), we can find a supporting
 hyperplane. What we need to prove is that at every point on the boundary we
 can find a supporting hyperplane. 
 \subsection{Theorem}
-\label{sec:org034a869}
+\label{sec:org25af4c3}
 Let \(K\subset \R^n\) (here \(K\) is not equal to \(\R^n\) be closed convex set.
 Then \(K\) is equal to the intersection of all its supporting half-spaces. 
 \subsubsection{Proof}
-\label{sec:org7939823}
+\label{sec:org835aeec}
 Because \(K\) is not \(\R^n\), we have a point in the difference. Then there is
 at least one supporting hyperplane, and therefore a supporting half space.
 Let \(K'\) be the intersection of all of it's supporting hyperplanes of \(K\).
@@ -356,11 +357,11 @@ Let \(k'\) be an element in \(K'\). Then there exists a supporting hyperplane
 intersections of hyperplanes. These will be called Polyhedra. An non-example is
 a disc.}
 \subsection{Theorem}
-\label{sec:org2328a83}
+\label{sec:org966c2f3}
 Let \(K\subset \R^n\) a closed convex set and \(x\in \partial K\). Then there
 exists a supporting hyperplane for \(K\) containing \(x\). 
 \subsubsection{Proof}
-\label{sec:orgfdc8b00}
+\label{sec:orge3cf4e3}
 We define the boundary of \(K\) first. Let \(x\in \partial K \iff (\forall U
     \in x \textup{ and open }) U \cap K \neq \emptyset\) and \(U\cap K^{c} \neq
     \emptyset\) and \(x_0 \in K\).
@@ -379,9 +380,9 @@ that \(y_n\) is also an element of \(S_n\), then
     f_K(y_{k_n}')\) and \(y_0 = lim y_k' \implies f_k(y_0) = \lim f_k(y_{k_n}')\)
 and \(x_0 = f_k(y_0)\) and \(y_0 \neq x_0\). \footnote{I don't understand what's happening at the end}
 \subsection{Faces and Normal Cone}
-\label{sec:orgffc6992}
+\label{sec:org6435968}
 \subsubsection{Definition}
-\label{sec:orgbeba645}
+\label{sec:org6cf559f}
 Let \(K\subset \R^n\) be a closed convex set. A face \(F\) of \(K\) is a subset of
 \(K\) is a subset of the form \(F = K \cap H\) where \(H\) is some supporting
 hyperplane of \(K\). 
@@ -392,10 +393,10 @@ but called non-proper. (A diagram with \(\emptyset\) and \(K\).)
 Examples: Triangles (here faces are the edges.) For a disc, then the faces
 are points on the boundary. For a cube, the faces are the faces of the cube.
 \subsubsection{Lemma about convexity of face}
-\label{sec:org26f7e91}
+\label{sec:org11a5b74}
 Every proper face of \(K\) is a closed convex set.
 \subsubsection{Dimension}
-\label{sec:org5ff5902}
+\label{sec:orgb961102}
 If \(F\) is a face of \(K\) and \(m=\dim F\), (Let affine hull of \(K\) is \(\R^n\).)
 \begin{enumerate}
 \item then \(m=0\) we call \(F\) a vertex of \(K\)
@@ -404,10 +405,10 @@ If \(F\) is a face of \(K\) and \(m=\dim F\), (Let affine hull of \(K\) is \(\R^
 \item If \(m=n-2\) we call \(F\) a \textbf{ridge} of \(K\).
 \end{enumerate}
 \subsection{Lemma}
-\label{sec:org387c8ee}
+\label{sec:org88ad649}
 Let \(F_0\) be subset of \(F_1\) faces of \(K\), then \(F_0\) is a face of \(F_1\).
 \subsubsection{Proof}
-\label{sec:org4ec3369}
+\label{sec:orga8f19b9}
 \(F_0\) is a face of \(K \implies\), therefore \(F_0 = K \cap H\), where \(H\) is a
 supporting hyperplane for \(K\). \(H\) supporting hyperplane for \(K\) and
 therefore for \(F_1\).
@@ -416,7 +417,7 @@ therefore for \(F_1\).
 
 \(F_0 = F_1 \cap H\). 
 \subsubsection{Remark}
-\label{sec:orgb976f2e}
+\label{sec:org581aef7}
 The converse of the lemma does not hold. \(F_2\) is a face of \(K\) and \(F_0\) is
 a face of \(F_2\) implies \(F_2\) is a face of \(K\). The last statement is not
 true. Notice that in the above proof we need both of them to be faces of
@@ -426,11 +427,11 @@ The picture: A square with a half-disc glued to the right. \(F_0\) be a vertex
 on the right side and \(F_1\) be the edge of the square containing \(F_0\). \footnote{Apparently the statement would be true for polytopes, i.e., the converse
 holds for polytopes. This is one of the reason we're interested in polytopes.}
 \subsection{Lemma}
-\label{sec:org5c2ec9d}
+\label{sec:orgefe5329}
 Let \(F_1, \cdots, F_k\) be faces of \(K\), then \(F=F_1\cap \cdots \cap F_k\) if a
 face of \(K\).
 \subsubsection{Proof}
-\label{sec:org9228d61}
+\label{sec:org7673c33}
 \(F_i = K \cap H_i\), where \(H_i = \{y \vert \langle y, u_i \rangle = 0\}\).
 (\(K \subset H_i^{-1}\) \footnote{We need the next statement for making this assertion.}) We can assume that \(0 \in F\) which is the
 intersection of all of them \(0 \in F = F_1 \cap \cdots F_k\).
@@ -464,7 +465,7 @@ The last statement implies that \(y\)
 \(\langle y, u \rangle = 0 = \langle y, u_1 \rangle + \cdots + \langle y,
     u_k\rangle\). \footnote{Question: what about infinite intersection.}
 \subsection{Lemma}
-\label{sec:orge631aec}
+\label{sec:org56af7b2}
 \begin{itemize}
 \item Let \(F\) be a face of a closed convex set \(K\) and \(x, \tilde x\) be an element
 \end{itemize}
@@ -475,13 +476,13 @@ containing \(x\) must contain \(\tilde x\).
 ten \(F = F'\).
 \end{itemize}
 \subsubsection{Proof}
-\label{sec:org50417a3}
+\label{sec:org728fd02}
 \(H\) supporting for \(F\). I didn't write this. \footnote{This means that we can choose a supporting hyperplane by choosing a
 point inside relative interior.}
 \section{Lecture 5 \textit{<2018-10-30 Tue>}}
-\label{sec:orgb86a6a7}
+\label{sec:org8112987}
 \subsection{Review}
-\label{sec:orgda2b7ce}
+\label{sec:orgd846768}
 He did a review of stuff. 
 
 \begin{enumerate}
@@ -492,7 +493,7 @@ that \(F = K \cap H\) is a face. \(\phi_1, K\) (improper) face.
 converse of the statement is not true. \footnote{Remember the example with a square and a half disc glued to the right side of the square?}
 \end{enumerate}
 \subsection{Definition (Normal cone)}
-\label{sec:org14aca23}
+\label{sec:orga6367e2}
 Let \(K\subset \R^n\) be a closed convex set and \(x\in K\). The \textbf{Normal cone} at
 \(x\) is the set at \(x\) is the set $$N(x) = -x + p_K^{-1}(\{x\})$$
 
@@ -520,11 +521,11 @@ the entire space using \(N(x)\). (I think the partition thing we are talking
 about is about \(p^{-1}_K\). \(N(x)\) would always contain \(0\).
 \end{enumerate}
 \subsection{Lemma}
-\label{sec:orgb958980}
+\label{sec:org017ffca}
 \(N(x)\) is a closed convex cone. It consists of \(0\) and all outer normals of
 \(K\) in \(x\). If \(x \in \inte K\), then \(N(x) = \{0\}\). 
 \subsubsection{Proof}
-\label{sec:org6ece2f3}
+\label{sec:orge782728}
 \(\lambda \ge 0, u \in N(x) \implies \lambda x \in N(x)\)
 
 \(u, v \in N(x) \implies u + v \in N(x)\)
@@ -555,43 +556,43 @@ also inside. So it's like a cone. What about closed?
 continuous, then inverse image is closed. Because the translation is an
 isometry, we are done.
 \subsection{Definition (Dual cone)}
-\label{sec:orgc42bf6e}
+\label{sec:orge2ea73e}
 Let \(G\) be a cone, then \(\sigma = \{u \vert \langle \sigma, u\rangle \ge 0 \}\)
 is called the \textbf{dual cone}. 
 \subsection{Lemma}
-\label{sec:orgfc64423}
+\label{sec:org64c2200}
 If \(\sigma\) is a cone with appex \(0\), then \(N_\sigma(0) = -\sigma\).\footnote{He didn't prove this, but it's obvious.}
 \subsection{Lemma}
-\label{sec:org05aaab6}
+\label{sec:org7ace8eb}
 Let \(F\) be a face of a closed convex set of \(K\) and \(x, \tilde{x} \in \relint
    F\), then \(N(x) = N(\tilde x)\).
 \subsubsection{{\bfseries\sffamily TODO} Proof}
-\label{sec:orgf9150f1}
+\label{sec:orgf6bec4e}
 The idea is that if there are two points in the relative interior of a face,
 then the supporting hyperplane for these points are the same. We look at all
 the normals at \(x\) and \(\tilde x\). \footnote{I think I'm missing some stuff.}
 \subsection{A random story}
-\label{sec:orgb3e1765}
+\label{sec:org515df17}
 \(P \rightarrow \{F \colon F \textup{ a face of P}\), for every face, we can
 talk about \(N(F)\) instead of a point in the relative interior. These two
 sets, we put inclusion as a relation, these are anti-isomorphic \footnote{I think it means, the inclusion becomes opposite in the other space.} These
 have some group structure and later can be used to construct affine Toric
 variety. \footnote{The construction is similar to the construction of a toric variety.}
 \subsection{Definition}
-\label{sec:org4737f62}
+\label{sec:orgc1d4326}
 If \(F\) is a face of a closed convex set \(K\) and \(x\in \relint F\), then \$N(x)
 is denoted by \(N(F)\) and is called the cone of normals of \(K\) in \(F\). \footnote{Connection with analysis: For a smooth real valued function from \(\R\),
 we have a unique normal, whereas for a non-smooth point, there are several
 different normals (or supporting hyperplane.) We'll do something similar in our
 course.}
 \subsection{Theorem}
-\label{sec:org0ca47a6}
+\label{sec:org146f205}
 Let \(K\) be a convex body in \(\R^n\) and \(x(F)\) are of the relative interior
 points in \(F \neq \emptyset\) or \(K\). Then \(\{\relint N(x(F)) \vert F \text{
    face of } K\} = \{ \relint N(F) \vert F\textup{ face of } K \}\) is a
 partition of \(\R^n\).
 \subsubsection{{\bfseries\sffamily TODO} Proof}
-\label{sec:orgf9ca601}
+\label{sec:org63a478e}
 Since \(K\) is bounded, there exists \(\alpha\) non-negative, such that \(K\) is a
 subset of \(H^{-1}(u, \alpha)\) where $$H(u, \alpha) = \{x \vert \langle x, u
     \rangle =\alpha\}$$
@@ -601,7 +602,7 @@ Let's take the intersection \(\cap_{K \subset H^{-1}}(u, \alpha) H^{-1}
 
 There was a nice diagram. 
 \subsubsection{Random stuff}
-\label{sec:orgeed5e93}
+\label{sec:orga989abd}
 \(\forall u \in \R^n - \{0\}\), there exists a face \(F\) of \(K\), \(u\in N(F)\)
 and \(0 \in N(K)\).
 
@@ -617,12 +618,12 @@ He did an example with tetrahedra.
 (I missed parts of this argument.) We used boundedness of the convex body.
 If it is unbounded, the family of normal cones do not cover.
 \subsection{Definition (Normal fan)}
-\label{sec:org73938e8}
+\label{sec:org3efb6ea}
 The family \(N(F)\) of \(K\) is called the normal fan of \(K\)
 \subsection{Support and distance functionn}
-\label{sec:orgbddacae}
+\label{sec:orgafdea09}
 \subsubsection{Definition (support function)}
-\label{sec:org52d40d5}
+\label{sec:org7caf6c7}
 Let \(K\) be a non-empty convex body. The function \(h_K\) that maps \(\R^n
     \rightarrow \R\), \(h_K(x) = \sup_{x\in K} \langle u, x\rangle\) is the
 \textbf{support function} of \(K\).\footnote{We use the fact that every compact function has a supremum.}
@@ -631,7 +632,7 @@ We can also say it is the supremum over a fixed \(x_0\).
 
 There was a diagram
 \subsubsection{Question?}
-\label{sec:org235f03c}
+\label{sec:orgb97b593}
 Given a ball, what is the normal fan of the space?
 
 If we take an interior point, then we have \(0\). So we should go to the
@@ -640,26 +641,26 @@ normal fan is all the half lines. The normal fan is a sphere. The normal fan
 can be ugly when we have smooth convex body. But for polytopes, it's much
 nicer.
 \section{Lecture 6 \textit{<2018-11-06 Tue>}}
-\label{sec:orgc746e30}
+\label{sec:orgfda823f}
 \subsection{Support and distance function}
-\label{sec:orgedc0146}
+\label{sec:org50428e1}
 \subsubsection{Definition}
-\label{sec:orgfdb27cd}
+\label{sec:org0f88896}
 Let \(K \subset \R^n\) be a convex body. The support function of \(K\) is
 \(h_K\colon \R^n \rightarrow \R\), \(h_K(u)= \sup_{x\in K} \langle u,
     x\rangle\)
 \subsubsection{Lemma}
-\label{sec:org4925df8}
+\label{sec:org0d504b5}
 \(h_{K+a}(u) = h_K(u) + \langle u, a \rangle\)
 \subsubsection{Proof}
-\label{sec:org36e3af5}
+\label{sec:org1fd43a0}
 \(K+a = \{x + a\vert x \in K\}\)
 
 \(h_{K+a}(u) = \sup_{x \in K} \langle u, x+a\rangle \sup_{x\in K} \langle u x \rangle + \langle u, a\rangle\)
 
 \(h_[p, q](u) = ?\), where \([p, q]\in \R^1\).
 \subsubsection{Lemma}
-\label{sec:org2a76325}
+\label{sec:org1876145}
 Let \(K\subset \R^n\) be a convex body and \(u+0\), \(x_0 \in \partial K\), there
 is a supporting hyperplane at \(x_0\), \(H_{x_0} = \{x \vert \langle x,
     u\rangle = \langle x_0, u\rangle \}\) where \(u\in N(x_0)\)
@@ -682,7 +683,7 @@ is a supporting hyperplane at \(x_0\), \(H_{x_0} = \{x \vert \langle x,
 \item Every support hyperplane of \(K\) has the above form.
 \end{enumerate}
 \subsubsection{Proof}
-\label{sec:org1818f92}
+\label{sec:orgef27154}
 \(h_K(u) = \sup\langle x, u\rangle = \langle x_0, u\rangle\) for some \(x_0 \in
     K\) (because of compactness \footnote{There is also the notion of sequential compactness. Compactness and
 sequential compactness are not equivalent.})
@@ -696,24 +697,24 @@ sequential compactness are not equivalent.})
     =\{x \vert \langle x, u\rangle = \langle x_0, u \rangle \}\) where \(u \in
     N(x_0)\). \(N \subset H^{-1}\)
 \subsection{Convex function}
-\label{sec:orgb30d00c}
+\label{sec:orgca3e696}
 Let \(f \colon \R^n \rightarrow \R\), we say that \(f\) is convex if for every
 \(x, y \in \R^n\) and \(0 \le \lambda \le 1\) holds that \(f(\lambda x +
    (1-\lambda)y) \le \lambda f(x) + (1-\lambda)f(y)\). If \(L \subset \R^n\) is an
 affine subspace, then \(f_L\) is also convex.
 \subsubsection{Definition}
-\label{sec:org72e0e89}
+\label{sec:org06c08eb}
 The function \(f\colon \R^n \rightarrow \R\) is \textbf{positively homogeneous} if
 for every \(x\in \R^n\) and \(\lambda \ge 0\) the following holds: \(f(\lambda x)
     = \lambda f(x)\)
 \subsection{Lemma}
-\label{sec:orgfc7538d}
+\label{sec:orgbca7a1f}
 Let \(f\) be positively homogeneous. Then \(f\) is convex if and only if for all
 \(x, y, \in \R^n\) the following holds:
 
 \(f(x + y) \le f(x) + f(y)\)
 \subsubsection{{\bfseries\sffamily TODO} Proof}
-\label{sec:orgb7096e8}
+\label{sec:orgb7b42e3}
 Let \(f\) be convex
 \$f(x)/2 + f(y)/2 \(\le\) f((x+y)/2) \(\le\) \$
 
@@ -722,7 +723,7 @@ Let \(f\) be convex
 \(f(\lambda x + (1- \lambda)y) \le f(\lambda x) + f((1-\lambda)y) = \lambda
     f(x) + (1-\lambda) f(y)\).
 \subsection{Lemma}
-\label{sec:org1653755}
+\label{sec:org462db8a}
 A function \(f\colon \R^n \rightarrow \R\) is convex if and only if for all
 \(x_1, \cdots, x_n\) and for all \(\lambda_1, \cdots, \lambda_n\) non-negative
 such that \(\lambda_0 + \cdots + \lambda_m = 1\) the following holds
@@ -730,7 +731,7 @@ such that \(\lambda_0 + \cdots + \lambda_m = 1\) the following holds
 \(f(\lambda_0 x_0 + \cdots \lambda_m) \le \lambda_0 f(x_0) + \cdots + \lambda_m
    f(x_m)\)
 \subsubsection{Proof}
-\label{sec:org5450c2d}
+\label{sec:org7855a77}
 \(\Leftarrow\), we put \(x_1, \cdots, x_m = y\), it follows trivially now.
 
 \(\implies\), induction on \(m\). Assume that the condition holds with \(n-1\) on
@@ -745,10 +746,10 @@ If \(\lambda_0\) is zero, we are done.
     \lambda_0 f(x_0) + (1-\lambda_0) f(\frac{\lambda_1}{(1-\lambda_0)} x_1 +
     \cdots + \frac{\lambda_m}{(1-\lambda_0} f(x_m))\) We are done.
 \subsection{Lemma (Convex functions are continuous)}
-\label{sec:org20d2ab9}
+\label{sec:org2160d6a}
 Every convex function \(f\colon \R^n \rightarrow \R\) is continuous
 \subsubsection{{\bfseries\sffamily TODO} Proof}
-\label{sec:orgaa6c420}
+\label{sec:org7dce062}
 \(x_0 \in \R^n\), \(T = \conv \{x_0, \cdots, x_{m+1}\}\) regular simplex, such that 
 
 \begin{verbatim}
@@ -788,16 +789,16 @@ Every convex function \(f\colon \R^n \rightarrow \R\) is continuous
 We can call the last value as \(\varepsilon\) and for given \(\varepsilon > 0\),
 we can choose \(\delta\). Hence the function is continuous.
 \subsection{Lemma}
-\label{sec:org68c211a}
+\label{sec:orge82e488}
 \(f \colon \R^n \rightarrow \R\) is convex if and only if \(T^{+}(f) =
    \{(x, \zeta) \vert x \in \R^n, \zeta \in \R, f(x) \le \zeta \}\) is a closed
 convex \footnote{\(f(x) = 1/x\) and \(f'(x) = - 1/x^2\), but the function is not always
 increasing (but on connected components.)}
 \subsubsection{Examples}
-\label{sec:org424ef17}
+\label{sec:orge52eff2}
 \(y = x^2\) is a convex function.
 \subsubsection{{\bfseries\sffamily TODO} Proof}
-\label{sec:org5b2e08c}
+\label{sec:orge03416b}
 \(\implies f\) is convex
 
 \((x, \zeta), (y, \eta) \in T^{+}(f) \implies \zeta \ge f(x), \eta \ge f(y)\),
@@ -814,42 +815,42 @@ implies that \(\lambda(x, f(x)) + (1-\lambda)(y, f(y)) \in T^{+}(f)\) this is
 equal to \((\lambda x + (1-\lambda y, \lambda f(x) + (1-\lambda) f(y)\), then
 \(f(\lambda x + (1-\lambda) y) \le \lambda f(x) + (1-\lambda) f(y)\).
 \subsection{Lemma}
-\label{sec:org9cf3b9e}
+\label{sec:org70cbf87}
 Let \(f\in \R^n \rightarrow \R\) be positively homogeneous. Then \(f\) is convex
 if and only if \(T^{+}(f)\) is a convex closed cone.
 \subsubsection{{\bfseries\sffamily TODO} Proof}
-\label{sec:org49b87a4}
+\label{sec:orgb3d7c34}
 \(f\) is convex.
 
 I didn't write this.
 \subsection{Remark}
-\label{sec:orgbbcb02f}
+\label{sec:org50ba9ea}
 Domain should not be restricted? 
 \section{Lecture 7 \textit{<2018-11-07 Wed>}}
-\label{sec:orge35bce1}
+\label{sec:orgab7e515}
 \subsection{Support and distance function (Review)}
-\label{sec:org362d75b}
+\label{sec:org516aaa7}
 \subsubsection{Definition}
-\label{sec:org96fa3ae}
+\label{sec:orga1481c3}
 \(K \subset \R^n\) non-empty convex body, we define the supoort function
 \(h_K \colon \R^n \rightarrow \R\), \(h_K(x) = \sup_{x\in K} \langle x, u \rangle\)
 \subsubsection{Lemma}
-\label{sec:orgc9bd69b}
+\label{sec:org4319cae}
 \(H_K(u) = \{x \in \R^n \vert \langle x , u \rangle = h_K(u)\}\) is a support
 hyperplane for \(K\).
 \subsubsection{Definition}
-\label{sec:org5fca79c}
+\label{sec:org0197882}
 \(f\colon \R^n \rightarrow \R\) is convex if for all \(\lambda \in [0, 1]\), and
 for all \(x, y, \in \R^n\), \(f(\lambda x + (1-\lambda)y) \le \lambda f(x) +
     (1-\lambda)f(y)\) positive homogeneous if \(\forall \lambda \ge 0\) and
 \(\forall x \in \R^n\), \(f(\lambda x) = \lambda f(x)\)
 \subsubsection{Lemma}
-\label{sec:orge6e7284}
+\label{sec:org78d42f5}
 \(f\colon \R^n \rightarrow \R\) positive homogeneous
 
 \(f\) is convex \(\iff\) \(\forall x, y, \in \R^n\), \(f(x+y) \le f(x) + f(y)\).
 \subsubsection{Lemma}
-\label{sec:orga70cd72}
+\label{sec:org455035a}
 \begin{enumerate}
 \item Every convex function is continuous
 \item \(f\colon \R^n \rightarrow \R\) is convex \(\iff\), \(T^{-1}(f) = \{(x, \zeta)
@@ -858,11 +859,11 @@ for all \(x, y, \in \R^n\), \(f(\lambda x + (1-\lambda)y) \le \lambda f(x) +
 \(f\) is convex \(\iff\) \(T^{+}(f)\) is closed convex cone in \(\R^{n+1}\).
 \end{enumerate}
 \subsection{Lemma}
-\label{sec:orgac23898}
+\label{sec:orgd13ff2f}
 A support function is positive homogenous and convex.
 \begin{enumerate}
 \item Proof
-\label{sec:orga1f934b}
+\label{sec:org202dd62}
 \begin{enumerate}
 \item \(h_k(\lambda u) = \sup \langle x, \lambda u\rangle = \sup_{x \in K} \lambda
         \langle x, u \rangle = \lambda \sup \langle x, u \rangle = \lambda h_K(u)\)
@@ -877,10 +878,10 @@ Now \(\langle x, u + v\rangle \le h_K(u) + h_K(v)\), \(\implies\) \(\sup_{x
 \end{enumerate}
 \end{enumerate}
 \subsection{Lemma (linearity of \(h_K\))}
-\label{sec:org97e25cb}
+\label{sec:org31daf5c}
 \(h_K\) is linear on all elements of \(\sum(K)\) (normal cone.)
 \subsubsection{Proof}
-\label{sec:orgc74ea4d}
+\label{sec:orgef75860}
 \(u \in N(x_0)\), then \(h_K(u)\), \(H_K(u) = \{x \vert \langle x, u \rangle =
     h_k(u)\}\)
 \begin{verbatim}
@@ -906,7 +907,7 @@ Now \(\langle x, u + v\rangle \le h_K(u) + h_K(v)\), \(\implies\) \(\sup_{x
 \end{verbatim}
 So \(h_K\vert_{N(x_0)}\) is the scalar product \(\langle \cdot, x_0\rangle\).
 \subsection{Definition}
-\label{sec:org5fd5772}
+\label{sec:org5675742}
 Let \(K\) be a convex body in \(\R^n\) and \(0\) is an element of the interior of
 \(K\). (So the dimension of the convex body is \(n\), i.e., the body is full
 dimensional.)
@@ -915,7 +916,7 @@ dimensional.)
    = \lambda\) for \(\bar{x}\) element of the boundary of \(K\). (When the body is
 symmetric, then one can define a norm.) Here \(\lambda > 0\).
 \subsection{Lemma}
-\label{sec:orgb53df6d}
+\label{sec:org2b53fdd}
 Let \(K\) be an n-dimensional convex body in \(\R^n\), 
 
 \begin{enumerate}
@@ -959,10 +960,10 @@ A ray can be thought of as a \(1\) dimensional half space.
 \([g_0, g_1] = g\cap K\), a convex body in \(\R^1\).
 \end{enumerate}
 \subsection{Lemma}
-\label{sec:orgdc777b1}
+\label{sec:org7d59ea9}
 \(d_K\) is positive homogeneous and convex.\footnote{Positive homogenous is a function \(f(\alpha x) = \alpha^k f(x)\).}
 \subsubsection{Proof}
-\label{sec:org4af0404}
+\label{sec:org390e047}
 It is clear that the function is positive homogenous.
 
 \textbf{Convexity}: We are going to use one of the equivalences on convexity, i.e.,
@@ -983,7 +984,7 @@ It is clear that the function is positive homogenous.
 have the following property: \(\Vert \lambda x \Vert = \vert \lambda \vert \Vert
 x \Vert\).}
 \subsection{Definition (Centrally symmetric)}
-\label{sec:orgb834343}
+\label{sec:orgc2d698d}
 A convex body \(K\) in \(\R^n\) is said to be \textbf{centrally symmetric} if there
 exists a point in \(K\) such that \(K = \rho(K)\) where \(\rho\) is the central
 symmetry with respect to \(c\).
@@ -1001,7 +1002,7 @@ Examples:
 dimensional cross polytope is an Octahedron.
 \end{enumerate}
 \subsection{Theorem}
-\label{sec:org0b36090}
+\label{sec:orgb6364b4}
 Let \(K\) be a centrally symmetric convex body with \(0\in \inte K\), as its
 center of reflection. Then \(d_K\) defines a norm in \(\R^n\) satisfying for all
 \(\lambda \in \R\) and \(x, y \in \R^n\)
@@ -1011,7 +1012,7 @@ center of reflection. Then \(d_K\) defines a norm in \(\R^n\) satisfying for all
 \item \(\Vert x +y \Vert \le \Vert x \Vert + \Vert y\Vert\)
 \end{enumerate}
 \subsection{Example}
-\label{sec:orgd743061}
+\label{sec:org5941c06}
 \begin{enumerate}
 \item \textbf{Maximum norm} in \(\R^2\): \(\Vert (x_1, x_2)\Vert =- \max \{\vert x_1\vert,
       \vert x_2 \vert \} = d_K(x_1, x_2)\). What is the convex body that induces
@@ -1021,7 +1022,7 @@ this norm? A square (with the usual orientation.)
 polytope; the slanted square.)
 \end{enumerate}
 \subsection{Polar bodies}
-\label{sec:org3095a0b}
+\label{sec:org931feb1}
 Let \(K\) be a convex body in \(\R^n\) with \(0 \in \inte K\). For \(u \neq 0\), let
 
 $$H_u^{-1} = \{x \in \R^n \vert \langle x, u \rangle \le 1\} = \cap_{x\in
@@ -1030,10 +1031,10 @@ $$H_u^{-1} = \{x \in \R^n \vert \langle x, u \rangle \le 1\} = \cap_{x\in
 In particular, \(H^{-1}_0= \R^m\). The polar body of \(K\) is \(K^{*} = \cap
    H^{-1}_u\).
 \subsection{Theorem}
-\label{sec:org546e47a}
+\label{sec:orga9fc98f}
 Let \(K\) be a convex body with \(0 \in \inte K\). Then \(K^{**} = K\)
 \subsubsection{Proof}
-\label{sec:org7ca11e8}
+\label{sec:org78c4240}
 \(K^{*} = \cap H^{-1}_u = \cap_{u \in K} \{x \vert \langle x, u \le 1 \} =
     \{x \vert \forall x \in K, \langle x, u \rangle \le 1\}\)
 
@@ -1046,9 +1047,9 @@ Let \(K\) be a convex body with \(0 \in \inte K\). Then \(K^{**} = K\)
 \(\langle K, y^{*} \le 1 \implies \langle K^{*}, y\rangle \le 1 \implies y
     \in K^{**}\), \(K \subset K^{**}\).
 \section{Lecture 8 \textit{<2018-11-13 Tue>}}
-\label{sec:orgd7d9a4c}
+\label{sec:org948852e}
 \subsection{Polar Body}
-\label{sec:org057c575}
+\label{sec:org89aacff}
 Let \(K\) be a convex body and \(0\in \inte K \subset \R^n\). For every \(u\in
    \R^n - \{0\}\), we define \(H_u^{-} = \{x \vert \langle x, u \rangle \le 1\}\)
 
@@ -1059,11 +1060,11 @@ The polar body \(K^{*}\) is the intersection \(\cap H^{-1}_u\), when \(u\) is
 element of \(K\). This is the same as \(\cap_{x\in \partial K} H_u^{-1}\). The
 idea is that for \(m>1\), it is easy to see that \(H^{-1}_{mu} \subset H^{-1}_u\)
 \subsection{Theorem}
-\label{sec:orgcf23b4c}
+\label{sec:orgfa2055b}
 Let \(K\) be a convex body in \(\R^n\) such that \(0 \in \inte K\). Then \(K^{**} =
    K\).
 \subsubsection{Proof}
-\label{sec:org671a487}
+\label{sec:orgf7ce4b6}
 We use the notation \(\{x \vert \langle x, K \rangle \le 1\}\) to denote
 \(K^{*}\). Similarly \(\{x \vert \langle x, K^{*} \rangle \le 1 \}\) to denote
 \(K^{**}\).
@@ -1082,22 +1083,22 @@ We use the notation \(\{x \vert \langle x, K \rangle \le 1\}\) to denote
        H^{-1}_u\) contradiction.
 \end{enumerate}
 \subsection{Random stuff}
-\label{sec:org49387d9}
+\label{sec:orgc858f68}
 If \(K\) is a convex body, it will turn out that the support function of the
 convex body will be the distance function of the dual body and vice-versa.
 \subsection{Theorem}
-\label{sec:org7a90a55}
+\label{sec:org165ef36}
 Let \(K \subset \R^n\) be a convex body and \(0 \in \inte K\), then \(d_K =
    h_{K^{*}}\) and \(d_{K^{*}} = h_{K}\).
 \subsection{Lemma}
-\label{sec:org8c35f55}
+\label{sec:org4cec6e0}
 Let \(K_1 \subset K_2\), then \(K_2^{*} \subset K_1^{*}\). The proof is not too hard.
 \subsection{Lemma}
-\label{sec:org9b7c107}
+\label{sec:orgea3d468}
 Let \(K \subset \R^n\) and \(0 \in \inte K\). Then \(H_u\) is a support hyperplane
 for \(K^{*}\) if \(u \in \partial K\).
 \subsubsection{Proof}
-\label{sec:orga650bbd}
+\label{sec:orgcfd4d49}
 We know that \(K^{*} = \cap_{x\in \partial K} H^{-1}_u\). We take \(0\in \inte
     K\), and in each direction \(u\), we have a unique intersection with the body.
 In each direction, we have exactly one point on the boundary.
@@ -1108,14 +1109,14 @@ The proof is kinda easy. The proof involved constructing a new convex body,
 \(\tilde{K} = \conv \{ \beta u \vert u \in \partial K\}\). Apparently there is
 a problem with this proof. \footnote{Apparently it's slightly different in the book. Which book?}
 \subsection{Proof of duality of distance and \(h_K\)}
-\label{sec:org37a4bbd}
+\label{sec:org3528b53}
 Let \(u \in \partial K \implies d_K(u) = 1\)
 
 But we just argued that on the boundary, it is a support hyperplane. Thus
 \(H_u = H_K(u) = \{x \vert \langle x, u \rangle = h_{K^{*}}(u)\}\) and \(\{x \vert
    \langle x, u \rangle = 1\}\). Thus \(h_{K^{*}}(u) = 1\).
 \subsection{Theorem}
-\label{sec:orgaf5d268}
+\label{sec:orgf568c49}
 Let \(K \subset \R^n\) be a convex body with \(0 \in \inte K\).
 
 \(K^{+} = \Gamma^{+}(d_K) \subset \R^{n+1}\) and \(H = \{(x, 1) \vert x \in
@@ -1127,17 +1128,17 @@ Let \(K \subset \R^n\) be a convex body with \(0 \in \inte K\).
 \item \(K_{+}, K^{*}_+\) are convex with appex \(O\) in \(\R^n\).
 \end{enumerate}
 \subsection{Theorem}
-\label{sec:org78b5a38}
+\label{sec:org942b088}
 Every positive homogenous and convex function \(h \colon \R^n \rightarrow \R\)
 is a support function \(h = h_K\) of a unique convex body \(K\) whose dimension
 possibly \(<n\). \footnote{We didn't prove this and the theorem before.}
 \subsection{Radon's theorem}
-\label{sec:org2d25723}
+\label{sec:org6a21403}
 Let \(X\) be a set of points in \(\R^n\), and \(\vert X \vert \ge n+2\), then there
 is a partition of \(X\) into \(P\) and \(N\), such that a convex hull of \(P\) and
 \(N\) intersect.
 \subsubsection{Proof}
-\label{sec:orgdf82c26}
+\label{sec:org4d4bc45}
 One can assume that \(\vert X \vert = n+2\) and \(X = \{x_1, \cdots, x_{n+2}\).
 There is an affine dependence \(\lambda_1 x_1 + \cdots + \lambda n+2 x_{n+2}
     = 0\) and \(\lambda_1 + \cdots + \lambda_n = 0\) and not all \(\lambda_i\) are
@@ -1150,11 +1151,11 @@ Now \(A = \sum_{x_i \in P} \lambda_i = \sum_{x_i \in N} \lambda)i > 0\).
 
 Now it is pretty easy to see that there is a point in intersection.
 \subsubsection{Questions?}
-\label{sec:org46b16dc}
+\label{sec:orga75b5ac}
 Why not two? How many points should we have to say something like, we can
 partition into \(100\) sets, but their convex hulls intersect.
 \subsection{Affine space}
-\label{sec:orgf536a2f}
+\label{sec:org03ae67f}
 \((\mathscr{E}, E, \theta \colon \mathscr{E} \times \mathscr{E} \rightarrow
    E)\)
 
@@ -1168,14 +1169,14 @@ is a bijection. \(B \mapsto \theta(A, B)\).
 Example: \((E,E, \theta(u, v) = v - u)\) This is an example with \(E = \R^n\)
 that we work with.
 \subsection{Random stuff}
-\label{sec:org5e842a5}
+\label{sec:org8169a3b}
 A map \((\mathscr{E}, E, \theta) \rightarrow (\mathscr{F}, F, \theta)\).
 \(\theta(\varphi, f), \varphi \colon \mathscr{E}\rightarrow \mathscr{F}\).
 
 And \(f\colon E \rightarrow F\), and for all \(A, B \in \mathscr{E}\) and
 \(\theta(\varphi(A), \varphi(B)) = f(\theta(A, B))\).
 \subsection{Radon's theorem rephrased}
-\label{sec:org9764eac}
+\label{sec:org708c00e}
 Let \(T_n+1\) be a simplex and \(a \colon T_{n+1}\rightarrow \R^n\) be an affine
 map. Then there exists faces \(\sigma\) and \(\tau\) of the simplex such that
 their \(a\) images in \(\R^n\) would intersect.
@@ -1187,15 +1188,15 @@ convex hull of all points on vertices.
 
 What about continuous map?
 \subsection{Continuous variant of Radon's theorem (Topological Radon)}
-\label{sec:orga3ac6a2}
+\label{sec:orga542da6}
 The continuous invariant is also true.
 \subsection{Helly's theorem}
-\label{sec:orge05b4af}
+\label{sec:orge247f4f}
 Let \(K_1, \cdots, K_n\) be a collection of convex sets in \(\R^d\) such that
 every subcollection of \(d+1\) of them intersects \(\neq \emptyset\), then the
 complete family intersects.
 \subsubsection{Proof}
-\label{sec:orgb890457}
+\label{sec:org23a5c1f}
 Induction on \(n\). If \(n \le d+1\), there is nothing to prove. Let \(n \ge
     d+2\), assume that it holds for \(n-1\), consider the following points \(x_i \in
     \cap_{1 \le j \le n, j \neq i} K_j\). By induction hypothesis, this has to
@@ -1203,7 +1204,7 @@ intersect. In this way, have points \(x_1, \cdots, x_n\). By assumption, \(n\ge
     d+2\), we can apply Radon's theorem. And the point in the Radon's theorem
 belongs to the intersection of everything.
 \subsection{Helly's theorem*}
-\label{sec:orgb5e794c}
+\label{sec:org7e66220}
 Let \(\{K_i \vert i \in I\}\) be a family of \textbf{convex bodies} in \(\R^n\) such
 that every family of \(d+1\) of them intersects, then the whole intersection is
 non-empty. The difference between these and the before theorem is that the
@@ -1211,34 +1212,34 @@ index set may be infinite. This follows from the above theorem because of
 compactness. (Use the closed set intersection of compactness; the
 finite-intersection property.)
 \section{Lecture 9 \textit{<2018-11-14 Wed>}}
-\label{sec:org9923d8b}
+\label{sec:orgb50ec20}
 \subsection{Helly's theorem}
-\label{sec:org4db8afe}
+\label{sec:org99cfbae}
 Let \(K_1, \cdots, K_n\) be a collection of convex sets in \(\R^d\) such that
 every subcollection of \(d+1\) of them intersects \(\neq \emptyset\), then the
 complete family intersects.
 \subsubsection{Is convexity important?}
-\label{sec:org7902fa7}
+\label{sec:org8dfe895}
 If we drop convexity of one set, we would not have such a result. Convexity
 is an important assumption. It's not too hard to construct a
 counter-example.
 \subsubsection{Remark about infinite families}
-\label{sec:orgd276002}
+\label{sec:orgdc76afe}
 We can replace the finite family with an infinite family, but of convex
 bodies.
 \subsection{Charatheodery's theorem}
-\label{sec:org2f900ca}
+\label{sec:org0521ee3}
 If \(x\in \conv X\), then there exists a collection of at most \(d+1\) points in
 \(X'\) of \(X\) such that \(x\in \conv X' \subset \conv X\).
 \subsection{Colorful Charatheodery's theorem (theorem by Inere Bardney)}
-\label{sec:org2ae0ca6}
+\label{sec:org3578859}
 Let \(S_1, \cdots, S_{d+1}\) be collections of points in \(\R^d\) and \(x \in
    \conv S_1 \cap \conv S_2 \cap \cdots \cap S_{d+1}\). Then there are points
 \(x_1 \in S_1, x_2 \in S_2, \cdots, x_{d+1} \in S_{d+1}\) such that \(x\) is an
 element of \(\conv \{x_1, \cdots, x_{d+1}\}\).\footnote{Think about \(S_i\) as having a unique color. I guess each \$S\(_{\text{i}}\)\$s are
 disjoint.}
 \subsubsection{Proof}
-\label{sec:orgded179e}
+\label{sec:org12b8c59}
 A proof using infinite descent. 
 
 Without loss of generality, we can assume that each of \(S_i\) are finite.
@@ -1292,7 +1293,7 @@ This is similar to the last part, we have a contradiction. Taking a point \(t
     xt \vert < \vert xz\vert = d\). This is a contradiction since \(t \in \bar{S}
     = \conv\{\bar{x}_1, \cdots, \bar{x}_{d+1}\}\). We are done.
 \subsection{Tverberg's theorem}
-\label{sec:org4b4f4c6}
+\label{sec:org67ac3d2}
 \href{https://en.wikipedia.org/wiki/Tverberg\%27s\_theorem}{Wikipedia} Let \(N=(d+1)(r-1)\) and \(X \subset \R^d\) with \(\vert X \vert \ge
    N+1\). Then there exists a partition \(X_1, \cdots, X_r\) of \(X\) such that
 
@@ -1309,7 +1310,7 @@ A simplex. Consider a simplex \(\Delta_N = \conv \{x_0, \cdots, x_N\} \mapsto
 The affine map sends a face of the simplex to the convex hull of the
 simplex.
 \subsubsection{Question (Topological Tverberg Conjecture)}
-\label{sec:org4c7ca23}
+\label{sec:org7cca3ca}
 For all \(d \ge 1\), \(r \ge 2\) and \(n=(d+1)(r-1)\) and any continuous map
 \(f\colon \Delta_N \rightarrow \R^d\), there exists \(G_1, \cdots, G_r\) pairwise
 disjoint faces of \(\Delta_N\) such that \(f(\sigma_1) \cap \cdots \cap
@@ -1320,7 +1321,7 @@ do with the elementary Abelian groups and their structure. Elementary
 Abelian groups are direct sums of cyclic groups \(\Z_p \oplus \cdots \oplus
     \Z_p\).
 \subsection{Weak Tverberg theorem}
-\label{sec:org5fa291b}
+\label{sec:org9438b78}
 Let \(n\ge (r-1)(d+1)^2 + 1\) and \(X = \{x_1, \cdots, x_n\} \subset \R^d\).
 There is a partition \(I_1, \cdots, I_r\) of \([n] = \{1, 2, \cdots, n\}\) such
 that the intersection of the convex hulls 
@@ -1329,7 +1330,7 @@ $$\cap_{n \le j \le r} \conv\{x_i \vert i \in I_j\} \neq \emptyset$$
 
 It's the same as last theorem, except we have more points.
 \subsubsection{Proof}
-\label{sec:org8437794}
+\label{sec:orgf8a6891}
 \(k=(d+1)(r-1)\), \(s=n-k \ge (r-1)(d+1)^2 + 1 - (r-1)(d+1) = (r-1)(d+1)d +1\)
 
 Now \(Y_1, \cdots, Y_{d+1} \subset X\) and each \(\vert Y_i\vert = s\), we claim
@@ -1344,7 +1345,7 @@ Proof: \(\vert Y_1 \cap Y_2\vert = \vert Y_1\vert + vert Y_2\vert - \vert Y_1
 
 \(\vert Y_1 \cap \cdots \cap Y_{d+1} \vert \ge n - (d+1)k \ge 1\).
 \subsubsection{{\bfseries\sffamily TODO} Corollary}
-\label{sec:orgb9ab439}
+\label{sec:org85e91db}
 If \(Y_1, \cdots, Y_{d+1} \subset X\) with \(\vert Y_i\vert = s\), then \(\conv
     Y_1 \cap \cdots \cap \conv Y_{d+1} \neq \emptyset\).
 
@@ -1361,16 +1362,16 @@ theorem there is
     \conv(X - X_2) \implies \exists x_2 \subset X - X_1), x_2 = d+1\) and \(z =
     \conv X_2\). I can do this \(r\) times and we are done.
 \subsection{Optimal colored Tverberg theorem}
-\label{sec:org9671aa7}
+\label{sec:org1c3ddf4}
 \subsubsection{Topological Tverberg theorem}
-\label{sec:org5380cdf}
+\label{sec:orgd7faeaa}
 \(d \ge 1\), \(r \ge 2\), power of prime, \(f \colon \Delta_N \rightarrow \R^d\),
 a continuous map. Here \(N=(d+1)(r-1)\).
 
 Then there exists \(\sigma_1, \cdots, \sigma_r\) pairwise disjoint faces of
 \(\Delta_N\), \(f(\sigma_1) \cap \cdots \cap f(\sigma_r) \neq \empty set\).
 \subsubsection{Optimal colored version}
-\label{sec:org237101c}
+\label{sec:org0c59041}
 \(d \ge 1\), \(r\ge 2\) is prime. \(f\colon \Delta_N \rightarrow \R^d\) continuous
 such that \(N=(d+1)(r-1)\) and \(\vert \Delta_N \vert= C_0 \sqcup \cdots \sqcup C_m\)
 such that \(\vert C_i \vert \le r- 1\) implies that there exists \(\sigma_1,
@@ -1380,9 +1381,9 @@ such that \(\vert C_i \vert \le r- 1\) implies that there exists \(\sigma_1,
 For all \(i, j\), \(\vert \sigma_i \cap \sigma_j \vert \le 1\). About
 Barany-Larwan conjecture for primes - 1.
 \section{Lecture 10 \textit{<2018-11-20 Tue>}}
-\label{sec:org27fb36a}
+\label{sec:org4ef4296}
 \subsection{Lemma about convex functions}
-\label{sec:org95d2264}
+\label{sec:org0952e3d}
 Let \(f\colon I \rightarrow \R\) be a convex function and \(x \le y \le z\) be
 points in \(I_1\). Then the following two inequalities hold: 
 
@@ -1392,7 +1393,7 @@ $$\frac{f(y) - f(x)}{y-x} \le \frac{f(z)-f(x)}{z-x} \le \frac{f(z) -
 One can think about this as the gradient/slope of lines that can be formed
 using points on the function.
 \subsubsection{Proof}
-\label{sec:orgb913c80}
+\label{sec:org4f88e92}
 \(x < y < z \implies\) there exists \(\lambda \in (0, 1)\), \(y = \lambda x + (1-\lambda)z\)
 
 $$\frac{f(y) - f(x)}{y-x} = \frac{f(\lambda x + (1-\lambda)y) -
@@ -1407,7 +1408,7 @@ $$\frac{f(z) - f(y)}{z-y} = \frac{f(z) - f(\lambda x + (1-\lambda)
 The last function is equal to \(\frac{\lambda f(z) - \lambda f(x)}{\lambda
     z - \lambda x} = \frac{f(z) - f(x)}{z-x}\)
 \subsection{Theorem (Jensen's inequality)}
-\label{sec:org0ca7f7f}
+\label{sec:orgbe90189}
 Let \(f\colon C \rightarrow \R\) be a convex function. Then for every \(x_1,
    \cdots, x_m \in C\) and \(\lambda_1, \cdots, \lambda_m \ge 0\) with \(\sum
    \lambda_i = 1\) holds
@@ -1415,19 +1416,19 @@ Let \(f\colon C \rightarrow \R\) be a convex function. Then for every \(x_1,
 $$f(\lambda_1 x_1 + \cdots + \lambda_m x_m) \le \lambda_1 f(x_1) + \cdots +
    \lambda_m f(x_m)$$
 \subsection{Definition}
-\label{sec:orgf508738}
+\label{sec:org261c484}
 Let \(f\colon X \rightarrow \R\) where \(X \subset \R^n\). The function \(f\) is
 Lipschitz on \(Y \subset X\) if there exists \(L > 0\), and \(x, y \in Y\), \(\vert
    f(x) - f(y) \vert \le L \Vert x - y \Vert\). The function \(f\colon X
    \rightarrow \R\) is locally Lipschitz on \(X\) if for all \(x\in X\), there exists
 \(x\in U\), a neighbourhood of \(x\) in \(X\), \(f\vert_U\) is Lipschitz.
 \subsection{Theorem}
-\label{sec:org1c4c3cd}
+\label{sec:org7b76cee}
 Let \(f\colon C\rightarrow \R\) be a convex function. Then \(f\) is Lipschitz on
 every compact subset of the interior of \(C\). In particular, \(f\) is continuous
 on the \(\int C\).
 \subsubsection{Proof}
-\label{sec:orgd950aa5}
+\label{sec:org035c803}
 It suffices to prove that \(f\) is locally Lipschitz. This is true, because at
 each point in the compact set, find a neighborhood where it is locally
 Lipschitz. Now this is a cover, hence there is a finite subcover. Choose
@@ -1481,17 +1482,17 @@ We would be done if we had the opposite one, \(\vert f(y) - f(z)\vert \le
 similar argument. Therefore the function is locally Lipschitz (this would
 also imply continuity.)    
 \subsection{Combinatorial theory of Polytopes and Polyhedral sets}
-\label{sec:org95dff8c}
+\label{sec:org51cf0d9}
 \subsubsection{A boundary complex of a polyhedral set}
-\label{sec:org27034c4}
+\label{sec:orga60975f}
 \begin{enumerate}
 \item Theorem
-\label{sec:org0c40030}
+\label{sec:orgf80a1ec}
 Every Polytope contains or has finitely many faces and all of them are
 Polytopes.
 \begin{enumerate}
 \item Proof
-\label{sec:org7bbda14}
+\label{sec:org9a19202}
 Let \(P\) be a Polytope \(P = \conv\{x_1, \cdots, x_r\} \subset \R^n\) b ea
 Polytope and \(F = P cap H\) be a face of \(P\), where \(H = \{x \vert \langle
       x, a \rangle = \alpha \}\) is a support hyperplane.
@@ -1521,12 +1522,12 @@ for \(\lambda_i > 0\) and \(\sum \lambda_i = 1\).
 \(F = \conv \{x_1, \cdots, x_s\}\) a Polytope.
 \end{enumerate}
 \item Theorem (Krein-Milman theorem)
-\label{sec:org7ebf76a}
+\label{sec:org2db3ca3}
 Every convex Polytope is a convex hull of its vertices. \(P = \conv(\vert
      P)\). (Vertices are the zero-dimensional faces of a Polytope.)
 \begin{enumerate}
 \item Proof
-\label{sec:org484b004}
+\label{sec:org24f0879}
 \(P = \conv\{x_1, \cdots, x_r\}\). \(\vert P \subset P\), \(\conv (\vert P)
       \subset P\).
 
@@ -1548,31 +1549,31 @@ Let \(H_i'\) be a the parallel Hyperplane to \(H_i\) passing through \(x_i\)
       \{x_i\}\). Thus \(x_i\) is a vertex. We are done.
 \end{enumerate}
 \item Remark
-\label{sec:org4b08629}
+\label{sec:org4d8b946}
 \(P = \conv \{x_1, \cdots, x_n\}\), we assume that these \(x_i\) are vertices.
 \item Definition (Polyhedral set)
-\label{sec:orgb147ef1}
+\label{sec:org5bff47e}
 A finite intersection of closed half spaces is called a Polyhedral set.
 \item Theorem
-\label{sec:orgbb2c1f7}
+\label{sec:org7944538}
 Every Polytope \(P\) is a bounded Polyhedral set.
 \item Remark
-\label{sec:org586a868}
+\label{sec:org58d0fbd}
 A Polytope is a convex hull of finitely many points.
 
 Also a finite bounded intersection of closed half space. (finitely many
 vectors and distances.)
 \end{enumerate}
 \section{Lecture 11 \textit{<2018-11-21 Wed>}}
-\label{sec:orge761e5d}
+\label{sec:org753c1c6}
 \subsection{Definition}
-\label{sec:org1700390}
+\label{sec:org5bbb229}
 A polyhedral set is a finite intersection of closed half-spaces
 \subsection{Theorem}
-\label{sec:orgdab8428}
+\label{sec:orgf4019d9}
 Every polytope is a bounded polyhedral set.
 \subsubsection{Proof}
-\label{sec:org5a92f2c}
+\label{sec:orgaf93dd0}
 \(P\) is a polytope. The aim is to show that it is the intersection of
 finitely many closed half spaces \(H_i^{-}\).
 
@@ -1605,12 +1606,12 @@ to a facet. Now the supporting hyperplane of this facet would separate \(x_0\)
 and \(P\). \(z\) belongs to a facet \(F = P \cap H\), and \(P \subset H^{-1}\) and
 \(x_0 \in \in H^{+}\). Contradiction with \(x_0 \in P' = \cap H^{-1}\).
 \subsection{Corollary}
-\label{sec:orgc4067eb}
+\label{sec:org868bbda}
 \(P = \cap H^{-}\), where \(H\) is a supporting facet. Moreover, this is a
 minimum representation, we cannot drop any half space from this
 representation.
 \subsection{Perspective}
-\label{sec:orgc2f05c7}
+\label{sec:orgbcd0201}
 \begin{enumerate}
 \item We want to study the boundary of \(P\) which is the union of faces.
 \item We know that it is the union of finitely many faces.
@@ -1620,10 +1621,10 @@ ordered set.
 intersection of the faces.
 \end{enumerate}
 \subsection{Theorem}
-\label{sec:org31ceb86}
+\label{sec:org2f7f5a3}
 If \(P\) is a bounded polyhedral set, then it is a Polytope.
 \subsubsection{Proof}
-\label{sec:orgefe698d}
+\label{sec:org671c84d}
 Induction on the dimension. \(P\) be an \(n\) dimensional bounded polyhedral set
 in \(\R^n\). Then all faces of \(P\) are polytopes by induction hypothesis.
 (face is the intersection of polyhedra with a hyperplane.) It follows that
@@ -1635,16 +1636,16 @@ Now we will prove that the interior of \(P\) is contained in the \(\conv(\cup
     P) \subset P\). \(x\in \int P\), then \(x \in \conv(F_1 \cup F_2) \subset \conv
     (\cup F)\). The argument is something about taking the closure.\footnote{Reminds me of something form Topology.}
 \subsection{Lemma}
-\label{sec:orgfb4fa79}
+\label{sec:org9ac2754}
 If \(F_1\) and \(F_2\) are faces of \(P\), \(F_1\) is subset of \(F_2\), then we prove
 that \(F_1\) is a face of \(F_2\). We then gave a counterexample to the "inverse"
 statement, but we claim that this would be true if we work with Polytopes.
 \subsection{Theorem}
-\label{sec:orgb6fc0ce}
+\label{sec:orgb8ab6ef}
 Let \(P\) be a polytope (\footnote{It also holds for Polyhderal set. But we didn't do it.}) and \(F_n\) is a face of \(P\) and \(F_2\) is a
 face of \(F_1\), then \(F_2\) is a face of \(P\).
 \subsubsection{Proof}
-\label{sec:orgbffc09e}
+\label{sec:org4dde025}
 \(F_1 \le P \implies\) There is a hyperplane \(H_1 = \{x \vert \langle x, u_1
     \rangle = 0 \}\) such that \(F_1 = P \cap H_1\) and \(P\) is a subset of
 \(H_1^{+}\). \(F_2 \le F_1 \implies\), there is a hyperplane \(H_2 = \{x \in H_1
@@ -1672,10 +1673,10 @@ Let \(\eta > \eta_0\) and we prove that \(H(\eta) \cap P = F_2\) and \(P \subset
 \item \(w\in \vert F_2\), \(\langle w, \eta u_1 + u_2 \rangle = 0\).
 \end{enumerate}
 \subsection{Theorem}
-\label{sec:orgb05538e}
+\label{sec:org20185a7}
 Any proper face of a polytope \(P\) is a face of a facet.
 \subsubsection{Proof}
-\label{sec:org784ce24}
+\label{sec:org55bf091}
 \begin{enumerate}
 \item \(x\in F\) where \(F\) is a proper face of \(P\), then \(x\) belongs to a facet.
 \(\dim F \le n-2\) and \(y\in \int P\) \(M = \cup \aff(\{y\} \cup G)\). Here
@@ -1697,18 +1698,18 @@ polytope and there exists \(F'\) a face of \(F_0\), where \(x\in \relint F'\).
        \in \relint F \cap \relint F'\), implies that \(F = F' \le F_0\).
 \end{enumerate}
 \subsection{Theorem}
-\label{sec:org1da070e}
+\label{sec:orgc78b4d7}
 Let \(\dim F' = 1\), where \(F_0\) is a face of an \(n\) polytope \(P\). If \(0 \le i
    < k\) and \(F^i \le F^k\), then there exist faces \(F^{i+1}, \cdots, F^{k-1}\)
 such that \(F^i\) is contained in \(F^{i+1} \subset F^k\).
 \subsubsection{Proof}
-\label{sec:org769b82b}
+\label{sec:org184bd5b}
 Induction on \(k\), when \(k=i+1\), there is nothing to prove. Assume \(k > i+1\),
 then \(F^i \subset \cdots \subset F^k \subset F^k\).
 \section{Lecture 12 \textit{<2018-11-27 Tue>}}
-\label{sec:orgb81d165}
+\label{sec:org964da29}
 \subsection{Partially Ordered sets}
-\label{sec:orgd60c7ed}
+\label{sec:org283ea03}
 Let \(P \neq \emptyset\) and \(\rho \subset P^2\) is called a binary relation.
 
 \begin{enumerate}
@@ -1725,7 +1726,7 @@ symmetric and transitive. Then we define the notion of equivalence classes
 and partition of a set. An example is in Groups. There is also an equivalence
 between the partitions of \(X\) and relations of equal in \(X\).
 \subsection{Partial order}
-\label{sec:org67a44bf}
+\label{sec:org8936f16}
 \(\rho\) is \textbf{partial order} if \(\rho\) is Reflexive, Anti symmetric and
 transitive.
 
@@ -1768,7 +1769,7 @@ define a \textbf{order reversing}.
 \textbf{Remark} Partial Ordered sets with order preserving maps form a Category.
 
 \subsection{Boundary of Polytope}
-\label{sec:org98935e9}
+\label{sec:org9576ca9}
 Boundary of Polytope: There are finitely many faces of \(P\).
 
 \(B(P) =\) the set set of all faces of \(P\).
@@ -1796,12 +1797,12 @@ maximal elements are facets and the minimal elements are vertices.
 
 Recall the definition of a ridge. It's an \(n-2\) dimensional face of \(P\).
 \subsection{Theorem about ridges}
-\label{sec:org330d321}
+\label{sec:org148fccd}
 Every \(\dim P - 2\) face of \(P\) is the intersection of exactly two
 facets.\footnote{In algebraic topology, we know that the boundary of a Polytope is a CW
 complex. What we're proving right now is that the boundary is a Pseudo Manifold.}
 \subsubsection{Proof}
-\label{sec:org1629d6e}
+\label{sec:orgf86a987}
 \(F_1, \cdots, F_s\) are facets of \(P\)
 
 \(F_1 = P \cap H_i\) and \(P \subset H_i^{-}\), \(\dim F = \dim P - 2\), \(P =
@@ -1821,12 +1822,12 @@ about the orthogonal complement.) The contradiction is that the facet will
 have a hyperplane that will separate the two parts of the Polytope. But in
 our case, this cannot happen and hence a contradiction. \footnote{For manifolds this proves that the top homology is exactly \(\Z\).}
 \subsection{Theorem}
-\label{sec:orgbeef13c}
+\label{sec:org453bee6}
 Let \(P\) be a Polytope and \(1 \le j \le k < \dim P\), then every \(j\) face \(F^j\)
 is an intersection of \(k\) faces of \(P\). In particular, each proper face is an
 intersection of facets.
 \subsubsection{Proof}
-\label{sec:orgfc24d34}
+\label{sec:org6b16d78}
 \(F^j \le P\) and \(F^j \le F^{j+1} \le \cdots \le F^{k+1} \le \cdots \le P\).
 
 There are two cases
@@ -1841,7 +1842,7 @@ is the intersection of two \(j+1\) faces if \(k > j+2\) and we continue doing
 this until \(k = j+2\).
 \end{enumerate}
 \subsection{Definitions}
-\label{sec:orgfb29583}
+\label{sec:orgb3490d6}
 \(B_0(P)\) all proper faces: reduced boundary complex
 
 \(B(P)\) boundary complex.
@@ -1849,9 +1850,9 @@ this until \(k = j+2\).
 \(\psi\colon B(P) \rightarrow B(Q)\), then \(P \equiv Q\) are combinatorially
 equivalent.
 \section{Lecture 13 \textit{<2018-11-27 Tue>}}
-\label{sec:orge8dbe47}
+\label{sec:org614b029}
 \subsection{Recap}
-\label{sec:org0d0d90c}
+\label{sec:org3e35897}
 \(P\) is a polytope of dimension \(n\) in \(\R^n\).
 
 \(B_0(P)\) is the family of all proper faces of \(P\) which is equal to the
@@ -1878,12 +1879,12 @@ functor maps morphisms to morphisms. Given a morphism, \(f\colon P
    \rightarrrow Q\), what is the map \(F(f) \colon P^{*} \rightarrow Q^{*}\). We
 define \(F(f) = f\).
 \subsection{Definition}
-\label{sec:orge3f7df5}
+\label{sec:orge1fd3ee}
 Let \(P\) be an \(n\) Polytope and \(f_i(P)\) is the number of \(i\) dimensional
 faces of \(P\), then the \(f\) vector of \(P\) is \(f(P) = (f_0(P), f_1(P), \cdots,
    f_{n-1}(P))\). We set \(f_{-1}(P) = 1\) and \(f_n(P) = 1\).
 \subsection{Remark}
-\label{sec:orgd5cb275}
+\label{sec:org5e691a3}
 What vectors in \(\N^n\) are \(f\) vectors of \(n\) polytopes? We should come up
 with characteristics for \(f\) vector.
 
@@ -1891,7 +1892,7 @@ A general characterization is not known. But we can look at subfamilies.
 
 Look at the subfamily of Simplicial complexes. \href{https://en.wikipedia.org/wiki/Simplicial\_complex}{Wikipedia}
 \subsection{A conjecture by Peter McMallen}
-\label{sec:org5256e8d}
+\label{sec:org56e77ce}
 \((f_0, f_1, \cdots, f_n) \in \N^n\) is a \(f\) vector of simplicial \(n\)
 polytopes if and only if 
 
@@ -1900,7 +1901,7 @@ polytopes if and only if
 \item A bunch of inequalities.
 \end{enumerate}
 \subsection{Dual Polytopes and Quotient Polytopes}
-\label{sec:org1f99131}
+\label{sec:org0256c07}
 \(P\) is a polytope. \(L_(P)\) is a lattice. What is a lattice? Every fininte
 subsets have an infimum and supremum.
 
@@ -1925,7 +1926,7 @@ If \(P\) is a polytope, \textbf{the dual polytope} is a polytope \(P^{*}\) whose
 lattice is dual of \(L(P)\). The dual Polytope is a class, not just a single
 Polytope, unlike the Polar of the Polytope which is a polytope. \footnote{Apparently was asked in the Oral exam.}
 \subsection{Polarity in \(\R^n\)}
-\label{sec:orgee0f2b1}
+\label{sec:org1c4faf2}
 Polarity in \(\R^n\) with respect to the unit sphere.
 
 \(0 \notin W\) the affine space \(\mapsto \pi(W) = \cap_{u \in W} H_{u} =
@@ -1938,7 +1939,7 @@ Polarity in \(\R^n\) with respect to the unit sphere.
 \(K\) a convex body with \(0 \in \int K\), \(K^{*} = \cap_{u \in K} H_u^{-} =
    \cap_{u\in \partial K} H^{-}_u\), the polar body.
 \subsection{Theorem}
-\label{sec:org1288a41}
+\label{sec:orga66fb53}
 Let \(P\) be an \(n\) dimensional Polytope in \(\R^n\) and \(0\) is an element of the
 interior of \(P\). Let \(P^{*}\) be the polar under the Polarity \(\pi\).
 
@@ -1954,7 +1955,7 @@ dimensional polytope with \(0 \in \int P^{*}\).
 
 Then this will be a dual Polytope.
 \subsubsection{Proof}
-\label{sec:org0a57766}
+\label{sec:orgc8f39dd}
 \begin{itemize}
 \item (Proof of 4) \(P^{*} = \cap_{u \in P} H^{-1}_u = \cap_{u \in P} \{x \vert \langle x, u
       \rangle \le 1\}\), \(P^{*} = \cap_{u \in \partial P} H^{-1}_u\) and \(\vert P
@@ -2040,9 +2041,9 @@ therefore belongs to the intersection. There something else that I missed.
 your map \(\phi^2 = \id\), then \(\phi\) is bijection.
 \end{itemize}
 \section{Lecture 14 \textit{<2018-12-05 Wed>}}
-\label{sec:orga5e9d70}
+\label{sec:orge136aed}
 \subsection{Dual and quotient polytopes}
-\label{sec:org6e459b0}
+\label{sec:orgcb9afb4}
 \textbf{A dual polytope} \(P^{*}\) of the polytope \(P\) is any polytope, whose face
  lattice is anti-isomorphic to the face lattice of \(P\).
 
@@ -2054,28 +2055,28 @@ reverses the inclusion.
 
 Here \(P^{*}\) is a class of Polytopes (Polar is one element in the class.)
 \subsubsection{Example}
-\label{sec:org424b69d}
+\label{sec:org07b6986}
 A prism in \(\R^3\). \(5\) facets. Hence the dual should have 5 vertices.
 
 The edges should be edges. We join the \(5\) points in the dual similarly.
 \subsubsection{Polar body}
-\label{sec:org6a932bf}
+\label{sec:orge66836f}
 If \(K\) is a convex body in \(\R^d\) with \(0 \in \int K\) \footnote{We know that the body is full dimensional because we have an interior point.}, then \(K^{*} =
     \{ y \vert \forall x \in K, \langle x, y \rangle \le 1\}\).
 \subsubsection{Lemma 1 (Polar body)}
-\label{sec:orge2267af}
+\label{sec:orge95dd6f}
 \(K^{*}\) is a closed set.
 
 The proof kinda depends on the fact that \(K^{*]\) can be written as the
 intersection of \(H_x^{-}\). Now these sets are closed. \(K^{*}\) is closed
 since it is intersection of closed sets.
 \subsubsection{Lemma 2 (Polar body)}
-\label{sec:org6144895}
+\label{sec:org62ec050}
 If \(K_1 \subset K_2\), then \(K_2^{*} \subset K_1^{*}\).
 
 The proof is kinda easy.
 \subsubsection{Lemma 3 (Polar body)}
-\label{sec:org7d550e6}
+\label{sec:orgf6fbd99}
 \(K^{*}\) is bounded and \(0 \in \int K^{*}\) (Also tells us that \(K^{*}\) is of
 maximum dimension)
 
@@ -2091,7 +2092,7 @@ Now K convex body \(\implies\) K compact \(\implies\) K bounded, implies that \(
     \subset B(0, r)\). Now \(0 \in B(0, 1/r) \subset K^{*}\) and thus \(0 \in \int
     K^{*}\).
 \subsubsection{Lemma 6 (Polar body)}
-\label{sec:orgd9eb723}
+\label{sec:org777d210}
 \(K^{**} = K\)
 
 \(x \in K\) and \(y \in K^{*}\), then \(\langle x,y \rangle \le 1\) for all \(y \in
@@ -2108,7 +2109,7 @@ Now K convex body \(\implies\) K compact \(\implies\) K bounded, implies that \(
 \(x_0 \in \int H_y^{+} \implies \langle x_0, y \rangle > 1\) and \(x_0 \notin
     K^{**}\) which is a contradiction.
 \subsubsection{Lemma 7 (Polar body)}
-\label{sec:org6fbbcc1}
+\label{sec:orgd892a63}
 Let \(F\) be a face of \(K\) and set
 
 \(\hat{F} = \{ y \in K^{*} \vert \forall x\in F, \langle x, y \rangle = 1\}\).
@@ -2116,7 +2117,7 @@ Let \(F\) be a face of \(K\) and set
 Then \(\hat{F}\) is a face of \(K^{*}\).
 \begin{enumerate}
 \item Proof
-\label{sec:orgf488f64}
+\label{sec:org7de635e}
 What is the hat of the empty set? It is \(K^{*}\).
 
 \(\hat{K}\), this has to be empty because \(K\) contains \(0\) and there is no
@@ -2148,12 +2149,12 @@ Thus \(F^{*} = \hat{F}\) and \(F^{*}\) is a face implying \(\hat{F}\) is a Face
 of \(K^{*}\).
 \end{enumerate}
 \subsubsection{Lemma 8 (Polar body)}
-\label{sec:orgced7e4f}
+\label{sec:orgffe9159}
 The correspondence \(F \mapsto \hat{F}\) between \(F(K)\) and \(F(K^{*})\) (Here
 \(K^{*}\) is the polar body) is bijective and inclusion reversing.
 \begin{enumerate}
 \item Proof
-\label{sec:org2008712}
+\label{sec:org8cf5a23}
 \(\hat{F} = \{y \in K^{*} \vert \forall x \in F, \langle x, y \rangle =
      1\}\).
 
@@ -2177,11 +2178,11 @@ Now \(x_0 \in K\setminus F, \implies x_0 \in K\setminus {\hat{\hat{F}}\)
      \hat{F} \implies x_0 \notin {\hat{\hat F}}\)
 \end{enumerate}
 \subsection{Theorem}
-\label{sec:org85c15f1}
+\label{sec:org24bc260}
 Let \(P\) be a \$d\$-polytope in \(\R^d\) with \(0 \in \int P\), then the polar
 \(P^{*}\) of \(P\) is a \$d\$-polytope dual to \(P\).
 \subsubsection{Proof}
-\label{sec:org7b17ef3}
+\label{sec:org8b167e3}
 We've already shown that the face lattice of \(P^{*}\) is anti-isomorphic to
 the face-lattice of \(P\). But we don't know if \(P^{*}\) is a Polytope.
 
@@ -2205,18 +2206,18 @@ arbitrary \(y \in P\), we should prove that \(\langle x, y \rangle \le 1\). Now
 Thus we can conclude that \(x\in P^{*}\), thus \(P^{*}\) is a polyhedron. We
 already proved that \(P^{*}\) is bounded, thus it is a Polytope.
 \subsection{Remark (What about lattice?)}
-\label{sec:orgb92967b}
+\label{sec:orgd830adb}
 The family of faces with \(\subset\) a lattice. \((F(P), \subset)\) is a lattice.
 
 In order to be a lattice, every two elements must have an infimum and
 supremum.
 \subsubsection{Proof}
-\label{sec:org9004916}
+\label{sec:orga48636d}
 \(F_1\) and \(F_2\) be face of \(P \implies F_1 \wedge F_2 = F_1 \cap F_2\) and
 \(F_1 \vee F_2 = (\hat{F}_1 \wedge {\hat F}_2)\). This is how we define the
 infimum and supremum.
 \subsection{Lemma}
-\label{sec:orge411553}
+\label{sec:org41b6970}
 Let \(P\) be a \(d\) polytope and \(0 \in \int P\). Let \(L\) be an \(n\) dimensional
 linear subspace and \(\sqcap \colon \R^d \rightarrow L\) corresponding
 orthogonal projection. Then \(L \cap P^{*}\) is the polar set in \(L\) of
@@ -2245,31 +2246,31 @@ Each \(w_i = \sqcap(v_i)\).
 Then it is same as \(\conv \{\sqcap(v_1), \cdots, \sqcap(v_k)\} =
    \sqcap\conv{v_1, \cdots, v_k\} = \sqcap(P)\).
 \subsection{Theorem}
-\label{sec:org085d1c0}
+\label{sec:org12091b4}
 Let \(F_1\) be a \(j\) face and \(F_2\) a \(k\) face of \(P\) and \(F_1 \subset F_2\),
 then the sub lattice of \(F(P)\) consisting of all faces \(F\) such that \(F_1
    \subset F \subset F_2\) is isomorphic to a face lattice of some \(k-j-1\)
 polytope we denote by \(F_2/F_1\).
 \subsubsection{Proof}
-\label{sec:org7562df9}
+\label{sec:org0ca7df0}
 We have \(F_2, F_1\) and we have a sub lattice. Now consider \([F, F_2]\), take
 a polar of \(F_2\), the face lattice changes the position. Now it is a face
 lattice of \([\hat{F}_1, \hat{F}_2]\).
 \section{Lecture 15}
-\label{sec:orge4def51}
+\label{sec:org7b378b8}
 \subsection{Review}
-\label{sec:org9925b03}
+\label{sec:org23dd6e0}
 The dual of a polytope was discussed.
 \subsection{Quotient polytope}
-\label{sec:orgb1462bf}
+\label{sec:orge2f872f}
 \subsubsection{Proposition}
-\label{sec:orga6f7cba}
+\label{sec:orgf43e62d}
 Let \(P\) be an \(n\) polytope \(F_1\) a \(j\) face of \(P\) and \(F_2\) be a \(k\) face
 of \(P\) such that \(F_2 \supset F_1\). Thus sublattice of all faces \(F\) such
 that \(F_1 \subset F \subset F_2\) is isomorphic to a face lattice of a
 \(k-j-1\) polytope that we denote by \(F_2/F_1\).
 \subsubsection{Some random stuff}
-\label{sec:org40e4b1a}
+\label{sec:org79e1ef1}
 \(F_2\) is a face of \(P\), \(F_2\) is a a face of \(P\), \(F_1 \subset F_2\).
 \(F_2^{*}\) is a polar of the \(F_2\), \(\hat{F}_1\) dual face of \(F_1\) inside
 \(F_2\).
@@ -2280,17 +2281,17 @@ The face lattice of \(\hat{F}_2\) is anti-isomorphic to \([F_1, F_2]\).
 
 We can say that \(F_2/F_1 \approx (\hat{F}_1)^{*}\).
 \subsubsection{Corollary}
-\label{sec:org5aa2b11}
+\label{sec:org4ebec0c}
 If \(\hat{F}_1\), \(\hat{F}_2\) are face of \(P^{*}\). \(F_1 \subset F_2\) and
 \(\hat{F}_2 \subset \hat{F}_1\).
 
 \(\hat{F}_1/\hat{F}_2 \approx (F_2/F_1)^{*}\)
 \subsubsection{Corollary}
-\label{sec:org829bd6d}
+\label{sec:orgcb58b6a}
 If \(F_1 \subset F_2 \subset F_3\) are faces of the polytope \(P\). Then
 \((F_3/F_1)/(F_2/F_1) \approx F_3/F_2\).
 \subsection{Definition (Face figure)}
-\label{sec:org7132add}
+\label{sec:orgf50e407}
 Let \(P\) be a polytope and \(F\) a vertex of \(P\) with \(H\) a hyperplane,
 separating \(F\) from \(\vert P \setminus \{F\}\), then a vertex-figure of \(P\) at
 \(F\) is the polytope \(P \cap H\).
@@ -2300,11 +2301,11 @@ polytope. A picture was drawn.
 
 \(\int H^{*} \supset F\) and \(\int H^{-} \supset \ver{P} - \{F}\)
 \subsection{{\bfseries\sffamily TODO} Lemma}
-\label{sec:orgd07059c}
+\label{sec:orgce56c7e}
 A vertex figure of \(P\) at the vertex \(F\) is combinatorially combinatorially
 isomorphic to \(P/F\).
 \subsubsection{Proof}
-\label{sec:org7148118}
+\label{sec:org6694d46}
 Let \(x\) be the vertex \(F\) and \(Q = \conv(\vert P \setminus \{x\})\). Let \(y\)
 be the closest point, \(p_Q(x)\).
 
@@ -2324,7 +2325,7 @@ Let \(H'\) be a hyperplane defining a face of \(P\) that contains \(x\), then
 
 Thus \(H \cap P\) is combinatorially isomorphic to \(P/x\).
 \subsection{Construction of quotient polytope using vertex figure}
-\label{sec:org6325bdc}
+\label{sec:org592c0d3}
 \(\emptyset = F^{-1} \subset \cdots \subset F^{j-2} \subset F^{j-1} \subset
    F_1 \subset F_2\)
 
@@ -2335,9 +2336,9 @@ Thus \(H \cap P\) is combinatorially isomorphic to \(P/x\).
 
 \(F_2/F^{0}\) is a vertex figure of \(F_2\).
 \subsection{Special types of Polytopes}
-\label{sec:org82ea31e}
+\label{sec:org5fb74a7}
 \subsubsection{Simplex}
-\label{sec:orga225805}
+\label{sec:orga7e2918}
 
 Simplex is the convex hull of affinely independent points.
 
@@ -2365,18 +2366,18 @@ polytope.
 
 \(f_k(T^d) = \binom{d+1}{k+1}\), \(0 \le k \le d\).
 \subsubsection{Simplicial}
-\label{sec:org32a9695}
+\label{sec:org520f2b3}
 A polytope \(P\) with all proper faces being simplices is called simplicial. A
 polytope \(P\) where dual \(P^{*}\) is simplicial is called simple.
 
 An example of a simplicial polytope is a bi-tetrahedron. An example of a
 simple is a cube.
 \subsection{Lemma}
-\label{sec:orgda21a33}
+\label{sec:org58858f6}
 An \(n\) polytope is simple if and only if each vertex is contained in exactly,
 \(n\) edges.
 \subsubsection{Proof}
-\label{sec:orgd7c2668}
+\label{sec:org675dd2c}
 \(P\) is a simple polytope \(\implies P^{*}\) is simplicial.
 
 \(v\) is a vertex and \(e_1, \cdots, e_m\) edges, containing \(v\), \(\implies
@@ -2388,29 +2389,29 @@ facets of \(\hat{v}\). Simplex of dimension \(n-1\).
 every face of \(P^{*}\) contains exactly \(n\) ridges. This implies every facet
 \((n-1)\) dimensional polytope of \(P^{*}\), \(n\) facets.
 \subsection{Definition}
-\label{sec:orgbdd5263}
+\label{sec:org1e1cf29}
 Let \(Q\) be an \(n-1\) dimensional polytope in \(\R^n\) and \(v\notin \aff{Q}\). The
 polytope \(P = \conv(Q \cap \{v\})\) is a pyramid with base \(Q\) and apex \(v\).
 
 \(d-1\) \textbf{fold} of a pyramid is the \(d\) face of \(d\) pyramid which is a simplex.
 \subsection{Lemma}
-\label{sec:orgec5a35a}
+\label{sec:org31c40de}
 \(f_k(P) = f_k(Q) + f_{k-1](Q)\), \(0 \le k \le n\).
 
 \(f_{-1}(Q) = f_{n-1}(Q)=1\), \(F_i(Q) = 0\) for \(i < -1\) and \(i > n-1\).
 \subsubsection{Proof}
-\label{sec:org4ddf79b}
+\label{sec:org7a51ad6}
 Let \(H\) be a supporting hyperplane of \(P\). Then \(v \notin H\), \(H \cap P = H
     \cap Q\) is a face of \(Q\).
 
 \(v \in H\) and \(H \cap (\ver P - v)\) gives a face in \(Q\), \(H \cap P = \con
     (\{v \} \cup\) cone of a face of \(Q \cap H\).
 \section{Lecture 16 \textit{<2018-12-12 Wed>}}
-\label{sec:orgb9cdda7}
+\label{sec:org25c4910}
 \subsection{Special types of polytopes}
-\label{sec:org38c7ef1}
+\label{sec:org650b95d}
 \subsubsection{Simplex}
-\label{sec:org123e74a}
+\label{sec:org8656678}
 A convex hull of affinely independent points.
 
 \(f_k(T^d) = \binom{d+1}{n+1}\)
@@ -2419,14 +2420,14 @@ A convex hull of affinely independent points.
 
 \([d+1] = \{1, \cdots, d+1\}\).
 \subsubsection{Simplicial and simple polytopes}
-\label{sec:orgb498f19}
+\label{sec:org3cd0815}
 Polytopes with all proper faces being simplices.
 
 Simple polytope: the dual is simplicial.
 
 \(P\) is simple if and only if every vertex is contained in \(\dim P\) edges.
 \subsubsection{Pyramid}
-\label{sec:org3abddc5}
+\label{sec:orgfc6089f}
 Is convex hull of \(\{Q, p\} \subset \R^n\). Where \(\dim Q = n - 1, p \notin
     \aff Q\)
 
@@ -2436,7 +2437,7 @@ Is convex hull of \(\{Q, p\} \subset \R^n\). Where \(\dim Q = n - 1, p \notin
 
 \(f_{-1}(Q) = 1 = f_{n-1}(Q)\), \(f_i(Q) = 0, i < -1, i > n-1\).
 \subsubsection{Remarks}
-\label{sec:org5400a58}
+\label{sec:orgeb49b8a}
 \begin{enumerate}
 \item Any \(d\) polytope is \(0\) fold \(d\) pyramid.
 \item A polytope \(P\) is an \(r\) fold, \$d\$-pyramid if it is a pyramid over an
@@ -2444,12 +2445,12 @@ Is convex hull of \(\{Q, p\} \subset \R^n\). Where \(\dim Q = n - 1, p \notin
 base is a polytope of dimension \(d-r\).
 \end{enumerate}
 \subsubsection{Lemma}
-\label{sec:orgc3cde4a}
+\label{sec:orgbacb812}
 If \(Q_1 \approx Q_2\) and \(P_1, P_2\) are pyramids over \(Q_1\), \(Q_2\)
 respectively, then \(P_1 \approx P_2\). Here \(\approx\) means combinatorially
 isomorphic. \footnote{What is combinatorially isomorphic?}
 \subsubsection{Lemma}
-\label{sec:orgb0b2de5}
+\label{sec:org5c1da62}
 Let \(P\) be an \(r\) fold, \(d\) pyramid over \(Q\), then \$1\$-fold pyramid over
 \(d-1\), \(G\).
 
@@ -2458,7 +2459,7 @@ Let \(P\) be an \(r\) fold, \(d\) pyramid over \(Q\), then \$1\$-fold pyramid ov
 \(f_k(P) = \sum_{i=0}^{k} \binom{i}{1}f_{k-i}(Q) = f_k(a) + f_{k-1}(Q)\).
 \begin{enumerate}
 \item Proof
-\label{sec:orga6bf94f}
+\label{sec:orgc74cac8}
 Induction hypothesis: Formula holds for \(r\) fold \(d\) pyramids (where \(d\) is
 anything.)
 
@@ -2475,11 +2476,11 @@ This is equal to \(\sum_{i=0}^{r}\binom{r}{i} f_{k-1}(Q) +
      f_{k-r-1}(Q)\)
 \end{enumerate}
 \subsubsection{Theorem}
-\label{sec:orga81fb08}
+\label{sec:orgae242f3}
 If \(p\) is an \(r\) fold pyramid, then \(P^{*}\) is an \(r\) fold pyramid.
 \begin{enumerate}
 \item Proof
-\label{sec:org82f8e5c}
+\label{sec:org3d3d1ff}
 \(P = \conv{Q \cup \{p\}\}\), \(Q\) base, \(p\) is the appex of \(P\).
 
 \(\hat{Q}\) is a vertex of \(P^{*}\) and \(p\) is a face of \(P^{*}\). These two
@@ -2493,12 +2494,12 @@ which is a facet. Thus \(P^{*}\) is a pyramid.
 
 What about \(r\) bigger than \(1\)? Do the induction.
 \item Exercise
-\label{sec:org9edcc7d}
+\label{sec:org09329da}
 What would be the Hasse diagram of a pyramid, given the Hasse diagram of
 the base?
 \end{enumerate}
 \subsection{Bipyramid}
-\label{sec:org86be844}
+\label{sec:orgb936e58}
 Let \(Q \subset R^n\) be an \(n-1\) polytope and \(I = [p, q]\) be a \(1\) dimensional
 polytope such that, \(\relint Q \cap \relint I = \text{pint}\)
 
@@ -2514,29 +2515,29 @@ Face of \(B\), \(F = B \cap H\), face of \(B\)
 \item \(p, q \in \ver F\). This case is not possible.
 \end{enumerate}
 \subsubsection{Lemma}
-\label{sec:org2b936c0}
+\label{sec:orgb67865c}
 \(f_k(B) = f_k(Q) + 2f_{k-1}(Q)\), for \(0 \le k \le n-1\) Here \(k\) are
 vertices. \(\dim B = n\). (Here \(f\) is sort of like the degree vector)
 \begin{enumerate}
 \item Proof
-\label{sec:org9482ab3}
+\label{sec:org11f377f}
 \(\dim Q = n-1\).
 
 \(f_{n-1}(Q) = 2f_{n-2}(Q)\).
 \end{enumerate}
 \subsubsection{\(r\) fold \(d\) bipyramid}
-\label{sec:org2b0d029}
+\label{sec:orgdc401c6}
 \(P\) is \(r\) fold \$d\$-bipyramid, if it a bipyramid over \(r-1\) fold \(d-1\)
 bipyramid and the basis are the same.
 
 What is \(d-1\) fold \(d\) bipyramid, \(d\) fold \(d\) bipyramid. This will in fact
 be a cross-polytope.
 \subsubsection{Lemma}
-\label{sec:org80859ed}
+\label{sec:orgab454ab}
 If \(Q_1 \approx Q_2\) and \(P_1\), \(P_2\) are bipyramids over \(Q_1, Q_2\)
 respectively, then \(P_1 \approx P_2\).
 \subsubsection{Cross Polytope}
-\label{sec:org07a391f}
+\label{sec:org26b034f}
 We're in \(\R^n\) and \(e_1, \cdots, e_n\) be a basis, then \(C^n = \conv\{e_1,
     \cdots, e_n, -e_1, \cdots, -e_n\}\). If \(\langle e_i, e_j \rangel =
     \delta_{ij}\), and \(\Vert e_i\Vert = \Vert e_j \Vert\) for all \(i, j\), then
@@ -2548,13 +2549,13 @@ How does one think about it? The typical \(k\) face of \(C^n\) is the convex
 hull \(\{\epsilon_0, e_{i_0}, \cdots, e_{i_k}\}\). There was some argument
 about counting.
 \subsubsection{Ordrent}
-\label{sec:org53f67c3}
+\label{sec:org5300158}
 In \(n\) dimensional space, given a basis. Then instead of base, we look at
 the orthogonal complements. These are hyperplane. These are called
 \(\{e_1^\perp, e_2^\perp, \cdots, e_n^\perp\}\). Now, \(\R^n\), without these
 \(n\) perpendicular things would have \(2^n\) components.
 \subsection{Prism}
-\label{sec:org70dd5eb}
+\label{sec:orgd0d9941}
 Let \(Q \subset \R^n\) be an \(n-1\) polytope and \(Q'\), its translate by a vector
 in a corresponding linear subspace to the \(\aff Q\).
 
@@ -2568,40 +2569,40 @@ What are the number of faces?
 
 What about \(n-1\)?
 \subsubsection{\(r\) fold \(d\) prism}
-\label{sec:org424e282}
+\label{sec:orgfea99dc}
 A prism over \(r-1\) fold \(d-1\) prism. What is \(d-1\) fold \(d\) prism?
 
 \(d-1\) fold \(d\) prism is the \(d\) fold \(d\) prism which is a \(d\) parallelotop.
 \subsection{Lemma}
-\label{sec:org07cc82a}
+\label{sec:org2f1a6a2}
 If \(Q_1 \approx Q_2\) and \(P_1, P_2\) prisms over \(Q_1\) and \(Q_2\), then \(Q_1
    \approx Q_2\).
 \subsection{Cube}
-\label{sec:org6bdc1d8}
+\label{sec:orgc1a6efa}
 A \(d\) cube is \(d\) parallelotop or \([0,1]^d\).
 
 \(f_k(\textup{cube}) = 2^{dk} \binom{d}{k}\) for \(0 \le k \le d\).
 \section{Lecture 17 \textit{<2018-12-18 Tue>}}
-\label{sec:orgc7cd2db}
+\label{sec:orgfcf2819}
 \subsection{Review}
-\label{sec:org1f4006f}
+\label{sec:org60d5e3f}
 \subsubsection{Simplex, simplicial polytopes, simple polytopes}
-\label{sec:org76999d9}
+\label{sec:orgd20e92c}
 \subsubsection{Pyramids}
-\label{sec:org3d1ef41}
+\label{sec:org846e1d9}
 r fold d pyramids, \(d-1\) fold d pyramid, d fold d pyramid, d simplex
 \subsubsection{Bipyramids}
-\label{sec:org9ec6395}
+\label{sec:org622f52f}
 r fold d pyramid, \(d-1\) fold d bipyramid, \(d\) fold \(d\) bipyramid.
 
 Cross polytope.
 \subsubsection{Prism}
-\label{sec:org28c63d8}
+\label{sec:org347afad}
 r fold d prism, \(d-1\) fold d prism, d cube, d parallelotop, d fold d prism.
 \subsubsection{Cyclic polytopes}
-\label{sec:orgedc796b}
+\label{sec:org799480e}
 \subsection{Moment curve}
-\label{sec:orge1774b3}
+\label{sec:orge147e94}
 \(\alpha(t) = (t, t^2, t^3, \cdots, t^d) \in \R^d\).
 
 An example of curve of order \(d\).
@@ -2617,32 +2618,32 @@ number of roots.
 
 \begin{enumerate}
 \item Claim
-\label{sec:org960c90b}
+\label{sec:orgcff563b}
 For every hyperplane, the cardinality of \(H \cap M\) is less than or equal to \(n\)
 \end{enumerate}
 \subsection{More about moment curves}
-\label{sec:org34bb40f}
+\label{sec:orgd7b0720}
 \(V \subset M\) be a finite set with \(v = \vert V \vert\). \(C(v, d) =
    \conv\{\alpha(t) \vert \alpha(t) \in V\} = \conv\{x_1, \cdots, x_r\} =
    \conv\{\alpha(t_1), \cdots, \alpha(t_v)\}\)
 
 \(V = \{x_1, \cdots, x_r \vert \textup{where } x_i = \alpha(t_i)\}\).
 \subsection{Remark}
-\label{sec:org7d75bbd}
+\label{sec:orgfc55c11}
 Notation \(C(v, d)\) indicated that cyclic polytope (its combinatorial class)
 depends only on dimension and the number of points.
 \subsection{Lemma}
-\label{sec:org622cff8}
+\label{sec:org9dd9287}
 \(C(v, d)\) is a simplicial polytope.
 \subsubsection{Proof}
-\label{sec:org3db1950}
+\label{sec:org38a26bd}
 \(C(v, d) = \conv\{\alpha(t_1), \cdots, \alpha(t_n)\}\)
 \subsubsection{Claim}
-\label{sec:org56aec3d}
+\label{sec:org9d499eb}
 Set of points \(\{x_1, \cdots, x_r\}\) is in \textbf{general position}, which means
 that every subset of at most \(d+1\) points is affinely independent.
 \subsubsection{Proof}
-\label{sec:org52020d5}
+\label{sec:org45ee101}
 Every subset of \(\{x_1, \cdots, x_v\}\) of cardinality \(d+1\) are affinely
 independent. \(\R^d \mapsto \R^{d+1}, (x_1, \cdots, x_{d+1}) \mapsto (1, x_0,
     \cdots, x_d)\), points \(x_1, \cdots, x_{d+1}\) are affinely independent if and
@@ -2662,7 +2663,7 @@ The above determinant is called the Van der Monde determinant and the value
 is equal to \(\prod_{1 \le i \le d+1} (t_i - t_j)\) The determinant is zero
 only if some of \(t_i\) coincide. But we don't have it here.
 \subsubsection{\(C(V, d)\) is simplicial}
-\label{sec:org88323ca}
+\label{sec:org919fa4e}
 \(C(v, d) \cap H = \conv W\), where \(H\) is a support hyperplane and \(W \subset
     V\) be vertices and \(\card W \ge d+2\). (Why don't we assume it's less, if
 less, then, then are affinely independent, and hence has to be a simplex.)
@@ -2678,7 +2679,7 @@ that we used only \(d\) points in the sum.
 \(w_1 = \sum_{i=2}^{d+1} w_j\), but then \(w_1, \cdots, w_{d+1}\) are affinely
 dependent is a contradiction.
 \subsection{More about \(C(V, d)\)}
-\label{sec:org87291e6}
+\label{sec:orgc615d8a}
 \(C(v, d) = \conv V\), \(V \subset M, \card V = v\).
 
 \(V = \{x_1, \cdots, x_v\} \subset M\).
@@ -2698,7 +2699,7 @@ Every \(W \subset V\) has unique presentation as a disjoint union \(W = Y\cap
    X_1 \cup \cdots \cup X_k \cup Y_2\), where \(x_i\) are contiguous and \(y_j\) end
 sets.
 \subsection{Definition}
-\label{sec:orgf6838ff}
+\label{sec:orga3cd8ad}
 \(W \subset V\) is of type \((r, s)\) if 
 
 \begin{enumerate}
@@ -2706,12 +2707,12 @@ sets.
 \item \(W\) has \(s\) contiguous sets with odd number of points.
 \end{enumerate}
 \subsection{Proposition}
-\label{sec:org66ed822}
+\label{sec:orge3a09d4}
 Let \(W\) be a subset of \(V = \vert C(v, d)\) where \(v \ge d + 1\). Then \(\card
    W\) is a \(k\) face of \(C(v, d)\), \(0 \le k \le d-1\) if and only if \(W\) is of
 type \((k+1, s)\) where \(0 \le s \le d - k -1\).
 \subsubsection{Proof}
-\label{sec:orgf0b7dc1}
+\label{sec:orgdeb3613}
 We know that \(C(v, d)\) is simplicial, \(\implies\) (\(\conv W\) is a \(k\) face
 \(\implies\), \(\card W = k+1\).)
 
@@ -2734,7 +2735,7 @@ points in \(V \setminus W\) should be separated only with even contiguous
 sets.
 
 Which means that there should not be odd contiguous sets. Thus, there are
-only even contiguous sets. Hence the statements \$\conv W\$is a face of
+only even contiguous sets. Hence the statements \(\conv W\) is a face of
 \(C(v, d)\) is equivalent to \(H\) is a support hyperplane of \(C(v, d)\).
 \item \(\card W = k+1, W \subset V\). \(W \subset V\), \(W\) is of type \((k+1, s\), \(0
        \le s \le d-k-1\).
@@ -2750,11 +2751,11 @@ Tomorrow, we'll do that \(\conv W\) is a face of \(C(v, d)\).
 \end{enumerate}
 \end{enumerate}
 \section{Lecture 18}
-\label{sec:org1762944}
+\label{sec:org1c9ca13}
 Books \footnote{Gunter Ziegler, Lectures on Polytopes (Springer), McMallen and Shepherd,
 Convex polytopes and the upper Bound conjecture.}
 \subsection{Cyclic Polytope}
-\label{sec:org8d9d596}
+\label{sec:org49ee8b8}
 \(M = \{(t, t^2, \cdots, t^{d}) \vert t \in \R\}\)
 
 \(t_1 < \cdots < t_v\) and \(x_i = \alpha(t_i)\) and \(C(v, d) = \conv \{x_1, x_2,
@@ -2777,14 +2778,14 @@ For every \(W \subset V\), there is a unique presentation \(W = Y_1 \cup X_1
    \cup \cdots \cup X_k \cup Y_2\) where \(X_i\) are contiguous and \(Y_i\) end sets
 be empty.
 \subsection{Proposition}
-\label{sec:org301ccb9}
+\label{sec:org6410e0d}
 Let \(V \subset M\) and \(\cad V = v\). For \(W \subset V\) holds \(\conv W\) is a
 face of \(C(v, d) = \conv V \iff W\) is of type \((k+1, s)\) with \(0 \le 1 \le d-
    k- 1\).
 \subsubsection{Proof}
-\label{sec:org1aae735}
+\label{sec:org45c62d3}
 Part 1: \(k = d-1 \iff \conv W = k+1\). Let \(W \subset V\) and \(\card W = d\),
-\(W \subet M\) and \(\card W = d \implies W\) is affinely independent.
+\(W \subset M\) and \(\card W = d \implies W\) is affinely independent.
 Therefore, affine hull of \(H\) is same as affine hull of \(W\).
 
 \(M\) is an order \(d\) curve (this means that if you cut the moment curve with
@@ -2814,7 +2815,7 @@ Now, there is \(t \subset M\) with \(\card W = d - k - 1\) such that \(T \cap V 
     T\) is a facet of \(C(v + d - k - 1, d)\) with supporting hyperplane, \(H =
     \aff(W \cup T)\).
 
-Summary: \(C(v, d) \subset C(v + d - k - 1, d) \subset H^{-1|\) (some abuse of
+Summary: \(C(v, d) \subset C(v + d - k - 1, d) \subset H^{-1}\) (some abuse of
 notation, the second one is the convex hull of \$V \(\cup\) T)
 
 \(W \cup T = (V \cup T) \cap H\).
@@ -2827,6 +2828,1302 @@ previous one.
 
 (I missed several parts of this proof.)
 \subsection{Definition}
-\label{sec:org9d868fb}
-A polytope is \(k\) 
+\label{sec:org9943296}
+A Polytope is \(k\) neighbouring if every subcollection of \(k\) vertices of \(P\)
+is set of vertices of a proper face.
+\subsection{Proposition}
+\label{sec:org208dbd0}
+\(C(v, d)\) for \(v > d+1\) is \(\lfloor \frac{d}{2} \rfloor\).
+\subsubsection{Proof}
+\label{sec:org4dcff97}
+\(V \subset W \subset V\) and \(\card W \le \lfloor \frac{d}{2} \rfloor\).
+
+We want to show that it is a face. We have a criterion for this.
+
+If \(W\) is of type \((\card W, s)\), since \(s \le \card W\), the number of all
+contiguous sets cannot exceed \(W\).
+
+\$s \(\le\) W\$is
+\subsection{Proposition}
+\label{sec:org39a7c00}
+\(f_k(v, d)\) is the number of \(k\) faces of \(C(v, d)\)
+
+\begin{enumerate}
+\item \(f_k(v, 2n) = \sum_{j = 1}^{n} \frac{v}{v-j} \binom{v-j}{j} \binom{j}{k+1
+      -j}\) for \(0 \le k \le 2n -1\).
+\item \(f_k(v, 2n + 1) = \sum_{j = 1}^{n} \frac{k+2}{v-j} \binom{v - j}{j+1}
+      \binom{j+1}{k+1-j}\) for \(0 \le k \le 2m\).
+\end{enumerate}
+\subsubsection{Proof}
+\label{sec:orgb7122ce}
+\(W \subset V\) is a vertex set of \(k\) face in \(C(v, d) \iff W\) is of type
+\((k+1, s)\) where \(0 \le s \le d - k - 1\).
+
+\(v\) points \(V\) is a subset of \(v\) points on the closed simple curve every
+point of \(v\) has a successor and predecessor.
+
+Something about Group actions were discussed.
+
+(A) \(d = 2n\), \(W \subset V\) of type \((k+1, s)\) or \((k+1, s - 1)\) where \(k +
+    1= s(\mod 2)\).
+
+\(W\) is of type \((k+1, s)\) and \(k+1 \equiv s (\mod 2)\), then, then number of
+points in the end sets is even.
+
+\(W = Y_1 \cup X_1 \cup \cdots \cup X_k \cup Y_2\),
+
+\(k+1 = \vert Y_1 \vert + \vert Y_2 \vert + \textup{even } + s\cdot \textup{
+    odd }\).
+
+\(W\) is of type \((k+1, s- 1)\) and \(k+1 = s (\mod 2)\), then the number of
+points in the end set is odd.
+
+Pictures of circuits were drawn. Type of a circuit: the cardinality of the
+number of odd continuous sets.
+
+\(p(v, k+1, s)\) is the number of distinct \(W_1 \subset V_1\) of type \((k+1,
+    s)\) where \(s = k + 1 (\mod 2)\) This is same as the number of distinct sets
+\(W \subset V\) of type \((k+1, s)\) or \((k+1, s-1)\) where \(1 \equiv k + 1
+    (\mod 2)\).
+
+\(f_k(v, 2m) = \{W \subset V \vert W \textup{ is of type } (k+1, s), 0 \le 1
+    \le \}\).
+\section{Lecture 19 \textit{<2019-01-08 Tue>}}
+\label{sec:org8e2e3fc}
+\subsection{Cyclic Polytope}
+\label{sec:org80eeb27}
+\(M\) is a moment curve and \(\{(t, t^2, \cdots, t^d) \in \R^d \vert t\in \R\}\).
+\(V = \{x(t_1), \cdots, x(t_v) \} \subset M\)
+
+\(C(V, d) = \conv V\) which is a cyclic polytope.
+
+\(C(V, d)\) is a simplicial polytope. 
+
+Any \(d+1\) different points on \(M\) are affinely dependent.
+
+Each face of \(C(V, d)\) is contained in a hyperplane and so can have at most
+\(d\) points from the moment curve.
+
+\(V \subset M\) a \(v\) set and \(W \subset V\), \(W = Y_1^w \cup X_1^W \cup \cdots
+   \cup X_t^w \cup Y_w^w\) where \(X_i\) are independent sets, \(X_i = \{x_a,
+   x_{a+1}, \cdots, x_{a+l}\}\), \(x_{a+1} \notin W\) and \(x_{a+1} \notin W\), \(Y_1
+   = \{x_1, x_2, \cddots, x_a\}\), \(x_{a+1} \notin W\), \(Y_2 = \{x_g, x_{g+1},
+   \cdots, x_v\}\) and \(x_{g-1} \noint W\). (Not super sure about the indices)
+
+\(W \subset V\) is of type \((r, s)\) if \(\card W = r\) and \(s\) the number of odd
+contiguous sets.
+\subsection{Theorem}
+\label{sec:org5eedd24}
+Let \(v \ge d+2\) and \(V \subset M\) with \(\card V = v\), \(W \subset V\) is a
+vertex set of a \(k\) face \(\card W\) of \(C(v, d) = \card V\) if and only if \(W\)
+is of type \((k+1, s)\) with \(0 \le s \le d - k - 1\).
+
+\(C(V, d)\) is the class of all polytopes combinatorially equivalent to \(\conv
+   V\) where \(V \subset M \subset \R^d\) is a \(v\) set.
+\subsection{Definition}
+\label{sec:org059b3b9}
+A polytope \(P\) is \(k\) neighbouring if every subset of \(\vert P\) of
+cardinality \(k\) is a vertex set of a face of \(P\).
+\subsection{Proposition}
+\label{sec:org3bf8aa7}
+A cyclic polytope \(C(V, d)\) is \(\lfloor d/2\rfloor\) neighbouring.
+\subsubsection{Proof}
+\label{sec:orge1db1cf}
+\(k = \lfloor \frac{d}{2} \rfloor\) and \(W \subset V\) with \(\card W = k\), \(W\)
+is of type \((k, s)\) where \(s \le k = \lfloor \frac{d}{2} \rfloor \le d -
+    \lfloor \frac{d}{2} \rfloor\), \(W\) is a face of \(C(V, d)\) and \(C(V, d)\) is
+\(k\) neighbouring.
+\subsection{Example}
+\label{sec:org49cbb63}
+\(G\) is a group, finite.
+
+\(\Z\) is the cyclic group, \(= \langle 1\rangle, \langle -1 \rangle\).
+
+\(\Z_n = \{0, \cdots, n-1\}\) (we will assume the addition operation)
+
+\(C_n = \{1, t, t^2, \cdots, t^{d+1}\}\) with \(t^n = 1\), this is the algebraic
+notation.
+
+Generators of \(\Z_n\) are all \(0 < i < n\) such that \((n, i) = 1\).
+
+\(S_n\) is the group of all permutations of the set \([n]\).
+
+\(D_{2n}\) the group of Isometries of regular \(n\) gon. \(D_{8}\) is known to be
+commutative. \(S_n\) is only commutative for \(n = 2\).
+
+\(X \neq 0\) be a set, \(G\) is a group, \(G\) acts on \(X\) from the left if there
+is a map, \(G \times X \rightarrow X\), \((g, x) \mapsto g\cdot x\). such that
+
+\begin{enumerate}
+\item \(g \cdot (h \cdot x) = (g \cdot h) \cdot x\)
+\item \(1 \cdot x = x\).
+\end{enumerate}
+
+An example. Consider \(R^2\) and \(\Z_2 = \{1, t\}\), \(t \cdot x = - x\).
+
+We are more interested in actions of groups on finite sets.
+
+\(G\) acts on \(G\) as \(G \cdot G \rightarrow G\), \((g, x) \mapsto gx\).
+
+An example we want to work with is \(\Z_n\)
+
+\(G\) acts on \(X\), \(x \in X\), \(G \cdot x = \{g \cdot x\vert g \in G\}\), the
+orbits of \(x\).
+
+\(G_x =\{h \in G \vert h \cdot x = x\} \subset G\). This is called the
+stabilizer of \(x\).
+
+The first thing one can notice is that the number of points in \(\card Gx =
+   \card G / \card G_x = [G \colon G_x]\).
+
+\(X = \sqcup_{x \in T} G \cdot x \implies \card X = \sum_{x \in T} \card(G x)
+   = \sum_{x \in T} \card D/\card G_x\).
+\subsection{{\bfseries\sffamily TODO} Theorem}
+\label{sec:org09786b6}
+\footnote{Apparently this theorem is important and Pavle said he'll ask in the
+exam.} For cyclic polytopes.
+
+\(f_k(v, 2n) = \sum_{j = 1}^{n} \frac{v}{v-j}\binom{v-j}{j} \binom{j}{k+1 -
+   j}\), \(0\le k \le 2n - 1\).
+
+\(f_k(v, 2n+1) = \sum_{j = 0}^{n} \frac{k+2}{v-j} \binom{v-j}{j+1}
+   \binom{j+1}{k+1 - j}\), \(0 \le k \le 2n\).
+\subsubsection{Proof}
+\label{sec:org4efca63}
+When \(d = 2n\), we need to compute \(f_k(v, 2n)\), this \(\card \{ W \subset V
+    \vert W \textup{ is of type } (k+1, s)\textup{ where } 0 \le s \le 2n - k +
+    1 \}\).
+
+This is same as \(\sum_{0 \le s le 2n - k + 1} \card \{W \subset V \vert W
+    \textup{ is of type (r, s)}\}\).
+
+This is again same as $$\sum_{0 \le s \le 2n - k + 1, s = k+1 (\mod 2)}
+    \left( \card \{W \subset V \vert W \textup{ is of type (r, s) or (r, s -
+    1)}\} + \card \{W \subset V \vert W \textup{ is of type (r, s)}\} \right).$$
+Now we have everything.
+
+\(V\) circuit is \(V \subset S^1\) circle. \(\vert V \vert = v\).
+
+\(W \subset V\) and \(W = X_1 \cup X_2 \cup \cdots X_t\).
+
+\(s = k+1 \mod 2\). \(W\) is of type \((k+1, s)\), \(\vert W \vert = \vert Y_1
+    \vert + \vert Y_2 \vert + \textup{even} + s \cdot \textup{odd}\). This would
+be similar, \(k + 1 = \vert W \vert = \vert Y_1 \vert + \vert Y_2 \vert +
+    \textup{even} + (s-1) \textup{odd}\).
+
+\begin{enumerate}
+\item \(W\) is of type \((r, s) \implies\) the number of points in end sets is
+even.
+\item \(W\) is of type \((n, s-1) \implies\) number of points in the end sets is
+odd.
+\end{enumerate}
+
+\(f_k(v, 2n) = \sum_{0 \le s \le 2n - k - 1, s \equiv k + 1 (\mod 2)} \{W_1
+    \subset V_1 \vert W_1 \textup{ is of type (r, s)}\}\)
+
+\(s = k+1 \mod 2\), \(p(v, k+1, s) =\) the number of \(W \subset V\) of type
+\((k+1, s)\) and \((k+1, s-1)\). This is equal to the number of \(W_1 \subset
+    V_1\) of type \$(k+1, \$
+
+\(p(v, k+1, s)\) (A circle was drawn)
+
+\(W_1 \subset V_1\) is of type \((k+1, s)\), \(W_2 \subset V_1\) is of type
+\((k+1 + s, 0)\).
+
+\(p(v, k+1, s) = \binom{i}{j} p(v, k+1, 1+s, 0)\).
+
+\(p(v, k+1, s) = \binom{\frac{k+1 + s}{2}}{s} p(v, k+1 + s, 0)\)
+
+We need to compute \(p(v, k+s + 1, 0)\).
+
+\(W_1 \subset V_1\), \(W_1\) is \((k+s +1, 0)\) and \(V_1\) has \(v\) elements. (I
+think \(W_1\) has cardinality 2j)\$.
+
+\(p(v, k+s + 1, 0) = \sum_{i \in I \textup{orbits of }Z_i \textup{ action of
+    subsets of type} (k+s + 1, 0)} \frac{v}{r_i}\)
+
+\(W_1 \subset V_1\) gets transformed to \(W_2 \subset V_2\), cardinality \(j\) and
+\(v-j\).
+
+\(\biom{v-j}{i} = \sum_{i \in I} {v - j}{j} = \sum_{v - j }{r_i} \implies
+    \sum_{i \in I}{\frac1r_i} = \frac{1}{v - j} \binom{v -j}{i}\).
+
+\(p(v, k + s + 1, 0) = \frac{v}{v-j} \binom{v- j}{i}\).
+
+\(p(v, k + s + 1, 0) = \sum {\frac{v}{r_i}}\).
+
+The most important argument was using the action of the group. It has some
+nice properties. This somehow proves the theorem for even, the theorem for
+odd is simpler.
+\section{Lecture 20}
+\label{sec:org9304a46}
+\subsection{Stuff from the beginning}
+\label{sec:org39cd461}
+A diagram for \(v = 8\). \(V_8 \times \{0, \cdots, 7\} \rightarrow \{0, \cdots,
+   7\}\).
+
+\(G\) acts on \(X\). \(G\) acts on \(X^k\).
+
+\(g(x_1, \cdots, x_k) = (gx_1, \cdots, gx_k)\). by definition.
+
+\(f_k(v, 2n) = \sum_{j =1}^{n} \frac{v}{v - j} \bionom{v-j}{j} \binom{j}{k +
+   1 - j}\), \(0 \le k \le 2n -1\).
+
+\(f_k(v, 2n+1) = \sum_{j = 0}^{n} \sum_{j = 0}^{n} \frac{k + 2}{v - j}
+   \binom{v - j}{j+1} \bionom{j+1}{k+1 - j}\) for \(0 \le k \le 2n\).
+
+\(f_k(v, d) = \card\{W \subset V \vert W \textup{ is of type (k+1, s) wheere }
+   s \le d - k - 1\}\)
+
+This is same as \(\sum_{s = 0}^{d - k - 1} \card\{W \subset V \vert W \textup{
+   is of type (k + 1, s)}\}\).
+
+\(G\) is a group, \(X + \emptyset\), \(G \times X \rightarrow X\), \((g, x) \mapsto
+   g \cdot x\). The definition of group action was repeated.
+
+The definition of symmetric group was done. 
+\subsection{More.}
+\label{sec:orgbd2607c}
+\(d = 2n\)
+
+\(W \subset V\), \((k + 1, s), (k+1, s - 1)\), \(s = k + 1 \mod 2\).
+
+The above maps to  the following
+
+\(W_1 \subset V_1\), \(v\) circuit. and \(s = k + 1 \mod 2\).
+
+\(p(v, k + 1, s) = \textup{number of } W \subset V\) of type \((k+1, s)\) or
+\((k + 1, s- 1)\) where \(s = k + 1 \mod 2\). This is same as the number of \(W_1
+   \subset V_1\) of type \((k + 1, s)\).
+
+\(W_2\) has \(j\) pairs of points, \(\bionom{i}{s} p(v, k+s + 1, 0) = p(v, k+1,
+   s)\). There was a picture that was drawn.
+
+A circle with 4 points, representing four contiguous sets. This is \(W_1\).
+
+The same thing is repeated, and labelled as \(W_2\), but each point is a pair
+with one yellow and other one white. Apparently this was a bad example,
+because \(\binom{4}{4} = 1\).
+
+Whatever.
+\subsection{For the odd case}
+\label{sec:org1a310be}
+\(d = 2n + 1\), \(W \subset V\) is a \(v\) 
+
+\(W \subset V\), \(W\) is \((k + 1, 2n - k)\) and \(V\) is a \(v\) set.
+
+\(W \subset V\), \(W\) is \((k + 1, s - 1)\) and \(V\) is a \(v\) set.
+
+\((k + 1, s)\) implies that the number of points in the end sets have odd
+number of points.
+
+Meaning that in \((k + 1, s - 1)\), the end sets have even number of points.
+This and the previous calculation follows from below.
+
+\(k + 1 = \vert W \vert = \vert \textup{end sets} + s(\textup{odd}) +
+   \textup{even}\).
+
+\(k + 1 = \vert W \vert = \vert \textup{end sets} \vert + ( s + 1)
+   \textup{odd} + \textup{even}\).
+
+Page 94/86 of the old book.
+\subsection{Definition}
+\label{sec:org0a19277}
+\(P\) is \(k\) neighbourly if any collection of \(k\) vertices of \(P\) is the vertex
+set of a face of \(P\).
+\subsection{Proposition}
+\label{sec:org392df5f}
+Let \(P\) be \(k\) neighbourly. Then any \(k\) vertices of \(P\) are affinely
+independent.
+\subsubsection{Proof}
+\label{sec:org77c89d8}
+\(\{w_1, \cdots, w_k\} \subset \vert P\), \(\{w_1, \cdots, w_k\}\) are affinely
+dependent. \(w_k \in \aff \{w_1, \cdots, w_{k+1}\}\).
+
+\(W \subset P\), but not equal to \(P\).
+
+Therefore one can find \(v \in \vert P \setminus W\), now take \(w_1, \cdots,
+    w_{k - 1}, v\}\) This is a vertex set of a face, in \(P\) because of the \(k\)
+neighbouring property. Thus we know that the convex hull of this set is a
+face.
+
+Thus it is the intersecting set of the polytope and some hyperplane.
+
+\(w_k \in \aff\{w_1, \cdots, w_{k+1}\} \subset H\), \(w_k \in P \cap H = F\) and
+\(w_k\) is a vertex of \(P\). 
+
+Thus \(w_k\) is a vertex of \(F\), this is a contradiction, since \(w_k\) does not
+appear in the list. There cannot be a vertex of a polytope inside the face
+if it is not a vertex of the face. Weird.
+\subsection{Question}
+\label{sec:org19cc45b}
+Is every \(k - 1\) face of a \(k\) neighbourly a simplex?
+\subsection{Proposition}
+\label{sec:org1995364}
+If \(P\) is \(k\) neighbouring, then \(P\) is \(j\) neighbouringly for all \(j \le k\).
+\subsubsection{Proof}
+\label{sec:org5d1a9ad}
+Let \(j \le k\), \(w_1, \cdots, w_j\), \(F =\conv\{w_1, \cdots, w_j, w_j',
+    \cdots, w_k'\}\). This is the \((k - 1)\) face of \(P\).
+
+\(F' = \conv \{w_1, \cdots, w_j\}\) is a face of \(F\), and \(F\) is a face of
+\(P\).
+\subsection{Proposition}
+\label{sec:orgbc3a394}
+If \(P\) is \(k\) neighbouringly polytope with \(v\) vertices, then \(f_j(P) =
+   \binom{v}{j+1}\), for \(0 \le j \le k - 1\).
+
+\(P\), \(P_i = \cup F\), \(F\) is a face of \(P\) and \(\dim F \le i\).
+\subsection{Proposition}
+\label{sec:org1b6da69}
+Let \(P\) be \(k\) neighbourly, and \(W \subset \vert P\) and \(\card W \ge k + 1\).
+Then \(W\) is also \(k\) neighbouringly.
+\subsubsection{Proof}
+\label{sec:org2d95031}
+We have a polytope that is \(k\) neighbourly. \(\{w_1, \cdots, w_k \} \subset W
+    \subset \vert P, F = \conv \{w_1, \cdots, w_k\}\) is a face of \(P\). \(F
+    \subset W\).
+
+Then \(F \cap \conv W = F\) is a face of a convex hull of \(W\) and we are done.
+\subsection{Proposition}
+\label{sec:org793f145}
+Let \(P\) be \(k\) neighbourly and \(k > \lfloor d/2 \rfloor\), then \(P\) is simplex.
+
+This means that the cyclic polytopes are maximally neighbourly, if it's more,
+then it's a simplex.
+\subsubsection{Proof}
+\label{sec:orgbbcd65b}
+Assume \(P\) is not a simplex ,then \(\card (\vert P ) \ge d + 2\).
+
+\(W \subset \vert P, \vert W \vert = d + 2\). \(W = X \cup Y, X \cap Y =
+    \emptyset, \conv X \cap \conv Y \neq \emptyset\).
+
+\(\vert X \vert \le \lfloor \frac{d + 2}{2}\rfloor\).
+
+This means that \(X\) is a face of \(P\) and \(\conv X\) intersects the \(\conv Y\).
+Since this is a face, we can write it as the intersection of a supporting
+hyperplane, which also intersects the convex hull of \(Y\).
+
+But then we have another vertex in a face where it does not belong, which is
+a contradiction.
+\subsection{Proposition}
+\label{sec:org757e0ad}
+Every \(n\) neighbourly \(2n\) Polytope is simplicial.
+\subsubsection{Proof}
+\label{sec:org3b36b08}
+Something is simplicial if every facet is simplex.
+
+\(F\) is a facet of \(P\), thus \(\dim F = 2n - 1\). By a previous proposition,
+this means that \(F\) is also \(n\) neighbourly. Now this means that \(F\) is a
+simplex.
+\subsection{Question}
+\label{sec:org4ec9b52}
+Do I have \(n\) neighbourly \(2n + 1\) polytope? Is it also simplicial? The
+answer is no.
+
+Take something simplicial, take a pyramid over it, but then we do not have a
+simplicial polytope.
+\section{Lecture 21 [Skipped]}
+\label{sec:org24fa341}
+\section{Lecture 22 \textit{<2019-01-16 Wed>}}
+\label{sec:org7cf9ae0}
+DG1 written exam: 19th February at 10:00. Mock exam: 5th February from 8:30 to
+10:00. One more in April.
+\subsection{Yesterday}
+\label{sec:orgdfbf8ea}
+WE talked about \(f\) vector of polytopes. \(F(P) = (f_0(P), \cdots, f_{d-1}(P))
+   \in \R^d\).
+
+\(f_{-1}(P) = -1\) by definition for every \(d\) polytope.
+
+We proved the Euler relation on the \(f\) vector on the Euler Polytope.
+\(\sum_{j = 0}^{j - 1} (-1)^{j) f_j(P) = 1 + (-1)^{d - 1}\). Linear if \(d\) is
+even. (\footnote{What? This means, it is homogeneous.})
+
+\(\aff \{ f(P) \vert P \textup{ is a d polytope\} = d - 1\).
+
+These two were the only thing in the class yesterday.
+\subsection{What about special classes of polytopes?}
+\label{sec:org5935140}
+Do they fulfil any extra properties? The answer is Yes.
+\subsection{Theorem (Dehn-Sommerville relations)}
+\label{sec:org03cdf2f}
+For every simplicial \(d\) polytope
+
+\(\sum_{j = k}^{d-1} (-1)^j \binom{j + 1}{k + 1} f_j(P) = (-1)^{d - 1}
+   f_k(P)\). The equation is labelled as \(E_k^d\)
+
+for \(k = 0, \cdots, d -2\).
+
+If \(k = -1\), then \(E_{-1}^d\). This is the Euler relation.
+\subsubsection{Proof}
+\label{sec:orgb19f93f}
+We count twice and get the equality.
+
+Let \(f_k\) be a \(k\) face of \(E\) and \(F^j\) a \(j\) face o f\(P\) such that \(0 \le
+    j \le d - 1\). Then the value of \(\varphi(F^k_j F^j)\) is \(0\) when \(F^k
+    \nsubseteq F^j\) or \(1\) when \(F^k \subset F^j\).
+
+Now, \(\sum_{j = k}^{d - 1} (-1)^j \sum_{k \textup{faces}} \sum_{j
+    \textup{faces}} \varphi(F^k, F^j) = A\).
+
+One sums over \(\sum_{j \textup{faces}} \varphi(F^k_j F^j)\).
+
+A diagram was drawn. \(\sum_{j \textup{faces}} \varphi(F^k_j F^j) = f_{j- k -
+    1}(P/F^k)\).
+
+Now, \(\sum_{j = k}^{d - 1} (-1)^{j - k - 1} \sum_{i \textup{faces}}
+    \varphi(F^k, F^j) = \sum_{j = k}^{d-1} (-1)^{j - k - 1} f_{j - k -
+    1}(P/F^{k}) = (-1)^{d - k - 2}\). This is the Euler relation.
+
+I need \(j\) to appear there. So we multiply by \(\sum_{j =k}^{d-1} (-1)^j
+    \sum_{j \textup{faces}} \varphi(F^k, F^j) = (-1)^{d-1}\).
+
+\(\sum_{k \textup{faces}} \sum_{j = k}^{d -1} (-1)^j \sum_{i \textup{faces}}
+    \varphi(F^k, F^j) = (-1)^{d - 1}f_K(P)\).
+
+Now, for the third step, \(\sum_{j \textup{faces}} \varphi(F^k, F^j) =
+    \binom{j + 1}{k + 1}\). (This has something to do with neighbourly.)
+
+\(\sum_{j \textup{faces}}\sum_{k \textup{faces}} \varphi(F^k, F^j) =
+    \bionom{j + 1}{k + 1} f_j(P)\).
+
+Finally, we take the sum \(\sum_{i = k}^{d -1} (-1)^i \sum_{j \textup{faces}}
+    \sum_{k \textup{faces}} \varphi(F^k, F^j) = \sum_{j = k}^{d - 1} (-1)^i
+    \bionom{j + 1}{d + 1} f_i(P)\).
+
+Now, we can get it from the above equations.
+\subsubsection{Example}
+\label{sec:org444b8a8}
+For \(3\), we have three equations,
+
+\(E^3_{-1}\) is \(f_0 - f_1 + f_2 = 2\). This is the Euler relation.
+
+What about \(k = 0\)? \(f_0 - 2f_1 + 3f_2 = f_0\). (The \(f_0\) cancels an we get
+\(-2f_1 + 3f_2 = 0\))
+
+For \(k = 1\). \(-f_1 + 3f_2 = f_1\). (Note that this relation is equal to the
+previous one.)
+
+So, there are just \(2\) linearly independent equations.
+\subsection{Theorem}
+\label{sec:orgb26f601}
+For any \(d \ge 1\), exactly \(\lfloor \frac{d + 1}{2} \rfloor\) of the
+Dehn-Somerville equations \((E^d_k)\), are independent. Geometrically, this
+means that \(f\) vectors, \(f_p\) of Simplicial, polytopes, lie on an affine
+subspace of \(\R^d\) of dimension \(\lfloor \frac{d}{2} \rfloor\) and on no
+affine subspace of lower dimension.
+
+(The second part of the theorem follows from the first part.)
+
+Note: if \(d = 2m\), then \(\lfloor \frac{d + 1}{2} \rfloor = m\), then \(\R^d\).
+The dimension of the space is \(d - m\).
+
+If \(d = 2m + 1\), then \(\lfloor \frac{d + 1}{2} \lfloor = m + 1\), \(\R^d = d -
+   (m + 1) = m\).
+\subsubsection{Proof}
+\label{sec:org9da0288}
+If we look at the equations, \(E_{-1}^d\), E\(_{\text{1}}^{\text{d}}\), E\(_{\text{3}}^{\text{d}}\)\$, etc. If we look
+at the matrix, then we have the rank.
+
+We see that, there are at least, \(\lfloor d + 1 \rfloor\) independent
+equations, 
+
+\begin{enumerate}
+\item if \(d = 2n\), then for \(j = 0, 1, \cdots, \frac{d - 1}{2}\), then
+terms, \(f_{2j}(P)\) appears, only in the first \(j + 1\) equations, of
+\(E_{-1}^d, E_{1}^d, E_3^d, \cdots, E_{d-3}^d\).
+\item If \(d\) is odd, then \(E^{-1}^d\) is the only non-homogeneous equation and
+for \(j = 1, \cdots, \frac{1}{2}\cdot (d- 1)\)., the term \(f_{2j - 1}(P)\)
+appears, in the first \(j + 1\) of the equations, \(E_{-1}^d, E_1^d, E_3^d,
+       \cdots, E^d_{d-2}\).
+\end{enumerate}
+
+\(L = \aff\{f(P) \vert P \textup{is simplicial polytope}\}\), we know that
+\(\dim L \le d - \lfloor \frac{d + 1}{2} \rfloor = \lfloor \frac{d}{2}
+    \rfloor\).
+
+In order to prove that the dimension of \(L\) is \(\lfloor \frac{d}{2} \rfloor
+    = n\), we exhibit, \(P_1, \cdots, P_n\), simplicial \(d\) polytopes such that
+\(f(P_1), \cdots, f(P_{n+1}) \subset \R^{n+1}\) are affinely independent.
+
+How can you give a linear space? One can give vectors. Also one can give
+linear equations that the vectors should fulfil.
+
+Let us try with cyclic polytopes. \$P\(_{\text{1}}\) = C(V, d), P\(_{\text{2}}\) = C(v + 1, d), \(\cdots{}\),
+P\(_{\text{n+1}}\) = C(v + n, d).\$ What do we know about cyclic polytopes. \(C(v, d)\) is
+\(n\) neighbourly. Because if we know how much neighbourly it is, then we know
+a piece of the \(f\) vector. We have \(\binom{v}{1}\) vertices, \(\binom{v}{2}\)
+edges and then we don't care. The \(f\) vector of \(P_1\)
+
+\(\bionom{v+1}{1}, \cdots, \binom{v+1}{2}\) for \(f(P_2)\).
+
+etc.
+
+Show show that it is affinely independent, we just need to show that these
+vectors are linearly independent. We prove it for a minor of
+
+I missed some details in writing. The proof seems to be same from the book.
+But pavle also proved how the value of determinant is \(1\). I think the book
+just skips this.
+\subsection{Pulling the vertices}
+\label{sec:orga66b9f1}
+Let \(P\) be a \(d\) Polytope in \(\R^d\) and \(w \in \R^d \setminus P\). For a
+hyperplane \(H\) not intersecting \(\int P\) we say that \(w\) is beyond \(H\) if \(w\)
+is in the intersection of the half-space not containing \(P\). \(W\) is beneath
+(with respect to \(P\)) if \(W\) is in the interior of the half-space containing
+\(P\).
+\subsection{Theorem}
+\label{sec:org26b1661}
+Let \(P\) be a \(d\) polytope in \(\R^d\), let \(w \in \R^d \setminus P\). Then \(P'\)
+by definition is the \(\conv (\{w \} \cup P)\) is also a \(d\) polytope, and 
+
+\begin{enumerate}
+\item A face \(F\) of \(P\) is a face of \(P' \iff\) there is a facet \(F''\) of \(P\)
+containing \(F\) such that \(w\) is beneath \(F''\) with respect to \(P\).
+\item If \(F\) is a face of \(P\), then \(f'\) is the \(\conv(\{w \} \cup F)\) if and
+only if either
+\begin{enumerate}
+\item \(w \in \aff F\)
+\item \(w\) is beyond at least one facet of \(P\) (meaning one supporting
+hyperplane of the facet containing \(F\) and beneath another facet
+containing \(F\).)
+\end{enumerate}
+
+Moreover, each face of \(P'\) is of one of the above two types.
+\end{enumerate}
+\section{Lecture 23 \textit{<2019-01-22 Tue>}}
+\label{sec:org1c14728}
+\subsection{Pulling vertices}
+\label{sec:org34ede0f}
+\(P = \conv \{x_1, \cdots, x_u\}\) polytope and \(Z(P) =\) partially ordered set
+of faces.
+
+\(f(P) = f_0, \cdots, f_{d-1}\), \(f_{-1} = f_d= 1\) \(f\) vector.
+
+
+A picture was drawn.
+
+If \(P\) is a \(d\) polytope in \(\R^d\) and \(w \in \R^d \setminus P\) and \(P
+   \subset H^{+}\). Let \(F\) be a facet of \(P\) and \(H\), the corresponding support
+hyperplane. Then \(w\) is beyond \(F\) if \(w \in \int H^{-}\), \(w\) is beneath \(F\)
+if \(w \in \int H^{+}\) with respect to \(P\).
+
+A picture was drawn.
+\subsection{Theorem}
+\label{sec:org14f0914}
+Let \(P\) be a \(d\) polytope in \(\R^d\) and let \(w \in \R^d \setminus P\), then \(P
+   = \conv (\{w\} \cup P)\) is also a \(d\) polytope and 
+
+\begin{enumerate}
+\item A face \(F\) of \(P\) is also a face of \(P^1\) if and only if there exits a
+facet \(F''\) containing \(F\) of \(P\) such that \(w\) is benath \(F''\) with
+respect to \(P\).
+\item If \(F\) is a face of \(P\), then \(F' = \conv(\{w \} \cup F)\) is a face of
+\(P'\) if and only if either 
+\begin{enumerate}
+\item \(w\in \aff F\) or
+\item \(w\) is beyond at least one facet of \(P\) containing \(F\) and beneath
+another.
+\end{enumerate}
+\end{enumerate}
+
+Moreover, each face of \(P'\) is one of these two types.
+\subsubsection{Proof}
+\label{sec:org5f14f5a}
+\(P = \conv V\), \(V = \vert P\), \(w \notin P, w \notin V\).
+
+\(P' = \conv(\{w \} \cup P)\), \(w\) is a vertex of \(P'\).
+
+\(\vert P' \subet \{w\} \cup \vert P\), \(\{w\} \cup V\).
+
+(second part) \(H'\) be a mapp hyperplane of \(P'\)
+
+\(F = P \cap H'\) is a face of \(P\).
+
+\begin{enumerate}
+\item \(w \notin \vert F' \implies \vert F' = \vert F\)
+
+\item \(w \in \vert F'\), \(F \subset F'\) and \(\vert F' \subset \{w \} \cup \vert
+       F\). \(F' = \conv(\{w\} \cup F)\).
+\end{enumerate}
+
+I missed several parts of the proof. But it is from the text book.
+
+(Proving the first part)
+
+\(F''\) is a facet of \(P\), then \(F''\) is a facet of \(P' \iff \aff F''\)
+supports \(P'\) and \(w \notin \aff F''\).
+
+\textbf{He didn't prove this part}: 
+
+\(F\) is a face of \(P'\) and \(w \notin F \implies\) \(F\) is a face of \(P\)
+contained in a facet \(F''\) of \(P\) such that \(w\) is beneath \(F''\) with
+respect to \(P\).
+
+Let \(F\) be a face of \(P\) such that \(F' = \conv (\{w \} \cup F)\) is a face of
+\(P'\). Choose \(y_0 \in \int P\), \(x_0 \in \int P\), \(x_0 \in \relint F\) and set
+\(E = \aff \{x_0, y_0, w\}\). The dimension of \(E = 2\).
+
+\(P_0 = E \cap P\).
+
+The proof was quite lengthy.
+
+He did some hand waving towards the end of the proof.
+\subsection{Random stuff}
+\label{sec:orgab73a23}
+Let \(P\) be a \(d\) polytope in \(\R^d\) and let \(w \in \vert P\) with \(w' \in \R^d
+   \setminus P\) such that the segment \((w, w']\) does not intersect any of the
+hyperplanes spanned by vertices of \(P\).
+
+If \(w \in \int \conv (\{w'\} \cup P)\), then \(P'= \conv \{w'\} \cup P\) is
+called \textbf{Pulling} of \(P\) at \(w\).
+\subsection{Theorem}
+\label{sec:org27a0b9d}
+Let \(P'\) be a \(d\) polytope in \(\R^d\) obtained from the \(d\) polytope \(P\) by
+pulling the vertex \(w\) of \(P\) to \(w'\), then for \(k = 1, \cdots, d -1\), the
+\(k\) faces of \(P'\) are 
+
+\begin{enumerate}
+\item The \(k\) faces of \(P\), which do not contain \(w\)
+\item The convex hulls of the form \(f' = \conv\{\{w\} \cup F\}\), where \(F\) is a
+\(k-1\) face, not containing \(w\), but contained in a facet of \(P\) containing
+\(w\).
+\end{enumerate}
+\subsection{Corollary}
+\label{sec:orgf0b17b0}
+Each \(k\) face of \(P'\) which contains \(w'\) is a \(k\) pyramid, with apex \(w'\).
+Thus, \(f_0(P) = f_0(P')\) and \(f_k(P') \ge f_k(P)\).
+\subsection{Theorem}
+\label{sec:org628ba7d}
+If \(Q\) is a polytope obtained from \(P\) by pulling all the vertices, then \(Q\)
+is simplicial and \(f_0(Q) = f_0(P)\), and \(f_k(Q) \ge f_k(P)\)
+
+\footnote{The main theorem of the course is the upper bound theorem. Something
+about maximizing the number of faces.}
+\section{Lecture 24 \textit{<2019-01-23 Wed>}}
+\label{sec:org2e7b467}
+I don't think the contents of this lecture was from the book, but they are
+rather general fact.
+\subsection{Affine space}
+\label{sec:orgf0d3490}
+\((\E, E, \theta)\) is an affine space. \(\E\) is the set, \(E\) is the vector
+space and \(\theta \colon \E \times \E \rightarrow E\).
+
+Every vector space has an affine structure, for \((E, E,\theta)\) where
+\(\theta(u,v) = u - v\).
+
+\(\R^n\) and \(\E^n\) Euclidean vector space.
+
+What about the other way around? Given \((\E, E, \theta)\) and an affine space.
+The answer is no.
+
+An affine map \((\E, E, \theta) \rightarrow (\mathscr{F}, F, \theta)\). Call
+this map \(\phi\). Call this map affine map if \(\varphi \colon \E \rightarrow
+   \mathscr{F}\) if there exists a point \(O\) inside \(\E\) and a linear map
+\(f\colon E \rightarrow F\) such that for all \(M \in \E\),
+\(\overline(\phi(0)\phi(M)) = f(\overline{OM})\). (It is not hard to prove that
+this will also hold for every point, not just \(O\).)
+
+\begin{enumerate}
+\item We say that \(\phi\) is translation if \(\phi = id\).
+\item \(\phi\) is a dilation if \(\overline{\phi} = \lambda Id\) for \(\lambda \in K
+      -\{0\}\).
+\end{enumerate}
+\subsection{Definition}
+\label{sec:orgb34a79e}
+An affine map \(\Gamma \colon \R^d \rightarrow \R^n\) is any map of the form
+\(\Gamma(x) = \Lambda(x) + a\).
+
+Also we can show from the definition that \(\Gamma(\sum \lambda_i x_i) = \sum
+   \lambda_i \Gamma(x_i)\) if \(\sum \lambda_i = 0\).
+
+where \(\Lambda \colon \R^d \rightarrow \R^n\) is a linear map and \(\a \in
+   \R^n\). An affine map is \textbf{non-singular} if \(\Lambda\) is non-singular.
+\subsection{Lemma}
+\label{sec:org8d2e434}
+Let \(a_0, \cdots, a_d \in \R^d\) be affinely independent points and \(b_0,
+   \cdots, b_n\) element of \(\R^n\), then there is an affine map \(\gamma\) from
+\(\R^d\) to \(\R^n\) such that \(\Gamma(a_0) = b_0, \cdots, \Gamma(a_d) = b_d\).
+\subsubsection{Proof}
+\label{sec:orga2770e0}
+When are \(a_0 \cdots a_d\) are affinely independent?
+
+Either you look at the vectors \((a_0, 1), \cdots, (a_d,1)\) are linearly
+independent in \(\R^{d+1}\) or \(a_1 - a_0, \cdots, a_d - a_0\) are linearly
+independent.
+
+\(a_1 - a_0, \cdots, a_d - a_0 \mapsto b_1 - b_0, \cdots, b_d - b_0\). (This
+map is \(\Lambda\).)
+
+\(\Gamma(x) = \Lambda(x) + b_0\).
+
+\(\Lambda(a_i - a_0) = b_i - b_0\).
+
+\(\Lambda(a_i) - \Lambda(a_0) = b_i - b_0\). This part wasn't completed.
+\subsection{Projective transformation}
+\label{sec:org2eaebf9}
+Consider a map \(\theta \colon \R^d \setminus \bbox \rightarrow \R^d\) given by
+
+\(\theta(x) = \frac{1}{\langle x, a \rangle + b} \Gamma(x)\), where \(\Gamma
+   \colon \R^d \rightarrow \R^n\) is an affine map, \(a\in \R^d\) and \(b\in \R\).
+
+\begin{enumerate}
+\item \(a = 0\), then \(\theta \colon \R^d \rightarrow \R^n\) is an affine map.
+\item \(a \neq 0\), then \(\theta \colon \R^d \setminus H \rightarrow \R^n\), \(H =
+      \{x \in \R^d \colon \langle x, a \rangle + b = 0\}\).
+\end{enumerate}
+
+We call \(\theta\) a projective map.
+
+\(\theta\) is \textbf{non-singular} if 
+
+\begin{center}
+\begin{tabular}{ll}
+\(\Lambda\) & \(c\)\\
+\(a^t\) & \(b\)\\
+\end{tabular}
+\end{center}
+
+And the matrix is not \(\emptyset\) or if the affine map.
+
+\(\bar{theta} \colon \R^{d+1} \rightarrow \R^{d+1}\).
+
+\((x, y) \mapsto (\Lambda(x) + cy, \langle x, a \rangle + by)\).
+
+\((x, y) \in (\R^d, \R)\) is non-singular.
+
+\(\theta\) is permissible to \(X\) is \(X \cap = \emptyset\).
+
+\(X = \{x_1, \cdots, x_n\}\) affinely dependent points on \(\R^d\). \(\aff X\) is
+permissible with respect to \(\theta\).
+
+\(\theta(x)\) is affinely dependent.
+
+\(\sum_{i = 1}^{n} \lamba_i x_i = 0, \sum \lambda_i = 0\).
+
+\(\theta(x_i)= \frac{1}{\langle x_i, a \rangle + b} \Gamma(x_i)\).
+
+\(\sum_{i = 1}^{n} \lambda_i(\langle x_i, a\rangle + b)(\theta(x_i)) = \sum_{i
+   = 1}^{n} \Gamma'(x_i) = \sum_{i = 1}^{n} \lambda_i(\Lambda(x_i) + c)\). (I
+missed parts of this calculation, but it is used to conclude the next statement.)
+
+What we proved is that if \(x_i\) s are affinely dependent, then \(\theta(x)\) is
+also affinely dependent.
+\subsection{Theorem}
+\label{sec:org972b14e}
+Let \(\{x_0, \cdots, x_d\}\) and \(\{y_0, \cdots, y_d\}\) be affinely independent
+set of points in \(\R^d\) and let, \(x' \in \relint \conv \{x_0, \cdots, x_d\}\)
+and \(y_1 \in \relint \{y_0, \cdots, y_d\}\).
+
+Then there exists a projective transformation \(\theta \colon \R^d \setminus H
+   \rightarrow \R^d\) such that \(\theta(x_i) = y_i\), \(0 \le i \le d\) and
+\(\theta(x') = \theta(y')\).
+\subsubsection{Proof}
+\label{sec:org3afe499}
+\(x' = \sum_{i = 0}^{n} \lambda_i x_i, \lambda_i > 0\).
+
+\(y' = \sum_{i =0}^{j} \mu_i y_i, \mu_i > 0\).
+
+\(\{x_0, \cdots, x_d\}\) maps to \(\{\frac{\mu_0}{\lambda_0} y_0, \cdots,
+    \frac{\mu_d}{\lambda_d} y_d\}\) is an affine map.
+
+\(\Gamma(x_i) = \frac{\mu_i}{\lambda_i} y_i\).
+
+\(\Gamma(x') = \Gamma(\sum_{i=0}^{d} \lambda_i x_i) = \sum_{i=0}^{d}
+    \lambda_i \Gamma(x_i) = y'\).
+
+Let \(z_0 = \frac{\lambda_0}{\mu_0}(x_0, 1), \cdots, z_d =
+    \frac{\lambda_d}{\mu_d}(x_d, 1)\in \R^{d+1}\). We have that \(x_0, \cdots,
+    x_d\) are affinely independent. This implies that \(z_0, \cdots, z_d\) are
+linearly independent. This implies that the affine hull is a hyperplane not
+passing through \(0\).
+
+\(H' = \span\{z_0, \cdots, z_d\} \subset \R^d = \{z \in \R^{d+1} \vert
+    \langle z, c \rangle = 1\}\)
+
+\(\R^{d}\times \R \rightarrow c = (b, \gamma)\).
+
+We know that every \(c\) belongs to the hyperplane and \(1 = \langle z_i, c
+    \rangle = \lanlge (b, \gama), \frac{\lambda_i}{\mu_i}(x_i, 1)\rangle =
+    \frac{\lambda_i}{\mu_i}\langle x_i, b \rangle + \gamma\).
+
+\(\langle x', b \rangle + \gamma = \frac{\mu_i}{\lambda_i}\)
+
+\(\langle x', b \rangle + \gamma = \langle \sum \lambda_i x_i, b \rangle +
+    \gamma = \sum \lambda_i \langle x_i, b\rangle + \sum \lambda_i \gamma\) This
+is same as \(\sum \lambda_i(\langle x_i, b\rangle + \gamma) = \sum \lambda_i
+    \frac{\mu_i}{\lambda_i} = 1\).
+
+\(\theta(x) = \frac{1}{\langle x', b\rangle + \gamma} \Gamma(x') = \Gamma(x')
+    = y'\)
+\subsection{Theorem}
+\label{sec:orgfb85de3}
+Let \(P\) be a \(d\) polytope in \(\R^d\) with \(n\) facets and \(a \in \int P\). Let
+\(T^{n+1} = \conv\{e_1, \cdots, e_n\} \subset \R^{n}\) be the regular
+\(n-1\) simplex with \(b\) element of the relative interior of \(T^{n-1}\).
+
+Then there exists a \(d\) dimensional subspace of \(\R^n\) containing \(b\) such
+that
+
+\begin{enumerate}
+\item \(P\) is projectively equivalent to the \(d\) polytope \(L \cap T^{n-1}\)
+\item In this projective equivalence, \(a\) corresponds to \(b\).
+\end{enumerate}
+\subsubsection{Proof}
+\label{sec:org19c6c09}
+\(0 = a \in \int P\) and \(P = \{x \in \R^d \vert \langle x, w_i \rangle \le 1,
+    i = 1, \cdots, n\} = Q^{*}\).
+
+Since \(P\) is bounded positive span \(\{w_1, \cdots, w_n\} = \R^d\).
+
+\(P^{*} = \{y \in \R^d \vert \forall x \in P, \langle x, y \rangle \le 1\}\).
+We can also write this as the intersection \(\cap_{x \in P} \{y \in \R^d
+    \vert \langle x, y \rangle \le 1\}\).
+
+This is same as \(\cap_{x \in \R} \{y \in \R^d \vert \langle x, y \rangle \le
+    1\} = \cap_{x \in \textup{vertex of } P} \{ y \in \R^d \vert \langle x, y
+    \rangle \le 1\}\).
+
+\(Q = \conv \{w_1, \cdots, w_n\}\). Now, \(Q\) is also a Polytope.
+
+\(0 \in B(0, r) \subset \int Q\).
+
+\(x \in \R^d\), \(\frac{1}{2\Vert x \Vert} \in B(0, r) \subset Q\).
+
+\(\frac{r}{2 \Vert x\Vert} = \sum_{i = 1}^{n} \lambda_i w_i, \lambda_i > 0,
+    \sum_{\lambda_i} = 1\).
+
+\(x =\frac{2\Vert x \Vert}{}r} \sum \lambda_i w_i\).
+
+\(b \in \relint T^{n-1}\), therefore \(b = \sum_{i = 1}^{n} \beta_i e_i\) and
+\(\sum \beta_i = 1\) and \(\beta_i > 0\).
+
+\(\theta(x) = \frac{1}{\sum \beta_i(1 - \langle x, x_i\rangle)} (\beta_i( 1-
+    \langle x, w_i\rangle), \cdots, \beta_n (1 - \langle x, w_m\rangle)\)
+
+\(L = \theta(\R^d)\)
+
+there was parts of the proof I skipped
+
+(\textbf{This is a theorem from chapter 3 of the book})
+\section{Lecture 25}
+\label{sec:org373f28e}
+\subsection{Gale transformation. Algebraic formulation}
+\label{sec:org9740b91}
+\subsubsection{Proposition}
+\label{sec:orgc5731ad}
+Let \(P\) be a \(d\) polytope and \(W \subset P = V\). Then \(W\) is the set of
+vertices of a face of \(P\) if and only if\footnote{Pavle said this one's important.}
+
+$$\aff W \cap \conv(V \setminus W) = \emptyset.$$ 
+\begin{enumerate}
+\item Proof
+\label{sec:orgc60200d}
+I couldn't find this in the book. (Theorem 1A is similar)
+
+\(\implies\) Let \(W\) be a face of \(P\). Then there exists a support hyperplane
+\(H\) such that \(\conv W = P \cap H\).
+
+Since \(H\) is a support hyperplane for \(P\), then \(V \setminus W \subset
+     H^{+}\), or a bit more, \(V \setminus W \subset \int H^{ +}\). Thus \(\conv(V
+     \setminus W) \subset \int H^{ + }\) and consequently \(\conv(V \setminus W)
+     \cap H = \emptyset\). Since \(\conv W \subset H\), then \(\aff W \subset H\) and
+so \(\conv (V \setminus W) \cap \aff W = \emptyset\).
+
+\(\Leftarrow\) Let \(x \in \aff W\) and \(y \in \conv(V \setminus W)\). If \(y\) is
+fixed, then the point \(x_0 \in \aff W\) such that $$\Vert x_0 - y \Vert =
+     \inf \{ \Vert x - y \Vert \vert x \in \aff W\}$$
+
+This defines a line \(\aff \{x_0, y\}\) perpendicular to \(\aff W\). I missed
+the rest of the proof.
+\end{enumerate}
+\subsubsection{Duality}
+\label{sec:orga080e4f}
+Let \(P\) be a \(d\) polytope in \(\R^d\) with \(n\) vertices, say \(V = \vert P
+    =\{x_1, \cdots, x_n\}\) where \(x_i \in \R^d\).
+
+\(x_1, \cdots, x_n \in \R^{xx}\) is affinely dependent if there exists
+scalers \(\lambda_1, \cdots, \lamba_n \in \R\) with \(\sum \lambda_i x_i = 0\)
+and \(\sum \lambda_i = 0\).
+
+(This is from the book 3.2)
+\begin{enumerate}
+\item About the dimension
+\label{sec:orgfe4d96e}
+\(A_n = \{(\lambda_1, \cdots, \lambda_n) \in \R^n \vert \sum \lambda_i =
+     0\}\) and \(D(V) \subset A_n\), \(\dim A_n = n-1\).
+
+\$f\(\colon\) A\(_{\text{n}}\) \mapsto \R\(^{\text{d}}\), \((\lambda_1, \cdots, \lambda_N) \mapsto
+     \sum_{i=1}^{n} \lambda_i x_i\).
+
+\begin{enumerate}
+\item \(f\) is surjective.
+
+\item \(\ker f = D(V)\).
+\end{enumerate}
+
+\(\dim D(v) = n - d- 1\).
+
+Notice that the dimension of \(D(V) = 0\) if the polytope is a simplex. Which
+actually makes sense.
+\end{enumerate}
+\subsubsection{Matrix}
+\label{sec:org9fe543b}
+He talked about the matrix and then the definition of gale transform.
+\subsubsection{Coface}
+\label{sec:org80f0ceb}
+\(V = \vert P\) \(Z \subset V\) is a \textbf{coface} if \(\conv V \setminus Z\) is a face
+of \(P\).
+
+\(Z = (x_1, \cdots, x_r) = (x_1, \cdots, x_n)\). \(\overline{Z} = (\bar{x}_1,
+    \cdots, \bar{x_r}) \suset \bar{V} = (\bar{x}_1, \cdots, \bar{x}_n)\).
+
+Recall that \(\conv W\) is a face of \(P \iff \aff W \cap \conv(V \setminus W) = \emptyset\).
+
+\(Z\) is a face of \(P \iff \aff(V\setminus Z)\cap \conv Z = \emptyset\).
+\subsubsection{Theorem}
+\label{sec:org9cceabd}
+Theorem 1A and proof from the book. pp. 128
+
+He didn't prove it in the reverse direction.
+\subsubsection{Why is this useful?}
+\label{sec:org4309295}
+My polytope is in \(d\) dimensions but the gale transform is in \(n-d - 1\). So
+maybe easier to work with?
+
+There can be repetitions in gale transform. Is this actually true?
+\subsubsection{Corollory}
+\label{sec:orgee22958}
+Let \(P\) be a d polytope in \(\R^d\) that is not a simplex. Then for every
+linear hyperplane in \(\R^{n - d- 1}\) contains at least two points of the
+Gale transform relative interior of both half-spaces.
+
+(The book mentions about this, doesn't actually state or prove this.)
+\begin{enumerate}
+\item Proof
+\label{sec:org71b726e}
+For every vertex \(x'_i\) of \(P\) is a face 
+
+I skipped this.
+\end{enumerate}
+\subsubsection{Theorem}
+\label{sec:org9980adf}
+Let \(\bar{V} = \{\bar{x}_1, \cdots, \bar{x}_n\} \subset \R^n\) a collection
+of points such that
+
+\begin{enumerate}
+\item \(\R^n = \aff \bar{V}\).
+\item \(0\) is the barycentre of \(\bar{V}\), and
+\item For every linear hyperplane \(H\) in \(\R^n\), \(\card(H^{+} \cap \bar{V}) \ge
+       2\) and \(\card \bar{H} \cap \bar{V}) \ge 2\).
+\end{enumerate}
+
+Then there exists 
+\section{Lecture 26}
+\label{sec:orgcbe8b26}
+\subsection{Gale transform}
+\label{sec:orgdc83380}
+Basically a review of gale transform (algebraic version)
+\subsection{Theorem}
+\label{sec:orgc61a09f}
+\(F = \conv\{x_1, \cdots, x_n\}\) is a face of \(P\) \(\iff 0 \in \relint \conv
+   \{\bar{x}_{r+1}, \cdots, \bar{x}_{n}\}\).
+
+Something to do with face and coface.
+\subsection{Example}
+\label{sec:org4f244fc}
+Gale transform of a \(d\) simplex is \(\{0, \cdots, 0\} \subset \R^n = \{0\}\).
+\subsection{Corollary}
+\label{sec:orga418b1f}
+If \(P\) is not a simplex, and \(V = \vert P\), then for every hyperplane \(H
+   \subset \R^{n-d-1}\) through \(0\), the cardinality \(\card (\int H^{-1} \cap
+   \bar{V}) \ge 2\).
+\subsection{Remark}
+\label{sec:orgc0eaede}
+The barycentre of the columns are zero.
+\subsection{Theorem}
+\label{sec:orgafcac16}
+Theorem 2. pp. 131
+\subsection{Theorem}
+\label{sec:org7c18154}
+\(\dim F = d + \dim \bar{Z} - \card{\bar{Z}}\), \(\dim \bar{Z} = \dim \aff \bar{Z}\).
+\subsubsection{Proof}
+\label{sec:org6074152}
+\(F = \conv \{x_1, \cdots, x_r\}\)
+
+\(Z = \{x_{n+1}, \cdots, x_n\}\)
+
+\(\dim D' = a\)
+
+\(D' = \{(\lambda_1, \cdots, \lambda_r) \in \R^r \vert \sum_{i=0}^{r}
+    \lambda_i x_i = 0, \sum_{i=1}^{r} \lambda_i = 0\}\)
+
+This gets mapped to \(D' = \{(\lambda_1, \cdots, \lambda_r, 0, \cdots 0) \in
+    \R^n \vert \sum_{i=1}^{r} \lambda_i x_i = 0, \sum_{i=1}^{r} \lambda_i = 0\}
+    \subset D(V)\)
+
+\(\dim \bar{Z} = n - d- 1- k\).
+
+\(k = \card F - \dim F - 1\).
+
+\(\dim \bar{Z} = n - d- 1 - (\card F - \dim F - 1)\)
+
+This is same as \(n - d + \dim F - (n - \card \bar{Z})\)
+
+Again, this is \(\card \bar{Z} - d + \dim F\).
+
+Thus \(\dim F = \dim \bar{Z} + d - \card\bar{Z}\).
+\subsection{Corollary}
+\label{sec:orge355bb2}
+Let \(F\) be a facet of \(P\), then the \(\conv \bar{Z}\) is a simplex with \(0\) in
+the relative interior \(\conv \bar{Z}\).
+\subsubsection{Proof}
+\label{sec:org4b99a4c}
+\(\conv \bar{Z}\) is a simplex? \(\dim F = d - 1\implies d- 1 = d + \dim
+    \bar{Z} - \card \bar{Z} \implies \card \bar{Z} - \dim \bar{Z} = 1\)
+\subsection{Corollary}
+\label{sec:org8147915}
+Let \(F\) be a face of \(P\) and \(F\) be a simplex, then \(\aff \bar{Z}\) positively
+open \(\aff \bar{V}\).
+\subsubsection{Proof}
+\label{sec:org32d92c6}
+\(\aff \bar{Z} = \aff \bar{V}\).
+\subsection{Corollary}
+\label{sec:org2c3f965}
+Let \(P\) be a simplicial polytope and \(\bar{B}\) is a gale transform in \(\R^r\).
+
+\(P\) is simplicial \(\iff \forall 0 \in H\) hypersphere in \(\R^r\), \(0 \in
+   \relint (\bar{V} \cap H)\).
+\subsection{Theorem}
+\label{sec:org81b9bd1}
+Theorem 3 pp. 131
+\subsection{Theorem}
+\label{sec:orgfab7ab6}
+Theorem 4 pp. 132
+\section{Lecture 27 \textit{<2019-02-06 Wed>}}
+\label{sec:org4e12f34}
+\subsection{Gale transform}
+\label{sec:org41a8f5a}
+\textbf{Question on the oral exam} \footnote{Question on oral exam}
+
+\(P\) is a \(d\) polytope in \(\R^d\), \(V = \vert P = \{x_1, \cdots, x_n\}\).
+
+We look at the space of all affine dependencies \(D(V) = \{(\lambda_1, \cdots,
+   \lambda_m) \in \R^n \vert \sum_{i=1}^{n} \lambda_i x_i = 0, \sum_{i=1}^{n}
+   \lambda_i = 0\}\)
+
+\(\dim D(V) = n - d- 1\).
+
+Choice of a basis of \(D(V)\). \(\{a_1, \cdots, a_{n-d-1}\} \subset \R^n\)
+
+We can write \(A(V)\) as a row
+
+\begin{center}
+\begin{tabular}{l}
+\(a_1\)\\
+\(a_2\)\\
+\(\cdots\)\\
+\$a\(_{\text{n-d-1}}\)\\
+\end{tabular}
+\end{center}
+
+
+We can look at this as the matrix
+
+\begin{center}
+\begin{tabular}{lll}
+\(\alpha_{11}\) & \(\cdots\) & \(\alpha_{1n}\)\\
+\(\alpha-{21}\) & \(\cdots\) & \(\alpha_{2n}\)\\
+\(\cdots\) & \(\cdots\) & \(\cdots\)\\
+\$\(\alpha_{\text{n-d-1, 1}}\) & \(\cdots\) & \(\alpha_{n-d-1,n}\)\\
+\end{tabular}
+\end{center}
+
+This can be written as \((\bar{x_1}, \cdots, \bar{x_n})\).
+
+Where \(\bar{x}_i\) is a column.
+\subsection{Theorem}
+\label{sec:org6c2208a}
+Let \(P\) be a \(d\) polytope and \(F\) a proper face \(P\) of \(F \neq \emptyset\)
+with \(F = \conv\{x_1, \cdots, x_r\}\) where \(V = \vert P = \{x_1, \cdots,
+   x_n\}\), then \(0 \in \relint \conv \{\bar{x}_{r-1}, \cdots, \bar{x}_n\}\)
+
+\(V = \{x_1, \cdots, x_m\}\), \(X \subset V\) and \(X \neq V\) then \(\conv X\) is a
+face of \(P \iff 0 \in \relint \conv(\bar{V}\setminus \bar{X})\).
+\subsection{Corollary}
+\label{sec:org4f62f05}
+If \(P\) is not a simplex and \(H\) is a \textbf{linear} hyperplane in \(\R^{n-r-1}\),
+then \(\card(\bar{V} \cap \int H^{+}) \ge 2\)
+
+This corollary is important because this characterizes all Gale transforms.
+Apparently this is important for the exam.
+\subsection{Theorem}
+\label{sec:orgd7970a3}
+Let \(\bar{V} = \{bar{x}_1, \cdots, \bar{x}_n\} \subset \R^n\) satisfying the
+following:
+\begin{enumerate}
+\item \(0\) is the barycentre/centroid of \(\bar{x}_1, \cdots, \bar{x}_n\), \(0 =
+      \sum \frac{1}{n} \bar{x}_i\).
+\item (From the corollary) Every linear hyperplane \(H \subset \R^{n-d-1}\) and
+\(\card(\bar{V} \cap \int H^{+})\) is at least \(2\).
+
+Trick question: how do I know what is \(H^{+}\)? We're assuming that we're
+working with oriented hyperplane \(H\) and hence there is an orientation.
+\end{enumerate}
+
+Then there exist a \(d\) polytope \(P\) on \(n\) vertices whose Gale transform is
+\(\bar{V}\)
+\subsection{Lemma}
+\label{sec:org8184008}
+A relation between gale transform and the dimension of the face.
+
+\(\dim F = d + \dim \bar{Z} - \card \bar{Z}\).
+\subsection{Corollary}
+\label{sec:org1745760}
+If \(F\) is a \textbf{facet} of \(P\), then the corresponding convex hull of the co-face
+\(\bar{Z}\) is a simplex with \(0\) in the relative interior.
+
+The zero in relative interior comes from the above theorem. Not a big deal.
+But why is it a simplex?
+
+\(\dim F = d - 1\), if we put it in the formula, \(d - 1 = d + \dim\bar{Z} -
+   \card\bar{Z} \implies \card \bar{Z} - \dim \bar{Z} = 1\).
+\subsection{Corollary}
+\label{sec:org067c6be}
+If \(F\) is a face \(P\) of a simplex, then \(\bar{Z}\) positively spans \(\aff
+   \bar{V} = \R^{n-d-1}\).\footnote{What does it mean positively span? The coefficients \(\lambda_i\) are
+non-negative.}
+\subsubsection{Proof}
+\label{sec:orgfff7085}
+\(\aff \bar{Z} = \aff \bar{V} = \R^{n - d - 1}\).
+\subsection{Theorem}
+\label{sec:org3416cf0}
+Let \(P\) be a \(d\) polytope in \(\R^d\) and \(F\) a face of \(P\) and \(Z\)
+corresponding coface (set of vertices such that it's complement is the face)
+
+\(V = \vert P\) and \(\bar{V}\) a Gale transform of \(V\) and \(\sqcap \colon \aff V
+   \rightarrow (\aff V)^\perp\) Then \(\sqcap (\bar V \setminus \bar{Z})\) is a
+Gale transform of \(F\).
+
+\begin{center}
+\begin{tabular}{rl}
+0 & affine dependencies of \(\vert F = \{x_{n+1}, \cdots, x_n\}\)\\
+\(\cdots\) & \(\cdots\)\\
+\end{tabular}
+\end{center}
+\subsection{Theorem}
+\label{sec:org1b0a296}
+Let \(P\) be a \(d\) polytope and \(x\in P\). Denote by \(X = \vert P \cup \{x\}\)
+and by \(\bar{X}\) its gale transform. Where does \(\bar{X}\) live? This is \(n +
+   1 - d - 1 = n - d\). This is a space with one more dimension.
+
+If \(H\) is a linear hyperplane, orthogonal to \(\bar{x}\) and \(\sqcap \colon
+   \aff \bar{X} \rightarrow H\), then \(\sqcap (\bar{X}\setminus \{x\})\) is a Gale
+transform of \(\vert P\).
+
+\(P = \conv \{y_1, \cdots, y_m\}\) not necessarily vertices. Call this \(Y\).
+\(\bar{Y}\) is the gale transform \(\R^{m-d-1}\) for every \(y \in Y\) such that \(0
+   \notin \relint (\bar{Y} \setminus \{\bar{y}\}\) we project \(\bar{Y}\) to
+\(X^\perp\).
+\subsection{Gale diagrams}
+\label{sec:org9a6366c}
+\subsubsection{Definition}
+\label{sec:org662adde}
+\(\bar{X}\) and \(\bar{X}'\) be sets of endpoints in \(\R^{n-d-1}\), \(\bar{X} =
+    \{\bar{x}_1, \cdots, \bar{x}_n\}\) and \(X' = \{\bar{x}_1, \cdots,
+    \bar{x}_m'\}\) which assume correspondence \(\bar{x}_i \iff \bar{x}_i'\) such
+that \(0 \in \int \conv \bar{X}\) and \(0 \in \int \conv \bar{X}'\), then
+\(\bar{X}\) and \(\bar{X}'\) are equivalent if and only if \(0 \in \relint \conv
+    \bar{Y}\iff 0 \in \relint \conv \bar{Y}'\) for every \(\bar{Y} \subset
+    \bar{X}\) and \(\bar{Y}' \subset \bar{X}'\).
+
+The definition is a bit clumsy.
+\subsubsection{Definition}
+\label{sec:org2b91d0b}
+A Gale diagram of \(P\) is any collection of points in \(\R^{n-d-1}\) equivalent
+to a Gale transform of \(P\).
+\subsubsection{Remark}
+\label{sec:orgf9b6499}
+If \(\bar{V} = \{\bar{x}_1, \cdots, \bar{x}_n\}\) is a Gale diagram of \(P\) and
+\(\mu_1, \cdots, \mu_n > 0\), then \(\{\mu_1 \bar{x}_1, \cdots,
+    \mu_n\bar{x}_n\}\). Notice that all sets of theorems for gale transform is
+also true for the gale diagram.
+
+I skipped the proof of this.
+\subsubsection{Definition}
+\label{sec:org5c15103}
+Let \(P\) be a \(d\) polytope and \(V = \vert P = \{x_1, \cdots, x_m\}\) and \(x_m
+    = 0\). Let \(H\) be an affine hyperplane that separates \(x_m\) from \(x_1,
+    \cdots, x_{m-1}\).
+\subsubsection{Theorem}
+\label{sec:orgf9c52d7}
+Let \(P\) be a polytope and \(F_1 \subset F_2\) faces of \(P\) and \(Z_1 = \vert
+    F_1\) and \(Z_2\) is a coface corresponding to \(F_2\). In any gale diagram
+\(\bar{V}\) of \(P\), let \(L\) be the orthogonal linear complement to \(\aff
+    \bar{Z}\), in \(\aff \bar{V}\), and let \(\sqcap\colon \aff \bar{V}\rightarrow
+    L\). Then \(\sqcap(\bar{V} \setminus (\bar{Z}_1 \cup \bar{Z}_2))\) is
+isomorphic to a Gale transform of a set of point whose convex hull is
+\(F_2/F_1\).
+\subsubsection{Number of polytopes}
+\label{sec:org7135233}
+\(d\) polytopes with \(d + 2\) vertices.
+
+\(\R^{d + 2 - d - 1} = \R^1\).
+
+The point lies of the sphere. Three points \(-1, 0, 1\). There were more
+things to this argument. I was too lazy to write it down. Some stuff about
+polytopes being simplicial.
+\section{Lecture 28}
+\label{sec:orgb44c76d}
+\subsection{Upper bound conjecture}
+\label{sec:orga3708fd}
+\(\max \{f_k(P) \vert P \in \P^d, f_0(P) = v\} \le f_k(C(v, d))\)
+
+\(\max\{f_k(P) \vert P \in \P^d_{\textup{sim}}, f_0(P) = v\}\)
+
+\(f_k(C(v, d))\)
+
+\textbf{Euler's relation} \(\sum (-1)^{i} f_i(P) = 1 + (-1)^{d-1}\)
+
+\(P\) is a Simplicial \(d\) polytope.
+
+\(f(P, f) = \sum_{k=-1}^{d-1} (-1)^{k+1} f_k(P) t^{k+1} =1 - f_0(P) + f_1(P) -
+   f_2(P)t^2 + \cdots\)
+
+\(f_{-1}(P) = 1\) and \(f_i(P) = 0\) for \(i < 2\) and \(i \ge d\), \(f_d(P) = 0\).
+
+(DS equations)
+
+\(\sum_{j=k}^{d-1} (-1)^j \binom{j+1}{k+1} f_j(P) = (-1)^{d-1} f_k(P)\) for
+\(k=0, \cdots, d-2\).
+
+\(f(P, 1 - t) = (-1)^d f(P, t)\)
+
+\(f(P, 1-t) = \sum_{k=-1}^{d-1} (-1)^{k + 1} f_k(P) (1-t)^{k+1} =
+   \sum_{k=-1}^{d - 1} (-1)^{k+1} f_k(P) \sum_{i=0}^{k + 1}(-1)^i
+   \bionom{k+1}{i}t^i = \sum_{k=-1}^{d-1}\sum_{i=0}^{k-1} (-1)^{k+i+1}
+   \bionom{k+1}{i} f_k(P)\)
+
+There was more calculations that I was too lazy to write down. This was
+already done in the class though.
+
+\(l \ge d\), then \(g^{e}(P, t) = (1-t)^e f(P, \frac{t}{1-t})\) This is a
+polynomial of degree \(e\).
+
+Now, we'll prove that \(g_k^e(P) = \sum_{j=-1}^{k} (-1)^{k-j}
+   \binom{e-j-1}{e-k-1} f_j(P)\). The book says this is an easy calculation and
+didn't prove it, but pavle proved it in the class. So, whatever.
+
+(All of these are from the chapter Upper bound conjecture for Polytopes)
+
+He wrote equation (5)
+\section{Study}
+\label{sec:org7bdc3b0}
+\subsection{Skipped}
+\label{sec:org27a1f29}
+\begin{enumerate}
+\item pp 43, 44. Convex Polytope is a bounded Polyhedral set and vice versa.
+\item Many pages until pp. 60.
+\end{enumerate}
 \end{document}

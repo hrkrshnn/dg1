@@ -7,9 +7,13 @@
 \newtheorem{corollary}{Corollary}[theorem]
 \newtheorem{lemma}[theorem]{Lemma}
 
+\pagenumbering{gobble}
 \def\R{\mathbb{R}}
 \def\conv{\operatorname{conv}}
+\def\aff{\operatorname{aff}}
 \def\verti{\operatorname{vert}}
+\def\card{\operatorname{card}}
+\def\relint{\operatorname{rel. int.}}
 
 \begin{document}
 \begin{multicols}{3}
@@ -128,7 +132,7 @@
   \section{Special polytopes}
   \begin{enumerate}
     \item Simplices: $V$ is a set of $d+1$ affinely independent points, then
-      $T^d = \conv V$ is the $d$ simplex. $f_k(T^d) = \chose{d+1}{k+1}$. Thus
+      $T^d = \conv V$ is the $d$ simplex. $f_k(T^d) = \choose{d+1}{k+1}$. Thus
       any two $d$ simplices are combinatorially equivalent. Also the dual of the
       $d$ simplex is also a $d$ simplex
     \item Pyramids: A $d$ pyramid is the convex hull of a $d-1$ polytope $Q$ called
@@ -141,12 +145,12 @@
       For $\tau_1 < \tau_2 < \cdots, \tau_n$ consider the $f(\tau_1), \cdots,
       f(\tau_n)$. These are the vertices. The cyclic polytope would be the
       convex hull of these points.
-    \item \bf{General position} We say that a set of points in $\R^d$ is in
+    \item {\bf General position} We say that a set of points in $\R^d$ is in
       general position, if any collection of $d+1$ points is affinely
       independent.
     \item A cyclic polytope is a simplicial polytope. Proof: We infact prove
       that the points are in general position. Remember the determinant
-      argument? The determinant would be $\Prod(\tau_i - \tau_j)$ for $i \neq
+      argument? The determinant would be $\Pi(\tau_i - \tau_j)$ for $i \neq
       j$.
     \item Let us denote $x_i = f(\tau_i)$ and $x_i < x_j \iff \tau_i < \tau_j$.
       Now $V = \{x_1, \cdots, x_v\}$ is a totally ordered set. If the
@@ -154,7 +158,7 @@
         contiguous} if $X = \{x_i, \cdots, x_j\}$ and $x_{i-1} \neq W$ and
       $x_{j+1} \neq W$. $X$ will be called even or odd according to the parity
       of the cardinality of $X$. An {\emph end-set} is a subset $Y \subset W$ of
-      the form ${x_1, \cdots, x_i}$ and ${x_j, \cdots, x_v\}$ where $x_{i+1}
+      the form ${x_1, \cdots, x_i}$ and $\{x_j, \cdots, x_v\}$ where $x_{i+1}
         \neq W$ and $x_{j-1} \neq W$ respectively.
 
         Now we may represent any set $W \subset V$ uniquely as $Y_1 \cup X_1
@@ -202,9 +206,95 @@
 
     \begin{enumerate}
     \item A polytope $P$ is said to be $k$ neighbourly if every subset of $k$
-      points of $V = \vert P$ is the set of vertices of a proper face of $P$.
+      points of $V = \verti P$ is the set of vertices of a proper face of $P$.
     \item $C(v, d)$ is $\lfloor \frac{d}{2} \rfloor$ neighbourly.
+    \item If a polytope is strictly more than $\lfloor \frac{d}{2} \rfloor$ neighbourly,
+      then it is a simplex.
+    \item Every $n$ neighbourly $2n$ polytope $P$ is simplicial. Proof: This
+      follows from the last result. Take any proper face, then it is $n$
+      neighbourly and hence a simplex.
     \end{enumerate}
+
+    \begin{lemma}
+      $C(V, d)$ is $\lfloor \frac{d}{2} \rfloor$ neighbourly.
+    \end{lemma}
+    \begin{proof}
+      If $W$ is a subset of $V$ such that the cardinality of $W = \lfloor
+      \frac{d}{2} \rfloor$. Now, notice that $d - \lfloor \frac{d}{2} \rfloor
+      \ge \lfloor \frac{d}{2} \rfloor$. From the theorem that says that a subset
+      or vertices form the vertices of a face if and only if it is of type
+      $(\lfloor \frac{d}{2} \rfloor, s)$. This is valid in our case.
+    \end{proof}
+
+    \begin{lemma}
+      If $P$ is a $k$ neighbourly polytope, then every $k$ vertices of $P$ are
+      affinely independent.
+    \end{lemma}
+    \begin{proof}
+      
+    \end{proof}
+
+    \begin{lemma}
+      Let $P$ be a $k$ neighbourly $d$ Polytope with $k > \langle \frac{d}{2}
+      \rangle$. Then $P$ is a simplex.
+    \end{lemma}
+    \begin{theorem}
+      If $P$ is not a $d$ simplex, then the cardinality of vertices of $P \ge d
+      + 2$.
+    \end{theorem}
+    \begin{proof}
+      We use the Radon's theorem to get a partition $V, W$ such that
+      $\conv V \cap \conv W \neq \emptyset$. WLOG, $\card V \le \lfloor
+      \frac{d+2}{2} \rfloor$. Now, because of the neighbourly property, $\conv
+      V$ is a face, but then for every supporting hyperplane, we have $H \cap
+      \conv W \neq \emptyset$ and therefore $H \cap Z \neq \emptyset$. This is
+      impossible.
+    \end{proof}
+
+
+    \section{Euler's theorem}
+    \begin{theorem}
+      Let $P$ be a $d$ polytope and let $f_j(P)$ denote its number of $j$ faces
+      $(0 \le j \le d - 1)$. Then $\sum_{j = 0}^{d - 1} (-1)^j f_j(P) = 1 +
+      (-1)^{d-1}$. Can be also written as $\sum_{j=-1}^{d} (-1)^{j} f_J(P) = 0$.
+      We adopt the convention that $f_{-1}(P) = f_d(P) = 1$.
+    \end{theorem}
+
+    \begin{proof}
+      The theorem is true for $d = 1$. We will prove this by induction.
+      \begin{enumerate}
+        \item $D$ be the union of at most $\frac{1}{2} v(v-1)$ hyperplanes
+          through origin one perpendicular to each of the $\frac{1}{2}v(v-1)$
+          lines joining two vertices of $P$.
+        \item $a$ be a vector in $\R^d \setminus D$. $H$ be a hyperplane
+          perpendicular to $a$
+        \item $H_1, H_3, \cdots, H_{2v -1}$ be hyperplanes parallel to $H$ in
+          order passing through each vertex of $P$.
+        \item $H_2, \cdots, H_{2v-2}$ be hyperplanes parallel to $H$ such that
+          $H_{2k}$ lies between $H_{2k-1}$ and $H_{2k + 1}$.
+        \item $H_1$ and  $H_{2v - 1}$ supports $P$.
+        \item $P_i = H_i \cap P$ be a $(d-1)$ polytope.
+        \item $\psi (F^j, P) = 0$ if $P_i \cap \relint F^j = \emptyset$ and $1$
+          otherwise.
+        \item For each $F^j$, the first hyperplane $H_i$ to meet $F^j$ will have
+          odd suffix. $i = 2l - 1$ and the last one will have odd suffix too.
+          Thus $\sum_{i=2}^{2v-2} (-1)^i \psi(F^j, P_i) = 1$. Thus, it takes
+          value $1$ at one more even value than for odd value.
+        \item $\sum_{\textup{j-faces}}\sum_{i=2}^{2v-2} (-1)^i \psi(F^j, P_i) =
+          f_j(P)$ for $1 \le j \le d - 1$.
+        \item $\sum_{j = 1}^{d-1} (-1)^j \sum_{\textup{j-faces}}
+          \sum_{i=2}^{2v-2} (-1)^i \psi(F^j, P_i) = \sum_{j = 1}^{d-2} (-1)^j
+          f_j(P)$.
+        \item For $i$ even or $j > 1$, then each $(j-1)$ face of $P_i$ is the
+          intersection of a $j$ face of $P$ with $H_i$.
+        \item For $i$ odd and $j =1$, one vertex of $P_i$ is a vertex of $P$ and
+          each remaining vertex is the intersection of an edge of $P$ with
+          $H_i$.
+        \item $\sum_{\textup{j faces}} \psi(F^j, P_i) = f_p(P_i) -1$ if $j = 1$
+          and $i$ odd; and $f_{j-1}(P_i)$ otherwise.
+        \item TODO
+      \end{enumerate}
+    \end{proof}
 
     \section{Gale transform}
     Let $P$ be a $d$ polytope with vertices $\{x_1, \cdots, x_n\}$. Consider the
@@ -225,7 +315,7 @@
     \begin{lemma}
       For a $d$ polytope $P$ with vertex set $V$, $F = \conv \{x_i, \cdots,
       x_j\}$ is a face of $P$ if and only if $\aff(F) \cap \conv \{V \setminus
-      F} = \emptyset$.
+      F\} = \emptyset$.
   \end{lemma}
 
   \begin{proof}
@@ -243,13 +333,34 @@
   \end{proof}
 
   \begin{theorem}
-    Let $P$ be a polytope and let $V =\vert P$. Then the subset $Z \subset V$ is
+    Let $P$ be a polytope and let $V =\verti P$. Then the subset $Z \subset V$ is
     a coface of $P$ if and only if in a gale transform $\bar{V}$ of $V$, $0 \in$
     the relative interior of $\conv \bar{Z}$.
   \end{theorem}
 
   \begin{proof}
+    We use the above condition. $Z$ is a coface if and only if $\aff(V \setminus
+    Z) \cap \aff(Z) = \emptyset$. Assume that $Z$ is not a coface.
 
+    This means that there is an $x = \sum_{i=1}^{r}{\lambda_i x_i}$
+    where $\sum \lambda_i = 1$ and $\lambda_i \ge 0$ and $x = \sum_{i=k +
+      1}^{n}{-\lambda_i x_i}$ and $\sum_{i=k+1}^{n}(-\lambda_i) = 1$
+
+    From the two equations, we get that $\sum_{i=1}^{n} \lambda_i x_i = 0$ with
+    $\sum_{\lambda_i} = 0$. Now $l = (\lambda_1, \cdots, \lambda_n)$ is an
+    affine dependence. Let $a_1, \cdots, a_{n-d-1}$ be the basis for such set
+    and $l = \sum_{i=1}^{n-d-1} \gamma_i a_{i}$. Let $c = (\gamma_1, \cdots,
+    \gamma_{n - d- 1})$
+
+    The above correspondences say that $\lambda_i = \langle c,
+    \bar{x}_i\rangle$. Also for $i = 1, \cdots, k$, we know that $\langle c,
+    \bar{x}_i\rangle \ge 0$. Thus for $\langle c, \bar{x}\rangle \ge 0$, which
+    represents the closed half space, at least one point of $\bar{Z}$ lies in
+    the interior. Thus $0$ cannot be in the relative interior of convex hull of
+    $\bar{Z}$.
+
+    We can reverse the argument to prove the other direction, although I have
+    never done it myself.
   \end{proof}
 
   \begin{corollary}
@@ -264,6 +375,42 @@
     for $x_i$, the vertex becoming a face. It is that $0 \in \operatorname{rel.
       int}\{\bar{x}_1, \cdots, \bar{x}_{i-1}, \bar{x}_{i+1}, \cdots,
     \bar{x}_{d+1}\}$ But this would lead to a contradiction.
+  \end{proof}
+
+  \begin{theorem}
+    Let $\bar{V} = \{\bar{x}_1, \cdots, \bar{x}_n\}$ be any set of points in
+    $\R^d$ such that 
+    \begin{enumerate}
+      \item $0$ is the centroid of the points $\bar{x}_1, \cdots, \bar{x}_n$,
+        and 
+      \item each open half-sapce of $\R^d$ bounded by a hyperplane through $0$
+        contains at least two points of $\bar{V}$
+    \end{enumerate}
+
+    Then $\bar{V}$ is a Gale transform of the set of vertices of some $(n- r -
+    1)$ polytope.
+  \end{theorem}
+  \begin{proof}
+    Let $\bar{V}$ be satisfying the conditions of the theorem. Let $A$ be an $r
+    \times n$ matrix whose columns are $\bar{x_1}, \cdots, \bar{x}_n$. If $y$ is
+    an $n \times 1$ column vector, then the system of equations $A y = 0$ has $n
+    - r - 1$ affinely independent solutions, $y_1, \cdots, y_{n-r-1}$. Write
+    these as columns of an $n \times (n - r - 1)$ matrix and call the rows $V =
+    \{x_1, \cdots, x_n\}$. It follows that $V$ is a gale transform of $\bar{V}$.
+
+    An element $v\in V$ is a vertex iff $0 \in \relint \bar{V} \setminus
+    \bar{v}$. This is true because of the second condition.
+  \end{proof}
+
+  \begin{theorem}
+    Let $P$ be a polytope, $F$ is a face of $P$, and $Z$ the corresponding
+    coface, and let $\bar{V}$ be a Gale transform of $V = \verti P$. Let $L$ be
+    the complementary linear subspace in $\aff \bar{V}$ perpendicular to $\aff
+    \bar{Z}$, and let $\Pi$ denote the orthogonal projection onto $L$. Then
+    $\Pi(\bar{V} \setminus \bar{Z})$ is a Gale transform of $\vert F$.
+  \end{theorem}
+  \begin{proof}
+
   \end{proof}
       
 \end{multicols}
